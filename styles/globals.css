@@ -1,3 +1,89 @@
+@font-face {
+  font-family: "Alice";
+  src: url("/fonts/Alice/Alice-Regular.ttf");
+}
+
+@font-face {
+  font-family: "DancingScript";
+  src: url("/fonts/DancingScript/DancingScript-Regular.ttf");
+  src: url("/fonts/DancingScript/DancingScript-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Bold.ttf");
+}
+
+:root { 
+  /* color scheme */
+  --background: #FEFEFE;
+  --font: #160300;
+  --accent: #E9C696;
+  --accent-dark: #8B765A;
+  --accent-dark-alpha: #8B765A80;
+  --accent-dark-2: #372f24;
+  --accent-dark-2-alpha: #372f2480;
+  --accent-hover: #ddb16f;
+
+  /* spacing increments */
+  --spacing-1: 10px;
+  --spacing-2: 20px;
+  --spacing-3: 30px;
+  --spacing-4: 40px;
+
+  /* fixed sizes */
+  --logo-height: 150px;
+  --header-height: 75px;
+  --footer-height: 65px;
+}
+
+/***** Global *****/
+html {
+  background-color: var(--background);
+  color: var(--font);
+  position: relative;
+  font-family: 'Roboto';
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding-top: calc(75px - (var(--spacing-1) * 2));
+  padding-bottom: 65px;
+  min-height: calc(100vh - 215px);
+}
+
+h1, h2 {
+  font-family: 'DancingScript';
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: var(--spacing-1);
+  margin-bottom: var(--spacing-2);
+}
+
+hr {
+  border-color: var(--accent-dark);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.img-round {
+  border-radius: 50%;
+}
+
 html,
 body {
   padding: 0;
