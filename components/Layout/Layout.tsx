@@ -2,7 +2,7 @@ import React from 'react'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 
-export function Layout (children: any): JSX.Element {
+export function Layout ({ children }: LayoutProps): JSX.Element {
   return (
     <>
       <Header />
@@ -10,4 +10,8 @@ export function Layout (children: any): JSX.Element {
       <Footer />
     </>
   )
+}
+
+interface LayoutProps {
+  children: JSX.Element
 }

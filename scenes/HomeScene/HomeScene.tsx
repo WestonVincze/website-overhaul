@@ -5,7 +5,7 @@ export function HomeScene (): JSX.Element {
   return (
     <>
       <Container centered={true}>
-        HOME
+        <span>HOME</span>
       </Container>
     </>
   )

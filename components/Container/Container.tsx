@@ -10,6 +10,6 @@ export function Container ({ children, centered = true }: ContainerProps): JSX.E
 }
 
 interface ContainerProps {
-  children?: any
+  children?: JSX.Element
   centered?: boolean
 }

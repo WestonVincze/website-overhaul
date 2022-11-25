@@ -1,11 +1,39 @@
+.footer {
+  padding-bottom: 30px;
+}
+.fa-stack-1x {
+  transition: color 0.5s ease;
+  color: #fff;
+}
+.fa-circle {
+  transition: color 0.5s ease;
+  color: #fd8469;
+}
+.fa-stack:hover .fa-stack-1x {
+  transition: color 0.5s ease;
+  color: #fd8469;
+}
+.fa-stack:hover .fa-circle{
+  transition: color 0.5s ease;
+  color: transparent;
+}
+.text-link {
+  text-decoration: none;
+  color: inherit;
+}
+.text-link:hover {
+  border-bottom: 1.5px solid #fd8469;
+}
+/**
 .footerContainer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
   height: 65px;
-  /* border-bottom: 2px solid var(--accent-dark-2); */
+  /* border-bottom: 2px solid var(--accent-dark-2); 
 }
+
 
 .footer {
   height: 100%;
@@ -46,3 +74,4 @@
   border-radius: 50%;
   background-color: var(--background);
 }
+*/

@@ -7,7 +7,7 @@ export function Button ({ path, variant, children }: ButtonProps): JSX.Element {
   const buttonStyle = variant != null ? styles[variant] : styles.primary
 
   return (
-    <Link href={path}>
+    <Link legacyBehavior href={path}>
       <a className={`${styles.button} ${buttonStyle}`}>
         {children}
       </a>
@@ -16,7 +16,8 @@ export function Button ({ path, variant, children }: ButtonProps): JSX.Element {
 }
 
 interface ButtonProps {
+  /* text: string */
   path: string
   variant?: ButtonVariants
-  children?: any
+  children?: JSX.Element
 }
