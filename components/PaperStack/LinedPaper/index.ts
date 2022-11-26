@@ -1,0 +1,1 @@
+export { LinedPaper } from './LinedPaper'

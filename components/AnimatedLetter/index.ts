@@ -1,0 +1,1 @@
+export { AnimatedLetter } from './AnimatedLetter'

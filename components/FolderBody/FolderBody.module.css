@@ -1,0 +1,7 @@
+.folder {
+  background: var(--accent);
+  margin-left: 2px;
+  margin-right: 2px;
+  /* is this the right spot? */
+  padding: var(--spacing-2);
+}

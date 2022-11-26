@@ -15,7 +15,9 @@
     "eslint-config-next": "13.0.5",
     "next": "13.0.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-spring": "^9.5.5",
+    "react-use-gesture": "^9.1.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.44.0",

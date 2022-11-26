@@ -14,9 +14,21 @@
   src: url("/fonts/Roboto/Roboto-Bold.ttf");
 }
 
+@font-face {
+  font-family: "AmaticSC";
+  src: url("/fonts/AmaticSC/AmaticSC-Bold.ttf");
+}
+
+/** BROKEN **/
+@font-face {
+  font-family: "Zeyata";
+  src: url("/fonts/Zeyada/Zeyada-Regular.ttf");
+}
+
 :root { 
   /* color scheme */
-  --background: #FEFEFE;
+  /*--background: #FEFEFE;*/
+  --background: #FD8469;
   --font: #160300;
   --accent: #E9C696;
   --accent-dark: #8B765A;
@@ -24,6 +36,7 @@
   --accent-dark-2: #372f24;
   --accent-dark-2-alpha: #372f2480;
   --accent-hover: #ddb16f;
+  --blue-pen: #00407e;
 
   /* spacing increments */
   --spacing-1: 10px;
@@ -47,6 +60,7 @@ html {
 
 body {
   margin: 0;
+  background: transparent !important;
 }
 
 main {
@@ -56,7 +70,8 @@ main {
 }
 
 h1, h2 {
-  font-family: 'DancingScript';
+  /*/font-family: 'DancingScript';*/
+  font-family: 'AmaticSC';
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -66,6 +81,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 hr {
   border-color: var(--accent-dark);
+}
+
+.written { 
+  color: var(--blue-pen);
+  font-family: 'Zeyada', cursive;
 }
 
 .text-center {
@@ -101,6 +121,7 @@ a {
   box-sizing: border-box;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -110,3 +131,4 @@ a {
     background: black;
   }
 }
+*/
