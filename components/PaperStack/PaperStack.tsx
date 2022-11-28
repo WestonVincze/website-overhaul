@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
-import styles from './PaperStack.module.css'
+import React from 'react'
+// import styles from './PaperStack.module.css'
 import { LinedPaper, LinedPaperProps } from './LinedPaper/LinedPaper'
-import { useSpring, useTrail, animated } from 'react-spring'
+import { useTrail, animated } from 'react-spring'
 
 // hook should allow developer to create paper with addPaper()
 // hook should return a list of papers
 // hook can be used to add and remove elements on the fly (why?)
+/*
 export function usePaperStack (): JSX.Element {
   function addPaper (paper: LinedPaperProps): JSX.Element {
     return (<LinedPaper {...paper} />)
   }
   return (<></>)
 }
+*/
 
 // phase 1: animate paper stack into frame from top
 // phase 2: animate paper stack out of folder, off screen, then into frame.

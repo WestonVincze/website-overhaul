@@ -4,6 +4,8 @@ import { Container } from '../../components/Container/Container'
 import { FolderBody } from '../../components/FolderBody'
 import { LinedPaperProps } from '../../components/PaperStack/LinedPaper/LinedPaper'
 import { PaperStack } from '../../components/PaperStack'
+import { AnimatedWord } from '../../components/AnimatedWord'
+import { ContentRow } from '../../components/ContentRow'
 
 // I could move this to a separate file to emulate a fetch request and keep this
 // logic separate
@@ -27,6 +29,10 @@ export function HomeScene (): JSX.Element {
     <FolderBody>
       <Container centered={true}>
         <>
+          <ContentRow>
+            <AnimatedWord word={'Weston'} />
+            <AnimatedWord word={'Vincze'} />
+          </ContentRow>
           <Image width={500} height={500} src="/images/web-dev-weston.gif" alt="Animated Weston 'developing web'" />
           <PaperStack papers={paperContent} />
         </>

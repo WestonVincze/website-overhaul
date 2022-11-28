@@ -1,0 +1,1 @@
+export { AnimatedWord } from './AnimatedWord'
