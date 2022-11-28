@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './Container.module.css'
 
-export function Container ({ children, centered = true }: ContainerProps): JSX.Element {
+export function Container ({ children, centered = true, ...props }: ContainerProps): JSX.Element {
   return (
-    <div className={`${styles.container} ${centered ? 'text-center' : ''}`}>
+    <div className={`${styles.container} ${centered ? 'text-center' : ''}`} {...props}>
       {children}
     </div>
   )

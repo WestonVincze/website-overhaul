@@ -5,9 +5,9 @@ import styles from './ContentRow.module.css'
  * Wrapper for displaying content within a row
  * @param cols the number of columns for the content row
  */
-export function ContentRow ({ children }: ContentRowProps): JSX.Element {
+export function ContentRow ({ children, ...props }: ContentRowProps): JSX.Element {
   return (
-    <div className={`${styles.contentRow} ${styles[`col-${'cols'}`]}`}>
+    <div className={`${styles.contentRow} ${styles[`col-${'cols'}`]}`} {...props}>
       {children.map(c => c)}
     </div>
   )

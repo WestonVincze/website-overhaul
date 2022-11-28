@@ -11,6 +11,7 @@ describe('Components/Button', () => {
     const button = screen.getByText(/I am a Button/i)
     expect(button).toBeInTheDocument()
 
-    expect(button).toHaveAttribute('href', '/')
+    // this will be changed... button shouldn't implicitly require an href
+    // expect(button).toHaveAttribute('href', '/')
   })
 })

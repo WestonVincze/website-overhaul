@@ -10,7 +10,7 @@ describe('Components/AnimatedWord', () => {
   it('renders as many animated letters as there are characters in the word prop', () => {
     render(<AnimatedWord data-testid={testWord} word={testWord} />)
 
-    // makes sure each letter from 'word' renders
+    // ensures each letter from 'word' prop is rendered
     testWord.split('').map((letter => {
       expect(screen.getByText(letter)).toBeInTheDocument()
     }))
