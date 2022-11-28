@@ -1,5 +1,4 @@
 import React from 'react'
-import { animated } from 'react-spring'
 import { AnimatedLetter } from '../AnimatedLetter'
 
 /**

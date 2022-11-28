@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import React from 'react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import { Container } from '.'
@@ -12,6 +13,6 @@ describe('Components/Container', () => {
     )
 
     const containerContent = screen.getByText(/I am in a container/i)
-    expect(containerContent).toBeInTheDocument();
+    expect(containerContent).toBeInTheDocument()
   })
 })
