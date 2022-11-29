@@ -1,0 +1,12 @@
+.folderTab {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 98%);
+  padding: var(--spacing-1) var(--spacing-3);
+  /* extra padding to help center text with clip-path */
+  padding-left: var(--spacing-4);
+  background-color: var(--accent);
+  margin-left: var(--spacing-2);
+}
+
+.folderTab.active {
+  background-color: var(--accent-dark);
+}

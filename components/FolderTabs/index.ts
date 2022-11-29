@@ -1,0 +1,1 @@
+export { FolderTabs } from './FolderTabs'

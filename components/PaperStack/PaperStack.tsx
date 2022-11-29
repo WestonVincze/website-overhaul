@@ -22,7 +22,6 @@ export function usePaperStack (): JSX.Element {
 export function PaperStack ({ papers }: PaperStackProps): JSX.Element {
   // const [papers, setPapers] = useState([])
   // animations handeled here
-  console.log(papers)
 
   // is it dangerous to use "papers.length" and access array directly?
   const trail = useTrail(papers.length, {
