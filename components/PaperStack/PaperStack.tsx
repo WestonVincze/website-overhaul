@@ -24,7 +24,7 @@ export function PaperStack ({ papers }: PaperStackProps): JSX.Element {
   const stackRef = useRef<HTMLDivElement>(null)
 
   // consider adding AnimationStates as a type
-  const [animationState, setAnimationState] = useState('in')
+  const [animationState, setAnimationState] = useState<AnimationState>('from-inside')
   // consider changing name (height of stack + window)
   const [stackHeight, setStackHeight] = useState(0)
 
@@ -36,9 +36,31 @@ export function PaperStack ({ papers }: PaperStackProps): JSX.Element {
       height = stackRef?.current?.offsetHeight
     }
     // might want to trigger onResize as well
-    console.log(-1 * (height + window.innerHeight))
     setStackHeight(-1 * (height + window.innerHeight))
   }, [stackRef])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimationState('from-top')
+    }, 300)
+  }, [setAnimationState])
+
+  const animationValues = {
+    'from-inside': {
+      to: { y: stackHeight, x: 200 },
+      from: { y: 0, x: 0 }
+    },
+    'from-top': {
+      to: { y: 0, x: 0 },
+      from: { y: stackHeight, x: 200 }
+    },
+    'from-mid': {
+      to: { y: stackHeight, x: 200 },
+      from: { y: 0, x: 0 }
+    }
+  }
+
+  console.log(animationValues[animationState].to)
 
   // is it dangerous to use "papers.length" and access array directly?
   const paperStackTrail = useTrail(papers.length, {
@@ -47,17 +69,16 @@ export function PaperStack ({ papers }: PaperStackProps): JSX.Element {
     delay: 500,
     // update to getter function
     // get the height of the paperstack and use it for the y value
-    to: animationState === 'in' ? { y: 0, x: 0 } : { y: stackHeight, x: 200 },
-    from: animationState === 'in' ? { y: -1500, x: 200 } : { y: 0, x: 0 }
+    // to: animationState === 'in' ? { y: 0, x: 0 } : { y: stackHeight, x: 200 },
+    to: animationValues[animationState].to,
+    from: animationValues[animationState].from
   })
 
   return (<div ref={stackRef}> {
     paperStackTrail.map((styles, i) =>
       (<animated.div
         key={i}
-        style={styles}
-        onClick={() =>
-          setAnimationState(animationState === 'in' ? 'out' : 'in')}>
+        style={styles}>
         <LinedPaper key={i} {...papers[i]} />
       </animated.div>)
     )
@@ -67,3 +88,5 @@ export function PaperStack ({ papers }: PaperStackProps): JSX.Element {
 interface PaperStackProps {
   papers: LinedPaperProps[] // change this to use an array of paper props
 }
+
+type AnimationState = 'from-inside' | 'from-top' | 'from-mid'
