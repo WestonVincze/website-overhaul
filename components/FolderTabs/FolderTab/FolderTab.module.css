@@ -3,10 +3,14 @@
   padding: var(--spacing-1) var(--spacing-3);
   /* extra padding to help center text with clip-path */
   padding-left: var(--spacing-4);
-  background-color: var(--accent);
-  margin-left: var(--spacing-2);
+  background-color: var(--accent-dark);
+  z-index: -1;
+}
+
+.folderTab.blankTab {
+  padding-left: var(--spacing-6)
 }
 
 .folderTab.active {
-  background-color: var(--accent-dark);
+  background-color: var(--accent);
 }

@@ -39,10 +39,12 @@
   --blue-pen: #00407e;
 
   /* spacing increments */
+  --small-margin: 5px;
   --spacing-1: 10px;
   --spacing-2: 20px;
   --spacing-3: 30px;
   --spacing-4: 40px;
+  --spacing-6: 90px;
 
   /* fixed sizes */
   --logo-height: 150px;

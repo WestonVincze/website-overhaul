@@ -1,8 +1,10 @@
 import React from 'react'
 import { Container } from '../../components/Container'
 
-export function SkillsScene (): JSX.Element {
+export function ResumeScene (): JSX.Element {
   return (<>
-    <Container />
+    <Container>
+      <div>Hello</div>
+    </Container>
   </>)
 }

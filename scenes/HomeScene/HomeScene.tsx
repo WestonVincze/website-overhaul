@@ -1,12 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import { Container } from '../../components/Container/Container'
-import { FolderBody } from '../../components/FolderBody'
 import { LinedPaperProps } from '../../components/PaperStack/LinedPaper/LinedPaper'
 import { PaperStack } from '../../components/PaperStack'
 import { AnimatedWord } from '../../components/AnimatedWord'
 import { ContentRow } from '../../components/ContentRow'
-import { FolderTabs } from '../../components/FolderTabs'
 
 // I could move this to a separate file to emulate a fetch request and keep this
 // logic separate
@@ -27,20 +25,17 @@ const paperContent: LinedPaperProps[] = [
 
 export function HomeScene (): JSX.Element {
   return (
-    <FolderBody>
-      <>
-        <FolderTabs tabs={[{ path: '/', text: 'test' }, { path: '/', text: 'test' }]} />
-        <Container centered={true}>
-          <>
-            <ContentRow>
-              <AnimatedWord word={'Weston'} />
-              <AnimatedWord word={'Vincze'} />
-            </ContentRow>
-            <Image width={500} height={500} src="/images/web-dev-weston.gif" alt="Animated Weston 'developing web'" />
-            <PaperStack papers={paperContent} />
-          </>
-        </Container>
-      </>
-    </FolderBody>
+    <>
+      <Container centered={true}>
+        <>
+          <ContentRow>
+            <AnimatedWord word={'Weston'} />
+            <AnimatedWord word={'Vincze'} />
+          </ContentRow>
+          <Image width={500} height={500} src="/images/web-dev-weston.gif" alt="Animated Weston 'developing web'" />
+          <PaperStack papers={paperContent} />
+        </>
+      </Container>
+    </>
   )
 }

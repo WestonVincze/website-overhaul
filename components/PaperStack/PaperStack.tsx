@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 // import styles from './PaperStack.module.css'
 import { LinedPaper, LinedPaperProps } from './LinedPaper/LinedPaper'
 import { useTrail, animated } from 'react-spring'
@@ -20,29 +20,48 @@ export function usePaperStack (): JSX.Element {
 // phase 3: reverse animations to put items away and take them out once user scrolls object out of screen from top
 
 export function PaperStack ({ papers }: PaperStackProps): JSX.Element {
-  // const [papers, setPapers] = useState([])
   // animations handeled here
+  const stackRef = useRef<HTMLDivElement>(null)
+
+  // consider adding AnimationStates as a type
+  const [animationState, setAnimationState] = useState('in')
+  // consider changing name (height of stack + window)
+  const [stackHeight, setStackHeight] = useState(0)
+
+  // determines how much distance the stack needs to travel in order to be off screen
+  // calculation adds extra space (total height + PaperStack height)
+  useEffect(() => {
+    let height = 0
+    if (stackRef?.current?.offsetHeight !== undefined) {
+      height = stackRef?.current?.offsetHeight
+    }
+    // might want to trigger onResize as well
+    console.log(-1 * (height + window.innerHeight))
+    setStackHeight(-1 * (height + window.innerHeight))
+  }, [stackRef])
 
   // is it dangerous to use "papers.length" and access array directly?
-  const trail = useTrail(papers.length, {
-    // config: { duration: 600 },
+  const paperStackTrail = useTrail(papers.length, {
     config: { mass: 10, tension: 3500, friction: 500 },
     loop: false,
-    // loop: { reverse: true },
-    delay: 200,
-    to: { y: 0, x: 0 },
-    from: { y: -1000, x: 200 }
+    delay: 500,
+    // update to getter function
+    // get the height of the paperstack and use it for the y value
+    to: animationState === 'in' ? { y: 0, x: 0 } : { y: stackHeight, x: 200 },
+    from: animationState === 'in' ? { y: -1500, x: 200 } : { y: 0, x: 0 }
   })
 
-  return (<>
-    {
-      trail.map((styles, i) =>
-        (<animated.div key={i} style={styles}>
-          <LinedPaper key={i} {...papers[i]} />
-        </animated.div>)
-      )
-    }
-  </>)
+  return (<div ref={stackRef}> {
+    paperStackTrail.map((styles, i) =>
+      (<animated.div
+        key={i}
+        style={styles}
+        onClick={() =>
+          setAnimationState(animationState === 'in' ? 'out' : 'in')}>
+        <LinedPaper key={i} {...papers[i]} />
+      </animated.div>)
+    )
+  }</div>)
 }
 
 interface PaperStackProps {

@@ -6,6 +6,5 @@
   position: absolute;
   display: flex;
   top: 25px;
-  right: 2.5px;
+  right: var(--small-margin);
 }
-
