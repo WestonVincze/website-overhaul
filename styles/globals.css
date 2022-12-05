@@ -19,6 +19,11 @@
   src: url("/fonts/AmaticSC/AmaticSC-Bold.ttf");
 }
 
+@font-face {
+  font-family: "OldTypewriter";
+  src: url("/fonts/OldTypewriter/fzm-Old.Typewriter.ttf");
+}
+
 /** BROKEN **/
 @font-face {
   font-family: "Zeyata";
@@ -27,16 +32,14 @@
 
 :root { 
   /* color scheme */
-  /*--background: #FEFEFE;*/
   --background: #FD8469;
   --font: #160300;
-  --accent: #E9C696;
-  --accent-dark: #8B765A;
+  --accent: var(--folder);
+  --accent-dark: var(--folder-shadow);
   --accent-dark-alpha: #8B765A80;
   --accent-dark-2: #372f24;
   --accent-dark-2-alpha: #372f2480;
   --accent-hover: #ddb16f;
-  --blue-pen: #00407e;
 
   /* spacing increments */
   --small-margin: 5px;
@@ -49,6 +52,14 @@
   --logo-height: 150px;
   --header-height: 75px;
   --footer-height: 65px;
+
+  /* color names */
+  --folder: #E9C696;
+  --folder-shadow: #8B765A;
+  --blue-pen: #00407e;
+
+  /* fonts */
+  --core-font: "OldTypewriter";
 }
 
 /***** Global *****/
@@ -56,7 +67,7 @@ html {
   background-color: var(--background);
   color: var(--font);
   position: relative;
-  font-family: 'Roboto';
+  font-family: var(--core-font);
 }
 
 body {
@@ -103,14 +114,6 @@ hr {
 
 .img-round {
   border-radius: 50%;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {

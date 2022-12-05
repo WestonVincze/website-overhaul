@@ -33,7 +33,8 @@ export function HomeScene (): JSX.Element {
             <AnimatedWord word={'Vincze'} />
           </ContentRow>
           <Image width={500} height={500} src="/images/web-dev-weston.gif" alt="Animated Weston 'developing web'" />
-          <PaperStack papers={paperContent} />
+          <PaperStack papers={paperContent} isAnimated={true} />
+          <PaperStack papers={paperContent} isAnimated={false} />
         </>
       </Container>
     </>

@@ -5,4 +5,5 @@
   /* is this the right spot? */
   padding: var(--spacing-2);
   position: relative;
+  z-index: 10;
 }

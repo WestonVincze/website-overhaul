@@ -1,30 +1,47 @@
 import React, { useState } from 'react'
 import style from './FolderTabs.module.css'
 import { FolderTab, FolderTabProps } from './FolderTab/FolderTab'
+import { PaperPreview } from './PaperPreview/PaperPreview'
+import { useRouter } from 'next/router'
 
 /**
  * @param tabs
  */
 export function FolderTabs ({ tabs, ...props }: FolderTabsProps): JSX.Element {
-  const [activeTab, setActiveTab] = useState('')
+  const router = useRouter()
+  const currentPage = router.pathname.split('').splice(1).join('')
 
-  function handleClick (id: string): void {
+  const [activeTab, setActiveTab] = useState(currentPage === '' ? 'home' : currentPage)
+  const [hoverTab, setHoverTab] = useState('')
+  const [z, setZ] = useState(-1)
+
+  function handleClick (id: string, z: number): void {
     if (activeTab === id) return
     setActiveTab(id)
+    setZ(z)
+  }
+
+  function handleHover (id: string, z: number): void {
+    setHoverTab(id)
+    setZ(z)
   }
 
   return (
-    <div className={style.folderTabs} {...props}> {
-      tabs.map((tab) =>
-        <span onClick={() => handleClick(tab.id)} key={tab.id}>
-          <FolderTab
-            id={tab.id}
-            path={tab.path}
-            text={tab.text}
-            isActive={activeTab === tab.id}
-            key={tab.id} />
-        </span>
-      )}
+    <div className={style.folderTabs} {...props}>
+      {
+        tabs.map((tab, i) =>
+          <div style={{ }} key={i}>
+            <PaperPreview hovering={hoverTab === tab.id && hoverTab !== activeTab} active={tab.id === activeTab} z={z} key={i} />
+            <span onClick={() => handleClick(tab.id, i)} onMouseEnter={() => handleHover(tab.id, i)} onMouseLeave={() => handleHover('', -1)} style={{ zIndex: i }} key={tab.id}>
+              <FolderTab
+                id={tab.id}
+                path={tab.path}
+                text={tab.text}
+                isActive={activeTab === tab.id}
+                key={tab.id} />
+            </span>
+          </div>
+        )}
     </div>)
 }
 
