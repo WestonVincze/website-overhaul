@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './FolderTabs.module.css'
-import { FolderTab, FolderTabProps } from './FolderTab/FolderTab'
-import { PaperPreview } from './PaperPreview/PaperPreview'
+import { FolderTab, FolderTabProps } from './FolderTab'
+import { PaperPreview } from './PaperPreview'
 import { useRouter } from 'next/router'
 
 /**
@@ -30,7 +30,7 @@ export function FolderTabs ({ tabs, ...props }: FolderTabsProps): JSX.Element {
     <div className={style.folderTabs} {...props}>
       {
         tabs.map((tab, i) =>
-          <div style={{ }} key={i}>
+          <div key={i}>
             <PaperPreview hovering={hoverTab === tab.id && hoverTab !== activeTab} active={tab.id === activeTab} z={z} key={i} />
             <span onClick={() => handleClick(tab.id, i)} onMouseEnter={() => handleHover(tab.id, i)} onMouseLeave={() => handleHover('', -1)} style={{ zIndex: i }} key={tab.id}>
               <FolderTab
