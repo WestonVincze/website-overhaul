@@ -20,7 +20,9 @@ export function PaperStack ({ papers, isAnimated = false }: PaperStackProps): JS
     <LinedPaper key={i} {...paper} />
   )
   return (<>
-    {isAnimated ? <AnimatedContent>{paperElements}</AnimatedContent> : <div>{ paperElements }</div>}
+    {isAnimated
+      ? <AnimatedContent>{paperElements}</AnimatedContent>
+      : <div>{ paperElements }</div>}
   </>)
 }
 

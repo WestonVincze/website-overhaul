@@ -4,9 +4,15 @@ import { animated, useTrail } from 'react-spring'
 // animated content acts as a wrapper component for page content that
 // will be animated in and out of the scene
 
+interface AnimatedContentProps {
+  children: JSX.Element[]
+}
+
+type AnimationState = 'from-inside' | 'from-top' | 'from-mid'
+
 export function AnimatedContent ({ children }: AnimatedContentProps): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [animationState, setAnimationState] = useState<AnimationState>('from-inside')
+  const [animationState, setAnimationState] = useState<AnimationState>('from-top')
   const [yOffset, setYOffset] = useState(0)
 
   // calculates yOffset based on container and window height
@@ -57,9 +63,3 @@ export function AnimatedContent ({ children }: AnimatedContentProps): JSX.Elemen
     </div>
   )
 }
-
-interface AnimatedContentProps {
-  children: JSX.Element[]
-}
-
-type AnimationState = 'from-inside' | 'from-top' | 'from-mid'
