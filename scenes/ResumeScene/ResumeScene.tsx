@@ -1,31 +1,24 @@
 import React from 'react'
-import { PaperStack } from '../../components/PaperStack'
+import Image from 'next/image'
 import { Container } from '../../components/Container'
-import { LinedPaperProps } from '../../components/PaperStack/LinedPaper/LinedPaper'
+import { AnimatedContent } from '../../components/AnimatedContent'
+import { DragSnap } from '../../components/Drag/DragSnap'
 
-const paperContent: LinedPaperProps[] = [
-  {
-    id: 1,
-    title: 'I am a title',
-    message: 'test',
-    orientLeft: true
-  },
-  {
-    id: 2,
-    title: 'I am a title also',
-    message: 'test 2',
-    orientLeft: false
-  }
-]
+const resumeWidth = 700
+const resumeHeight = 900 // ~ * 1.294
 
 export function ResumeScene (): JSX.Element {
   return (
     <Container>
-      <>
-        <div>RESUME</div>
-        <PaperStack papers={paperContent} isAnimated={true} />
-        <PaperStack papers={paperContent} isAnimated={false} />
-      </>
+      <AnimatedContent>
+        <h1>RESUME</h1>
+        <DragSnap>
+          <Image src="/images/WestonResume-Page1.png" alt="Weston Resume Page 1" width={resumeWidth} height={resumeHeight} />
+        </DragSnap>
+        <DragSnap>
+          <Image src="/images/WestonResume-Page2.png" alt="Weston Resume Page 2" width={resumeWidth} height={resumeHeight} />
+        </DragSnap>
+      </AnimatedContent>
     </Container>
   )
 }
