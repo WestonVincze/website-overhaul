@@ -7,11 +7,12 @@ import { animationMachine, AnimationStates } from './AnimationFSM'
 interface PaperPreviewProps {
   hovering: boolean
   active: boolean
+  startActive?: boolean
   z: number
 }
 
-export function PaperPreview ({ hovering = false, active = false, z }: PaperPreviewProps): JSX.Element {
-  const [reset, setReset] = useState(false)
+const PaperPreview = ({ hovering = false, active = false, z, startActive = false }: PaperPreviewProps): JSX.Element => {
+  const [reset, setReset] = useState(startActive)
   const [current, send] = useMachine(animationMachine)
 
   useEffect(() => {
@@ -48,3 +49,5 @@ export function PaperPreview ({ hovering = false, active = false, z }: PaperPrev
     />
   )
 }
+
+export default PaperPreview

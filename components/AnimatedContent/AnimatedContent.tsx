@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { animated, useTrail } from 'react-spring'
+
+const DELAY_FACTOR = 300
 
 interface AnimatedContentProps {
   children: JSX.Element[]
@@ -10,19 +12,17 @@ interface AnimatedContentProps {
  * @param children an array of JSX.Elements to animate
  */
 export function AnimatedContent ({ children }: AnimatedContentProps): JSX.Element {
-  const [yOffset] = useState(-1 * window.innerHeight)
-  const [xOffset] = useState(window.innerWidth)
-
   const contentTrail = useTrail(children.length, {
-    delay: 300,
-    from: { y: yOffset, x: xOffset },
-    to: { y: 0, x: 0 }
+    delay: DELAY_FACTOR,
+    config: { mass: 25, tension: 2000, friction: 500 },
+    from: { y: '-15vh', x: '100vw' },
+    to: { y: '0%', x: '0%' }
   })
 
   return (
     <>
       {contentTrail.map((style, i) => (
-        <animated.div style={style} key={i}>
+        <animated.div key={i} style={style}>
           {children[i]}
         </animated.div>
       ))}

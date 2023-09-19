@@ -1,55 +1,59 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
 import style from './AnimatedLetter.module.css'
+import { DragSnap } from '../Drag/DragSnap'
+
+const ROTATION_THRESHOLD = 15
+
+interface AnimatedLetterProps {
+  letter: string
+}
+
+type rotateDirection = 'left' | 'right'
+
+const rotateAngle = (direction: rotateDirection): string => {
+  return `${direction === 'left' ? '-' : ''}${ROTATION_THRESHOLD}`
+}
 
 /**
  * Creates a letter that can be manipulated by user
  * @param letter the letter to be animated
  */
-export function AnimatedLetter ({ letter }: AnimatedLetterProps): JSX.Element {
-  // on hover and click certain events can occur
+const AnimatedLetter = ({ letter }: AnimatedLetterProps): JSX.Element => {
   const [isTargeted, setIsTargeted] = useState(false)
-  // const [click, setClick] = useState(false)
+  const [rotateDirection, setRotateDirection] = useState<rotateDirection>('left')
 
-  /*
-  useEffect(() => {
-    if (isTargeted) return
+  const flipRotation = (): void => {
+    setRotateDirection(rotateDirection === 'left' ? 'right' : 'left')
+  }
 
-  }, [isTargeted])
-  */
-
-  function onMouseEnter (): void {
+  const onMouseEnter = (): void => {
     if (isTargeted) return
     setIsTargeted(true)
   }
 
-  function onMouseLeave (): void {
+  const onMouseLeave = (): void => {
     if (!isTargeted) return
     setIsTargeted(false)
   }
 
-  /*
-  function onClick (): void {
-    // pulse animation
-  }
-  */
-
   const animatedStyle = useSpring({
     loop: { reverse: true },
-    transform: isTargeted ? 'rotate(15deg)' : 'rotate(0deg)'
+    transform: isTargeted ? `rotate(${rotateAngle(rotateDirection)}deg)` : 'rotate(0deg)',
+    onRest: () => flipRotation()
   })
 
   return (
-    <animated.div
-      className={style.animatedLetter}
-      onMouseEnter={() => onMouseEnter()}
-      onMouseLeave={() => onMouseLeave()}
-      style={animatedStyle}>
-      {letter}
-    </animated.div>
+    <DragSnap>
+      <animated.div
+        className={style.animatedLetter}
+        onMouseEnter={() => onMouseEnter()}
+        onMouseLeave={() => onMouseLeave()}
+        style={animatedStyle}>
+        {letter}
+      </animated.div>
+    </DragSnap>
   )
 }
 
-interface AnimatedLetterProps {
-  letter: string
-}
+export default AnimatedLetter

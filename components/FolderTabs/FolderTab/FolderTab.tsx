@@ -1,18 +1,24 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import style from './FolderTab.module.css'
 import { animated, useSpring } from 'react-spring'
-import Link from 'next/link'
 
-export function FolderTab ({ path, text, isActive = false, ...props }: FolderTabProps): JSX.Element {
+export interface FolderTabProps {
+  id: string
+  path: string
+  text?: string
+  isActive?: boolean
+}
+
+const FolderTab = ({ path, text, isActive = false, ...props }: FolderTabProps): JSX.Element => {
   const [isTargeted, setIsTargeted] = useState(false)
-  // repeated code, extract into shared component
 
-  function onMouseEnter (): void {
+  const onMouseEnter = (): void => {
     if (isTargeted) return
     setIsTargeted(true)
   }
 
-  function onMouseLeave (): void {
+  const onMouseLeave = (): void => {
     if (!isTargeted) return
     setIsTargeted(false)
   }
@@ -37,9 +43,4 @@ export function FolderTab ({ path, text, isActive = false, ...props }: FolderTab
   )
 }
 
-export interface FolderTabProps {
-  id: string
-  path: string
-  text?: string
-  isActive?: boolean
-}
+export default FolderTab

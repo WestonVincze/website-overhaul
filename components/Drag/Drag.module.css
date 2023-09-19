@@ -1,0 +1,23 @@
+.draggable:hover {
+  cursor: grab;
+}
+
+.draggable.active {
+  cursor: grabbing;
+}
+
+/* let's come back later. We'll need to do a bit more work to make it look good */
+/*
+.draggable.active::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  border-radius: 50%;
+}
+*/

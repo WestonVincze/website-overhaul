@@ -1,7 +1,7 @@
 import { createMachine, assign } from 'xstate'
 
 const HIDDEN_Y_OFFSET = 35
-const VISIBLE_Y_OFFSET = 10
+const VISIBLE_Y_OFFSET = 5
 const OFF_SCREEN_Y_OFFSET = -100
 const OFF_SCREEN_X_OFFSET = 100
 
@@ -17,6 +17,7 @@ interface Context {
 }
 
 export const animationMachine = createMachine<Context>({
+  predictableActionArguments: true,
   initial: AnimationStates.default,
   context: {
     y: HIDDEN_Y_OFFSET,

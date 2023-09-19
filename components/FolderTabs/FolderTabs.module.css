@@ -1,7 +1,3 @@
-/* 
-- must be sticky and remain in top right area
-- 
-*/
 .folderTabs {
   position: absolute;
   display: flex;

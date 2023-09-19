@@ -28,20 +28,19 @@ export function FolderTabs ({ tabs, ...props }: FolderTabsProps): JSX.Element {
 
   return (
     <div className={style.folderTabs} {...props}>
-      {
-        tabs.map((tab, i) =>
-          <div key={i}>
-            <PaperPreview hovering={hoverTab === tab.id && hoverTab !== activeTab} active={tab.id === activeTab} z={z} key={i} />
-            <span onClick={() => handleClick(tab.id, i)} onMouseEnter={() => handleHover(tab.id, i)} onMouseLeave={() => handleHover('', -1)} style={{ zIndex: i }} key={tab.id}>
-              <FolderTab
-                id={tab.id}
-                path={tab.path}
-                text={tab.text}
-                isActive={activeTab === tab.id}
-                key={tab.id} />
-            </span>
-          </div>
-        )}
+      {tabs.map((tab, i) =>
+        <div key={i}>
+          <PaperPreview hovering={hoverTab === tab.id && hoverTab !== activeTab} active={tab.id === activeTab} z={z} key={i} />
+          <span onClick={() => handleClick(tab.id, i)} onMouseEnter={() => handleHover(tab.id, i)} onMouseLeave={() => handleHover('', -1)} style={{ zIndex: i }} key={tab.id}>
+            <FolderTab
+              id={tab.id}
+              path={tab.path}
+              text={tab.text}
+              isActive={activeTab === tab.id}
+              key={tab.id} />
+          </span>
+        </div>
+      )}
     </div>)
 }
 
