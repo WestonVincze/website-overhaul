@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSpring, animated } from 'react-spring'
 
 interface PathProps {
   stroke: string
@@ -8,8 +9,13 @@ interface PathProps {
 }
 
 export const Path = ({ stroke, fill, d, transform = 'translate(0,0)' }: PathProps): JSX.Element => {
+  const animatedStyle = useSpring({
+    from: { opacity: 0.5 },
+    to: { opacity: 1 },
+    loop: { reverse: true }
+  })
   return (
-    <path style={{
+    <animated.path style={{
       stroke,
       fill,
       strokeWidth: '0',
@@ -19,7 +25,7 @@ export const Path = ({ stroke, fill, d, transform = 'translate(0,0)' }: PathProp
       strokeLinejoin: 'miter',
       strokeMiterlimit: '4',
       fillRule: 'nonzero',
-      opacity: '1'
+      ...animatedStyle
     }}
     transform={transform}
     d={d}
