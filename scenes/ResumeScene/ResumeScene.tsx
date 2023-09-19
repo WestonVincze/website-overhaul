@@ -7,7 +7,7 @@ import { DragSnap } from '../../components/Drag/DragSnap'
 const resumeWidth = 700
 const resumeHeight = 900 // ~ * 1.294
 
-export function ResumeScene (): JSX.Element {
+export const ResumeScene = (): JSX.Element => {
   return (
     <Container>
       <AnimatedContent>

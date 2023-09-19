@@ -11,7 +11,7 @@ interface AnimatedContentProps {
  * Animates multiple elements onto the screen in a staggered pattern
  * @param children an array of JSX.Elements to animate
  */
-export function AnimatedContent ({ children }: AnimatedContentProps): JSX.Element {
+export const AnimatedContent = ({ children }: AnimatedContentProps): JSX.Element => {
   const contentTrail = useTrail(children.length, {
     delay: DELAY_FACTOR,
     config: { mass: 25, tension: 2000, friction: 500 },

@@ -5,7 +5,7 @@ import { AnimatedWord } from '../../components/AnimatedWord'
 import { ContentRow } from '../../components/ContentRow'
 import { WebDevWeston } from '../../components/WebDevWeston'
 
-export function HomeScene (): JSX.Element {
+export const HomeScene = (): JSX.Element => {
   return (
     <>
       <Container centered={true}>

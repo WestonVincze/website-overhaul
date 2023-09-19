@@ -4,7 +4,11 @@ import { FolderTabs } from '../FolderTabs'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 
-export function Layout ({ children }: LayoutProps): JSX.Element {
+interface LayoutProps {
+  children: JSX.Element
+}
+
+export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div style={{ overflow: 'hidden' }}>
       <Header />
@@ -19,8 +23,4 @@ export function Layout ({ children }: LayoutProps): JSX.Element {
       <Footer />
     </div>
   )
-}
-
-interface LayoutProps {
-  children: JSX.Element
 }

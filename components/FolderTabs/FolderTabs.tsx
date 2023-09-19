@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 /**
  * @param tabs
  */
-export function FolderTabs ({ tabs, ...props }: FolderTabsProps): JSX.Element {
+export const FolderTabs = ({ tabs, ...props }: FolderTabsProps): JSX.Element => {
   const router = useRouter()
   const currentPage = router.pathname.split('').splice(1).join('')
 
