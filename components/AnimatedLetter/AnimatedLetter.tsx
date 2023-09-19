@@ -5,14 +5,14 @@ import { DragSnap } from '../Drag/DragSnap'
 
 const ROTATION_THRESHOLD = 15
 
-interface AnimatedLetterProps {
-  letter: string
-}
-
 type rotateDirection = 'left' | 'right'
 
 const rotateAngle = (direction: rotateDirection): string => {
   return `${direction === 'left' ? '-' : ''}${ROTATION_THRESHOLD}`
+}
+
+interface AnimatedLetterProps {
+  letter: string
 }
 
 /**

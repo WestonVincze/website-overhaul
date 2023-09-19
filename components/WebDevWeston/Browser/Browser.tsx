@@ -85,11 +85,11 @@ export const Browser = ({
           textAnchor="middle"
           dominantBaseline="middle"
           stroke="black"
-          strokeWidth="1"
+          strokeWidth=".5"
           fontSize="12"
         >
           {text?.map((t, i) =>
-            (<tspan x="25%" dy={i === 0 ? '0' : '1em'} key={i}>{t}</tspan>))}
+            (<tspan x="25%" dy={i === 0 ? '0' : '1.2em'} key={i}>{t}</tspan>))}
         </text>
       </g>
     </svg>

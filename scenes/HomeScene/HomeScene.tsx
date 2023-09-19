@@ -14,6 +14,7 @@ export const HomeScene = (): JSX.Element => {
             <AnimatedWord word={'Weston'} />
             <AnimatedWord word={'Vincze'} />
           </ContentRow>
+          <h1>Web Developer.</h1>
           <WebDevWeston />
         </AnimatedContent>
       </Container>
