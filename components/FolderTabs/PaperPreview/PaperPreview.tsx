@@ -11,7 +11,7 @@ interface PaperPreviewProps {
   z: number
 }
 
-const PaperPreview = ({ hovering = false, active = false, z, startActive = false }: PaperPreviewProps): JSX.Element => {
+export const PaperPreview = ({ hovering = false, active = false, z, startActive = false }: PaperPreviewProps): JSX.Element => {
   const [reset, setReset] = useState(startActive)
   const [current, send] = useMachine(animationMachine)
 
@@ -49,5 +49,3 @@ const PaperPreview = ({ hovering = false, active = false, z, startActive = false
     />
   )
 }
-
-export default PaperPreview

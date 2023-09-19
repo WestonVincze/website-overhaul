@@ -19,7 +19,7 @@ const rotateAngle = (direction: rotateDirection): string => {
  * Creates a letter that can be manipulated by user
  * @param letter the letter to be animated
  */
-const AnimatedLetter = ({ letter }: AnimatedLetterProps): JSX.Element => {
+export const AnimatedLetter = ({ letter }: AnimatedLetterProps): JSX.Element => {
   const [isTargeted, setIsTargeted] = useState(false)
   const [rotateDirection, setRotateDirection] = useState<rotateDirection>('left')
 
@@ -55,5 +55,3 @@ const AnimatedLetter = ({ letter }: AnimatedLetterProps): JSX.Element => {
     </DragSnap>
   )
 }
-
-export default AnimatedLetter

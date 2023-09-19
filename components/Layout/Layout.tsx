@@ -6,18 +6,18 @@ import { Header } from '../Header'
 
 export function Layout ({ children }: LayoutProps): JSX.Element {
   return (
-    <>
+    <div style={{ overflow: 'hidden' }}>
       <Header />
       <FolderTabs tabs={[
-        { id: 'skills', path: '/skills', text: 'Skills' },
-        { id: 'resume', path: '/resume', text: 'Resume' },
+        { id: 'skills', path: '/skills', text: 'SKILLS' },
+        { id: 'resume', path: '/resume', text: 'RESUME' },
         { id: 'home', path: '/' }
       ]} />
       <main>
         <FolderBody>{children}</FolderBody>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

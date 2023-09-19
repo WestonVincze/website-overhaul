@@ -10,7 +10,7 @@ export interface FolderTabProps {
   isActive?: boolean
 }
 
-const FolderTab = ({ path, text, isActive = false, ...props }: FolderTabProps): JSX.Element => {
+export const FolderTab = ({ path, text, isActive = false, ...props }: FolderTabProps): JSX.Element => {
   const [isTargeted, setIsTargeted] = useState(false)
 
   const onMouseEnter = (): void => {
@@ -42,5 +42,3 @@ const FolderTab = ({ path, text, isActive = false, ...props }: FolderTabProps): 
     </animated.div>
   )
 }
-
-export default FolderTab
