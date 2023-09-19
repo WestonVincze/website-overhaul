@@ -1,83 +1,51 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { animated, useSpring } from 'react-spring'
 import styles from './PaperPreview.module.css'
+import { useMachine } from '@xstate/react'
+import { animationMachine, AnimationStates } from './AnimationFSM'
 
-export function PaperPreview ({ hovering = false, active = false, z }: PaperPreviewProps): JSX.Element {
-  // const [active, setActive] = useState(false)
-  const [cancel, setCancel] = useState(false)
-  const [isAnimating, setIsAnimating] = useState(false)
-  const [animationState, setAnimationState] = useState<PaperPreviewAnimationState>('hidden')
-  const [yValue, setYValue] = useState(0)
+interface PaperPreviewProps {
+  hovering: boolean
+  active: boolean
+  startActive?: boolean
+  z: number
+}
+
+export const PaperPreview = ({ hovering = false, active = false, z, startActive = false }: PaperPreviewProps): JSX.Element => {
+  const [reset, setReset] = useState(startActive)
+  const [current, send] = useMachine(animationMachine)
 
   useEffect(() => {
-    // animate off screen, pause animation, reset position without animation
-    if (isAnimating) return
+    send(hovering ? 'HOVER' : 'LEAVE_HOVER')
+  }, [hovering])
+
+  useEffect(() => {
     if (active) {
-      // animation needs to finish before resetting
-      setYValue(-150)
-      setIsAnimating(true)
-      setTimeout(() => {
-        setIsAnimating(false)
-        // I could hide the paper once the animation finishes......
-        setCancel(true)
-        setYValue(35)
-        setTimeout(() => {
-          setCancel(false)
-        }, 500)
-      }, 500)
-    } else if (hovering) {
-      setYValue(10)
+      send('ACTIVE')
     } else {
-      setYValue(35)
+      send('LEAVE_ACTIVE')
+      resetAnimation()
     }
-  }, [hovering, active])
+  }, [active])
 
-  // stack of 'paper' that animates into view when a folder tab is hovered
-  // on click, papers fly off screen
-  /*
-  function peak () {
-
+  const resetAnimation = (): void => {
+    setReset(true)
   }
-  function flyOut () {
 
-  }
-  */
-  // need to track z-index which should change depending on which tab is being hovered over
-  // 3 states
-  // (hidden) default -> paper is off screen (inside folder)
-  // (peak) on hover -> paper can be seen 'peaking' from folder
-  // (offScreen) on select -> paper is off screen (above DOM)
-  const animationStyle = useSpring({
-    to: { y: yValue, z },
-    cancel,
-    onRest: () => console.log('resting')
+  const springProps = useSpring({
+    to: { y: current.context.y, x: current.context.x, z },
+    onRest: current.value === AnimationStates.active ? resetAnimation : {},
+    immediate: reset
   })
-  // onRest should fire a callback to set the state?
 
-  function getAnimationValue (state: PaperPreviewAnimationState): object {
-    const animationValue = { to: { y: 0 }, from: { y: 0 } }
-    if (state === 'hidden') {
-      animationValue.to.y = 15
-    } else if (state === 'peak') {
-      animationValue.to.y = 0
-    } else if (state === 'offScreen') {
-      animationValue.to.y = -50
-    }
-    return animationValue
-  }
+  useEffect(() => {
+    if (reset) setReset(false)
+  }, [reset])
 
   return (
     <animated.div
-      style={animationStyle}
+      style={springProps}
       className={styles.paperPreview}
     />
   )
 }
-
-interface PaperPreviewProps {
-  hovering?: boolean
-  active?: boolean
-  z: number
-}
-
-type PaperPreviewAnimationState = 'hidden' | 'peak' | 'offScreen'

@@ -1,6 +1,8 @@
 import React from 'react'
-import { HomeScene } from '../scenes/HomeScene/HomeScene'
+import { HomeScene } from '../scenes/HomeScene'
 
-export default function Home (): JSX.Element {
+const Home = (): JSX.Element => {
   return (<HomeScene />)
 }
+
+export default Home

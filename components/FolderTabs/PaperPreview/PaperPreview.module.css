@@ -4,8 +4,6 @@
   top: 0;
   width: 75vw;
   height: 50px;
-  background-color: white;
   z-index: 0;
-  /* does this look okay? */
-  box-shadow: -1px 1px 0 1px rgba(0,0,0,0.2);
+  background-color: #fff;
 }

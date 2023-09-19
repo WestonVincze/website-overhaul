@@ -1,0 +1,10 @@
+.weston {
+  position: relative;
+}
+
+.browser {
+  width: 50%;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+}

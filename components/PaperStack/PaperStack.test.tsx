@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import { PaperStack } from '.'
-import { LinedPaperProps } from './LinedPaper/LinedPaper'
+import { LinedPaperProps } from '../LinedPaper/LinedPaper'
 
 const papers: LinedPaperProps[] = [
   {

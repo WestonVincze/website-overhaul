@@ -1,41 +1,22 @@
-import React from 'react'
-import Image from 'next/image'
-import { Container } from '../../components/Container/Container'
-import { LinedPaperProps } from '../../components/PaperStack/LinedPaper/LinedPaper'
-import { PaperStack } from '../../components/PaperStack'
+import React, { useEffect } from 'react'
+import { Container } from '../../components/Container'
+import { AnimatedContent } from '../../components/AnimatedContent'
 import { AnimatedWord } from '../../components/AnimatedWord'
 import { ContentRow } from '../../components/ContentRow'
+import { WebDevWeston } from '../../components/WebDevWeston'
 
-// I could move this to a separate file to emulate a fetch request and keep this
-// logic separate
-const paperContent: LinedPaperProps[] = [
-  {
-    id: 1,
-    title: 'I am a title',
-    message: 'test',
-    orientLeft: true
-  },
-  {
-    id: 2,
-    title: 'I am a title also',
-    message: 'test 2',
-    orientLeft: false
-  }
-]
-
-export function HomeScene (): JSX.Element {
+export const HomeScene = (): JSX.Element => {
   return (
     <>
       <Container centered={true}>
-        <>
+        <AnimatedContent>
           <ContentRow>
             <AnimatedWord word={'Weston'} />
             <AnimatedWord word={'Vincze'} />
           </ContentRow>
-          <Image width={500} height={500} src="/images/web-dev-weston.gif" alt="Animated Weston 'developing web'" />
-          <PaperStack papers={paperContent} isAnimated={true} />
-          <PaperStack papers={paperContent} isAnimated={false} />
-        </>
+          <h1>Web Developer.</h1>
+          <WebDevWeston />
+        </AnimatedContent>
       </Container>
     </>
   )

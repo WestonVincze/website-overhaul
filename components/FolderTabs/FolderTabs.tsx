@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import style from './FolderTabs.module.css'
-import { FolderTab, FolderTabProps } from './FolderTab/FolderTab'
-import { PaperPreview } from './PaperPreview/PaperPreview'
+import { FolderTab, FolderTabProps } from './FolderTab'
+import { PaperPreview } from './PaperPreview'
 import { useRouter } from 'next/router'
 
 /**
  * @param tabs
  */
-export function FolderTabs ({ tabs, ...props }: FolderTabsProps): JSX.Element {
+export const FolderTabs = ({ tabs, ...props }: FolderTabsProps): JSX.Element => {
   const router = useRouter()
   const currentPage = router.pathname.split('').splice(1).join('')
 
@@ -28,20 +28,19 @@ export function FolderTabs ({ tabs, ...props }: FolderTabsProps): JSX.Element {
 
   return (
     <div className={style.folderTabs} {...props}>
-      {
-        tabs.map((tab, i) =>
-          <div style={{ }} key={i}>
-            <PaperPreview hovering={hoverTab === tab.id && hoverTab !== activeTab} active={tab.id === activeTab} z={z} key={i} />
-            <span onClick={() => handleClick(tab.id, i)} onMouseEnter={() => handleHover(tab.id, i)} onMouseLeave={() => handleHover('', -1)} style={{ zIndex: i }} key={tab.id}>
-              <FolderTab
-                id={tab.id}
-                path={tab.path}
-                text={tab.text}
-                isActive={activeTab === tab.id}
-                key={tab.id} />
-            </span>
-          </div>
-        )}
+      {tabs.map((tab, i) =>
+        <div key={i}>
+          <PaperPreview hovering={hoverTab === tab.id && hoverTab !== activeTab} active={tab.id === activeTab} z={z} key={i} />
+          <span onClick={() => handleClick(tab.id, i)} onMouseEnter={() => handleHover(tab.id, i)} onMouseLeave={() => handleHover('', -1)} style={{ zIndex: i }} key={tab.id}>
+            <FolderTab
+              id={tab.id}
+              path={tab.path}
+              text={tab.text}
+              isActive={activeTab === tab.id}
+              key={tab.id} />
+          </span>
+        </div>
+      )}
     </div>)
 }
 

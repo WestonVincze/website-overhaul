@@ -6,4 +6,5 @@
   padding: var(--spacing-2);
   position: relative;
   z-index: 10;
+  min-height: calc(100vh - var(--folder-tab-height) - var(--small-margin));
 }

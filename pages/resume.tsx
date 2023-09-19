@@ -1,6 +1,8 @@
 import React from 'react'
-import { ResumeScene } from '../scenes/ResumeScene/ResumeScene'
+import { ResumeScene } from '../scenes/ResumeScene'
 
-export default function Resume (): JSX.Element {
+const Resume = (): JSX.Element => {
   return <ResumeScene />
 }
+
+export default Resume

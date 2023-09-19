@@ -3,7 +3,14 @@ import styles from './Button.module.css'
 import Link from 'next/link'
 import { ButtonVariants } from './types'
 
-export function Button ({ path, variant, children }: ButtonProps): JSX.Element {
+interface ButtonProps {
+  /* text: string */
+  path: string
+  variant?: ButtonVariants
+  children?: JSX.Element
+}
+
+export const Button = ({ path, variant, children }: ButtonProps): JSX.Element => {
   const buttonStyle = variant != null ? styles[variant] : styles.primary
 
   return (
@@ -13,11 +20,4 @@ export function Button ({ path, variant, children }: ButtonProps): JSX.Element {
       </a>
     </Link>
   )
-}
-
-interface ButtonProps {
-  /* text: string */
-  path: string
-  variant?: ButtonVariants
-  children?: JSX.Element
 }
