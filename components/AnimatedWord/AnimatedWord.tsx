@@ -1,5 +1,6 @@
 import React from 'react'
 import { AnimatedLetter } from '../AnimatedLetter'
+import { animated } from 'react-spring'
 
 interface AnimatedWordProps {
   word: string
@@ -10,6 +11,13 @@ interface AnimatedWordProps {
  * @param word the word to be animated
  */
 export const AnimatedWord = ({ word, ...props }: AnimatedWordProps): JSX.Element => {
-  // animation for the word itself could be added
-  return (<div {...props}>{word.split('').map((character, i) => <AnimatedLetter key={i} letter={character} />)}</div>)
+  return (
+    <animated.div {...props}>
+      {word.split('').map((character, i) =>
+        <AnimatedLetter
+          key={i}
+          letter={character}
+        />)}
+    </animated.div>
+  )
 }

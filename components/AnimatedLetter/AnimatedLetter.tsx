@@ -45,13 +45,13 @@ export const AnimatedLetter = ({ letter }: AnimatedLetterProps): JSX.Element => 
 
   return (
     <DragSnap>
-      <animated.div
+      <animated.span
         className={style.animatedLetter}
         onMouseEnter={() => onMouseEnter()}
         onMouseLeave={() => onMouseLeave()}
         style={animatedStyle}>
         {letter}
-      </animated.div>
+      </animated.span>
     </DragSnap>
   )
 }

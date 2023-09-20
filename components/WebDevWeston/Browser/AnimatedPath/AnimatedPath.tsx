@@ -1,18 +1,22 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring'
 
-interface PathProps {
+interface AnimatedPathProps {
+  toggle: boolean
   stroke: string
   fill: string
   d: string
   transform?: string
+  delay?: number
 }
 
-export const Path = ({ stroke, fill, d, transform = 'translate(0,0)' }: PathProps): JSX.Element => {
+export const AnimatedPath = ({ toggle, stroke, fill, d, transform = 'translate(0,0)', delay = 0 }: AnimatedPathProps): JSX.Element => {
+  const start = { opacity: 0.5, transform: `${transform} scale(0)` }
+  const end = { opacity: 1, transform: `${transform} scale(1)` }
   const animatedStyle = useSpring({
-    from: { opacity: 0.5 },
-    to: { opacity: 1 },
-    loop: { reverse: true }
+    from: start,
+    to: toggle ? end : start,
+    delay: toggle ? delay : 0
   })
   return (
     <animated.path style={{
@@ -27,8 +31,9 @@ export const Path = ({ stroke, fill, d, transform = 'translate(0,0)' }: PathProp
       fillRule: 'nonzero',
       ...animatedStyle
     }}
-    transform={transform}
+    transform={animatedStyle.transform}
     d={d}
     strokeLinecap = "round"
-    />)
+    />
+  )
 }

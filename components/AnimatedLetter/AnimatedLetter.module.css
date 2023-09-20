@@ -1,8 +1,6 @@
 .animatedLetter {
   font-family: 'AmaticSC', sans-serif;
-  font-size: 100px;
-  line-height: 100px;
   display: inline-block;
   cursor: pointer;
-  padding: var(--spacing-1);
+  padding: 0 5px;
 }

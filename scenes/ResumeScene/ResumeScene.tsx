@@ -11,7 +11,6 @@ export const ResumeScene = (): JSX.Element => {
   return (
     <Container>
       <AnimatedContent>
-        <h1>RESUME</h1>
         <DragSnap>
           <Image src="/images/WestonResume-Page1.png" alt="Weston Resume Page 1" width={resumeWidth} height={resumeHeight} />
         </DragSnap>

@@ -9,7 +9,7 @@ export const WebDevWeston = (): JSX.Element => {
   return (<DragSnap>
     <div className={styles.weston}>
       <Image className={styles.weston} width={400} src={webDevWestonGIF} alt="Animated GIF of Weston 'web' developing" />
-      <Browser className={styles.browser} text={['<div>', '    hello', '</div>']} />
+      <Browser text={['<div>', '    RESUME', '</div>']} />
     </div>
   </DragSnap>)
 }
