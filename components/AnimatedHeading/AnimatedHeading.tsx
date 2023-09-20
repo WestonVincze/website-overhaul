@@ -15,9 +15,9 @@ const small = {
 type route = '/' | '/resume' | '/skills'
 
 const typewriterText = {
-  '/': 'Web Developer.',
-  '/resume': 'My Resume.',
-  '/skills': 'My Skills.'
+  '/': 'Web Developer',
+  '/resume': 'My Resume',
+  '/skills': 'My Skills'
 }
 
 export const AnimatedHeading = (): JSX.Element => {
@@ -33,11 +33,11 @@ export const AnimatedHeading = (): JSX.Element => {
     <>
       <animated.div style={animatedStyle}>
         <ContentRow>
-          <AnimatedWord word={'Weston'} style={animatedStyle} />
-          <AnimatedWord word={'Vincze'} style={animatedStyle} />
+          <AnimatedWord word={'Weston'} animatedStyle={animatedStyle} />
+          <AnimatedWord word={'Vincze'} animatedStyle={animatedStyle} />
         </ContentRow>
       </animated.div>
-      <Typewriter lines={typewriterText[path]} centered={true} />
+      <Typewriter lines={typewriterText[path]} inlineTag={true} centered={true} />
     </>
   )
 }
