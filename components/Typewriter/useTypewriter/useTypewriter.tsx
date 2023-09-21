@@ -27,7 +27,7 @@ export const useTypewriter = ({
 
   useEffect(() => {
     if (isDeleting && typed.length === 0) setIsDeleting(false)
-    if (typed.length >= text.length && !isDeleting) {
+    if (typed === text && !isDeleting) {
       onDoneTyping()
       return
     }

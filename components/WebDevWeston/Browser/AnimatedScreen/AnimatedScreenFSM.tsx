@@ -10,6 +10,7 @@ interface Context {
 
 export const AnimatedScreenFSM = createMachine<Context>({
   initial: 'loop',
+  predictableActionArguments: true,
   context: {
     currentIndex: 0
   },

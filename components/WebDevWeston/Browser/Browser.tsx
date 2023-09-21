@@ -108,7 +108,7 @@ export const Browser = ({
           d="M -111.04848 -111.04848 L 111.04848 -111.04848 L 111.04848 111.04848 L -111.04848 111.04848 z"
           delay={1000}
         />
-        <AnimatedScreen toggle={toggleScreen} />
+        {toggleScreen && <AnimatedScreen />}
       </g>
     </svg>
   )

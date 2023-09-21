@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTypewriter } from '../../../Typewriter/useTypewriter'
 import { Animations } from './Animations'
 import { useMachine } from '@xstate/react'
@@ -21,31 +21,17 @@ import { AnimatedScreenFSM } from './AnimatedScreenFSM'
  *   - we could pass in variants for the decision
  */
 
-interface AnimatedScreenProps {
-  toggle: boolean
-}
-
-export const AnimatedScreen = ({ toggle }: AnimatedScreenProps): JSX.Element => {
-  const [text, setText] = useState('')
+export const AnimatedScreen = (): JSX.Element => {
   const [current, send] = useMachine(AnimatedScreenFSM)
+  const [text, setText] = useState(Animations[current.context.currentIndex].text)
 
   useEffect(() => {
-    if (!toggle) return
-
-    setText(Animations[index].text)
-    setText(Animations[current.context.currentIndex].text)
-  }, [toggle])
-
-  useEffect(() => {
-    if (!toggle) return
-
     setText(Animations[current.context.currentIndex].text)
   }, [current])
 
-  const handleDoneTyping = (): void => {
-    if (!toggle) return
-    send('NEXT')
-  }
+  const handleDoneTyping = useCallback((): void => {
+    setTimeout(() => send('NEXT'), 500)
+  }, [send])
 
   const typed = useTypewriter({ text, onDoneTyping: handleDoneTyping })
 
