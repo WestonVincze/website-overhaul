@@ -1,13 +1,8 @@
 import { createMachine, assign } from 'xstate'
+import { Animations } from './Animations'
 /**
  * Tool to through an animation collection (will be imported)
  */
-
-const animationCollection = [
-  {
-
-  }
-]
 
 interface Context {
   currentIndex: number
@@ -25,7 +20,7 @@ export const AnimatedScreenFSM = createMachine<Context>({
           target: 'loop',
           actions: assign((context) => {
             const nextIndex =
-              context.currentIndex < animationCollection.length - 1
+              context.currentIndex < Animations.length - 1
                 ? context.currentIndex + 1
                 : 0
             return {
@@ -41,7 +36,7 @@ export const AnimatedScreenFSM = createMachine<Context>({
           target: 'random',
           actions: assign((context) => {
             const randomIndex =
-              Math.floor(Math.random() * animationCollection.length)
+              Math.floor(Math.random() * Animations.length)
             return {
               currentIndex: randomIndex
             }

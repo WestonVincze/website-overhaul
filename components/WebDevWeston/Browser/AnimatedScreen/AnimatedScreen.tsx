@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useTypewriter } from '../../../Typewriter/useTypewriter'
 import { Animations } from './Animations'
+import { useMachine } from '@xstate/react'
+import { AnimatedScreenFSM } from './AnimatedScreenFSM'
 
 /**
  * Acts as a screen within the Browser SVG component
@@ -25,22 +27,27 @@ interface AnimatedScreenProps {
 
 export const AnimatedScreen = ({ toggle }: AnimatedScreenProps): JSX.Element => {
   const [text, setText] = useState('')
-  const [index, setIndex] = useState(0)
+  const [current, send] = useMachine(AnimatedScreenFSM)
 
   useEffect(() => {
     if (!toggle) return
 
     setText(Animations[index].text)
+    setText(Animations[current.context.currentIndex].text)
   }, [toggle])
 
+  useEffect(() => {
+    if (!toggle) return
+
+    setText(Animations[current.context.currentIndex].text)
+  }, [current])
+
   const handleDoneTyping = (): void => {
-    setIndex((prevIndex) => prevIndex < Animations.length - 1 ? prevIndex + 1 : 0)
-    setTimeout(() => {
-      setText(Animations[index].text)
-    }, 1000)
+    if (!toggle) return
+    send('NEXT')
   }
 
-  const typed = useTypewriter({ text, onDoneTyping: () => handleDoneTyping() })
+  const typed = useTypewriter({ text, onDoneTyping: handleDoneTyping })
 
   const lines = useMemo(() => typed.split('|'), [typed])
 
