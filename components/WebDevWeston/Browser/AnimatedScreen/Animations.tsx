@@ -1,40 +1,86 @@
 import React from 'react'
+/**
+ * Code typing Animations that can be played within the
+ * Browser component's screen. New lines are denoted with '|'
+ * Limitations:
+ * - 23 characters in length
+ * - 7 lines
+ */
 
-/* MAX WIDTH---------| */
-const helloWorld = `
-<html>|
-  <p>Hello World!</p>|
-</html>`
-
+/* MAX WIDTH----------| */
 const html = `
-<html>|
-  <head ---------- />|
-  <body>|
-    -----------------|
-  </body>|
-  <footer -------- />|
-</html>|
+<div class="card">|
+  <h1>~~~ ~~~~~</h1>|
+  <p>|
+    ~~~ ~~~~ ~~~~~~~|
+    ~~ ~~~~~ ~~~ ~~~|
+  </p>|
+</div>
 `
 
-const navBar = `
-<nav>|
-  <a ----- />|
-  <a ----- />|
-  <a ----- />|
-</nav|
+/* MAX WIDTH----------| */
+const css = `
+.card {|
+  ~~~: ~~~~;|
+}|
+.card h1, .card p {|
+  ~~~~: ~~ ~~~ ~~~;|
+  ~~~: ~~~~;|
+}
+`
+
+/* MAX WIDTH----------| */
+const js = `
+const card = ~~.~~(~)|
+|
+card.~~~~~(() => |
+  ~~ (!~~~) return|
+  ~~~.~~~~('~~~~')|
+  ~~~ ~~~~~~|
+)
+`
+
+/* MAX WIDTH----------| */
+const ts = `
+interface CardProps {|
+  ~~~~: ~~.~~~|
+  ~~~: ~~~~~~|
+  ~~~~~: ~~~[]|
+  ~~~?: () => {}|
+  ~~~~?: ~~~|
+}
+`
+
+/* MAX WIDTH----------| */
+const react = `
+const Card = ((~~) => {|
+  ~~~ [~~,~~] = ~~~()|
+|
+  return (<>{ ~~~ }</>)|
+})|
+|
+export default Card;
 `
 
 export const Animations: Array<{ text: string, path: JSX.Element }> = [
-  {
-    text: helloWorld,
-    path: <></>
-  },
   {
     text: html,
     path: <></>
   },
   {
-    text: navBar,
+    text: css,
+    path: <></>
+  },
+  {
+    text: js,
+    path: <></>
+  },
+  {
+    text: react,
+    path: <></>
+  },
+  {
+    text: ts,
     path: <></>
   }
 ]

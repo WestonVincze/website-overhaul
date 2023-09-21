@@ -1,7 +1,9 @@
 import { createMachine, assign } from 'xstate'
 import { Animations } from './Animations'
 /**
- * Tool to through an animation collection (will be imported)
+ * FSM for the AnimatedScreen component
+ * - hierarchical state with iterative options at root
+ * - holds the current index in the context
  */
 
 interface Context {

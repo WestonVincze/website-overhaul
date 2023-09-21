@@ -11,14 +11,6 @@ import { AnimatedScreenFSM } from './AnimatedScreenFSM'
  * - each animation will have multiple elements being generated
  * - we should loop through multiple animations
  *
- * How should I actually animate this?
- * - sequentially in a loop?
- * - using an FSM?
- *   - would each string + path pair be its own state?
- *   - how would we switch between them?
- * - what about a custom hook?
- *   - this would return the formatted text and related animated path
- *   - we could pass in variants for the decision
  */
 
 export const AnimatedScreen = (): JSX.Element => {
@@ -30,7 +22,7 @@ export const AnimatedScreen = (): JSX.Element => {
   }, [current])
 
   const handleDoneTyping = useCallback((): void => {
-    setTimeout(() => send('NEXT'), 500)
+    setTimeout(() => send('NEXT'), 1000)
   }, [send])
 
   const typed = useTypewriter({ text, onDoneTyping: handleDoneTyping })
@@ -45,7 +37,7 @@ export const AnimatedScreen = (): JSX.Element => {
       dominantBaseline="middle"
       stroke="black"
       strokeWidth=".5"
-      fontSize={14}
+      fontSize={13}
     >
       {lines.map((line, i) =>
         <tspan x="5%" dy={i === 0 ? '0' : '1.2em'} key={i}>
