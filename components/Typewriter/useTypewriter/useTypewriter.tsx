@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react'
 
 interface useTypewriterProps {
   text: string
-  immediateDelete: boolean
-  typeSpeed: number
+  typeSpeed?: number
+  playRetypeAnimation?: boolean
   onStartTyping?: () => void
   onDoneTyping?: () => void
 }
 
 export const useTypewriter = ({
   text,
-  immediateDelete = false,
   typeSpeed = 40,
+  playRetypeAnimation = false,
   onStartTyping = () => {},
   onDoneTyping = () => {}
 }: useTypewriterProps): string => {
@@ -19,8 +19,8 @@ export const useTypewriter = ({
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
-    if (immediateDelete) setTyped('')
-    else setIsDeleting(typed.length > 0)
+    if (playRetypeAnimation) setIsDeleting(typed.length > 0)
+    else setTyped('')
 
     onStartTyping()
   }, [text])
@@ -32,9 +32,14 @@ export const useTypewriter = ({
       return
     }
 
-    const typeDelay = isDeleting
-      ? setTimeout(() => setTyped(typed.slice(0, -1)), typeSpeed)
-      : setTimeout(() => setTyped(typed + text[typed.length]), typeSpeed)
+    const typeDelay = setTimeout(() => {
+      setTyped((prevTyped) => {
+        if (isDeleting && prevTyped.length > 0) {
+          return prevTyped.slice(0, -1)
+        }
+        return prevTyped + text[prevTyped.length]
+      })
+    }, typeSpeed)
 
     return () => clearTimeout(typeDelay)
   }, [text, typed, isDeleting])

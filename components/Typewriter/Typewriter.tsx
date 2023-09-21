@@ -25,9 +25,6 @@ interface TypewriterProps {
   inlineTag?: boolean
   flashingCursor?: boolean
   centered?: boolean
-  typeSpeed?: number
-  startDelay?: number
-  immediateDelete?: boolean
 }
 
 export const Typewriter = ({
@@ -35,17 +32,13 @@ export const Typewriter = ({
   inlineTag = false,
   flashingCursor = false,
   centered = false,
-  typeSpeed = 40,
-  startDelay = 0,
-  immediateDelete = false,
   ...props
 }: TypewriterProps): JSX.Element => {
   const [isIdle, setIsIdle] = useState(false)
 
   const typed = useTypewriter({
     text: lines,
-    typeSpeed,
-    immediateDelete,
+    playRetypeAnimation: true,
     onStartTyping: () => setIsIdle(false),
     onDoneTyping: () => setIsIdle(true)
   })

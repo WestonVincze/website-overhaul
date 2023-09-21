@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Browser.module.css'
 import { AnimatedPath } from './AnimatedPath'
+import { AnimatedScreen } from './AnimatedScreen'
 
 interface BrowserProps {
   text?: string[]
@@ -19,13 +20,21 @@ export const Browser = ({
   buttonColor = '#FFF'
 }: BrowserProps): JSX.Element => {
   const [toggle, setToggle] = useState(false)
+  const [toggleScreen, setToggleScreen] = useState(false)
+
   useEffect(() => {
+    // TODO: refactor into an event listener so we can better control the delay
     const startDelay = setTimeout(() => {
       setToggle(true)
     }, 2000)
 
+    const screenDelay = setTimeout(() => {
+      setToggleScreen(true)
+    }, 4000)
+
     return () => {
       clearTimeout(startDelay)
+      clearTimeout(screenDelay)
     }
   }, [])
 
@@ -99,28 +108,7 @@ export const Browser = ({
           d="M -111.04848 -111.04848 L 111.04848 -111.04848 L 111.04848 111.04848 L -111.04848 111.04848 z"
           delay={1000}
         />
-        <rect
-          x="10%"
-          y="30%"
-          width="80%"
-          height="50%"
-          stroke="none"
-          fill="none"
-        />
-        {/*
-        <text
-          x="50%"
-          y="30%"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          stroke="black"
-          strokeWidth=".5"
-          fontSize="12"
-        >
-          {text?.map((t, i) =>
-            (<tspan x="25%" dy={i === 0 ? '0' : '1.2em'} key={i}>{t}</tspan>))}
-        </text>
-        */}
+        <AnimatedScreen toggle={toggleScreen} />
       </g>
     </svg>
   )
