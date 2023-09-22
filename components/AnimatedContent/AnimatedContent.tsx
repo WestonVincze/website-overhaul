@@ -4,7 +4,7 @@ import { animated, useTrail } from 'react-spring'
 const DELAY_FACTOR = 300
 
 interface AnimatedContentProps {
-  children: JSX.Element[]
+  children: JSX.Element[] | JSX.Element
 }
 
 /**
@@ -12,7 +12,8 @@ interface AnimatedContentProps {
  * @param children an array of JSX.Elements to animate
  */
 export const AnimatedContent = ({ children }: AnimatedContentProps): JSX.Element => {
-  const contentTrail = useTrail(children.length, {
+  const content = Array.isArray(children) ? children : [children]
+  const contentTrail = useTrail(content.length, {
     delay: DELAY_FACTOR,
     config: { mass: 25, tension: 2000, friction: 500 },
     from: { y: '-15vh', x: '100vw' },
@@ -23,7 +24,7 @@ export const AnimatedContent = ({ children }: AnimatedContentProps): JSX.Element
     <>
       {contentTrail.map((style, i) => (
         <animated.div key={i} style={style}>
-          {children[i]}
+          {content[i]}
         </animated.div>
       ))}
     </>

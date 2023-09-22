@@ -20,8 +20,8 @@ export const DragSnap = ({ children, preventDefault = true }: DragProps): JSX.El
   })
 
   return (
-    <animated.div className={`${styles.draggable} ${active ? styles.active : ''}`} {...bind()} style={{ x, y, scale, display: 'inline-block' }}>
+    <animated.span className={`${styles.draggable} ${active ? styles.active : ''}`} {...bind()} style={{ x, y, scale, display: 'inline-block' }}>
       {children}
-    </animated.div >
+    </animated.span>
   )
 }

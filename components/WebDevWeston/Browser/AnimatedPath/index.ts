@@ -1,0 +1,1 @@
+export { AnimatedPath } from './AnimatedPath'
