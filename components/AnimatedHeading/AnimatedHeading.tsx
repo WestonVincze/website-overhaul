@@ -32,7 +32,6 @@ export const AnimatedHeading = (): JSX.Element => {
     AnimationStates.greeting,
   );
   const { appState } = useAppState();
-  const [greetingText, setGreetingText] = useState(" ");
   const [showGreeting, setShowGreeting] = useState(true);
 
   useEffect(() => {
@@ -42,9 +41,6 @@ export const AnimatedHeading = (): JSX.Element => {
 
   // This is a *bit* of a hack, but it works for now
   useEffect(() => {
-    const pauseDelay = setTimeout(() => {
-      setGreetingText("Hi. My name is...");
-    }, 500);
     const nameStateDelay = setTimeout(() => {
       setAnimationState(AnimationStates.name);
     }, 1500);
@@ -53,7 +49,6 @@ export const AnimatedHeading = (): JSX.Element => {
     }, 3000);
 
     return () => {
-      clearTimeout(pauseDelay);
       clearTimeout(nameStateDelay);
       clearTimeout(titleStateDelay);
     };
@@ -78,7 +73,8 @@ export const AnimatedHeading = (): JSX.Element => {
     <>
       <animated.div style={greetingStyle}>
         <Typewriter
-          text={greetingText}
+          text={"Hi. My name is..."}
+          delay={500}
           centered={true}
           flashingCursor={true}
           size={"large"}
