@@ -9,6 +9,7 @@ import styles from "./Typewriter.module.css";
 export type Size = "small" | "medium" | "large";
 interface TypewriterProps {
   text: string;
+  delay?: number;
   size?: Size;
   inlineTag?: boolean;
   flashingCursor?: boolean;
@@ -19,6 +20,7 @@ interface TypewriterProps {
 
 export const Typewriter = ({
   text,
+  delay = 0,
   inlineTag = false,
   flashingCursor = false,
   centered = false,
@@ -41,6 +43,7 @@ export const Typewriter = ({
 
   const typed = useTypewriter({
     text,
+    delay,
     playRetypeAnimation: true,
     onStartTyping: handleStartTyping,
     onDoneTyping: handleDoneTyping,
