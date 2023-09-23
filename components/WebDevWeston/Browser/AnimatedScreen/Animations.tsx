@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 /**
  * Code typing Animations that can be played within the
  * Browser component's screen. New lines are denoted with '|'
@@ -16,7 +16,7 @@ const html = `
     ~~ ~~~~~ ~~~ ~~~|
   </p>|
 </div>
-`
+`;
 
 /* MAX WIDTH----------| */
 const css = `
@@ -27,7 +27,7 @@ const css = `
   ~~~~: ~~ ~~~ ~~~;|
   ~~~: ~~~~;|
 }
-`
+`;
 
 /* MAX WIDTH----------| */
 const js = `
@@ -38,7 +38,7 @@ card.~~~~~(() => |
   ~~~.~~~~('~~~~')|
   ~~~ ~~~~~~|
 )
-`
+`;
 
 /* MAX WIDTH----------| */
 const ts = `
@@ -49,7 +49,7 @@ interface CardProps {|
   ~~~?: () => {}|
   ~~~~?: ~~~|
 }
-`
+`;
 
 /* MAX WIDTH----------| */
 const react = `
@@ -60,30 +60,30 @@ const Card = ((~~) => {|
 })|
 |
 export default Card;
-`
+`;
 
-export const Animations: Array<{ text: string, path: JSX.Element }> = [
+export const Animations: Array<{ text: string; path: JSX.Element }> = [
   {
     text: html,
-    path: <></>
+    path: <></>,
   },
   {
     text: css,
-    path: <></>
+    path: <></>,
   },
   {
     text: js,
-    path: <></>
+    path: <></>,
   },
   {
     text: react,
-    path: <></>
+    path: <></>,
   },
   {
     text: ts,
-    path: <></>
-  }
-]
+    path: <></>,
+  },
+];
 
 /*
 // Future design

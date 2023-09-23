@@ -1,1 +1,1 @@
-export { DragSnap } from './DragSnap'
+export { DragSnap } from "./DragSnap";

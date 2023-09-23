@@ -1,1 +1,1 @@
-export { AnimatedPath } from './AnimatedPath'
+export { AnimatedPath } from "./AnimatedPath";

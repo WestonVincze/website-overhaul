@@ -1,1 +1,1 @@
-export { AnimatedScreen } from './AnimatedScreen'
+export { AnimatedScreen } from "./AnimatedScreen";

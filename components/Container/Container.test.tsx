@@ -1,18 +1,18 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import { Container } from '.'
+import { Container } from ".";
 
-describe('Components/Container', () => {
-  it('renders', () => {
+describe("Components/Container", () => {
+  it("renders", () => {
     render(
       <Container>
         <p>I am in a container</p>
-      </Container>
-    )
+      </Container>,
+    );
 
-    const containerContent = screen.getByText(/I am in a container/i)
-    expect(containerContent).toBeInTheDocument()
-  })
-})
+    const containerContent = screen.getByText(/I am in a container/i);
+    expect(containerContent).toBeInTheDocument();
+  });
+});

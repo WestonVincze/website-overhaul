@@ -1,15 +1,15 @@
-import { assign, createMachine } from 'xstate'
+import { assign, createMachine } from "xstate";
 
 export const AppStates = {
-  loading: 'loading',
-  ready: 'ready'
-}
+  loading: "loading",
+  ready: "ready",
+};
 
 export const AppStateFSM = createMachine({
-  id: 'app',
+  id: "app",
   initial: AppStates.loading,
   context: {
-    introAnimationFinished: false
+    introAnimationFinished: false,
   },
   predictableActionArguments: true,
   states: {
@@ -18,11 +18,11 @@ export const AppStateFSM = createMachine({
         INTRO_ANIMATION_COMPLETE: {
           target: AppStates.ready,
           actions: assign({
-            introAnimationFinished: true
-          })
-        }
-      }
+            introAnimationFinished: true,
+          }),
+        },
+      },
     },
-    [AppStates.ready]: {}
-  }
-})
+    [AppStates.ready]: {},
+  },
+});

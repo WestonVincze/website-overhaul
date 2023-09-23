@@ -34,7 +34,8 @@
   padding-bottom: 5px;
 }
 
-.navButton:hover, .navIcon:hover {
+.navButton:hover,
+.navIcon:hover {
   border-right: 2px solid var(--accent-dark);
   border-bottom: 2px solid var(--accent-dark);
   margin-left: -2px;

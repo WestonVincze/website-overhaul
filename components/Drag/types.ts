@@ -1,5 +1,5 @@
-import React from 'react'
+import React from "react";
 export interface DragProps {
-  children: React.ReactNode
-  preventDefault?: boolean
+  children: React.ReactNode;
+  preventDefault?: boolean;
 }

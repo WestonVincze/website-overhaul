@@ -1,1 +1,1 @@
-export { ResumeScene } from './ResumeScene'
+export { ResumeScene } from "./ResumeScene";

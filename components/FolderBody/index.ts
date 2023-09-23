@@ -1,1 +1,1 @@
-export { FolderBody } from './FolderBody'
+export { FolderBody } from "./FolderBody";

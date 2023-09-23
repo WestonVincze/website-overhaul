@@ -1,48 +1,59 @@
-import React, { useEffect, useState } from 'react'
-import styles from './Browser.module.css'
-import { AnimatedPath } from './AnimatedPath'
-import { AnimatedScreen } from './AnimatedScreen'
-import { AppStates, useAppState } from '../../AppStateProvider'
-import { useSelector } from '@xstate/react'
+import React, { useEffect, useState } from "react";
+import styles from "./Browser.module.css";
+import { AnimatedPath } from "./AnimatedPath";
+import { AnimatedScreen } from "./AnimatedScreen";
+import { AppStates, useAppState } from "../../AppStateProvider";
+import { useSelector } from "@xstate/react";
 
 interface BrowserProps {
-  windowColor?: string
-  windowBorderColor?: string
-  headerColor?: string
-  buttonColor?: string
-  className?: string
+  windowColor?: string;
+  windowBorderColor?: string;
+  headerColor?: string;
+  buttonColor?: string;
+  className?: string;
 }
 
 export const Browser = ({
-  windowColor = '#FFF',
-  windowBorderColor = '#FD8469',
-  headerColor = '#FD8469',
-  buttonColor = '#FFF'
+  windowColor = "#FFF",
+  windowBorderColor = "#FD8469",
+  headerColor = "#FD8469",
+  buttonColor = "#FFF",
 }: BrowserProps): JSX.Element => {
-  const [toggle, setToggle] = useState(false)
-  const [toggleScreen, setToggleScreen] = useState(false)
-  const { appState } = useAppState()
-  const ready = useSelector(appState, state => state.matches(AppStates.ready))
+  const [toggle, setToggle] = useState(false);
+  const [toggleScreen, setToggleScreen] = useState(false);
+  const { appState } = useAppState();
+  const ready = useSelector(appState, (state) =>
+    state.matches(AppStates.ready),
+  );
 
   useEffect(() => {
-    if (!ready) return
+    if (!ready) return;
 
     const startDelay = setTimeout(() => {
-      setToggle(true)
-    }, 1000)
+      setToggle(true);
+    }, 1000);
 
     const screenDelay = setTimeout(() => {
-      setToggleScreen(true)
-    }, 3000)
+      setToggleScreen(true);
+    }, 3000);
 
     return () => {
-      clearTimeout(startDelay)
-      clearTimeout(screenDelay)
-    }
-  }, [ready])
+      clearTimeout(startDelay);
+      clearTimeout(screenDelay);
+    };
+  }, [ready]);
 
   return (
-    <svg className={styles.browser} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width="222" height="170" viewBox="0 0 222 170" xmlSpace="preserve">
+    <svg
+      className={styles.browser}
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      version="1.1"
+      width="222"
+      height="170"
+      viewBox="0 0 222 170"
+      xmlSpace="preserve"
+    >
       <desc>Created by Weston Vincze with Fabric.js 5.3.0</desc>
       {/* Frame */}
       <AnimatedPath
@@ -114,5 +125,5 @@ export const Browser = ({
         {toggleScreen && <AnimatedScreen />}
       </g>
     </svg>
-  )
-}
+  );
+};

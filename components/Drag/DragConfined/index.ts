@@ -1,1 +1,1 @@
-export { DragConfined } from './DragConfined'
+export { DragConfined } from "./DragConfined";

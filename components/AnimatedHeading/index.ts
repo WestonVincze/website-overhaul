@@ -1,1 +1,1 @@
-export { AnimatedHeading } from './AnimatedHeading'
+export { AnimatedHeading } from "./AnimatedHeading";

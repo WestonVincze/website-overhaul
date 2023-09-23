@@ -1,1 +1,1 @@
-export { PaperStack } from './PaperStack'
+export { PaperStack } from "./PaperStack";

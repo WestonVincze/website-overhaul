@@ -1,2 +1,2 @@
-export * from './AppStateProvider'
-export { AppStates } from './AppStateFSM'
+export * from "./AppStateProvider";
+export { AppStates } from "./AppStateFSM";

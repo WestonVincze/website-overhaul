@@ -30,13 +30,13 @@
   src: url("/fonts/Zeyada/Zeyada-Regular.ttf");
 }
 
-:root { 
+:root {
   /* color scheme */
-  --background: #FD8469;
+  --background: #fd8469;
   --font: #160300;
   --accent: var(--folder);
   --accent-dark: var(--folder-shadow);
-  --accent-dark-alpha: #8B765A80;
+  --accent-dark-alpha: #8b765a80;
   --accent-dark-2: #372f24;
   --accent-dark-2-alpha: #372f2480;
   --accent-hover: #ddb16f;
@@ -55,8 +55,8 @@
   --folder-tab-height: calc(var(--header-height) - (var(--spacing-1) * 2));
 
   /* color names */
-  --folder: #E9C696;
-  --folder-shadow: #BA9E78;
+  --folder: #e9c696;
+  --folder-shadow: #ba9e78;
   --blue-pen: #00407e;
 
   /* fonts */
@@ -79,11 +79,16 @@ body {
 
 main {
   padding-top: var(--folder-tab-height);
-  padding-bottom: 65px;
   min-height: calc(100vh - 215px);
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: var(--spacing-1);
   /* margin-bottom: var(--spacing-2); */
 }
@@ -92,9 +97,9 @@ hr {
   border-color: var(--accent-dark);
 }
 
-.written { 
+.written {
   color: var(--blue-pen);
-  font-family: 'Zeyada', cursive;
+  font-family: "Zeyada", cursive;
 }
 
 .text-center {

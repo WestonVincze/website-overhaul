@@ -1,1 +1,1 @@
-export { AnimatedLetter } from './AnimatedLetter'
+export { AnimatedLetter } from "./AnimatedLetter";

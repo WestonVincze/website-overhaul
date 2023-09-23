@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { useTypewriter } from '../../../Typewriter/useTypewriter'
-import { Animations } from './Animations'
-import { useMachine } from '@xstate/react'
-import { AnimatedScreenFSM } from './AnimatedScreenFSM'
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useTypewriter } from "../../../Typewriter/useTypewriter";
+import { Animations } from "./Animations";
+import { useMachine } from "@xstate/react";
+import { AnimatedScreenFSM } from "./AnimatedScreenFSM";
 
 /**
  * Acts as a screen within the Browser SVG component
@@ -14,20 +14,22 @@ import { AnimatedScreenFSM } from './AnimatedScreenFSM'
  */
 
 export const AnimatedScreen = (): JSX.Element => {
-  const [current, send] = useMachine(AnimatedScreenFSM)
-  const [text, setText] = useState(Animations[current.context.currentIndex].text)
+  const [current, send] = useMachine(AnimatedScreenFSM);
+  const [text, setText] = useState(
+    Animations[current.context.currentIndex].text,
+  );
 
   useEffect(() => {
-    setText(Animations[current.context.currentIndex].text)
-  }, [current])
+    setText(Animations[current.context.currentIndex].text);
+  }, [current]);
 
   const handleDoneTyping = useCallback((): void => {
-    setTimeout(() => send('NEXT'), 1000)
-  }, [send])
+    setTimeout(() => send("NEXT"), 1000);
+  }, [send]);
 
-  const typed = useTypewriter({ text, onDoneTyping: handleDoneTyping })
+  const typed = useTypewriter({ text, onDoneTyping: handleDoneTyping });
 
-  const lines = useMemo(() => typed.split('|'), [typed])
+  const lines = useMemo(() => typed.split("|"), [typed]);
 
   return (
     <text
@@ -39,10 +41,11 @@ export const AnimatedScreen = (): JSX.Element => {
       strokeWidth=".5"
       fontSize={13}
     >
-      {lines.map((line, i) =>
-        <tspan x="5%" dy={i === 0 ? '0' : '1.2em'} key={i}>
+      {lines.map((line, i) => (
+        <tspan x="5%" dy={i === 0 ? "0" : "1.2em"} key={i}>
           {line}
-        </tspan>)}
+        </tspan>
+      ))}
     </text>
-  )
-}
+  );
+};

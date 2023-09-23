@@ -1,1 +1,1 @@
-export { BabylonScene } from './BabylonScene'
+export { BabylonScene } from "./BabylonScene";

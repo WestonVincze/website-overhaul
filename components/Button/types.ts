@@ -1,1 +1,1 @@
-export type ButtonVariants = 'primary' | 'secondary' | 'navButton' | 'navIcon'
+export type ButtonVariants = "primary" | "secondary" | "navButton" | "navIcon";

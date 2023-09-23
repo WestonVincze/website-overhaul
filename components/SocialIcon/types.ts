@@ -1,6 +1,6 @@
-type icon = 'envelope' | 'basket'
+type icon = "envelope" | "basket";
 
 export interface SocialIconProps {
-  link: string
-  icon: icon
+  link: string;
+  icon: icon;
 }

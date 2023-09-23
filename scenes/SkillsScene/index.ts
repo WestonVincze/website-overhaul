@@ -1,1 +1,1 @@
-export { SkillsScene } from './SkillsScene'
+export { SkillsScene } from "./SkillsScene";

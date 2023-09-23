@@ -1,1 +1,1 @@
-export { FolderTabs } from './FolderTabs'
+export { FolderTabs } from "./FolderTabs";
