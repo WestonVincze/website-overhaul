@@ -44,14 +44,16 @@ export const AnimatedLetter = ({ letter }: AnimatedLetterProps): JSX.Element => 
   })
 
   return (
-    <DragSnap>
-      <animated.span
-        className={style.animatedLetter}
-        onMouseEnter={() => onMouseEnter()}
-        onMouseLeave={() => onMouseLeave()}
-        style={animatedStyle}>
-        {letter}
-      </animated.span>
-    </DragSnap>
+    letter === ' '
+      ? <span className={style.animatedLetter}>&nbsp;</span>
+      : <DragSnap>
+        <animated.span
+          className={style.animatedLetter}
+          onMouseEnter={() => onMouseEnter()}
+          onMouseLeave={() => onMouseLeave()}
+          style={animatedStyle}>
+          {letter}
+        </animated.span>
+      </DragSnap>
   )
 }

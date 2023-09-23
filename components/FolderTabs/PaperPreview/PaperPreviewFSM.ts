@@ -1,9 +1,10 @@
 import { createMachine, assign } from 'xstate'
-
-const HIDDEN_Y_OFFSET = 35
-const VISIBLE_Y_OFFSET = 5
-const OFF_SCREEN_Y_OFFSET = -100
-const OFF_SCREEN_X_OFFSET = 100
+import {
+  HIDDEN_Y_OFFSET,
+  VISIBLE_Y_OFFSET,
+  OFF_SCREEN_Y_OFFSET,
+  OFF_SCREEN_X_OFFSET
+} from './types'
 
 export const AnimationStates = {
   default: 'default',
@@ -16,7 +17,7 @@ interface Context {
   x: number
 }
 
-export const animationMachine = createMachine<Context>({
+export const PaperPreviewFSM = createMachine<Context>({
   predictableActionArguments: true,
   initial: AnimationStates.default,
   context: {

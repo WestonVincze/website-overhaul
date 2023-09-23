@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import styles from './Browser.module.css'
 import { AnimatedPath } from './AnimatedPath'
 import { AnimatedScreen } from './AnimatedScreen'
+import { AppStates, useAppState } from '../../AppStateProvider'
+import { useSelector } from '@xstate/react'
 
 interface BrowserProps {
-  text?: string[]
   windowColor?: string
   windowBorderColor?: string
   headerColor?: string
@@ -13,7 +14,6 @@ interface BrowserProps {
 }
 
 export const Browser = ({
-  text,
   windowColor = '#FFF',
   windowBorderColor = '#FD8469',
   headerColor = '#FD8469',
@@ -21,22 +21,25 @@ export const Browser = ({
 }: BrowserProps): JSX.Element => {
   const [toggle, setToggle] = useState(false)
   const [toggleScreen, setToggleScreen] = useState(false)
+  const { appState } = useAppState()
+  const ready = useSelector(appState, state => state.matches(AppStates.ready))
 
   useEffect(() => {
-    // TODO: refactor into an event listener so we can better control the delay
+    if (!ready) return
+
     const startDelay = setTimeout(() => {
       setToggle(true)
-    }, 2000)
+    }, 1000)
 
     const screenDelay = setTimeout(() => {
       setToggleScreen(true)
-    }, 4000)
+    }, 3000)
 
     return () => {
       clearTimeout(startDelay)
       clearTimeout(screenDelay)
     }
-  }, [])
+  }, [ready])
 
   return (
     <svg className={styles.browser} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width="222" height="170" viewBox="0 0 222 170" xmlSpace="preserve">
