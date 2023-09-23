@@ -9,7 +9,7 @@ export const BabylonScene = (): JSX.Element => {
     const camera = new BABYLON.FreeCamera(
       "camera1",
       new BABYLON.Vector3(0, 5, -10),
-      scene
+      scene,
     );
 
     camera.setTarget(BABYLON.Vector3.Zero());
@@ -18,14 +18,14 @@ export const BabylonScene = (): JSX.Element => {
     const light = new BABYLON.HemisphericLight(
       "light",
       new BABYLON.Vector3(0, 1, 0),
-      scene
+      scene,
     );
     light.intensity = 0.7;
 
     const sphere = BABYLON.MeshBuilder.CreateSphere(
       "sphere",
       { diameter: 2, segments: 32 },
-      scene
+      scene,
     );
     sphere.position.y = 1;
 

@@ -16,14 +16,14 @@ export const AnimatedPath = ({
   fill,
   d,
   transform = "translate(0,0)",
-  delay = 0
+  delay = 0,
 }: AnimatedPathProps): JSX.Element => {
   const start = { opacity: 0.5, transform: `${transform} scale(0)` };
   const end = { opacity: 1, transform: `${transform} scale(1)` };
   const animatedStyle = useSpring({
     from: start,
     to: toggle ? end : start,
-    delay: toggle ? delay : 0
+    delay: toggle ? delay : 0,
   });
   return (
     <animated.path
@@ -37,7 +37,7 @@ export const AnimatedPath = ({
         strokeLinejoin: "miter",
         strokeMiterlimit: "4",
         fillRule: "nonzero",
-        ...animatedStyle
+        ...animatedStyle,
       }}
       transform={animatedStyle.transform}
       d={d}

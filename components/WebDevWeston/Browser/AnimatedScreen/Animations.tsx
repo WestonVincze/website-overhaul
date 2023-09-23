@@ -65,24 +65,24 @@ export default Card;
 export const Animations: Array<{ text: string; path: JSX.Element }> = [
   {
     text: html,
-    path: <></>
+    path: <></>,
   },
   {
     text: css,
-    path: <></>
+    path: <></>,
   },
   {
     text: js,
-    path: <></>
+    path: <></>,
   },
   {
     text: react,
-    path: <></>
+    path: <></>,
   },
   {
     text: ts,
-    path: <></>
-  }
+    path: <></>,
+  },
 ];
 
 /*

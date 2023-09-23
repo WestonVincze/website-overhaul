@@ -9,7 +9,7 @@ describe("Components/Container", () => {
     render(
       <Container>
         <p>I am in a container</p>
-      </Container>
+      </Container>,
     );
 
     const containerContent = screen.getByText(/I am in a container/i);

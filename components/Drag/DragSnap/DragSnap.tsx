@@ -6,7 +6,7 @@ import { DragProps } from "../types";
 
 export const DragSnap = ({
   children,
-  preventDefault = true
+  preventDefault = true,
 }: DragProps): JSX.Element => {
   const [{ x, y, scale }, api] = useSpring(() => ({ x: 0, y: 0, scale: 1 }));
   const [active, setActive] = useState(false);
@@ -18,7 +18,7 @@ export const DragSnap = ({
       x: down ? mx : 0,
       y: down ? my : 0,
       scale: active ? 1.2 : 1,
-      immediate: (k) => k !== "scale" && active
+      immediate: (k) => k !== "scale" && active,
     });
   });
 

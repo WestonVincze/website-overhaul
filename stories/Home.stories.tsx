@@ -6,7 +6,7 @@ import { HomeScene } from "../scenes/HomeScene/HomeScene";
 
 export default {
   title: "pages/home",
-  component: HomeScene
+  component: HomeScene,
 };
 
 export const Home = (): JSX.Element => <HomeScene />;

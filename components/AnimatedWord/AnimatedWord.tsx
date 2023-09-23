@@ -22,7 +22,7 @@ export const AnimatedWord = ({
 
   const trails = useTrail(characters.length, {
     from: { opacity: 0, transform: "translateX(50%) scale(1.5)" },
-    to: { opacity: 1, transform: "translateX(0) scale(1)" }
+    to: { opacity: 1, transform: "translateX(0) scale(1)" },
   });
 
   return (

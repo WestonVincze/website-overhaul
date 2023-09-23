@@ -15,7 +15,7 @@ export const FolderTabs = ({
   const currentPage = router.pathname.split("").splice(1).join("");
 
   const [activeTab, setActiveTab] = useState(
-    currentPage === "" ? "home" : currentPage
+    currentPage === "" ? "home" : currentPage,
   );
   const [hoverTab, setHoverTab] = useState("");
   const [z, setZ] = useState(-1);

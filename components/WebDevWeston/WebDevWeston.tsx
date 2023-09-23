@@ -15,7 +15,7 @@ export const WebDevWeston = (): JSX.Element => {
           src={webDevWestonGIF}
           alt="Animated GIF of Weston 'web' developing"
         />
-        <Browser text={["<div>", "    RESUME", "</div>"]} />
+        <Browser />
       </div>
     </DragSnap>
   );

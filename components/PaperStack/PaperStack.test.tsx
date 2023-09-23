@@ -9,18 +9,18 @@ const papers: LinedPaperProps[] = [
   {
     id: 1,
     title: "title1",
-    message: "message1"
+    message: "message1",
   },
   {
     id: 2,
     title: "title2",
-    message: "message2"
+    message: "message2",
   },
   {
     id: 3,
     title: "title3",
-    message: "message3"
-  }
+    message: "message3",
+  },
 ];
 
 describe("Components/PaperStack", () => {

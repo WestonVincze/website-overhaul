@@ -15,7 +15,7 @@ export const DragConfined = ({
   offsetLeft = -100,
   offsetRight = 100,
   offsetTop = -50,
-  offsetBottom = 50
+  offsetBottom = 50,
 }: DragConfinedProps): JSX.Element => {
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
 
@@ -27,9 +27,9 @@ export const DragConfined = ({
         left: offsetLeft,
         right: offsetRight,
         top: offsetTop,
-        bottom: offsetBottom
-      }
-    }
+        bottom: offsetBottom,
+      },
+    },
   );
 
   return (

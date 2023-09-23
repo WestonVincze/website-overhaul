@@ -6,10 +6,10 @@ import { Typewriter } from "../Typewriter";
 import { useAppState } from "../AppStateProvider";
 
 const large = {
-  fontSize: "100px"
+  fontSize: "100px",
 };
 const small = {
-  fontSize: "60px"
+  fontSize: "60px",
 };
 
 type route = "/" | "/resume" | "/skills";
@@ -17,19 +17,19 @@ type route = "/" | "/resume" | "/skills";
 const subHeadingText = {
   "/": "Web Developer",
   "/resume": "My Resume",
-  "/skills": "My Skills"
+  "/skills": "My Skills",
 };
 
 enum AnimationStates {
   greeting,
   name,
-  subHeading
+  subHeading,
 }
 
 export const AnimatedHeading = (): JSX.Element => {
   const router = useRouter();
   const [AnimationState, setAnimationState] = useState(
-    AnimationStates.greeting
+    AnimationStates.greeting,
   );
   const { appState } = useAppState();
   const [greetingText, setGreetingText] = useState(" ");
@@ -38,7 +38,7 @@ export const AnimatedHeading = (): JSX.Element => {
   useEffect(() => {
     if (showGreeting) return;
     appState.send("INTRO_ANIMATION_COMPLETE");
-  }, [showGreeting]);
+  }, [showGreeting, appState]);
 
   // This is a *bit* of a hack, but it works for now
   useEffect(() => {
@@ -65,13 +65,13 @@ export const AnimatedHeading = (): JSX.Element => {
 
   const greetingStyle = useSpring({
     opacity: showGreeting ? 1 : 0,
-    height: showGreeting ? "60px" : "0px"
+    height: showGreeting ? "60px" : "0px",
   });
 
   const path = router.pathname as route;
   const isHomeScene = path === "/";
   const animatedStyle = useSpring({
-    ...(isHomeScene || showGreeting ? large : small)
+    ...(isHomeScene || showGreeting ? large : small),
   });
 
   return (

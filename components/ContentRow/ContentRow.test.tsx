@@ -11,7 +11,7 @@ describe("Components/ContentRow", () => {
         <div>1</div>
         <div>2</div>
         <div>3</div>
-      </ContentRow>
+      </ContentRow>,
     );
 
     const contentRow = screen.getByTestId(/contentRow/i);

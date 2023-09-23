@@ -13,7 +13,7 @@ interface ButtonProps {
 export const Button = ({
   path,
   variant,
-  children
+  children,
 }: ButtonProps): JSX.Element => {
   const buttonStyle = variant != null ? styles[variant] : styles.primary;
 

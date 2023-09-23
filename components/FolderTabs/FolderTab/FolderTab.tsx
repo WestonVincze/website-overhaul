@@ -30,7 +30,7 @@ export const FolderTab = ({
 
   const animatedStyle = useSpring({
     loop: { reverse: true },
-    y: isTargeted || isActive ? "0" : "7px"
+    y: isTargeted || isActive ? "0" : "7px",
   });
 
   return (

@@ -20,7 +20,7 @@ interface AnimatedLetterProps {
  * @param letter the letter to be animated
  */
 export const AnimatedLetter = ({
-  letter
+  letter,
 }: AnimatedLetterProps): JSX.Element => {
   const [isTargeted, setIsTargeted] = useState(false);
   const [rotateDirection, setRotateDirection] =
@@ -45,7 +45,7 @@ export const AnimatedLetter = ({
     transform: isTargeted
       ? `rotate(${rotateAngle(rotateDirection)}deg)`
       : "rotate(0deg)",
-    onRest: () => flipRotation()
+    onRest: () => flipRotation(),
   });
 
   return letter === " " ? (

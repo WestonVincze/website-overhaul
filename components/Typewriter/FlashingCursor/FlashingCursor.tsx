@@ -8,12 +8,12 @@ interface FlashingCursorProps {
 
 export const FlashingCursor = ({
   cursor = "|",
-  toggle
+  toggle,
 }: FlashingCursorProps): JSX.Element => {
   const animatedStyle = useSpring({
     from: { opacity: 1 },
     to: toggle && { opacity: 0 },
-    loop: { reverse: true }
+    loop: { reverse: true },
   });
   return <animated.span style={animatedStyle}>{cursor}</animated.span>;
 };

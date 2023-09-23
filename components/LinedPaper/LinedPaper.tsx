@@ -12,7 +12,7 @@ export interface LinedPaperProps {
 export const LinedPaper = ({
   message,
   title,
-  orientLeft = true
+  orientLeft = true,
 }: LinedPaperProps): JSX.Element => {
   const orientation = orientLeft ? styles.paperLeft : styles.paperRight;
 

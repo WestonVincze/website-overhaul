@@ -9,15 +9,15 @@ import { OFF_SCREEN_Y_OFFSET, OFF_SCREEN_X_OFFSET } from "./types";
 interface PaperPreviewProps {
   hovering: boolean;
   active: boolean;
-  startActive?: boolean
-  z: number
+  startActive?: boolean;
+  z: number;
 }
 
 export const PaperPreview = ({
   hovering = false,
   active = false,
   z,
-  startActive = false
+  startActive = false,
 }: PaperPreviewProps): JSX.Element => {
   const [reset, setReset] = useState(startActive);
   const [current, send] = useMachine(PaperPreviewFSM);
@@ -27,7 +27,7 @@ export const PaperPreview = ({
 
   useEffect(() => {
     send(hovering ? "HOVER" : "LEAVE_HOVER");
-  }, [hovering]);
+  }, [hovering, send]);
 
   useEffect(() => {
     if (active) {
@@ -36,7 +36,7 @@ export const PaperPreview = ({
       send("LEAVE_ACTIVE");
       resetAnimation();
     }
-  }, [active]);
+  }, [active, send]);
 
   const resetAnimation = (): void => {
     setReset(true);
@@ -49,7 +49,7 @@ export const PaperPreview = ({
         : {},
     to: { x: current.context.x, y: current.context.y, z },
     onRest: current.value === AnimationStates.active ? resetAnimation : {},
-    immediate: reset
+    immediate: reset,
   });
 
   useEffect(() => {

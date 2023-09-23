@@ -16,7 +16,7 @@ import { AnimatedScreenFSM } from "./AnimatedScreenFSM";
 export const AnimatedScreen = (): JSX.Element => {
   const [current, send] = useMachine(AnimatedScreenFSM);
   const [text, setText] = useState(
-    Animations[current.context.currentIndex].text
+    Animations[current.context.currentIndex].text,
   );
 
   useEffect(() => {

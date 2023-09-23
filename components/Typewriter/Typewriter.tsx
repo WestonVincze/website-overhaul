@@ -43,7 +43,7 @@ export const Typewriter = ({
     text,
     playRetypeAnimation: true,
     onStartTyping: handleStartTyping,
-    onDoneTyping: handleDoneTyping
+    onDoneTyping: handleDoneTyping,
   });
 
   return (

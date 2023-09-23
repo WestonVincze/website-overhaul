@@ -14,7 +14,7 @@ interface AnimatedContentProps {
  * @param children an array of JSX.Elements to animate
  */
 export const AnimatedContent = ({
-  children
+  children,
 }: AnimatedContentProps): JSX.Element => {
   const content = Array.isArray(children) ? children : [children];
 
@@ -25,7 +25,7 @@ export const AnimatedContent = ({
     delay: DELAY_FACTOR,
     config: { mass: 25, tension: 2000, friction: 500 },
     from: { y: "-15vh", x: "100vw" },
-    to: introDone && { y: "0%", x: "0%" }
+    to: introDone && { y: "0%", x: "0%" },
   });
 
   return (

@@ -2,7 +2,7 @@ import React, {
   ReactNode,
   createContext,
   useCallback,
-  useContext
+  useContext,
 } from "react";
 import { useInterpret } from "@xstate/react";
 import { InterpreterFrom } from "xstate";
@@ -15,6 +15,8 @@ export const AppStateContext = createContext<
 
 export const useAppState = (): {
   appState: AppState;
+  // the xstate callback uses any, so we have to as well
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   isReady: (state: any) => boolean;
 } => {
   const appContext = useContext(AppStateContext);
@@ -23,8 +25,9 @@ export const useAppState = (): {
   }
 
   const isReady = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: any): boolean => state.matches(AppStates.ready),
-    []
+    [],
   );
 
   return { appState: appContext.appState, isReady };
@@ -34,7 +37,7 @@ interface AppStateProviderProps {
   children: ReactNode;
 }
 export const AppStateProvider = ({
-  children
+  children,
 }: AppStateProviderProps): JSX.Element => {
   const appState = useInterpret(AppStateFSM);
 

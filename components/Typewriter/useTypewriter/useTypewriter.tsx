@@ -12,8 +12,8 @@ export const useTypewriter = ({
   text,
   typeSpeed = 40,
   playRetypeAnimation = false,
-  onStartTyping = () => {},
-  onDoneTyping = () => {}
+  onStartTyping,
+  onDoneTyping,
 }: useTypewriterProps): string => {
   const [typed, setTyped] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -22,14 +22,14 @@ export const useTypewriter = ({
     if (playRetypeAnimation) setIsDeleting(typed.length > 0);
     else setTyped("");
     // TODO: something isn't working here
-    onStartTyping();
-  }, [text]);
+    onStartTyping?.();
+  }, [text, onStartTyping, playRetypeAnimation, setTyped, typed.length]);
 
   useEffect(() => {
     if (isDeleting && typed.length === 0) setIsDeleting(false);
     if (typed === text && !isDeleting) {
       // TODO: something isn't working here
-      onDoneTyping();
+      onDoneTyping?.();
       return;
     }
 
@@ -43,7 +43,7 @@ export const useTypewriter = ({
     }, typeSpeed);
 
     return () => clearTimeout(typeDelay);
-  }, [text, typed, isDeleting]);
+  }, [text, typed, isDeleting, typeSpeed, onDoneTyping]);
 
   return typed;
 };

@@ -14,7 +14,7 @@ export const AnimatedScreenFSM = createMachine<Context>({
   initial: "loop",
   predictableActionArguments: true,
   context: {
-    currentIndex: 0
+    currentIndex: 0,
   },
   states: {
     loop: {
@@ -24,24 +24,24 @@ export const AnimatedScreenFSM = createMachine<Context>({
           actions: assign((context) => {
             const nextIndex = (context.currentIndex + 1) % Animations.length;
             return {
-              currentIndex: nextIndex
+              currentIndex: nextIndex,
             };
-          })
-        }
-      }
+          }),
+        },
+      },
     },
     random: {
       on: {
         NEXT: {
           target: "random",
-          actions: assign((context) => {
+          actions: assign(() => {
             const randomIndex = Math.floor(Math.random() * Animations.length);
             return {
-              currentIndex: randomIndex
+              currentIndex: randomIndex,
             };
-          })
-        }
-      }
-    }
-  }
+          }),
+        },
+      },
+    },
+  },
 });

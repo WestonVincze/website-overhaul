@@ -17,13 +17,13 @@ export const Browser = ({
   windowColor = "#FFF",
   windowBorderColor = "#FD8469",
   headerColor = "#FD8469",
-  buttonColor = "#FFF"
+  buttonColor = "#FFF",
 }: BrowserProps): JSX.Element => {
   const [toggle, setToggle] = useState(false);
   const [toggleScreen, setToggleScreen] = useState(false);
   const { appState } = useAppState();
   const ready = useSelector(appState, (state) =>
-    state.matches(AppStates.ready)
+    state.matches(AppStates.ready),
   );
 
   useEffect(() => {
