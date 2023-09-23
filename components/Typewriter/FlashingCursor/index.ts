@@ -1,1 +1,1 @@
-export { FlashingCursor } from './FlashingCursor'
+export { FlashingCursor } from "./FlashingCursor";

@@ -1,1 +1,1 @@
-export { ContentRow } from './ContentRow'
+export { ContentRow } from "./ContentRow";

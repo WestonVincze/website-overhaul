@@ -1,7 +1,7 @@
-import React from 'react'
-import { Container } from '../../components/Container'
-import { AnimatedContent } from '../../components/AnimatedContent'
-import { WebDevWeston } from '../../components/WebDevWeston'
+import React from "react";
+import { Container } from "../../components/Container";
+import { AnimatedContent } from "../../components/AnimatedContent";
+import { WebDevWeston } from "../../components/WebDevWeston";
 
 export const HomeScene = (): JSX.Element => {
   return (
@@ -10,5 +10,5 @@ export const HomeScene = (): JSX.Element => {
         <WebDevWeston />
       </AnimatedContent>
     </Container>
-  )
-}
+  );
+};

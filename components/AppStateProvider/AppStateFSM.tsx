@@ -1,12 +1,12 @@
-import { assign, createMachine } from 'xstate'
+import { assign, createMachine } from "xstate";
 
 export const AppStates = {
-  loading: 'loading',
-  ready: 'ready'
-}
+  loading: "loading",
+  ready: "ready"
+};
 
 export const AppStateFSM = createMachine({
-  id: 'app',
+  id: "app",
   initial: AppStates.loading,
   context: {
     introAnimationFinished: false
@@ -25,4 +25,4 @@ export const AppStateFSM = createMachine({
     },
     [AppStates.ready]: {}
   }
-})
+});

@@ -1,2 +1,2 @@
-export { Typewriter } from './Typewriter'
-export type{ Size } from './Typewriter'
+export { Typewriter } from "./Typewriter";
+export type { Size } from "./Typewriter";

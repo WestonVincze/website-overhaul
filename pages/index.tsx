@@ -1,8 +1,8 @@
-import React from 'react'
-import { HomeScene } from '../scenes/HomeScene'
+import React from "react";
+import { HomeScene } from "../scenes/HomeScene";
 
 const Home = (): JSX.Element => {
-  return (<HomeScene />)
-}
+  return <HomeScene />;
+};
 
-export default Home
+export default Home;

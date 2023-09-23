@@ -13,7 +13,7 @@
   transition: color 0.5s ease;
   color: #fd8469;
 }
-.fa-stack:hover .fa-circle{
+.fa-stack:hover .fa-circle {
   transition: color 0.5s ease;
   color: transparent;
 }

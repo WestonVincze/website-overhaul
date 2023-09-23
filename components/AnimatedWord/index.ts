@@ -1,1 +1,1 @@
-export { AnimatedWord } from './AnimatedWord'
+export { AnimatedWord } from "./AnimatedWord";

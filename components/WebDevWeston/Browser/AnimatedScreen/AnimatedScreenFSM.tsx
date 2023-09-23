@@ -1,5 +1,5 @@
-import { createMachine, assign } from 'xstate'
-import { Animations } from './Animations'
+import { createMachine, assign } from "xstate";
+import { Animations } from "./Animations";
 /**
  * FSM for the AnimatedScreen component
  * - hierarchical state with iterative options at root
@@ -7,11 +7,11 @@ import { Animations } from './Animations'
  */
 
 interface Context {
-  currentIndex: number
+  currentIndex: number;
 }
 
 export const AnimatedScreenFSM = createMachine<Context>({
-  initial: 'loop',
+  initial: "loop",
   predictableActionArguments: true,
   context: {
     currentIndex: 0
@@ -20,12 +20,12 @@ export const AnimatedScreenFSM = createMachine<Context>({
     loop: {
       on: {
         NEXT: {
-          target: 'loop',
+          target: "loop",
           actions: assign((context) => {
-            const nextIndex = (context.currentIndex + 1) % Animations.length
+            const nextIndex = (context.currentIndex + 1) % Animations.length;
             return {
               currentIndex: nextIndex
-            }
+            };
           })
         }
       }
@@ -33,16 +33,15 @@ export const AnimatedScreenFSM = createMachine<Context>({
     random: {
       on: {
         NEXT: {
-          target: 'random',
+          target: "random",
           actions: assign((context) => {
-            const randomIndex =
-              Math.floor(Math.random() * Animations.length)
+            const randomIndex = Math.floor(Math.random() * Animations.length);
             return {
               currentIndex: randomIndex
-            }
+            };
           })
         }
       }
     }
   }
-})
+});

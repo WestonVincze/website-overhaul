@@ -1,20 +1,20 @@
-import { createMachine, assign } from 'xstate'
+import { createMachine, assign } from "xstate";
 import {
   HIDDEN_Y_OFFSET,
   VISIBLE_Y_OFFSET,
   OFF_SCREEN_Y_OFFSET,
   OFF_SCREEN_X_OFFSET
-} from './types'
+} from "./types";
 
 export const AnimationStates = {
-  default: 'default',
-  hovered: 'idle',
-  active: 'active'
-}
+  default: "default",
+  hovered: "idle",
+  active: "active"
+};
 
 interface Context {
-  y: number
-  x: number
+  y: number;
+  x: number;
 }
 
 export const PaperPreviewFSM = createMachine<Context>({
@@ -54,4 +54,4 @@ export const PaperPreviewFSM = createMachine<Context>({
       }
     }
   }
-})
+});
