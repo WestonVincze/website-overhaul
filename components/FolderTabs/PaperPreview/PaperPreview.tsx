@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { animated, useSpring } from 'react-spring'
 import styles from './PaperPreview.module.css'
-import { useMachine } from '@xstate/react'
-import { animationMachine, AnimationStates } from './AnimationFSM'
+import { useMachine, useSelector } from '@xstate/react'
+import { PaperPreviewFSM, AnimationStates } from './PaperPreviewFSM'
+import { useAppState } from '../../AppStateProvider'
+import { OFF_SCREEN_Y_OFFSET, OFF_SCREEN_X_OFFSET } from './types'
 
 interface PaperPreviewProps {
   hovering: boolean
@@ -13,7 +15,9 @@ interface PaperPreviewProps {
 
 export const PaperPreview = ({ hovering = false, active = false, z, startActive = false }: PaperPreviewProps): JSX.Element => {
   const [reset, setReset] = useState(startActive)
-  const [current, send] = useMachine(animationMachine)
+  const [current, send] = useMachine(PaperPreviewFSM)
+  const { appState, isReady } = useAppState()
+  const ready = useSelector(appState, isReady)
 
   useEffect(() => {
     send(hovering ? 'HOVER' : 'LEAVE_HOVER')
@@ -33,7 +37,8 @@ export const PaperPreview = ({ hovering = false, active = false, z, startActive 
   }
 
   const springProps = useSpring({
-    to: { y: current.context.y, x: current.context.x, z },
+    from: active && !ready ? { x: OFF_SCREEN_X_OFFSET, y: OFF_SCREEN_Y_OFFSET } : {},
+    to: { x: current.context.x, y: current.context.y, z },
     onRest: current.value === AnimationStates.active ? resetAnimation : {},
     immediate: reset
   })

@@ -21,13 +21,14 @@ export const useTypewriter = ({
   useEffect(() => {
     if (playRetypeAnimation) setIsDeleting(typed.length > 0)
     else setTyped('')
-
+    // TODO: something isn't working here
     onStartTyping()
   }, [text])
 
   useEffect(() => {
     if (isDeleting && typed.length === 0) setIsDeleting(false)
     if (typed === text && !isDeleting) {
+      // TODO: something isn't working here
       onDoneTyping()
       return
     }
