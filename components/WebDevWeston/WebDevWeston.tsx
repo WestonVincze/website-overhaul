@@ -10,6 +10,7 @@ export const WebDevWeston = (): JSX.Element => {
     <DragSnap>
       <div className={styles.weston}>
         <Image
+          priority={true}
           className={styles.weston}
           width={400}
           src={webDevWestonGIF}

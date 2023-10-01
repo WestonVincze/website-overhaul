@@ -73,7 +73,7 @@ export const AnimatedHeading = (): JSX.Element => {
     <>
       <animated.div style={greetingStyle}>
         <Typewriter
-          text={"Hi. My name is..."}
+          text={"Hi. My name is"}
           delay={500}
           centered={true}
           flashingCursor={true}
