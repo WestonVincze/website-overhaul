@@ -34,6 +34,9 @@
   /* color scheme */
   --background: #816381;
   --primary: #fd8469;
+  --primary-dark: #fd7456;
+  --primary-dark-alpha-50: #fd745680;
+  --primary-darker: #fc6442;
   --font: #160300;
   --accent: var(--folder);
   --accent-dark: var(--folder-shadow);
