@@ -3,7 +3,7 @@ import styles from "./LinedPaper.module.css";
 import { DragSnap } from "../Drag/DragSnap";
 
 export interface LinedPaperProps {
-  title: string;
+  title?: string;
   orientLeft?: boolean;
   children?: React.ReactNode;
 }

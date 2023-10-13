@@ -15,5 +15,5 @@ export const FlashingCursor = ({
     to: toggle && { opacity: 0 },
     loop: { reverse: true },
   });
-  return <animated.span style={animatedStyle}>{cursor}</animated.span>;
+  return <></>; //<animated.span style={animatedStyle}>{cursor}</animated.span>;
 };

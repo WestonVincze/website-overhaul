@@ -3,8 +3,8 @@ const intro =
 
 const workExperience = [
   {
-    title: "Software Developer",
     company: "Auvik Networks",
+    title: "Software Developer",
     description:
       "Served as a full-stack developer in Auvik's agile PACT (Platform Account Management) team. I managed a wide range of tasks from minor Core updates to overseeing complete project lifecycles.",
     location: "Waterloo, Canada (Remote)",
@@ -19,8 +19,8 @@ const workExperience = [
     ],
   },
   {
-    title: "JavaScript Consultant",
     company: "Bitovi",
+    title: "JavaScript Consultant",
     description:
       "Worked within Bitovi's React Department as a developer and consultant for a diverse set of clients. I handled a wide spectrum of projects from short-term solo tasks to extensive agile collaborations.",
     location: "Chicago, USA (Remote)",
@@ -35,8 +35,8 @@ const workExperience = [
     ],
   },
   {
-    title: "Full Stack Developer",
     company: "Richmond Day",
+    title: "Full Stack Developer",
     description:
       "Collaborated in a development team with project managers and designers to create/update websites for clients like MINI, BMW, Rapid, and LG.",
     location: "Toronto, Canada (Remote)",
@@ -51,10 +51,10 @@ const workExperience = [
   },
 ];
 
-const Education = {
-  degree: "Advanced Diploma",
-  program: "Computer Programming and Analysis",
+const education = {
   school: "Seneca College",
+  program: "Computer Programmer",
+  degree: "Advanced Diploma",
   description:
     "Learned the fundamentals of programming, web development, and data structure. Collaborated in an agile environment during an 8 month co-op internship at PWC Technologies as a Software Engineer.",
   startDate: "September 2015",
@@ -96,7 +96,7 @@ const technicalSkills = [
     ],
   },
   {
-    title: "libraries",
+    title: "Libraries & Frameworks",
     skills: [
       "React",
       "NextJS",
@@ -118,7 +118,7 @@ const technicalSkills = [
     ],
   },
   {
-    title: "tools",
+    title: "Tools & Technologies",
     skills: [
       "JIRA",
       "GitHub",
@@ -135,7 +135,7 @@ const technicalSkills = [
   },
 ];
 
-const Hobbies = [
+const hobbies = [
   "Game Development",
   "Drawing & Animation",
   "World Building",
@@ -149,6 +149,6 @@ export const ResumeContent = {
   workExperience,
   skillHighlights,
   technicalSkills,
-  Education,
-  Hobbies,
+  education,
+  hobbies,
 };
