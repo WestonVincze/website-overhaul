@@ -32,7 +32,11 @@
 
 :root {
   /* color scheme */
-  --background: #fd8469;
+  --background: #816381;
+  --primary: #fd8469;
+  --primary-dark: #fd7456;
+  --primary-dark-alpha-50: #fd745680;
+  --primary-darker: #fc6442;
   --font: #160300;
   --accent: var(--folder);
   --accent-dark: var(--folder-shadow);
@@ -40,6 +44,7 @@
   --accent-dark-2: #372f24;
   --accent-dark-2-alpha: #372f2480;
   --accent-hover: #ddb16f;
+  --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   /* spacing increments */
   --small-margin: 5px;
@@ -69,12 +74,13 @@ html {
   color: var(--font);
   position: relative;
   font-family: var(--core-font);
+  min-width: 560px;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   background: transparent !important;
-  overflow-x: hidden;
 }
 
 main {

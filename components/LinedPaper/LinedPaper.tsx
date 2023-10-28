@@ -1,27 +1,23 @@
 import React from "react";
 import styles from "./LinedPaper.module.css";
-import { DragSnap } from "../Drag/DragSnap";
 
 export interface LinedPaperProps {
-  id: number;
-  title: string;
-  message: string;
+  title?: string;
   orientLeft?: boolean;
+  children?: React.ReactNode;
 }
 
 export const LinedPaper = ({
-  message,
   title,
   orientLeft = true,
+  children,
 }: LinedPaperProps): JSX.Element => {
   const orientation = orientLeft ? styles.paperLeft : styles.paperRight;
 
   return (
-    <DragSnap>
-      <div className={`${styles.paper} ${orientation}`}>
-        <h1 className="written">{title}</h1>
-        <p>{message}</p>
-      </div>
-    </DragSnap>
+    <div className={`${styles.paper} ${orientation}`}>
+      {title && <h1>{title}</h1>}
+      {children}
+    </div>
   );
 };

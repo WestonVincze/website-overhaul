@@ -8,12 +8,14 @@ interface PaperStackProps {
   isAnimated?: boolean;
 }
 
+// animate papers in/out
+
 export const PaperStack = ({
   papers,
-  isAnimated = false,
+  isAnimated = true,
 }: PaperStackProps): JSX.Element => {
   const paperElements = papers.map((paper, i) => (
-    <LinedPaper key={i} {...paper} />
+    <LinedPaper key={i} orientLeft={i % 2 == 0} {...paper} />
   ));
   return (
     <>
