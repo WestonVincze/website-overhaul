@@ -13,9 +13,9 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
       <SocialIcons />
       <FolderTabs
         tabs={[
-          { id: "skills", path: "/skills", text: "SKILLS" },
+          // { id: "skills", path: "/skills", text: "SKILLS" },
           { id: "resume", path: "/resume", text: "RESUME" },
-          { id: "home", path: "/" },
+          { id: "home", path: "/", text: "HOME" },
         ]}
       />
       <main>
