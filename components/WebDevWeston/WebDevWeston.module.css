@@ -1,9 +1,11 @@
 .weston {
   position: relative;
+  max-height: 60vh;
+  width: auto;
 }
 
 .browser {
-  width: 50%;
+  /*width: 50%;*/
   position: absolute;
   top: 35%;
   left: 25%;

@@ -74,12 +74,13 @@ html {
   color: var(--font);
   position: relative;
   font-family: var(--core-font);
+  min-width: 560px;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   background: transparent !important;
-  overflow-x: hidden;
 }
 
 main {

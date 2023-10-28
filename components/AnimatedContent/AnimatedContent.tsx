@@ -24,8 +24,8 @@ export const AnimatedContent = ({
   const contentTrail = useTrail(content.length, {
     delay: DELAY_FACTOR,
     config: { mass: 25, tension: 2000, friction: 500 },
-    from: { y: "-15vh", x: "100vw" },
-    to: introDone && { y: "0%", x: "0%" },
+    from: { y: "-15vh", x: "100vw", display: "none" },
+    to: introDone && { y: "0%", x: "0%", display: "block" },
   });
 
   return (
