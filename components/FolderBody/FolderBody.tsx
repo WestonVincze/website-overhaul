@@ -9,6 +9,10 @@ interface FolderBodyProps {
 export const FolderBody = ({ children }: FolderBodyProps): JSX.Element => {
   return (
     <div className={styles.folder}>
+      <p className="temp-disclaimer">
+        This site is in active development and not yet optimized for mobile
+        devices.
+      </p>
       <AnimatedHeading />
       {children}
     </div>

@@ -31,20 +31,24 @@
 }
 
 :root {
-  /* color scheme */
-  --background: #816381;
+  /* colors */
+  --font: #160300;
   --primary: #fd8469;
   --primary-dark: #fd7456;
-  --primary-dark-alpha-50: #fd745680;
   --primary-darker: #fc6442;
-  --font: #160300;
-  --accent: var(--folder);
-  --accent-dark: var(--folder-shadow);
-  --accent-dark-alpha: #8b765a80;
+  --secondary: #816381;
+  --accent: #e9c696;
+  --accent-dark: #ba9e78;
+  /* not currently in use
   --accent-dark-2: #372f24;
   --accent-dark-2-alpha: #372f2480;
   --accent-hover: #ddb16f;
-  --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  */
+
+  /* color names */
+  --folder: var(--accent);
+  --folder-shadow: var(--accent-dark);
+  --background: var(--secondary);
 
   /* spacing increments */
   --small-margin: 5px;
@@ -59,13 +63,11 @@
   --footer-height: 65px;
   --folder-tab-height: calc(var(--header-height) - (var(--spacing-1) * 2));
 
-  /* color names */
-  --folder: #e9c696;
-  --folder-shadow: #ba9e78;
-  --blue-pen: #00407e;
-
   /* fonts */
   --core-font: "OldTypewriter";
+
+  /* other */
+  --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /***** Global *****/
@@ -80,12 +82,10 @@ html {
 
 body {
   margin: 0;
-  background: transparent !important;
 }
 
 main {
   padding-top: var(--folder-tab-height);
-  min-height: calc(100vh - 215px);
 }
 
 h1,
@@ -95,33 +95,12 @@ h4,
 h5,
 h6,
 p {
-  margin: var(--spacing-1);
+  margin: var(--spacing-1) 0;
   /* margin-bottom: var(--spacing-2); */
 }
 
 hr {
   border-color: var(--accent-dark);
-}
-
-.written {
-  color: var(--blue-pen);
-  font-family: "Zeyada", cursive;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.img-round {
-  border-radius: 50%;
 }
 
 a {
@@ -131,6 +110,28 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.text-center { 
+  text-align: center;
+}
+
+.temp-disclaimer {
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 560px) {
+  html {
+    overflow-x: scroll;
+  }
+  .temp-disclaimer {
+    display: block;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
 }
 
 /*
