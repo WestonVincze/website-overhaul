@@ -7,3 +7,10 @@
   z-index: 0;
   background-color: #fff;
 }
+
+@media screen and (max-width: 810px) {
+  /* paper preview needs to be refactored for mobile because there is no "hover" state */
+  .paperPreview {
+    display: none;
+  }
+}

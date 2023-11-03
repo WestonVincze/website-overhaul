@@ -24,14 +24,17 @@ export const AnimatedContent = ({
   const contentTrail = useTrail(content.length, {
     delay: DELAY_FACTOR,
     config: { mass: 25, tension: 2000, friction: 500 },
-    from: { y: "-15vh", x: "100vw", display: "none" },
-    to: introDone && { y: "0%", x: "0%", display: "block" },
+    from: { y: "-15vh", x: "100vw" },
+    to: introDone && { y: "0", x: "0" },
   });
 
   return (
     <>
       {contentTrail.map((style, i) => (
-        <animated.div key={i} style={style}>
+        <animated.div
+          key={i}
+          style={{ ...style, willChange: "transform, opacity" }}
+        >
           {content[i]}
         </animated.div>
       ))}

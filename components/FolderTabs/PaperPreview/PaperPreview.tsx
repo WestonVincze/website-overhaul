@@ -45,9 +45,9 @@ export const PaperPreview = ({
   const springProps = useSpring({
     from:
       active && !ready
-        ? { x: OFF_SCREEN_X_OFFSET, y: OFF_SCREEN_Y_OFFSET, display: "none" }
+        ? { x: OFF_SCREEN_X_OFFSET, y: OFF_SCREEN_Y_OFFSET }
         : {},
-    to: { x: current.context.x, y: current.context.y, z, display: "block" },
+    to: { x: current.context.x, y: current.context.y },
     onRest: current.value === AnimationStates.active ? resetAnimation : {},
     immediate: reset,
   });

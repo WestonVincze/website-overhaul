@@ -9,7 +9,7 @@ const large = {
   fontSize: "100%",
 };
 const small = {
-  fontSize: "60%",
+  fontSize: "80%",
 };
 
 type route = "/" | "/resume" | "/skills";
@@ -76,7 +76,6 @@ export const AnimatedHeading = (): JSX.Element => {
           text={"Hi. My name is"}
           delay={500}
           centered={true}
-          flashingCursor={true}
           size={"large"}
         />
       </animated.div>
