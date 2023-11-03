@@ -1,3 +1,9 @@
+.stickyNotes {
+  display: flex;
+  justify-content: center;
+  column-gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
 .columns {
   display: flex;
   justify-content: space-between;
@@ -5,4 +11,10 @@
 }
 .columns > * {
   width: 33%;
+}
+
+@media screen and (max-width: 490px) {
+  .columns > * {
+    width: 100%;
+  }
 }

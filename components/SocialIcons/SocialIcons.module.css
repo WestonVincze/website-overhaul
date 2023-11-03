@@ -3,6 +3,5 @@
   display: flex;
   top: var(--small-margin);
   left: var(--small-margin);
-  display: flex;
   column-gap: var(--small-margin);
 }

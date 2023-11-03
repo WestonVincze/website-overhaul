@@ -1,11 +1,14 @@
 .small {
-  font-size: 1em;
+  font-size: var(--small-font-size);
+  line-height: var(--small-font-size);
 }
 
 .medium {
-  font-size: 2em;
+  font-size: var(--medium-font-size);
+  line-height: var(--medium-font-size);
 }
 
 .large {
-  font-size: 3em;
+  font-size: var(--large-font-size);
+  line-height: var(--large-font-size);
 }

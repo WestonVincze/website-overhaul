@@ -6,10 +6,10 @@ import { Typewriter } from "../Typewriter";
 import { useAppState } from "../AppStateProvider";
 
 const large = {
-  fontSize: "100px",
+  fontSize: "100%",
 };
 const small = {
-  fontSize: "60px",
+  fontSize: "60%",
 };
 
 type route = "/" | "/resume" | "/skills";
@@ -60,7 +60,7 @@ export const AnimatedHeading = (): JSX.Element => {
 
   const greetingStyle = useSpring({
     opacity: showGreeting ? 1 : 0,
-    height: showGreeting ? "60px" : "0px",
+    height: showGreeting ? "100%" : "0",
   });
 
   const path = router.pathname as route;
@@ -81,9 +81,16 @@ export const AnimatedHeading = (): JSX.Element => {
         />
       </animated.div>
       {AnimationState >= AnimationStates.name && (
-        <animated.div style={animatedStyle}>
-          <AnimatedWord word={"Weston Vincze"} />
-        </animated.div>
+        <span
+          style={{
+            fontSize: "var(--animated-font-size)",
+            lineHeight: "var(--animated-font-size",
+          }}
+        >
+          <animated.div style={animatedStyle}>
+            <AnimatedWord word={"Weston Vincze"} />
+          </animated.div>
+        </span>
       )}
       {AnimationState >= AnimationStates.subHeading && (
         <Typewriter
