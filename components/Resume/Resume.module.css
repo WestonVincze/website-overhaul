@@ -1,3 +1,8 @@
+.stickyNotes {
+  display: flex;
+  justify-content: center;
+  column-gap: var(--spacing-2);
+}
 .columns {
   display: flex;
   justify-content: space-between;
