@@ -2,11 +2,5 @@
   position: relative;
   max-height: 60vh;
   width: auto;
-}
-
-.browser {
-  /*width: 50%;*/
-  position: absolute;
-  top: 35%;
-  left: 25%;
+  margin-top: var(--spacing-1);
 }
