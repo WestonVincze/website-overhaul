@@ -46,10 +46,10 @@ export const Resume = (): JSX.Element => (
   <>
     <div className={styles.stickyNotes}>
       <a href="/images/WestonVinczeResume.pdf" download>
-        <StickyNote icon="Download" text="Download" />
+        <StickyNote icon="PDF" text="Download" />
       </a>
       <a href="/images/WestonVinczeResume.pdf" target="_blank">
-        <StickyNote text="View" />
+        <StickyNote icon="PDF" text="View" />
       </a>
     </div>
     <div style={{ textAlign: "left" }}>

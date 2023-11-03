@@ -81,7 +81,12 @@ export const AnimatedHeading = (): JSX.Element => {
         />
       </animated.div>
       {AnimationState >= AnimationStates.name && (
-        <span style={{ fontSize: "var(--animated-font-size)", lineHeight: "var(--animated-font-size" }}>
+        <span
+          style={{
+            fontSize: "var(--animated-font-size)",
+            lineHeight: "var(--animated-font-size",
+          }}
+        >
           <animated.div style={animatedStyle}>
             <AnimatedWord word={"Weston Vincze"} />
           </animated.div>
