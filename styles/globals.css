@@ -92,7 +92,9 @@ main {
   padding-top: var(--folder-tab-height);
 }
 
-html, body, main {
+html,
+body,
+main {
   overflow-x: hidden;
 }
 
@@ -131,7 +133,7 @@ a {
     --medium-font-size: 25px;
     --small-font-size: 15px;
   }
-  
+
   h1 {
     font-size: 25px;
   }

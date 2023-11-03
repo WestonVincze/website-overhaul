@@ -76,7 +76,8 @@
   transform-origin: top;
   padding-top: calc(var(--fold-height) / 8);
 }
-.taped:hover .fold, .taped:active .fold {
+.taped:hover .fold,
+.taped:active .fold {
   transform: var(--transform);
   box-shadow: var(--box-shadow);
 }
