@@ -33,11 +33,12 @@ export const AnimatedHeading = (): JSX.Element => {
   );
   const { appState } = useAppState();
   const [showGreeting, setShowGreeting] = useState(true);
+  const [greetingComplete, setGreetingComplete] = useState(false);
 
   useEffect(() => {
-    if (showGreeting) return;
+    if (!greetingComplete) return;
     appState.send("INTRO_ANIMATION_COMPLETE");
-  }, [showGreeting, appState]);
+  }, [greetingComplete, appState]);
 
   // This is a *bit* of a hack, but it works for now
   useEffect(() => {
@@ -60,7 +61,11 @@ export const AnimatedHeading = (): JSX.Element => {
 
   const greetingStyle = useSpring({
     opacity: showGreeting ? 1 : 0,
-    height: showGreeting ? "10svh" : "0",
+    height: showGreeting ? "8svh" : "0",
+    display: greetingComplete ? "none" : "block",
+    onRest: () => {
+      if (!showGreeting) setGreetingComplete(true);
+    },
   });
 
   const path = router.pathname as route;
@@ -73,7 +78,7 @@ export const AnimatedHeading = (): JSX.Element => {
     <>
       <animated.div style={greetingStyle}>
         <Typewriter
-          text={"Hi. My name is..."}
+          text={"Hi. My name is"}
           delay={500}
           centered={true}
           size={"large"}

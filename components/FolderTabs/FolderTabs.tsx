@@ -31,7 +31,7 @@ export const FolderTabs = ({
   return (
     <div className={style.folderTabs} {...props}>
       {tabs.map((tab, i) => (
-        <div key={i}>
+        <React.Fragment key={i}>
           <PaperPreview
             hovering={hoverTab === tab.id && hoverTab !== activeTab}
             active={tab.id === activeTab}
@@ -52,7 +52,7 @@ export const FolderTabs = ({
               key={tab.id}
             />
           </span>
-        </div>
+        </React.Fragment>
       ))}
     </div>
   );

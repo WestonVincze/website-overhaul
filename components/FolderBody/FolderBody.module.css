@@ -1,10 +1,10 @@
 .folder {
-  background: var(--accent);
-  margin-left: var(--small-margin);
-  margin-right: var(--small-margin);
+  background: var(--folder);
+  margin: var(--small-margin);
+  margin-top: 0;
   /* is this the right spot? */
   padding: var(--spacing-2);
   position: relative;
   z-index: 10;
-  min-height: calc(100svh - var(--folder-tab-height) - var(--small-margin));
+  min-height: calc(100svh - var(--header-height));
 }

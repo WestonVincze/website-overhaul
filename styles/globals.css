@@ -36,9 +36,9 @@
   --spacing-4: 50px;
 
   /* fixed sizes */
-  --header-height: 75px;
-  --folder-tab-height: calc(var(--header-height) - (var(--spacing-1) * 2));
   --folder-tab-offset: 25px;
+  --folder-tab-height: 50px;
+  --header-height: calc(var(--folder-tab-offset) + var(--folder-tab-height));
 
   /* fonts */
   --core-font: "OldTypewriter";
@@ -59,6 +59,7 @@ html {
   color: var(--font);
   position: relative;
   font-family: var(--core-font);
+  font-size: var(--small-font-size);
   width: 100%;
 }
 
@@ -67,7 +68,7 @@ body {
 }
 
 main {
-  padding-top: var(--folder-tab-height);
+  padding-top: var(--header-height);
 }
 
 html,
@@ -84,7 +85,6 @@ h5,
 h6,
 p {
   margin: var(--spacing-1) 0;
-  /* margin-bottom: var(--spacing-2); */
 }
 
 hr {
@@ -104,33 +104,47 @@ a {
   text-align: center;
 }
 
-@media (max-width: 590px) {
+@media (max-width: 620px) {
   :root {
-    --animated-font-size: 80px;
+    --animated-font-size: 75px;
     --large-font-size: 35px;
     --medium-font-size: 25px;
     --small-font-size: 15px;
-  }
-
-  h1 {
-    font-size: 25px;
+    --folder-tab-height: 45px;
   }
 }
 
 @media (max-width: 490px) {
   :root {
-    --animated-font-size: 60px;
+    --animated-font-size: 65px;
     --folder-tab-offset: 70px;
-    --header-height: 120px;
   }
 }
 
 @media (max-width: 410px) {
   :root {
-    --animated-font-size: 40px;
+    --animated-font-size: 55px;
     --large-font-size: 33px;
     --medium-font-size: 23px;
     --small-font-size: 13px;
+  }
+}
+
+@media (max-width: 365px) {
+  :root {
+    --animated-font-size: 45px;
+    --large-font-size: 28px;
+    --medium-font-size: 20px;
+    --small-font-size: 10px;
+  }
+}
+
+@media (max-width: 310px) {
+  :root {
+    --animated-font-size: 35px;
+    --large-font-size: 20px;
+    --medium-font-size: 18px;
+    --small-font-size: 10px;
   }
 }
 
