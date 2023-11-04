@@ -1,6 +1,7 @@
 .paper {
   position: relative;
   min-height: 120px;
+  background: #fff;
   background: url("/images/linedpaper.png") repeat;
   /*line-height: 1.62em;*/
   padding: 20px;

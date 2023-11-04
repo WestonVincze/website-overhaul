@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <main>
       <SocialIcons />
       <FolderTabs
         tabs={[
@@ -18,9 +18,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
           { id: "home", path: "/", text: "HOME" },
         ]}
       />
-      <main>
-        <FolderBody>{children}</FolderBody>
-      </main>
-    </div>
+      <FolderBody>{children}</FolderBody>
+    </main>
   );
 };

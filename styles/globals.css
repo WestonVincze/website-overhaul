@@ -81,8 +81,7 @@ html {
   color: var(--font);
   position: relative;
   font-family: var(--core-font);
-  min-width: 320px;
-  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -91,6 +90,12 @@ body {
 
 main {
   padding-top: var(--folder-tab-height);
+}
+
+html,
+body,
+main {
+  overflow-x: hidden;
 }
 
 h1,
@@ -128,6 +133,10 @@ a {
     --medium-font-size: 25px;
     --small-font-size: 15px;
   }
+
+  h1 {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 490px) {
@@ -141,9 +150,9 @@ a {
 @media (max-width: 410px) {
   :root {
     --animated-font-size: 40px;
-    --large-font-size: 30px;
-    --medium-font-size: 20px;
-    --small-font-size: 10px;
+    --large-font-size: 33px;
+    --medium-font-size: 23px;
+    --small-font-size: 13px;
   }
 }
 
