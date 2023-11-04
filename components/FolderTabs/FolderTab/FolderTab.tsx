@@ -46,7 +46,7 @@ export const FolderTab = ({
           text == null ? style.blankTab : ""
         }`}
       >
-        {text}
+        <span>{text}</span>
       </Link>
     </animated.div>
   );

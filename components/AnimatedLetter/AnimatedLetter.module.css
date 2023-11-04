@@ -4,3 +4,9 @@
   /* cursor: pointer; removed for now */
   padding: 0 5px;
 }
+
+@media screen and (max-width: 350px) {
+  .animatedLetter {
+    padding: 0 2px;
+  }
+}
