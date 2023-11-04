@@ -60,7 +60,7 @@ export const AnimatedHeading = (): JSX.Element => {
 
   const greetingStyle = useSpring({
     opacity: showGreeting ? 1 : 0,
-    height: showGreeting ? "100%" : "0",
+    height: showGreeting ? "10svh" : "0",
   });
 
   const path = router.pathname as route;
@@ -73,7 +73,7 @@ export const AnimatedHeading = (): JSX.Element => {
     <>
       <animated.div style={greetingStyle}>
         <Typewriter
-          text={"Hi. My name is"}
+          text={"Hi. My name is..."}
           delay={500}
           centered={true}
           size={"large"}

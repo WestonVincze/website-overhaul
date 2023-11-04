@@ -1,1 +1,0 @@
-export { BabylonScene } from "./BabylonScene";

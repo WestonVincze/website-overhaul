@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { FlashingCursor } from "./FlashingCursor";
+import React from "react";
 import { useTypewriter } from "./useTypewriter";
 import styles from "./Typewriter.module.css";
 /**
@@ -12,7 +11,6 @@ interface TypewriterProps {
   delay?: number;
   size?: Size;
   inlineTag?: boolean;
-  flashingCursor?: boolean;
   centered?: boolean;
   onDoneTyping?: () => void;
   onStartTyping?: () => void;
@@ -22,22 +20,17 @@ export const Typewriter = ({
   text,
   delay = 0,
   inlineTag = false,
-  flashingCursor = false,
   centered = false,
   size = "medium",
   onDoneTyping,
   onStartTyping,
   ...props
 }: TypewriterProps): JSX.Element => {
-  const [isIdle, setIsIdle] = useState(false);
-
   const handleDoneTyping = (): void => {
-    setIsIdle(true);
     onDoneTyping?.();
   };
 
   const handleStartTyping = (): void => {
-    setIsIdle(false);
     onStartTyping?.();
   };
 
@@ -56,7 +49,6 @@ export const Typewriter = ({
       {...props}
     >
       {inlineTag ? `<${typed} />` : typed}
-      {flashingCursor && <FlashingCursor toggle={isIdle} />}
     </h1>
   );
 };

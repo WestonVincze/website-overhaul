@@ -1,20 +1,4 @@
 @font-face {
-  font-family: "Alice";
-  src: url("/fonts/Alice/Alice-Regular.ttf");
-}
-
-@font-face {
-  font-family: "DancingScript";
-  src: url("/fonts/DancingScript/DancingScript-Regular.ttf");
-  src: url("/fonts/DancingScript/DancingScript-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto/Roboto-Bold.ttf");
-}
-
-@font-face {
   font-family: "AmaticSC";
   src: url("/fonts/AmaticSC/AmaticSC-Bold.ttf");
 }
@@ -22,12 +6,6 @@
 @font-face {
   font-family: "OldTypewriter";
   src: url("/fonts/OldTypewriter/fzm-Old.Typewriter.ttf");
-}
-
-/** BROKEN **/
-@font-face {
-  font-family: "Zeyata";
-  src: url("/fonts/Zeyada/Zeyada-Regular.ttf");
 }
 
 :root {
@@ -89,7 +67,7 @@ body {
 }
 
 main {
-  padding-top: var(--folder-tab-height);
+  padding-top: calc(var(--folder-tab-height) - 1px);
 }
 
 html,
