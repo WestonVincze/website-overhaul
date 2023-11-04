@@ -67,7 +67,7 @@ body {
 }
 
 main {
-  padding-top: calc(var(--folder-tab-height) - 1px);
+  padding-top: var(--folder-tab-height);
 }
 
 html,
