@@ -18,17 +18,14 @@ export const FolderTabs = ({
     currentPage === "" ? "home" : currentPage,
   );
   const [hoverTab, setHoverTab] = useState("");
-  const [z, setZ] = useState(-1);
 
-  function handleClick(id: string, z: number): void {
+  function handleClick(id: string): void {
     if (activeTab === id) return;
     setActiveTab(id);
-    setZ(z);
   }
 
-  function handleHover(id: string, z: number): void {
+  function handleHover(id: string): void {
     setHoverTab(id);
-    setZ(z);
   }
 
   return (
@@ -38,13 +35,12 @@ export const FolderTabs = ({
           <PaperPreview
             hovering={hoverTab === tab.id && hoverTab !== activeTab}
             active={tab.id === activeTab}
-            z={z}
             key={i}
           />
           <span
-            onClick={() => handleClick(tab.id, i)}
-            onMouseEnter={() => handleHover(tab.id, i)}
-            onMouseLeave={() => handleHover("", -1)}
+            onClick={() => handleClick(tab.id)}
+            onMouseEnter={() => handleHover(tab.id)}
+            onMouseLeave={() => handleHover("")}
             style={{ zIndex: i }}
             key={tab.id}
           >
