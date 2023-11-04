@@ -10,13 +10,11 @@ interface PaperPreviewProps {
   hovering: boolean;
   active: boolean;
   startActive?: boolean;
-  z: number;
 }
 
 export const PaperPreview = ({
   hovering = false,
   active = false,
-  z,
   startActive = false,
 }: PaperPreviewProps): JSX.Element => {
   const [reset, setReset] = useState(startActive);
