@@ -26,13 +26,17 @@
   --width: 45px;
   --height: 45px;
   --icon-width: 25px;
-  font-size: 12px;
+  font-size: 10px;
 }
 .medium {
   --width: 100px;
   --height: 100px;
   --icon-width: 100px;
-  font-size: 15px;
+  font-size: 13px;
+  line-height: 13px;
+}
+@media screen and (max-width: 450px) {
+  
 }
 
 /** TAPED *****************************************/
@@ -75,6 +79,9 @@
     box-shadow 0.6s ease;
   transform-origin: top;
   padding-top: calc(var(--fold-height) / 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .taped:hover .fold,
 .taped:active .fold {

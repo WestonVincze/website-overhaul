@@ -105,4 +105,4 @@ export const Icons = {
   ),
 };
 
-export type IconNames = keyof typeof Icons;
+export type IconName = keyof typeof Icons;

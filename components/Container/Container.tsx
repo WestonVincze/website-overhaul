@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export const Container = ({
   children,
-  centered = true,
+  centered = false,
   ...props
 }: ContainerProps): JSX.Element => {
   return (

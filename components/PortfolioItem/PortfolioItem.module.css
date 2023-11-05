@@ -1,0 +1,12 @@
+.body {
+  margin-bottom: 50px;
+}
+
+.footer {
+  padding: var(--spacing-2);
+  display: flex;
+  column-gap: var(--spacing-2);
+  position: absolute;
+  bottom: -40%;
+  left: 0;
+}
