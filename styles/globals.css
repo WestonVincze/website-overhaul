@@ -30,6 +30,7 @@
 
   /* spacing increments */
   --small-margin: 5px;
+  --medium-margin: 10px;
   --spacing-1: 10px;
   --spacing-2: 20px;
   --spacing-3: 30px;
@@ -60,7 +61,6 @@ html {
   position: relative;
   font-family: var(--core-font);
   font-size: var(--small-font-size);
-  width: 100%;
 }
 
 body {

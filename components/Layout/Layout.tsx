@@ -13,7 +13,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
       <SocialIcons />
       <FolderTabs
         tabs={[
-          { id: "portfolio", path: "/portfolio", text: "PORTFOLIO" },
+          { id: "projects", path: "/projects", text: "PROJECTS" },
           { id: "resume", path: "/resume", text: "RESUME" },
           { id: "home", path: "/", text: "HOME" },
         ]}

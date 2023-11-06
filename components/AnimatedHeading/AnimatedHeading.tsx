@@ -12,12 +12,12 @@ const small = {
   fontSize: "80%",
 };
 
-type route = "/" | "/resume" | "/portfolio";
+type route = "/" | "/resume" | "/projects";
 
 const subHeadingText = {
   "/": "Web Developer",
   "/resume": "My Resume",
-  "/portfolio": "My Portfolio",
+  "/projects": "My Projects",
 };
 
 enum AnimationStates {

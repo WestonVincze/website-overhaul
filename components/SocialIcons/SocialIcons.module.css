@@ -3,5 +3,5 @@
   display: flex;
   top: var(--small-margin);
   left: var(--small-margin);
-  column-gap: var(--small-margin);
+  column-gap: var(--medium-margin);
 }

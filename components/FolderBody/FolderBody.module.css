@@ -6,5 +6,5 @@
   padding: var(--spacing-2);
   position: relative;
   z-index: 10;
-  min-height: calc(100svh - var(--header-height));
+  min-height: calc(100svh - var(--header-height) - var(--small-margin));
 }

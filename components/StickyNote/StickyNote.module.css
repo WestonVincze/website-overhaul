@@ -23,10 +23,11 @@
 
 /** SIZES *****************************************/
 .small {
-  --width: 45px;
-  --height: 45px;
-  --icon-width: 25px;
-  font-size: 10px;
+  --width: 65px;
+  --height: 65px;
+  --icon-width: 35px;
+  font-size: 11px;
+  line-height: 11px;
 }
 .medium {
   --width: 100px;
@@ -44,7 +45,7 @@
   transform-style: preserve-3d;
 }
 .taped.small {
-  --fold-height: 10px;
+  --fold-height: 18px;
   --transform: rotateX(40deg) translateY(-2px);
   --box-shadow: inset 0 4px 8px var(--primary-darker);
 }

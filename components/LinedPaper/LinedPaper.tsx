@@ -16,7 +16,7 @@ export const LinedPaper = ({
 
   return (
     <div className={`${styles.paper} ${orientation}`}>
-      {title && <h1>{title}</h1>}
+      {title && <h2>{title}</h2>}
       {children}
     </div>
   );
