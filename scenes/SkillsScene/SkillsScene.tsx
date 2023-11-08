@@ -1,5 +1,3 @@
-import React from "react";
-
-export const SkillsScene = (): JSX.Element => {
+export const SkillsScene = () => {
   return <></>;
 };

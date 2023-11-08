@@ -1,12 +1,11 @@
-import React from "react";
 import styles from "./FolderBody.module.css";
 import { AnimatedHeading } from "../AnimatedHeading";
 
 interface FolderBodyProps {
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
-export const FolderBody = ({ children }: FolderBodyProps): JSX.Element => {
+export const FolderBody = ({ children }: FolderBodyProps) => {
   return (
     <div className={styles.folder}>
       <AnimatedHeading />

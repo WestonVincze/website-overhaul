@@ -1,9 +1,4 @@
-import React, {
-  ReactNode,
-  createContext,
-  useCallback,
-  useContext,
-} from "react";
+import { ReactNode, createContext, useCallback, useContext } from "react";
 import { useInterpret } from "@xstate/react";
 import { InterpreterFrom } from "xstate";
 import { AppStateFSM, AppStates } from "./AppStateFSM";
@@ -36,9 +31,7 @@ export const useAppState = (): {
 interface AppStateProviderProps {
   children: ReactNode;
 }
-export const AppStateProvider = ({
-  children,
-}: AppStateProviderProps): JSX.Element => {
+export const AppStateProvider = ({ children }: AppStateProviderProps) => {
   const appState = useInterpret(AppStateFSM);
 
   return (

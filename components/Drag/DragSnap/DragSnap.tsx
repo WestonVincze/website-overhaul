@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../Drag.module.css";
 import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { DragProps } from "../types";
 
-export const DragSnap = ({
-  children,
-  preventDefault = true,
-}: DragProps): JSX.Element => {
+export const DragSnap = ({ children, preventDefault = true }: DragProps) => {
   const [{ x, y, scale }, api] = useSpring(() => ({ x: 0, y: 0, scale: 1 }));
   const [active, setActive] = useState(false);
 

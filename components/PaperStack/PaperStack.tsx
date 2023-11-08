@@ -1,4 +1,3 @@
-import React from "react";
 // import styles from './PaperStack.module.css'
 import { LinedPaper, LinedPaperProps } from "../LinedPaper";
 import { AnimatedContent } from "../AnimatedContent";
@@ -10,10 +9,7 @@ interface PaperStackProps {
 
 // animate papers in/out
 
-export const PaperStack = ({
-  papers,
-  isAnimated = true,
-}: PaperStackProps): JSX.Element => {
+export const PaperStack = ({ papers, isAnimated = false }: PaperStackProps) => {
   const paperElements = papers.map((paper, i) => (
     <LinedPaper key={i} orientLeft={i % 2 == 0} {...paper} />
   ));
