@@ -61,7 +61,7 @@ const Card = ((~~) => {|
 export default Card;
 `;
 
-export const Animations: Array<{ text: string; path }> = [
+export const Animations: Array<{ text: string; path: React.ReactNode }> = [
   {
     text: html,
     path: <></>,
