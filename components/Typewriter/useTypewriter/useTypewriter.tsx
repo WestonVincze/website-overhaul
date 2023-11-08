@@ -19,32 +19,38 @@ export const useTypewriter = ({
 }: useTypewriterProps): string => {
   const [typed, setTyped] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isDelayed, setIsDelayed] = useState(false);
+  const [isDelayed, setIsDelayed] = useState(true);
+  const [onStartTriggered, setOnStartTriggered] = useState(false);
+  const [onDoneTriggered, setOnDoneTriggered] = useState(false);
 
   useEffect(() => {
     const setDelay = setTimeout(() => {
-      setIsDelayed(true);
+      setIsDelayed(false);
     }, delay);
 
     return () => clearTimeout(setDelay);
   }, [delay]);
 
   useEffect(() => {
-    if (!isDelayed) return;
+    if (isDelayed) return;
     if (playRetypeAnimation) setIsDeleting(typed.length > 0);
     else setTyped("");
     // TODO: something isn't working here
+    if (onStartTriggered) return;
     onStartTyping?.();
+    setOnStartTriggered(true);
     // we ONLY want to run the this effect when the text changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   useEffect(() => {
-    if (!isDelayed) return;
+    if (isDelayed) return;
     if (isDeleting && typed.length === 0) setIsDeleting(false);
     if (typed === text && !isDeleting) {
       // TODO: something isn't working here
+      if (onDoneTriggered) return;
       onDoneTyping?.();
+      setOnDoneTriggered(true);
       return;
     }
 
@@ -58,7 +64,15 @@ export const useTypewriter = ({
     }, typeSpeed);
 
     return () => clearTimeout(typeDelay);
-  }, [text, typed, isDeleting, typeSpeed, onDoneTyping, isDelayed]);
+  }, [
+    text,
+    typed,
+    isDeleting,
+    typeSpeed,
+    onDoneTyping,
+    isDelayed,
+    onDoneTriggered,
+  ]);
 
   return typed;
 };

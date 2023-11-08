@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import style from "./AnimatedLetter.module.css";
 import { DragSnap } from "../Drag/DragSnap";
@@ -19,9 +19,7 @@ interface AnimatedLetterProps {
  * Creates a letter that can be manipulated by user
  * @param letter the letter to be animated
  */
-export const AnimatedLetter = ({
-  letter,
-}: AnimatedLetterProps): JSX.Element => {
+export const AnimatedLetter = ({ letter }: AnimatedLetterProps) => {
   const [isTargeted, setIsTargeted] = useState(false);
   const [rotateDirection, setRotateDirection] =
     useState<rotateDirection>("left");

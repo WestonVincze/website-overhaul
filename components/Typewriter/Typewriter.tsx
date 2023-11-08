@@ -1,4 +1,3 @@
-import React from "react";
 import { useTypewriter } from "./useTypewriter";
 import styles from "./Typewriter.module.css";
 /**
@@ -25,7 +24,7 @@ export const Typewriter = ({
   onDoneTyping,
   onStartTyping,
   ...props
-}: TypewriterProps): JSX.Element => {
+}: TypewriterProps) => {
   const handleDoneTyping = (): void => {
     onDoneTyping?.();
   };

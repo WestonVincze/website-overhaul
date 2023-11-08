@@ -1,4 +1,3 @@
-import React from "react";
 /**
  * Code typing Animations that can be played within the
  * Browser component's screen. New lines are denoted with '|'
@@ -62,7 +61,7 @@ const Card = ((~~) => {|
 export default Card;
 `;
 
-export const Animations: Array<{ text: string; path: JSX.Element }> = [
+export const Animations: Array<{ text: string; path }> = [
   {
     text: html,
     path: <></>,

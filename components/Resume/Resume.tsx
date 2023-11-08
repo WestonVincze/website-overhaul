@@ -42,7 +42,7 @@ const workExperiencePapers: LinedPaperProps[] =
     ),
   }));
 
-export const Resume = (): JSX.Element => (
+export const Resume = () => (
   <div className={styles.resume}>
     <div className={styles.stickyNotes}>
       <a href="/images/WestonVinczeResume.pdf" download>

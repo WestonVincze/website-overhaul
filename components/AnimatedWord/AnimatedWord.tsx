@@ -1,4 +1,3 @@
-import React from "react";
 import { AnimatedLetter } from "../AnimatedLetter";
 import { animated, useTrail } from "react-spring";
 import styles from "./AnimatedWord.module.css";
@@ -11,13 +10,7 @@ interface AnimatedWordProps {
  * Creates a collection of AnimatedLetters from a string
  * @param word the word to be animated
  */
-export const AnimatedWord = ({
-  word,
-  ...props
-}: AnimatedWordProps): JSX.Element => {
-  // "Hi." (pause) "My name is"
-  // WESTON VINCZE <-- animate in
-  // "I am a"
+export const AnimatedWord = ({ word, ...props }: AnimatedWordProps) => {
   const characters = word.split("");
 
   const trails = useTrail(characters.length, {
@@ -26,12 +19,12 @@ export const AnimatedWord = ({
   });
 
   return (
-    <animated.div className={styles.word} {...props}>
+    <div className={styles.word} {...props}>
       {trails.map((style, i) => (
         <animated.div style={style} key={i}>
-          <AnimatedLetter key={i} letter={characters[i]} />
+          <AnimatedLetter letter={characters[i]} />
         </animated.div>
       ))}
-    </animated.div>
+    </div>
   );
 };

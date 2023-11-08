@@ -65,15 +65,12 @@ html {
 
 body {
   margin: 0;
-}
-
-main {
   padding-top: var(--header-height);
 }
 
+
 html,
-body,
-main {
+body {
   overflow-x: hidden;
 }
 

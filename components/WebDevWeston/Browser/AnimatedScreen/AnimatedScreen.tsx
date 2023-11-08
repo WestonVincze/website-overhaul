@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTypewriter } from "../../../Typewriter/useTypewriter";
 import { Animations } from "./Animations";
 import { useMachine } from "@xstate/react";
@@ -13,7 +13,7 @@ import { AnimatedScreenFSM } from "./AnimatedScreenFSM";
  *
  */
 
-export const AnimatedScreen = (): JSX.Element => {
+export const AnimatedScreen = () => {
   const [current, send] = useMachine(AnimatedScreenFSM);
   const [text, setText] = useState(
     Animations[current.context.currentIndex].text,
