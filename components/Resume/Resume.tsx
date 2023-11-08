@@ -5,24 +5,9 @@ import { PaperStack } from "../PaperStack";
 import { StickyNote } from "../StickyNote";
 
 const skillPapers: LinedPaperProps[] = ResumeContent.technicalSkills.map(
-  (skills) => ({
-    title: skills.title,
-    children: (
-      <div className={styles.columns}>
-        <div>
-          <h3>Expert</h3>
-          <p>{skills.expert.map((skill) => skill).join(", ")}</p>
-        </div>
-        <div>
-          <h3>Advanced</h3>
-          <p>{skills.advanced.map((skill) => skill).join(", ")}</p>
-        </div>
-        <div>
-          <h3>Intermediate</h3>
-          <p>{skills.intermediate.map((skill) => skill).join(", ")}</p>
-        </div>
-      </div>
-    ),
+  (skillType) => ({
+    title: skillType.title,
+    children: <p>{skillType.skills.map((skill) => skill).join(", ")}</p>,
   }),
 );
 
@@ -33,6 +18,7 @@ const workExperiencePapers: LinedPaperProps[] =
       <>
         <h4>{`${role.startDate} - ${role.endDate}`}</h4>
         <p>{role.description}</p>
+        <b>{`{ ${role.skills.map((skill) => skill).join(", ")} }`}</b>
         <ul>
           {role.highlights.map((h, i) => (
             <li key={i}>{h}</li>
