@@ -3,10 +3,6 @@
   justify-content: space-between;
 }
 
-.body {
-  margin-bottom: 50px;
-}
-
 .footer {
   padding: var(--spacing-2);
   display: flex;
@@ -18,4 +14,5 @@
 
 .stamp {
   color: var(--primary);
+  flex: 0 0 auto;
 }

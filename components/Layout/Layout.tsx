@@ -15,7 +15,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <SocialIcons />
       <FolderTabs
         tabs={[
-          // { id: "portfolio", path: "/skills", text: "PORTFOLIO" },
+          // { path: "/projects", text: "PROJECTS" },
           { path: "/resume", text: "RESUME" },
           { path: "/", text: "HOME" },
         ]}

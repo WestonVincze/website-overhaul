@@ -1,22 +1,10 @@
 .resume {
   text-align: left;
 }
-.resume ul > li {
-  margin-bottom: 1rem;
-}
 .stickyNotes {
   display: flex;
   justify-content: center;
   column-gap: var(--spacing-2);
-}
-.skillStickers {
-  color: #fff;
-  display: flex;
-  row-gap: 1.2rem;
-  column-gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-content: left;
 }
 .columns {
   display: flex;

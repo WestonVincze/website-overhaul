@@ -2,10 +2,19 @@ import { ProjectDetails } from "./types";
 
 const websites: ProjectDetails[] = [
   {
-    title: "Personal Website v2",
+    title: "Personal Website",
     year: "2023",
     status: "in progress",
-    skills: ["React", "React", "React", "React", "React"],
+    skills: [
+      "NextJS",
+      "Vercel",
+      "React",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "ReactSpring",
+      "Jest",
+    ],
     description:
       "Revamping my old NextJS website with TypeScript integration, react-spring, new custom assets, and a 'fractal modlet' architecture pattern.",
     highlights: ["", "", "", ""],
