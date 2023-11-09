@@ -1,7 +1,20 @@
+import { IconNames } from "../Icons";
+
 const intro =
   "I am a passionate web developer backed by over 5 years of professional experience. I specialize in JavaScript libraries and frameworks with a strong proficiency in React and TypeScript.";
 
-const workExperience = [
+type WorkExperience = {
+  company: string;
+  title: string;
+  skills: IconNames[];
+  description: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  highlights: string[];
+};
+
+const workExperience: WorkExperience[] = [
   {
     company: "Auvik Networks",
     title: "Software Developer",
@@ -51,8 +64,8 @@ const workExperience = [
       "NextJS",
       "Redux",
       "NodeJS",
-      "Material UI",
-      "Chakra UI",
+      "MaterialUI",
+      "ChakraUI",
       "JIRA",
       "GitHub",
     ],
@@ -73,19 +86,19 @@ const workExperience = [
     company: "Richmond Day",
     title: "Full Stack Developer",
     skills: [
-      "jQuery",
+      "JQuery",
       "JavaScript",
       "HTML",
       "CSS",
       "Bootstrap",
-      "ASP.NET",
-      "C#",
-      "Entity Framework",
-      "AJAX",
+      "ASPnet",
+      "Csharp",
+      //"Entity Framework",
+      //"AJAX",
       "SQL",
       "WordPress",
       "PHP",
-      "Liquid",
+      //"Liquid",
       "JIRA",
       "GitHub",
     ],
@@ -104,7 +117,7 @@ const workExperience = [
     company: "Self Employed",
     title: "Freelance Web Developer",
     skills: [
-      "jQuery",
+      "JQuery",
       "JavaScript",
       "HTML",
       "CSS",
@@ -134,14 +147,14 @@ const workExperience = [
     skills: [
       "VueJS",
       "React",
-      "jQuery",
+      "JQuery",
       "JavaScript",
       "HTML",
       "CSS",
       "Bootstrap",
-      "ASP.NET",
-      "C#",
-      "Entity Framework",
+      "ASPnet",
+      "Csharp",
+      //"Entity Framework",
       "SQL",
       "WordPress",
       "PHP",
@@ -164,13 +177,13 @@ const workExperience = [
     company: "PWC Technology Services, Inc",
     title: "Software Developer Intern",
     skills: [
-      "jQuery",
+      "JQuery",
       "JavaScript",
       "HTML",
       "CSS",
       "Bootstrap",
-      "AJAX",
-      "MySQL",
+      //"AJAX",
+      //"MySQL",
       "PHP",
     ],
     description:
@@ -213,7 +226,12 @@ const skillHighlights = [
   "Adept with CI/CD deployment workflows",
 ];
 
-const technicalSkills = [
+type TechnicalSkill = {
+  title: string;
+  skills: string[];
+};
+
+const technicalSkills: TechnicalSkill[] = [
   {
     title: "Languages",
     skills: [
@@ -291,7 +309,7 @@ const technicalSkills = [
 ];
 
 const hobbies = [
-  "<a href=''>Game Development</a>",
+  "Game Development",
   "Drawing & Animation",
   "World Building",
   "Improv & TTRPG`s",
