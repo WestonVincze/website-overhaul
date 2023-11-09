@@ -33,6 +33,7 @@ export const useTypewriter = ({
 
   useEffect(() => {
     if (isDelayed) return;
+    setOnDoneTriggered(false);
     if (playRetypeAnimation) setIsDeleting(typed.length > 0);
     else setTyped("");
     // TODO: something isn't working here
