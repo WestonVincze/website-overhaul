@@ -96,13 +96,16 @@
     transform: rotate3d(0, 0, 0, 0.1turn) translateZ(0px);
   }
   25% {
-    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px) translateZ(0px);
+    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px)
+      translateZ(0px);
   }
   35% {
-    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px) translateZ(20px);
+    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px)
+      translateZ(20px);
   }
   50% {
-    transform: rotate3d(0, 0, 0, 0.1turn) translateX(1px) translateY(-1px) translateZ(60px);
+    transform: rotate3d(0, 0, 0, 0.1turn) translateX(1px) translateY(-1px)
+      translateZ(60px);
   }
   100% {
     transform: rotate3d(0, 0, 0, 0.1turn) translateZ(60px);
@@ -150,9 +153,11 @@
   color: var(--font);
   opacity: 0;
   transform: translateY(20%);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.sticker:hover .text, .sticker:active .text, .sticker:focus .text {
+.sticker:hover .text,
+.sticker:active .text,
+.sticker:focus .text {
   position: absolute;
   bottom: -1rem;
   left: auto;
