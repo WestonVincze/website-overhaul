@@ -1,0 +1,7 @@
+.skillStickers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 65px); /* TODO: dynamically populate this value based on StickyNote height */
+  grid-gap: 32px;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}

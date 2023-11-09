@@ -3,11 +3,13 @@
   min-height: 120px;
   background: #fff;
   background: url("/images/linedpaper.png") repeat;
-  /*line-height: 1.62em;*/
   padding: 20px;
   margin-bottom: 35px;
   filter: var(--shadow);
   line-height: 1.5rem;
+}
+.paper ul > li {
+  margin-bottom: 1rem;
 }
 
 .paperLeft {

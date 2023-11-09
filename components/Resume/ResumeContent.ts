@@ -208,24 +208,6 @@ const education = {
   endDate: "May 2018",
 };
 
-// not used
-const skillHighlights = [
-  "Superb with state management patterns",
-  "Well-versed with RESTful API methodology",
-  "Implements intuitive and responsive UI/UX",
-  "Ensures accessibility compliance (WCAG)",
-  "Quick to learn new frameworks and tech",
-  "Leverages and customizes open-source tools",
-  "Capably communicates across all skill levels",
-  "Thoroughly tests and documents code",
-  "Emphasizes type safety and code clarity",
-  "Develops DRY-minded modular code",
-  "Adheres to source control best practices",
-  "Proficient with task management tools",
-  "Confidently handles client consultations",
-  "Adept with CI/CD deployment workflows",
-];
-
 type TechnicalSkill = {
   title: string;
   skills: string[];
