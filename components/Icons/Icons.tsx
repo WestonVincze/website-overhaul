@@ -858,4 +858,4 @@ export const Icons: Record<string, Icon> = {
   },
 };
 
-export type IconName = keyof typeof Icons;
+export type IconNames = keyof typeof Icons;

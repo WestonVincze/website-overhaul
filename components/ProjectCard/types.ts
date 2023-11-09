@@ -1,7 +1,7 @@
-import { IconName } from "../Icons";
+import { IconNames } from "../Icons";
 
 export type SocialLink = {
-  icon: IconName;
+  icon: IconNames;
   text: string;
   url: string;
 };
@@ -10,7 +10,7 @@ export type ProjectDetails = {
   title: string;
   year: string;
   status: "in progress" | "complete";
-  skills: IconName[];
+  skills: IconNames[];
   description: string;
   highlights: string[];
   links?: SocialLink[];

@@ -3,7 +3,7 @@ import { ResumeContent } from "./ResumeContent";
 import { LinedPaper, LinedPaperProps } from "../LinedPaper";
 import { PaperStack } from "../PaperStack";
 import { StickyNote } from "../StickyNote";
-import { IconName, Icons } from "../Icons";
+import { IconNames, Icons } from "../Icons";
 
 const skillPapers: LinedPaperProps[] = ResumeContent.technicalSkills.map(
   (skillType) => ({
@@ -28,7 +28,7 @@ const workExperiencePapers: LinedPaperProps[] =
             <StickyNote
               key={i}
               variant="sticker"
-              icon={icon as IconName}
+              icon={icon as IconNames}
               size="small"
               text={Icons[icon].title}
             />
