@@ -12,12 +12,12 @@ const small = {
   fontSize: "80%",
 };
 
-type path = "/" | "/resume" | "/skills";
+type Path = "/" | "/resume" | "/projects";
 
 const subHeadingText = {
   "/": "Web Developer",
   "/resume": "My Resume",
-  "/skills": "My Skills",
+  "/projects": "My Projects",
 };
 
 enum AnimationStates {
@@ -29,7 +29,7 @@ enum AnimationStates {
 }
 
 export const AnimatedHeading = () => {
-  const currentPage = usePathname() as path;
+  const currentPage = usePathname() as Path;
   const isHomeScene = currentPage === "/";
   const [animationState, setAnimationState] = useState(
     AnimationStates.greeting,

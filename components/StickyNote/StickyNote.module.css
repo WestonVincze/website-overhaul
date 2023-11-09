@@ -23,16 +23,18 @@
 
 /** SIZES *****************************************/
 .small {
-  --width: 45px;
-  --height: 45px;
-  --icon-width: 25px;
-  font-size: 12px;
+  --width: 65px;
+  --height: 65px;
+  --icon-width: 35px;
+  font-size: 11px;
+  line-height: 11px;
 }
 .medium {
   --width: 100px;
   --height: 100px;
   --icon-width: 100px;
-  font-size: 15px;
+  font-size: 13px;
+  line-height: 13px;
 }
 
 /** TAPED *****************************************/
@@ -41,7 +43,7 @@
   transform-style: preserve-3d;
 }
 .taped.small {
-  --fold-height: 10px;
+  --fold-height: 18px;
   --transform: rotateX(20deg) translateY(-2px);
   --box-shadow: inset 0 4px 8px var(--primary-darker);
 }
@@ -76,6 +78,9 @@
     box-shadow 0.6s ease;
   transform-origin: top;
   padding-top: calc(var(--fold-height) / 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .taped:hover .text,
 .taped:active .text {
@@ -89,13 +94,16 @@
     transform: rotate3d(0, 0, 0, 0.1turn) translateZ(0px);
   }
   25% {
-    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px) translateZ(0px);
+    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px)
+      translateZ(0px);
   }
   35% {
-    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px) translateZ(20px);
+    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px)
+      translateZ(20px);
   }
   50% {
-    transform: rotate3d(0, 0, 0, 0.1turn) translateX(1px) translateY(-1px) translateZ(60px);
+    transform: rotate3d(0, 0, 0, 0.1turn) translateX(1px) translateY(-1px)
+      translateZ(60px);
   }
   100% {
     transform: rotate3d(0, 0, 0, 0.1turn) translateZ(60px);
@@ -132,7 +140,7 @@
   cursor: help;
 }
 .sticker .content svg {
-  height: 80%;
+  height: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,9 +151,11 @@
   color: var(--font);
   opacity: 0;
   transform: translateY(20%);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.sticker:hover .text, .sticker:active .text, .sticker:focus .text {
+.sticker:hover .text,
+.sticker:active .text,
+.sticker:focus .text {
   position: absolute;
   bottom: -1rem;
   left: auto;

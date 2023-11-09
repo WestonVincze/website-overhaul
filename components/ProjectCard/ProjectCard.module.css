@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body {
+  margin-bottom: 50px;
+}
+
+.footer {
+  padding: var(--spacing-2);
+  display: flex;
+  column-gap: var(--spacing-2);
+  position: absolute;
+  bottom: -75px;
+  left: 0;
+}
+
+.stamp {
+  color: var(--primary);
+}

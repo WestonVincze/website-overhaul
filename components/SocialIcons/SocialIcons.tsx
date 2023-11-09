@@ -9,17 +9,17 @@ export const SocialIcons = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <StickyNote size="small" icon="GitHub" />
+        <StickyNote size="small" icon="GitHub" text="github" />
       </a>
       <a
         href="https://www.linkedin.com/in/weston-vincze/"
         target="_blank"
         rel="noreferrer"
       >
-        <StickyNote size="small" icon="Linkedin" />
+        <StickyNote size="small" icon="Linkedin" text="linkedin" />
       </a>
       <a href="mailto:westonvincze@gmail.com" target="_blank" rel="noreferrer">
-        <StickyNote size="small" icon="Email" />
+        <StickyNote size="small" icon="Email" text="say hi" />
       </a>
     </div>
   );
