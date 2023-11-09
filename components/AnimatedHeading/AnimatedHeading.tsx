@@ -56,6 +56,7 @@ export const AnimatedHeading = () => {
   }, []);
 
   const handleDoneTypingSubHeading = (): void => {
+    if (animationState >= AnimationStates.hideGreeting) return;
     setTimeout(() => setAnimationState(AnimationStates.hideGreeting), 500);
   };
 
