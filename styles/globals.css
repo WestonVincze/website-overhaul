@@ -108,6 +108,7 @@ a {
     --medium-font-size: 25px;
     --small-font-size: 15px;
     --folder-tab-height: 45px;
+    --folder-tab-offset: 30px;
   }
 }
 
