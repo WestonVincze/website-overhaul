@@ -9,7 +9,7 @@ export const SocialIcons = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <StickyNote size="small" icon="Github" />
+        <StickyNote size="small" icon="GitHub" />
       </a>
       <a
         href="https://www.linkedin.com/in/weston-vincze/"

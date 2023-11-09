@@ -7,13 +7,20 @@
   column-gap: var(--spacing-2);
   margin-top: var(--spacing-2);
 }
+.skillStickers {
+  color: #fff;
+  display: flex;
+  column-gap: 1rem;
+  row-gap: 1.2rem;
+  flex-wrap: wrap;
+}
 .columns {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .columns > * {
-  width: 33%;
+  width: 50%;
 }
 
 @media screen and (max-width: 490px) {
