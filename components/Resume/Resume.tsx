@@ -3,35 +3,37 @@ import { ResumeContent } from "./ResumeContent";
 import { LinedPaper, LinedPaperProps } from "../LinedPaper";
 import { PaperStack } from "../PaperStack";
 import { StickyNote } from "../StickyNote";
+import { IconName, Icons } from "../Icons";
 
 const skillPapers: LinedPaperProps[] = ResumeContent.technicalSkills.map(
-  (skills) => ({
-    title: skills.title,
+  (skillType) => ({
     children: (
-      <div className={styles.columns}>
-        <div>
-          <h3>Expert</h3>
-          <p>{skills.expert.map((skill) => skill).join(", ")}</p>
-        </div>
-        <div>
-          <h3>Advanced</h3>
-          <p>{skills.advanced.map((skill) => skill).join(", ")}</p>
-        </div>
-        <div>
-          <h3>Intermediate</h3>
-          <p>{skills.intermediate.map((skill) => skill).join(", ")}</p>
-        </div>
-      </div>
+      <>
+        <h2>{skillType.title}</h2>
+        <p>{skillType.skills.map((skill) => skill).join(", ")}</p>
+      </>
     ),
   }),
 );
 
 const workExperiencePapers: LinedPaperProps[] =
   ResumeContent.workExperience.map((role) => ({
-    title: `${role.title} - ${role.company}`,
+    title: role.title,
     children: (
       <>
+        <h3>{role.company}</h3>
         <h4>{`${role.startDate} - ${role.endDate}`}</h4>
+        <div className={styles.skillStickers}>
+          {role.skills.map((icon, i) => (
+            <StickyNote
+              key={i}
+              variant="sticker"
+              icon={icon as IconName}
+              size="small"
+              text={Icons[icon].title}
+            />
+          ))}
+        </div>
         <p>{role.description}</p>
         <ul>
           {role.highlights.map((h, i) => (
@@ -42,14 +44,14 @@ const workExperiencePapers: LinedPaperProps[] =
     ),
   }));
 
-export const Resume = (): JSX.Element => (
+export const Resume = () => (
   <div className={styles.resume}>
     <div className={styles.stickyNotes}>
       <a href="/images/WestonVinczeResume.pdf" download>
-        <StickyNote icon="PDF" text="Download" />
+        <StickyNote icon="PDF" text="Download" size="small" />
       </a>
       <a href="/images/WestonVinczeResume.pdf" target="_blank">
-        <StickyNote icon="PDF" text="View" />
+        <StickyNote icon="PDF" text="View" size="small" />
       </a>
     </div>
     <h1>Summary.</h1>

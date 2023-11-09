@@ -2,30 +2,21 @@ import React, { useState } from "react";
 import style from "./FolderTabs.module.css";
 import { FolderTab, FolderTabProps } from "./FolderTab";
 import { PaperPreview } from "./PaperPreview";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
-/**
- * @param tabs
- */
-export const FolderTabs = ({
-  tabs,
-  ...props
-}: FolderTabsProps): JSX.Element => {
-  const router = useRouter();
-  const currentPage = router.pathname.split("").splice(1).join("");
+export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
+  const currentPage = usePathname();
 
-  const [activeTab, setActiveTab] = useState(
-    currentPage === "" ? "home" : currentPage,
-  );
+  const [activeTab, setActiveTab] = useState(currentPage);
   const [hoverTab, setHoverTab] = useState("");
 
-  function handleClick(id: string): void {
-    if (activeTab === id) return;
-    setActiveTab(id);
+  function handleClick(path: string): void {
+    if (activeTab === path) return;
+    setActiveTab(path);
   }
 
-  function handleHover(id: string): void {
-    setHoverTab(id);
+  function handleHover(path: string): void {
+    setHoverTab(path);
   }
 
   return (
@@ -33,23 +24,19 @@ export const FolderTabs = ({
       {tabs.map((tab, i) => (
         <React.Fragment key={i}>
           <PaperPreview
-            hovering={hoverTab === tab.id && hoverTab !== activeTab}
-            active={tab.id === activeTab}
+            hovering={hoverTab === tab.path && hoverTab !== activeTab}
+            active={tab.path === activeTab}
             key={i}
           />
           <span
-            onClick={() => handleClick(tab.id)}
-            onMouseEnter={() => handleHover(tab.id)}
+            onClick={() => handleClick(tab.path)}
+            onMouseEnter={() => handleHover(tab.path)}
             onMouseLeave={() => handleHover("")}
-            style={{ zIndex: i }}
-            key={tab.id}
           >
             <FolderTab
-              id={tab.id}
               path={tab.path}
               text={tab.text}
-              isActive={activeTab === tab.id}
-              key={tab.id}
+              isActive={activeTab === tab.path}
             />
           </span>
         </React.Fragment>

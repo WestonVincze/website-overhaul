@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Container.module.css";
 
 interface ContainerProps {
@@ -10,7 +9,7 @@ export const Container = ({
   children,
   centered = false,
   ...props
-}: ContainerProps): JSX.Element => {
+}: ContainerProps) => {
   return (
     <div
       className={`${styles.container} ${centered ? "text-center" : ""}`}

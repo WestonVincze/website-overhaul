@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatedWord } from "../AnimatedWord";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { animated, useSpring } from "react-spring";
 import { Typewriter } from "../Typewriter";
 import { useAppState } from "../AppStateProvider";
@@ -12,7 +12,7 @@ const small = {
   fontSize: "80%",
 };
 
-type route = "/" | "/resume" | "/projects";
+type Path = "/" | "/resume" | "/projects";
 
 const subHeadingText = {
   "/": "Web Developer",
@@ -24,23 +24,23 @@ enum AnimationStates {
   greeting,
   name,
   subHeading,
+  hideGreeting,
+  done,
 }
 
-export const AnimatedHeading = (): JSX.Element => {
-  const router = useRouter();
-  const [AnimationState, setAnimationState] = useState(
+export const AnimatedHeading = () => {
+  const currentPage = usePathname() as Path;
+  const isHomeScene = currentPage === "/";
+  const [animationState, setAnimationState] = useState(
     AnimationStates.greeting,
   );
   const { appState } = useAppState();
-  const [showGreeting, setShowGreeting] = useState(true);
-  const [greetingComplete, setGreetingComplete] = useState(false);
 
   useEffect(() => {
-    if (!greetingComplete) return;
+    if (animationState !== AnimationStates.done) return;
     appState.send("INTRO_ANIMATION_COMPLETE");
-  }, [greetingComplete, appState]);
+  }, [animationState, appState]);
 
-  // This is a *bit* of a hack, but it works for now
   useEffect(() => {
     const nameStateDelay = setTimeout(() => {
       setAnimationState(AnimationStates.name);
@@ -56,22 +56,21 @@ export const AnimatedHeading = (): JSX.Element => {
   }, []);
 
   const handleDoneTypingSubHeading = (): void => {
-    setTimeout(() => setShowGreeting(false), 500);
+    setTimeout(() => setAnimationState(AnimationStates.hideGreeting), 500);
   };
 
   const greetingStyle = useSpring({
-    opacity: showGreeting ? 1 : 0,
-    height: showGreeting ? "8svh" : "0",
-    display: greetingComplete ? "none" : "block",
+    margin: 0,
+    opacity: animationState >= AnimationStates.hideGreeting ? 0 : 1,
+    height: animationState >= AnimationStates.hideGreeting ? "0" : "5svh",
     onRest: () => {
-      if (!showGreeting) setGreetingComplete(true);
+      if (animationState === AnimationStates.hideGreeting)
+        setAnimationState(AnimationStates.done);
     },
   });
 
-  const path = router.pathname as route;
-  const isHomeScene = path === "/";
   const animatedStyle = useSpring({
-    ...(isHomeScene || showGreeting ? large : small),
+    ...(isHomeScene || animationState < AnimationStates.done ? large : small),
   });
 
   return (
@@ -84,11 +83,11 @@ export const AnimatedHeading = (): JSX.Element => {
           size={"large"}
         />
       </animated.div>
-      {AnimationState >= AnimationStates.name && (
+      {animationState >= AnimationStates.name && (
         <span
           style={{
             fontSize: "var(--animated-font-size)",
-            lineHeight: "var(--animated-font-size",
+            lineHeight: "var(--animated-font-size)",
           }}
         >
           <animated.div style={animatedStyle}>
@@ -96,9 +95,9 @@ export const AnimatedHeading = (): JSX.Element => {
           </animated.div>
         </span>
       )}
-      {AnimationState >= AnimationStates.subHeading && (
+      {animationState >= AnimationStates.subHeading && (
         <Typewriter
-          text={subHeadingText[path]}
+          text={subHeadingText[currentPage]}
           inlineTag={true}
           centered={true}
           onDoneTyping={() => handleDoneTypingSubHeading()}

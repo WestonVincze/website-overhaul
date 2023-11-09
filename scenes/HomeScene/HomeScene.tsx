@@ -1,9 +1,8 @@
-import React from "react";
-import { Container } from "../../components/Container";
-import { AnimatedContent } from "../../components/AnimatedContent";
-import { WebDevWeston } from "../../components/WebDevWeston";
+import { Container } from "@/components/Container";
+import { AnimatedContent } from "@/components/AnimatedContent";
+import { WebDevWeston } from "@/components/WebDevWeston";
 
-export const HomeScene = (): JSX.Element => {
+export const HomeScene = () => {
   return (
     <Container centered={true}>
       <AnimatedContent>

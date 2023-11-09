@@ -1,24 +1,26 @@
-import React from "react";
+"use client";
+
 import { FolderBody } from "../FolderBody";
 import { FolderTabs } from "../FolderTabs";
 import { SocialIcons } from "../SocialIcons";
+import { AppStateProvider } from "../AppStateProvider";
 
 interface LayoutProps {
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
-export const Layout = ({ children }: LayoutProps): JSX.Element => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
-    <main>
+    <AppStateProvider>
       <SocialIcons />
       <FolderTabs
         tabs={[
-          { id: "projects", path: "/projects", text: "PROJECTS" },
-          { id: "resume", path: "/resume", text: "RESUME" },
-          { id: "home", path: "/", text: "HOME" },
+          // { id: "portfolio", path: "/skills", text: "PORTFOLIO" },
+          { path: "/resume", text: "RESUME" },
+          { path: "/", text: "HOME" },
         ]}
       />
       <FolderBody>{children}</FolderBody>
-    </main>
+    </AppStateProvider>
   );
 };

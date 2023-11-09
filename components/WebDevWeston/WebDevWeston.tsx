@@ -1,10 +1,9 @@
-import React from "react";
 import Image from "next/image";
 import styles from "./WebDevWeston.module.css";
 import webDevWestonGIF from "../../public/images/web-dev-weston.gif";
 import { Browser } from "./Browser";
 
-export const WebDevWeston = (): JSX.Element => {
+export const WebDevWeston = () => {
   return (
     <div className={styles.weston}>
       <Image

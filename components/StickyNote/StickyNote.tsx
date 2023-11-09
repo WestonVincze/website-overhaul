@@ -3,7 +3,7 @@ import { Icons, IconName } from "../Icons";
 
 interface StickyNoteProps {
   text?: string;
-  icon?: IconName;
+  icon: IconName;
   variant?: "taped" | "sticker";
   size?: "medium" | "small";
 }
@@ -15,12 +15,13 @@ export const StickyNote = ({
   size = "medium",
 }: StickyNoteProps) => {
   return (
-    <div className={`${styles.stickyNote} ${styles[variant]} ${styles[size]}`}>
-      <div className={styles.content}>{icon && Icons[icon]()}</div>
-      {variant === "taped" && (
-        <div className={styles.fold}>
-          <>{text}</>
-        </div>
+    <div
+      className={`${styles.stickyNote} ${styles[variant]} ${styles[size]}`}
+      aria-label={Icons[icon] ? Icons[icon]?.ariaLabel : "Sticky Note Graphic"}
+    >
+      <div className={styles.content}>{Icons[icon] && Icons[icon].icon()}</div>
+      {(variant === "taped" || text) && (
+        <div className={styles.text}>{text}</div>
       )}
     </div>
   );

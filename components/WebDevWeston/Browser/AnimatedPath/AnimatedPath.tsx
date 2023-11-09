@@ -1,4 +1,3 @@
-import React from "react";
 import { useSpring, animated } from "react-spring";
 
 interface AnimatedPathProps {
@@ -17,7 +16,7 @@ export const AnimatedPath = ({
   d,
   transform = "translate(0,0)",
   delay = 0,
-}: AnimatedPathProps): JSX.Element => {
+}: AnimatedPathProps) => {
   const start = { opacity: 0.5, transform: `${transform} scale(0)` };
   const end = { opacity: 1, transform: `${transform} scale(1)` };
   const animatedStyle = useSpring({

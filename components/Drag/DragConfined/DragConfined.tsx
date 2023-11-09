@@ -1,4 +1,3 @@
-import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { DragProps } from "../types";
@@ -16,7 +15,7 @@ export const DragConfined = ({
   offsetRight = 100,
   offsetTop = -50,
   offsetBottom = 50,
-}: DragConfinedProps): JSX.Element => {
+}: DragConfinedProps) => {
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
 
   const bind = useDrag(

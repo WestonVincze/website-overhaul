@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Browser.module.css";
 import { AnimatedPath } from "./AnimatedPath";
 import { AnimatedScreen } from "./AnimatedScreen";
@@ -18,7 +18,7 @@ export const Browser = ({
   windowBorderColor = "#FD8469",
   headerColor = "#FD8469",
   buttonColor = "#FFF",
-}: BrowserProps): JSX.Element => {
+}: BrowserProps) => {
   const [toggle, setToggle] = useState(false);
   const [toggleScreen, setToggleScreen] = useState(false);
   const { appState } = useAppState();

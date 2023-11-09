@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./LinedPaper.module.css";
 
 export interface LinedPaperProps {
@@ -11,7 +10,7 @@ export const LinedPaper = ({
   title,
   orientLeft = true,
   children,
-}: LinedPaperProps): JSX.Element => {
+}: LinedPaperProps) => {
   const orientation = orientLeft ? styles.paperLeft : styles.paperRight;
 
   return (
