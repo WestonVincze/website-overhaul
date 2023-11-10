@@ -100,7 +100,7 @@ a {
   text-align: center;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
   :root {
     --animated-font-size: 75px;
     --large-font-size: 35px;
@@ -110,11 +110,23 @@ a {
     --folder-tab-offset: 30px;
   }
 }
+@media (max-width: 660px) {
+  :root {
+    --large-font-size: 33px;
+    --medium-font-size: 22px;
+    --small-font-size: 13px;
+  }
+}
+
+@media (max-width: 590px) {
+  :root {
+    --folder-tab-offset: 75px;
+  }
+}
 
 @media (max-width: 490px) {
   :root {
     --animated-font-size: 65px;
-    --folder-tab-offset: 70px;
   }
 }
 
@@ -127,21 +139,28 @@ a {
   }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 385px) {
   :root {
     --animated-font-size: 45px;
     --large-font-size: 28px;
     --medium-font-size: 20px;
-    --small-font-size: 10px;
+    --small-font-size: 12px;
   }
 }
 
-@media (max-width: 310px) {
+@media (max-width: 350px) {
   :root {
     --animated-font-size: 35px;
     --large-font-size: 20px;
-    --medium-font-size: 18px;
-    --small-font-size: 10px;
+    --medium-font-size: 16px;
+    --small-font-size: 12px;
+    --folder-tab-height: 35px;
+  }
+}
+
+@media (max-width: 300px) {
+  :root {
+    --medium-font-size: 13px;
   }
 }
 

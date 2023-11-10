@@ -16,10 +16,10 @@ export const ProjectCard = ({
   links,
 }: ProjectCardProps) => {
   return (
-    <LinedPaper>
+    <LinedPaper style={links && { marginBottom: "100px" }}>
       <section className={styles.header}>
         <h2>
-          {title} - {year}
+          {title} ({year})
         </h2>
         <h3 className={styles.stamp}>[{status}]</h3>
       </section>

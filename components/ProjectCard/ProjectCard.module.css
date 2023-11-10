@@ -4,11 +4,11 @@
 }
 
 .footer {
-  padding: var(--spacing-2);
+  margin: var(--spacing-2);
   display: flex;
   column-gap: var(--spacing-2);
   position: absolute;
-  bottom: -75px;
+  top: calc(100% - 40px);
   left: 0;
 }
 
