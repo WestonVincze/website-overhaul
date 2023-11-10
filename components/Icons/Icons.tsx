@@ -67,19 +67,10 @@ export const Icons: Record<string, Icon> = {
     title: "Download",
     ariaLabel: "Download icon",
     icon: () => (
-      <svg
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 20 19"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M15 15h.01M4 12H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-3M9.5 1v10.93m4-3.93-4 4-4-4"
-        />
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
+          <path d="M23 22a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h20a1 1 0 0 1 1 1ZM13.31 18.688a2 2 0 0 1-2.62 0l-4.82-4.177C4.473 13.3 5.33 11 7.18 11H9V3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v8h1.82c1.85 0 2.708 2.299 1.31 3.511l-4.82 4.177Zm-1.965-2.079a1 1 0 0 0 1.31 0L16.819 13H14.5a1.5 1.5 0 0 1-1.5-1.5V3h-2v8.5A1.5 1.5 0 0 1 9.5 13H7.18l4.165 3.61Z" />
+        </g>
       </svg>
     ),
   },
@@ -965,6 +956,18 @@ export const Icons: Record<string, Icon> = {
             d="M147.66 311.7 192 268.07l-15.29-13.89-14.45 14.59h-1.68v-83.35c0-10.52 8.56-19.08 19.08-19.08h15.15c10.52 0 19.08 8.56 19.08 19.08v8.84h29.47v-11.08c0-19.08-15.43-34.52-34.52-34.52h-39.29c-19.08 0-34.52 15.43-34.52 34.52v85.45h-1.12l-16.84-14.45-13.33 13.89 43.92 43.63z"
             className="st0"
           />
+        </g>
+      </svg>
+    ),
+  },
+  Eye: {
+    title: "View",
+    ariaLabel: "Eye icon",
+    icon: () => (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
+          <path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-1 3a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+          <path d="M21.83 11.28C19.542 7.153 15.812 5 12 5c-3.812 0-7.542 2.152-9.83 6.28a1.376 1.376 0 0 0-.01 1.308C4.412 16.8 8.163 19 12 19c3.837 0 7.588-2.199 9.84-6.412a1.376 1.376 0 0 0-.01-1.307ZM12 17c-2.939 0-5.96-1.628-7.908-5.051C6.069 8.596 9.073 7 12 7c2.927 0 5.931 1.596 7.908 4.949C17.96 15.372 14.94 17 12 17Z" />
         </g>
       </svg>
     ),
