@@ -6,5 +6,5 @@
   ); /* TODO: dynamically populate this value based on StickyNote height */
   grid-gap: 32px;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
