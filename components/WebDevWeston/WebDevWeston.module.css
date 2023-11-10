@@ -1,8 +1,8 @@
 .weston {
   margin: auto;
   position: relative;
-  width: 400px;
+  width: 35vh;
   height: auto;
-  max-width: 100%;
-  margin-top: var(--spacing-1);
+  max-width: 80vw;
+  margin-top: 4vh;
 }
