@@ -7,9 +7,11 @@ import { useAppState } from "../AppStateProvider";
 
 const large = {
   fontSize: "100%",
+  lineHeight: "100%",
 };
 const small = {
   fontSize: "80%",
+  lineHeight: "80%",
 };
 
 type Path = "/" | "/resume" | "/projects";
@@ -84,18 +86,19 @@ export const AnimatedHeading = () => {
           size={"large"}
         />
       </animated.div>
-      {animationState >= AnimationStates.name && (
-        <span
-          style={{
-            fontSize: "var(--animated-font-size)",
-            lineHeight: "var(--animated-font-size)",
-          }}
-        >
+      <span
+        style={{
+          fontSize: "var(--animated-font-size)",
+          lineHeight: "var(--animated-font-size)",
+          fontFamily: "var(--amatic)",
+        }}
+      >
+        {animationState >= AnimationStates.name && (
           <animated.div style={animatedStyle}>
             <AnimatedWord word={"Weston Vincze"} />
           </animated.div>
-        </span>
-      )}
+        )}
+      </span>
       {animationState >= AnimationStates.subHeading && (
         <Typewriter
           text={subHeadingText[currentPage]}

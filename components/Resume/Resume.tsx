@@ -38,10 +38,10 @@ export const Resume = () => (
   <div className={styles.resume}>
     <div className={styles.stickyNotes}>
       <a href="/images/WestonVinczeResume.pdf" download>
-        <StickyNote icon="PDF" text="Download" size="small" />
+        <StickyNote icon="Download" text="Download" size="small" />
       </a>
       <a href="/images/WestonVinczeResume.pdf" target="_blank">
-        <StickyNote icon="PDF" text="View" size="small" />
+        <StickyNote icon="Eye" text="View" size="small" />
       </a>
     </div>
     <h1>Summary.</h1>
