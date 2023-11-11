@@ -10,18 +10,13 @@
 
 :root {
   /* colors */
-  --font: #160300;
+  --font-color: #160300;
   --primary: #fd8469;
   --primary-dark: #fd7456;
   --primary-darker: #fc6442;
   --secondary: #816381;
   --accent: #e9c696;
   --accent-dark: #ba9e78;
-  /* not currently in use
-  --accent-dark-2: #372f24;
-  --accent-dark-2-alpha: #372f2480;
-  --accent-hover: #ddb16f;
-  */
 
   /* color names */
   --folder: var(--accent);
@@ -57,7 +52,7 @@
 /***** Global *****/
 html {
   background-color: var(--background);
-  color: var(--font);
+  color: var(--font-color);
   position: relative;
   font-size: var(--small-font-size);
 }
@@ -93,6 +88,23 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+ul > li {
+  padding-left: 1rem;
+  text-indent: -1em;
+  margin-bottom: .5rem;
+}
+ul > li:before {
+  color: var(--primary);
+  content: "❖";
+  padding-right: 5px;
+
 }
 
 .text-center {

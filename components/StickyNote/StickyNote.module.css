@@ -146,7 +146,7 @@
   transform: translate(-50%, -50%);
 }
 .sticker .text {
-  color: var(--font);
+  color: var(--font-color);
   transform: translateY(25%);
   transition: all 0.5s ease-in-out;
   position: absolute;
