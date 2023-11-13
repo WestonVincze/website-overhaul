@@ -18,6 +18,13 @@ export const SocialIcons = () => {
       >
         <StickyNote size="small" icon="Linkedin" text="linkedin" />
       </a>
+      <a
+        href="https://codesandbox.io/u/WestonVincze"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <StickyNote size="small" icon="CodeSandbox" text="sandbox" />
+      </a>
       <a href="mailto:westonvincze@gmail.com" target="_blank" rel="noreferrer">
         <StickyNote size="small" icon="Email" text="say hi" />
       </a>
