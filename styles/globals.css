@@ -98,13 +98,12 @@ ul {
 ul > li {
   padding-left: 1rem;
   text-indent: -1em;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 ul > li:before {
   color: var(--primary);
   content: "❖";
   padding-right: 5px;
-
 }
 
 .text-center {
