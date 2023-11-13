@@ -39,11 +39,11 @@ export const AnimatedHeading = () => {
   const { appState } = useAppState();
 
   useEffect(() => {
-    if (animationState !== AnimationStates.done) return;
-    appState.send("INTRO_ANIMATION_COMPLETE");
-  }, [animationState, appState]);
-
-  useEffect(() => {
+    if (window.location.hash) {
+      // skip animation if url contains a hash
+      setAnimationState(AnimationStates.done);
+      return;
+    }
     const nameStateDelay = setTimeout(() => {
       setAnimationState(AnimationStates.name);
     }, 1500);
@@ -56,6 +56,11 @@ export const AnimatedHeading = () => {
       clearTimeout(titleStateDelay);
     };
   }, []);
+
+  useEffect(() => {
+    if (animationState !== AnimationStates.done) return;
+    appState.send("INTRO_ANIMATION_COMPLETE");
+  }, [animationState, appState]);
 
   const handleDoneTypingSubHeading = (): void => {
     if (animationState >= AnimationStates.hideGreeting) return;

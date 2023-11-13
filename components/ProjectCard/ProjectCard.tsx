@@ -4,22 +4,26 @@ import { StickyNote } from "../StickyNote";
 import { ProjectDetails } from "./types";
 import { SkillStickers } from "../SkillStickers";
 
-type ProjectCardProps = ProjectDetails;
+interface ProjectCardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    Omit<ProjectDetails, "anchorName"> {}
 
 export const ProjectCard = ({
-  title,
+  id,
+  projectName,
   year,
   status,
   skills,
   description,
+  contributions,
   highlights,
   links,
 }: ProjectCardProps) => {
   return (
-    <LinedPaper style={links && { marginBottom: "100px" }}>
+    <LinedPaper id={id} style={links && { marginBottom: "100px" }}>
       <section className={styles.header}>
         <h2>
-          {title} ({year})
+          {projectName} ({year})
         </h2>
         <h3 className={styles.stamp}>[{status}]</h3>
       </section>
@@ -27,6 +31,12 @@ export const ProjectCard = ({
       <section className={styles.body}>
         <h4>Description</h4>
         <p>{description}</p>
+        {contributions && (
+          <>
+            <h4>My Contributions</h4>
+            <p>{contributions}</p>
+          </>
+        )}
         <h4>Highlights</h4>
         <ul>
           {highlights.map((h, i) => (

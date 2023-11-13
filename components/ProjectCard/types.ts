@@ -7,11 +7,13 @@ export type SocialLink = {
 };
 
 export type ProjectDetails = {
-  title: string;
+  projectName: string;
+  anchorTag?: string;
   year: string;
   status: "in progress" | "complete";
   skills: IconNames[];
   description: string;
+  contributions?: string;
   highlights: string[];
   links?: SocialLink[];
 };

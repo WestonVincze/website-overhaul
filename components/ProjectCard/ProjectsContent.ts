@@ -2,7 +2,8 @@ import { ProjectDetails } from "./types";
 
 const websites: ProjectDetails[] = [
   {
-    title: "Personal Website",
+    projectName: "Portfolio Website",
+    anchorTag: "portfolio-website-2023",
     year: "2023",
     status: "in progress",
     skills: [
@@ -42,7 +43,8 @@ const websites: ProjectDetails[] = [
     ],
   },
   {
-    title: "Micro-Transaction Login Page",
+    projectName: "Micro-Transaction Login Page",
+    anchorTag: "microtransaction-login-page",
     year: "2023",
     status: "in progress",
     skills: [
@@ -77,7 +79,7 @@ const websites: ProjectDetails[] = [
   },
   /*
   {
-    title: "Wedding Website",
+    projectName: "Wedding Website",
     year: "2021",
     status: "complete",
     skills: ["WordPress", "HTML", "CSS", "JavaScript"],
@@ -86,7 +88,8 @@ const websites: ProjectDetails[] = [
   },
   */
   {
-    title: "We Sell Users",
+    projectName: "We Sell Users",
+    anchorTag: "we-sell-users",
     year: "2020",
     status: "complete",
     skills: [
@@ -117,7 +120,8 @@ const websites: ProjectDetails[] = [
     ],
   },
   {
-    title: "Dog Dojo",
+    projectName: "Dog Dojo",
+    anchorTag: "dog-dojo",
     year: "2020",
     status: "complete",
     skills: [
@@ -148,7 +152,8 @@ const websites: ProjectDetails[] = [
     ],
   },
   {
-    title: "Personal Website",
+    projectName: "Portfolio Website",
+    anchorTag: "portfolio-website-2019",
     year: "2019",
     status: "complete",
     skills: ["NextJS", "JavaScript", "HTML", "CSS", "Trello", "Illustrator"],
@@ -171,12 +176,15 @@ const websites: ProjectDetails[] = [
 
 const games: ProjectDetails[] = [
   {
-    title: "Dwarf Forges",
+    projectName: "Dwarf Forges",
+    anchorTag: "dwarf-forges",
     year: "2023",
     status: "in progress",
     skills: ["Unity", "Csharp", "Blender", "Figma"],
     description:
-      "Dwarf Forges is a 3D game being built with Untiy and planned to release in 2024. The team consists of 3 developers, 1 artist, 1 sound engineer. My role as a project manager and developer involves creating tickets, assembling meetings, leading collaborative brainstorming sessions, and completing development tasks. Dwarf Forges is a game in which you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars, imbuing them with special effects, and use them to create a variety of unique weapons. Use your crafted weapons to fend off the dwarves until there are none left!",
+      "Dwarf Forges is a 3D game being built with Untiy and planned to release in 2024. The team consists of 3 developers, 1 artist, 1 sound engineer. Dwarf Forges is a game in which you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars, imbuing them with special effects, and use them to create a variety of unique weapons. Use your crafted weapons to fend off the dwarves until there are none left!",
+    contributions:
+      "I am the team lead and a developer for this project. As the team lead I create tickets, assemble meetings, lead collaborative brainstorming sessions, document game mechanics and code standards, and guide team decisions. As a developer I implement various features (camera movement, animation logic, game state), manage the repository, and complete code reviews.",
     highlights: [
       "Physics based movement and object interactions",
       "Third person RTS Camera controls with locked and free roam camera states",
@@ -194,7 +202,7 @@ const games: ProjectDetails[] = [
   },
   /*
   {
-    title: "Stolen Creation",
+    projectName: "Stolen Creation",
     year: "2023",
     status: "in progress",
     skills: [],
@@ -210,14 +218,17 @@ const games: ProjectDetails[] = [
   },
   */
   {
-    title: "Tossed Away",
+    projectName: "Tossed Away",
+    anchorTag: "tossed-away",
     year: "2022",
     status: "complete",
     skills: ["Unity", "Csharp", "Aseprite", "Trello"],
     description:
-      "Tossed away was a Submission for the 7DRL Challenge (a one week game jam) in 2022. The team consisted of 2 developers, 2 artists, 1 sound designer, and 1 musician. I was a developer and technical artist for the project. My primary tasks involved implementing animation logic, item interactions, scene management, environment integration, and contributing to the character controller. In Tossed Away, you play as a skeleton who was summoned to fetch a cook book. You use your bones to destroy runic pillars and fend off enemies as you venture through your master's lair. Be careful! Throwing your last bone results in death. Don't make your master send in a replacement...",
+      "Tossed away was a submission for the 7DRL Challenge (a one week game jam) in 2022. The team consisted of 2 developers, 2 artists, 1 sound designer, and 1 musician. In Tossed Away, you play as a skeleton who was summoned to fetch a cook book. You use your bones to destroy runic pillars and fend off enemies as you venture through your master's lair. Be careful! Throwing your last bone results in death. Don't make your master send in a replacement...",
+    contributions:
+      "I was a developer and technical artist for this project. My primary tasks involved implementing animation logic, item interactions, scene management, environment integration, and contributing to the character controller.",
     highlights: [
-      "Successfully submitted within 7 day time limit and managed to create a playable proof of concept (3 levels)",
+      "Successfully submitted our MVP with 3 levels within 7 day time limit",
       "Unique gameplay mechanic in which the player uses health (bones) as fuel for attacks",
       "Top-down, 2d environment with a cohesive character style that extends to the UI and cursor",
     ],
@@ -235,12 +246,15 @@ const games: ProjectDetails[] = [
     ],
   },
   {
-    title: "Blood & Gold",
+    projectName: "Blood & Gold",
+    anchorTag: "blood-and-gold",
     year: "2021",
     status: "complete",
     skills: ["Unity", "Csharp", "Aseprite", "Trello"],
     description:
-      "Blood & Gold is a game built for the 'Metroidvania Month 13' Game Jam. The team consisted of 2 developers, 3 artists, 1 sound designer, and 1 musician. I played a pivotal role in assembling the team and organizing collaborative game design and planning meetings. As a developer I implemented all animation logic, lantern and lighting logic, modular item interaction, health and death mechanics, game state, scene transitions, and I contributed to the character controller and state management. As a technical artist I converted sprite sheets into animations and tile sets, implemented UI and Game Menu, and painted environment using tile sets based on level layout mockup. I also continued the development of the project post-submission and squished bugs, added features, implemented player feedback, improved the player's weapon animations, and created animations for some enemies. Blood & Gold is a game in which you play as a brave cowboy who delves into a forgotten mine that he should have left forgotten. You venture through the mines with a revolver to fend off corrupted enemies and a lantern to light your way. Fend off zombies and mutant insects in order to find the key and unlock the golden gate. Find the foreman and defeat him to earn a special weapon, if you dare. Unlock hidden paths and alternate routes. Defeat the mutant canary to end the mine's corruption and become a hero.",
+      "Blood & Gold is a game built for the 'Metroidvania Month 13' Game Jam. The team consisted of 2 developers, 3 artists, 1 sound designer, and 1 musician. Blood & Gold is a game in which you play as a brave cowboy who delves into a forgotten mine that he should have left forgotten. You venture through the mines with a revolver to fend off corrupted enemies and a lantern to light your way. Fend off zombies and mutant insects in order to find the key and unlock the golden gate. Find the foreman and defeat him to earn a special weapon, if you dare. Unlock hidden paths and alternate routes. Defeat the mutant canary to end the mine's corruption and become a hero.",
+    contributions:
+      "I played a pivotal role in assembling the team and organizing collaborative game design and planning meetings. As a developer I implemented all animation logic, lantern and lighting logic, modular item interaction, health and death mechanics, game state, scene transitions, and I contributed to the character controller and state management. As a technical artist I converted sprite sheets into animations and tile sets, implemented UI and Game Menu, and painted environment using tile sets based on level layout mockup. I also continued development of the project post-submission and squished bugs, added features, implemented player feedback, improved the player's weapon animations, and created animations for some enemies.",
     highlights: [
       "3100+ page views, 1600+ browser plays, and 180+ downloads on Itch.io",
       "Voted #2 for audio due to its environment-driven soundtrack/SFX and adrenaline fueling boss battle tracks",
