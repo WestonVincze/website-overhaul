@@ -2,20 +2,12 @@ import styles from "./LinedPaper.module.css";
 
 export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
-  orientLeft?: boolean;
   children?: React.ReactNode;
 }
 
-export const LinedPaper = ({
-  title,
-  orientLeft = true,
-  children,
-  ...props
-}: LinedPaperProps) => {
-  const orientation = orientLeft ? styles.paperLeft : styles.paperRight;
-
+export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
   return (
-    <div className={`${styles.paper} ${orientation}`} {...props}>
+    <div className={styles.paper} {...props}>
       {title && <h2>{title}</h2>}
       {children}
     </div>

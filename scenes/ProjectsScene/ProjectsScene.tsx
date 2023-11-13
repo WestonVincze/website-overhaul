@@ -7,14 +7,19 @@ export const ProjectsScene = (): JSX.Element => {
   return (
     <Container>
       <AnimatedContent>
-        <h1>Web Development</h1>
-        {ProjectsContent.websites.map((website, i) => (
-          <ProjectCard {...website} key={i} />
-        ))}
-        <h1>Game Development</h1>
-        {ProjectsContent.games.map((game, i) => (
-          <ProjectCard {...game} key={i} />
-        ))}
+        <h1 id="web-dev">Web Development</h1>
+        <section>
+          {ProjectsContent.websites.map((web, i) => (
+            <ProjectCard id={`web-dev-${web.anchorTag}`} {...web} key={i} />
+          ))}
+        </section>
+
+        <h1 id="game-dev">Game Development</h1>
+        <section>
+          {ProjectsContent.games.map((game, i) => (
+            <ProjectCard id={`game-dev-${game.anchorTag}`} {...game} key={i} />
+          ))}
+        </section>
       </AnimatedContent>
     </Container>
   );

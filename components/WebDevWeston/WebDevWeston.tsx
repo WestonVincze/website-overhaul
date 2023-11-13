@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./WebDevWeston.module.css";
-import webDevWestonGIF from "../../public/images/web-dev-weston.gif";
+import webDevWestonGIF from "/public/images/web-dev-weston.gif";
 import { Browser } from "./Browser";
 
 export const WebDevWeston = () => {

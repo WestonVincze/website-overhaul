@@ -20,18 +20,19 @@ export const AnimatedContent = ({ children }: AnimatedContentProps) => {
 
   const contentTrail = useTrail(content.length, {
     delay: DELAY_FACTOR,
-    config: { mass: 25, tension: 2000, friction: 500 },
-    from: { y: "-15vh", x: "100vw" },
-    to: introDone && { y: "0", x: "0" },
+    from: { y: "-15vh", x: "100vw", display: "none" },
+    to: introDone && { y: "0", x: "0", display: "block" },
+    onRest: () => {
+      const id = window.location.hash.substring(1);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView();
+    },
   });
 
   return (
     <>
       {contentTrail.map((style, i) => (
-        <animated.div
-          key={i}
-          style={{ ...style, willChange: "transform, opacity" }}
-        >
+        <animated.div key={i} style={{ ...style, willChange: "transform" }}>
           {content[i]}
         </animated.div>
       ))}

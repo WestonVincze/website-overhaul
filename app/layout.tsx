@@ -34,7 +34,7 @@ export const amatic = Amatic_SC({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <body className={`${amatic.variable} ${typeWriter.className}`}>
         <Layout>{children}</Layout>
       </body>
