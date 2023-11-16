@@ -203,7 +203,11 @@ const education = {
   program: "Computer Programmer",
   degree: "Advanced Diploma",
   description:
-    "Excelled as a team player and leader for multiple group projects and learned the fundamentals of programming (OOP), web development, networking, database design, normalization, and collaboration.",
+    "Excelled as a team player and leader for multiple group projects and mastered object oriented programming (OOP), web development, computer networking, database design, normalization, and collaboration.",
+  highlights: [
+    "Made the dean's list and graduated with honors",
+    "Excelled as a leader and team member for multiple group projects and presentations",
+  ],
   startDate: "September 2015",
   endDate: "May 2018",
 };

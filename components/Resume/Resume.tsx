@@ -58,7 +58,9 @@ export const Resume = () => (
       <h4>{`${ResumeContent.education.startDate} - ${ResumeContent.education.endDate}`}</h4>
       <p>{ResumeContent.education.description}</p>
       <ul>
-        <li>Made the dean&apos;s list and graduated with honors</li>
+        {ResumeContent.education.highlights.map((highlight, i) => (
+          <li key={i}>{highlight}</li>
+        ))}
       </ul>
     </LinedPaper>
     <h1>Hobbies.</h1>
