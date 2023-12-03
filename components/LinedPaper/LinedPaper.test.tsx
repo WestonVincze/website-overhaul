@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { LinedPaper } from ".";
 
 describe("Components/PaperStack/LinedPaper", () => {
-  it("renders a title and message", () => {
+  it("renders", () => {
     render(
       <LinedPaper id={"1"} title="title">
         message
@@ -11,7 +11,7 @@ describe("Components/PaperStack/LinedPaper", () => {
 
     const title = screen.getByText("title");
     expect(title).toBeInTheDocument();
-    expect(title).toBeInTheDocument();
+
     const message = screen.getByText("message");
     expect(message).toBeInTheDocument();
   });

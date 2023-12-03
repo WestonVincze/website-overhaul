@@ -10,7 +10,6 @@ export const Icons: Record<string, Icon> = {
     ariaLabel: "GitHub icon",
     icon: () => (
       <svg
-        className="w-6 h-6 text-gray-800 dark:text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"

@@ -13,6 +13,7 @@ export const StickyNote = ({
   icon,
   variant = "taped",
   size = "medium",
+  ...props
 }: StickyNoteProps) => {
   if (!text) {
     text = Icons[icon] ? Icons[icon].title : "";
@@ -22,6 +23,7 @@ export const StickyNote = ({
     <div
       className={`${styles.stickyNote} ${styles[variant]} ${styles[size]}`}
       aria-label={Icons[icon] ? Icons[icon]?.ariaLabel : "Sticky Note Graphic"}
+      {...props}
     >
       <div className={styles.content}>{Icons[icon] && Icons[icon].icon()}</div>
       <div className={styles.text}>{text}</div>

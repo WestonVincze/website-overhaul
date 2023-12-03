@@ -10,3 +10,5 @@ jest.mock("./components/AppStateProvider", () => ({
 jest.mock("@xstate/react", () => ({
   useSelector: () => true,
 }));
+
+jest.useFakeTimers();

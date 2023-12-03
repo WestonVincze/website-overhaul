@@ -83,7 +83,7 @@ export const AnimatedHeading = () => {
 
   return (
     <>
-      <animated.div style={greetingStyle}>
+      <animated.div style={greetingStyle} data-testid="greeting">
         <Typewriter
           text={"Hi. My name is"}
           delay={500}
