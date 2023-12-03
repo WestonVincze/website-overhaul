@@ -45,7 +45,7 @@ export const useTypewriter = ({
   }, [text]);
 
   useEffect(() => {
-    if (isDelayed) return;
+    if (isDelayed || !text) return;
     if (isDeleting && typed.length === 0) setIsDeleting(false);
     if (typed === text && !isDeleting) {
       // TODO: something isn't working here
