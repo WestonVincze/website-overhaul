@@ -7,19 +7,16 @@ import { LinedPaperProps } from "../LinedPaper/LinedPaper";
 
 const papers: LinedPaperProps[] = [
   {
-    id: 1,
     title: "title1",
-    message: "message1",
+    children: "message1",
   },
   {
-    id: 2,
     title: "title2",
-    message: "message2",
+    children: "message2",
   },
   {
-    id: 3,
     title: "title3",
-    message: "message3",
+    children: "message3",
   },
 ];
 
@@ -27,6 +24,6 @@ describe("Components/PaperStack", () => {
   it("renders a series of LinedPaper components", () => {
     render(<PaperStack papers={papers} />);
 
-    papers.map((p) => expect(screen.getByText(p.message)).toBeInTheDocument());
+    papers.map((p) => expect(screen.getByText(p.children)).toBeInTheDocument());
   });
 });
