@@ -5,9 +5,9 @@ interface FolderBodyProps {
   children: React.ReactNode;
 }
 
-export const FolderBody = ({ children }: FolderBodyProps) => {
+export const FolderBody = ({ children, ...props }: FolderBodyProps) => {
   return (
-    <div className={styles.folder}>
+    <div className={styles.folder} {...props}>
       <AnimatedHeading />
       {children}
     </div>

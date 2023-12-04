@@ -18,9 +18,10 @@ export const ProjectCard = ({
   contributions,
   highlights,
   links,
+  ...props
 }: ProjectCardProps) => {
   return (
-    <LinedPaper id={id} style={links && { marginBottom: "100px" }}>
+    <LinedPaper id={id} style={links && { marginBottom: "100px" }} {...props}>
       <section className={styles.header}>
         <h2>
           {projectName} ({year})

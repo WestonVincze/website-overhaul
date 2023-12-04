@@ -15,6 +15,7 @@ export const PaperPreview = ({
   hovering = false,
   active = false,
   startActive = false,
+  ...props
 }: PaperPreviewProps) => {
   const [reset, setReset] = useState(startActive);
   const [current, send] = useMachine(PaperPreviewFSM);
@@ -47,5 +48,11 @@ export const PaperPreview = ({
     if (reset) setReset(false);
   }, [reset]);
 
-  return <animated.div style={springProps} className={styles.paperPreview} />;
+  return (
+    <animated.div
+      style={springProps}
+      className={styles.paperPreview}
+      {...props}
+    />
+  );
 };

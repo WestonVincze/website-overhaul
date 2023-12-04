@@ -34,8 +34,8 @@ const workExperiencePapers: LinedPaperProps[] =
     ),
   }));
 
-export const Resume = () => (
-  <div className={styles.resume}>
+export const Resume = ({ ...props }) => (
+  <div className={styles.resume} {...props}>
     <div className={styles.stickyNotes}>
       <a href="/images/WestonVinczeResume.pdf" download>
         <StickyNote icon="Download" text="Download" size="small" />
