@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 import { StickyNote } from "./StickyNote";
 
-describe("StickyNote", () => {
-  test("renders StickyNote component", () => {
+describe("Components/StickyNote", () => {
+  it("renders StickyNote component", () => {
     const { getByTestId } = render(
       <StickyNote data-testid="sticky" icon="GitHub" text="GitHub Icon" />,
     );
