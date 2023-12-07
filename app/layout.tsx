@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
 import { Layout } from "@/components/Layout";
-import { Amatic_SC } from "@next/font/google";
-import localFont from "@next/font/local";
+import { Amatic_SC } from "next/font/google";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: {
