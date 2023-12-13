@@ -1,9 +1,9 @@
 import { useTypewriter } from "./useTypewriter";
 import styles from "./Typewriter.module.css";
-/**
- * Basic implementation of the useTypewriter hook
- */
 
+/**
+ * Renders an h1, h2, or p tag that utilizes the `useTypewriter` hook to "type" text
+ */
 export type Size = "small" | "medium" | "large";
 interface TypewriterProps {
   text: string;

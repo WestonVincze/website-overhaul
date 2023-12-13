@@ -8,7 +8,7 @@ import { AnimatedWord } from "../AnimatedWord";
 type Path = "/" | "/resume" | "/projects";
 
 const subHeadingText = {
-  "/": "Web Developer",
+  "/": "Frontend Developer",
   "/resume": "My Resume",
   "/projects": "My Projects",
 };
@@ -25,20 +25,28 @@ export const AnimatedHeading = () => {
   const [animationState, setAnimationState] = useState(AnimationStates.name);
   const { appState } = useAppState();
 
+  // skip animation if url contains a hash
   useEffect(() => {
     if (window.location.hash) {
-      // skip animation if url contains a hash
       setAnimationState(AnimationStates.done);
       return;
     }
   }, []);
+
+  // listen for done state and update App state accordingly
+  useEffect(() => {
+    if (animationState !== AnimationStates.done) return;
+
+    appState.send("INTRO_ANIMATION_COMPLETE");
+  }, [animationState, appState]);
 
   const handleDoneTypingName = (): void => {
     setAnimationState(AnimationStates.subHeading);
   };
 
   const handleDoneTypingSubHeading = (): void => {
-    appState.send("INTRO_ANIMATION_COMPLETE");
+    if (animationState === AnimationStates.done) return;
+    setAnimationState(AnimationStates.done);
   };
 
   return (
