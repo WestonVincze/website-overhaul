@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Browser.module.css";
-import { AnimatedPath } from "./AnimatedPath";
+import { AnimatedGroup } from "./AnimatedGroup";
 import { AnimatedScreen } from "./AnimatedScreen";
 import { AppStates, useAppState } from "../../AppStateProvider";
 import { useSelector } from "@xstate/react";
@@ -56,7 +56,7 @@ export const Browser = ({
     >
       <desc>Created by Weston Vincze with Fabric.js 5.3.0</desc>
       {/* Frame */}
-      <AnimatedPath
+      <AnimatedGroup
         toggle={toggle}
         stroke={windowBorderColor}
         fill={windowBorderColor}
@@ -66,7 +66,7 @@ export const Browser = ({
 
       {/* Left Nav */}
       <g>
-        <AnimatedPath
+        <AnimatedGroup
           toggle={toggle}
           stroke={headerColor}
           fill={headerColor}
@@ -76,7 +76,7 @@ export const Browser = ({
         />
         {/* Buttons */}
         <g>
-          <AnimatedPath
+          <AnimatedGroup
             toggle={toggle}
             stroke={buttonColor}
             fill={buttonColor}
@@ -85,7 +85,7 @@ export const Browser = ({
             d="M 7.31707 0 C 11.35609 0 14.63414 3.27805 14.63414 7.31707 C 14.63414 11.35609 11.35609 14.63414 7.31707 14.63414 C 3.2780500000000004 14.63414 0 11.35609 0 7.31707 C 0 3.2780500000000004 3.27805 0 7.31707 0 z"
             delay={800}
           />
-          <AnimatedPath
+          <AnimatedGroup
             toggle={toggle}
             stroke={buttonColor}
             fill={buttonColor}
@@ -94,7 +94,7 @@ export const Browser = ({
             d="M 7.31707 0 C 11.35609 0 14.63414 3.27805 14.63414 7.31707 C 14.63414 11.35609 11.35609 14.63414 7.31707 14.63414 C 3.2780500000000004 14.63414 0 11.35609 0 7.31707 C 0 3.2780500000000004 3.27805 0 7.31707 0 z"
             delay={700}
           />
-          <AnimatedPath
+          <AnimatedGroup
             toggle={toggle}
             stroke={buttonColor}
             fill={buttonColor}
@@ -107,7 +107,7 @@ export const Browser = ({
       </g>
 
       {/* Right Nav */}
-      <AnimatedPath
+      <AnimatedGroup
         toggle={toggle}
         stroke={headerColor}
         fill={headerColor}
@@ -117,7 +117,7 @@ export const Browser = ({
 
       {/* Screen & Content */}
       <g>
-        <AnimatedPath
+        <AnimatedGroup
           toggle={toggle}
           stroke={windowColor}
           fill={windowColor}

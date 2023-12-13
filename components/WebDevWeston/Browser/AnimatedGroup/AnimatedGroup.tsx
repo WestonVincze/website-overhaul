@@ -1,6 +1,7 @@
+import styles from "./AnimatedGroup.module.css";
 import { useSpring, animated } from "react-spring";
 
-interface AnimatedPathProps {
+interface AnimatedGroupProps {
   toggle: boolean;
   stroke: string;
   fill: string;
@@ -10,7 +11,7 @@ interface AnimatedPathProps {
   delay?: number;
 }
 
-export const AnimatedPath = ({
+export const AnimatedGroup = ({
   toggle,
   stroke,
   fill,
@@ -18,7 +19,7 @@ export const AnimatedPath = ({
   transform = "translate(0,0)",
   transformOrigin = "center center",
   delay = 0,
-}: AnimatedPathProps) => {
+}: AnimatedGroupProps) => {
   const start = {
     opacity: 0,
     transform: "scale(0.5)",
@@ -38,20 +39,10 @@ export const AnimatedPath = ({
       }}
     >
       <path
-        style={{
-          stroke,
-          fill,
-          strokeWidth: "0",
-          strokeDasharray: "none",
-          strokeLinecap: "butt", // lol butt
-          strokeDashoffset: "0",
-          strokeLinejoin: "miter",
-          strokeMiterlimit: "4",
-          fillRule: "nonzero",
-        }}
+        className={styles.path}
+        style={{ stroke, fill }}
         transform={transform}
         d={d}
-        strokeLinecap="round"
       />
     </animated.g>
   );

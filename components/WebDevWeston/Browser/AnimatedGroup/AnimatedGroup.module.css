@@ -1,0 +1,9 @@
+.path {
+  stroke-width: "0";
+  stroke-dasharray: "none";
+  stroke-linecap: "butt"; /* lol butt */
+  stroke-dashoffset: "0";
+  stroke-linejoin: "miter";
+  stroke-miterlimit: "4";
+  fill-rule: "nonzero";
+}

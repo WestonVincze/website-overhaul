@@ -1,1 +1,0 @@
-export { AnimatedPath } from "./AnimatedPath";
