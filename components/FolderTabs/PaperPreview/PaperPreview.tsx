@@ -4,6 +4,7 @@ import styles from "./PaperPreview.module.css";
 import { useMachine } from "@xstate/react";
 import { PaperPreviewFSM, AnimationStates } from "./PaperPreviewFSM";
 import { OFF_SCREEN_Y_OFFSET, OFF_SCREEN_X_OFFSET } from "./types";
+import { omitOnReducedMotion } from "hocs/omitOnReducedMotion";
 
 interface PaperPreviewProps {
   hovering: boolean;
@@ -11,7 +12,7 @@ interface PaperPreviewProps {
   startActive?: boolean;
 }
 
-export const PaperPreview = ({
+const PaperPreview = ({
   hovering = false,
   active = false,
   startActive = false,
@@ -56,3 +57,7 @@ export const PaperPreview = ({
     />
   );
 };
+
+// PaperPreview is an animated component that serves no purpose if the user prefers reduced motion
+const PaperPreviewWithReducedMotion = omitOnReducedMotion(PaperPreview);
+export { PaperPreviewWithReducedMotion as PaperPreview };

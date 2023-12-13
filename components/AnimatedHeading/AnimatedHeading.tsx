@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSpring, animated } from "react-spring";
 import { usePathname } from "next/navigation";
 import { Typewriter } from "../Typewriter";
 import { useAppState } from "../AppStateProvider";
-import { AnimatedWord } from "../AnimatedWord";
 
 type Path = "/" | "/resume" | "/projects";
 

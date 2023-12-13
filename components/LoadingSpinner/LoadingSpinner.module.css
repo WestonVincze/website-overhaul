@@ -42,3 +42,18 @@
 .spinner div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner div {
+    animation: none;
+    display: none;
+  }
+
+  .spinner::before {
+    content: "Loading...";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}

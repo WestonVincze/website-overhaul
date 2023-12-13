@@ -2,14 +2,12 @@ import { useTypewriter } from "./useTypewriter";
 import styles from "./Typewriter.module.css";
 
 /**
- * Renders an h1, h2, or p tag that utilizes the `useTypewriter` hook to "type" text
+ * Renders `h1`, `h2`, or `p` tag with `useTypewriter` implementation
  */
-export type Size = "small" | "medium" | "large";
 interface TypewriterProps {
   text: string;
   tagType?: "h1" | "h2" | "p";
   delay?: number;
-  size?: Size;
   inlineTag?: boolean;
   centered?: boolean;
   onDoneTyping?: () => void;
@@ -22,7 +20,6 @@ export const Typewriter = ({
   delay = 0,
   inlineTag = false,
   centered = false,
-  size = "medium",
   onDoneTyping,
   onStartTyping,
   ...props
@@ -47,8 +44,7 @@ export const Typewriter = ({
 
   return (
     <Tag
-      className={styles[size]}
-      style={centered ? { textAlign: "center" } : {}}
+      className={`${styles.typewriter} ${centered && styles.centered}`}
       {...props}
     >
       {inlineTag ? `<${typed} />` : typed}

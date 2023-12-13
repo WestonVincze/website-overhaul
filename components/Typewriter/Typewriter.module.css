@@ -1,14 +1,15 @@
-.small {
-  font-size: var(--small-font-size);
-  line-height: var(--small-font-size);
-}
-
-.medium {
-  font-size: var(--medium-font-size);
-  line-height: var(--medium-font-size);
-}
-
-.large {
+h1.typewriter {
   font-size: var(--large-font-size);
-  line-height: var(--large-font-size);
+}
+
+h2.typewriter {
+  font-size: var(--medium-font-size);
+}
+
+p.typewriter {
+  font-size: var(--small-font-size);
+}
+
+.centered {
+  text-align: center;
 }

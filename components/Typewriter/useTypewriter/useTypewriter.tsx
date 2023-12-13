@@ -1,3 +1,4 @@
+import { useAppState } from "@/components/AppStateProvider";
 import { useEffect, useRef, useState } from "react";
 
 interface useTypewriterProps {
@@ -9,6 +10,11 @@ interface useTypewriterProps {
   onDoneTyping?: () => void;
 }
 
+/**
+ * Hook for creating a "typing" effect.
+ *
+ * **note:** If the user prefers reduced motion, the passed `text` will be returned but the typing logic will still take effect.
+ */
 export const useTypewriter = ({
   text,
   delay,
@@ -17,6 +23,7 @@ export const useTypewriter = ({
   onStartTyping,
   onDoneTyping,
 }: useTypewriterProps): string => {
+  const { reducedMotion } = useAppState();
   const [typed, setTyped] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isDelayed, setIsDelayed] = useState(true);
@@ -80,5 +87,5 @@ export const useTypewriter = ({
     };
   }, [text, typed, isDeleting, typeSpeed, onDoneTyping, isDelayed]);
 
-  return typed;
+  return reducedMotion ? text : typed;
 };

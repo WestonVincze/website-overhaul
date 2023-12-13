@@ -105,6 +105,14 @@ ul > li:before {
   text-align: center;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 @media (max-width: 815px) {
   :root {
     --animated-font-size: 75px;
