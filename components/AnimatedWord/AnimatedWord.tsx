@@ -19,12 +19,12 @@ export const AnimatedWord = ({ word, ...props }: AnimatedWordProps) => {
   });
 
   return (
-    <div className={styles.word} {...props}>
+    <h1 className={styles.word} {...props}>
       {trails.map((style, i) => (
         <animated.div style={style} key={i}>
           <AnimatedLetter letter={characters[i]} />
         </animated.div>
       ))}
-    </div>
+    </h1>
   );
 };

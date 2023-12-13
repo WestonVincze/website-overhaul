@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import style from "./AnimatedLetter.module.css";
+import styles from "./AnimatedLetter.module.css";
 import { DragSnap } from "../Drag/DragSnap";
 
 const ROTATION_THRESHOLD = 15;
@@ -47,11 +47,11 @@ export const AnimatedLetter = ({ letter }: AnimatedLetterProps) => {
   });
 
   return letter === " " ? (
-    <span className={style.animatedLetter}>&nbsp;</span>
+    <span className={styles.animatedLetter}>&nbsp;</span>
   ) : (
     <DragSnap>
       <animated.span
-        className={style.animatedLetter}
+        className={styles.animatedLetter}
         onMouseEnter={() => onMouseEnter()}
         onMouseLeave={() => onMouseLeave()}
         style={animatedStyle}

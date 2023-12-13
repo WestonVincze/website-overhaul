@@ -7,6 +7,7 @@ import styles from "./Typewriter.module.css";
 export type Size = "small" | "medium" | "large";
 interface TypewriterProps {
   text: string;
+  tagType?: "h1" | "h2" | "p";
   delay?: number;
   size?: Size;
   inlineTag?: boolean;
@@ -17,6 +18,7 @@ interface TypewriterProps {
 
 export const Typewriter = ({
   text,
+  tagType = "h2",
   delay = 0,
   inlineTag = false,
   centered = false,
@@ -41,13 +43,15 @@ export const Typewriter = ({
     onDoneTyping: handleDoneTyping,
   });
 
+  const Tag = tagType;
+
   return (
-    <h1
+    <Tag
       className={styles[size]}
       style={centered ? { textAlign: "center" } : {}}
       {...props}
     >
       {inlineTag ? `<${typed} />` : typed}
-    </h1>
+    </Tag>
   );
 };

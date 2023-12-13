@@ -24,6 +24,7 @@ export const AnimatedContent = ({ children }: AnimatedContentProps) => {
     to: introDone && { y: "0", x: "0", display: "block" },
     onRest: () => {
       const id = window.location.hash.substring(1);
+      if (!id) return;
       const el = document.getElementById(id);
       if (el) el.scrollIntoView();
     },

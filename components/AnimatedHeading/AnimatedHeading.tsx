@@ -1,18 +1,9 @@
 import { useEffect, useState } from "react";
-import { AnimatedWord } from "../AnimatedWord";
+import { useSpring, animated } from "react-spring";
 import { usePathname } from "next/navigation";
-import { animated, useSpring } from "react-spring";
 import { Typewriter } from "../Typewriter";
 import { useAppState } from "../AppStateProvider";
-
-const large = {
-  fontSize: "100%",
-  lineHeight: "100%",
-};
-const small = {
-  fontSize: "80%",
-  lineHeight: "80%",
-};
+import { AnimatedWord } from "../AnimatedWord";
 
 type Path = "/" | "/resume" | "/projects";
 
@@ -23,7 +14,6 @@ const subHeadingText = {
 };
 
 enum AnimationStates {
-  greeting,
   name,
   subHeading,
   hideGreeting,
@@ -32,10 +22,7 @@ enum AnimationStates {
 
 export const AnimatedHeading = () => {
   const currentPage = usePathname() as Path;
-  const isHomeScene = currentPage === "/";
-  const [animationState, setAnimationState] = useState(
-    AnimationStates.greeting,
-  );
+  const [animationState, setAnimationState] = useState(AnimationStates.name);
   const { appState } = useAppState();
 
   useEffect(() => {
@@ -44,66 +31,26 @@ export const AnimatedHeading = () => {
       setAnimationState(AnimationStates.done);
       return;
     }
-    const nameStateDelay = setTimeout(() => {
-      setAnimationState(AnimationStates.name);
-    }, 1500);
-    const titleStateDelay = setTimeout(() => {
-      setAnimationState(AnimationStates.subHeading);
-    }, 3000);
-
-    return () => {
-      clearTimeout(nameStateDelay);
-      clearTimeout(titleStateDelay);
-    };
   }, []);
 
-  useEffect(() => {
-    if (animationState !== AnimationStates.done) return;
-    appState.send("INTRO_ANIMATION_COMPLETE");
-  }, [animationState, appState]);
-
-  const handleDoneTypingSubHeading = (): void => {
-    if (animationState >= AnimationStates.hideGreeting) return;
-    setTimeout(() => setAnimationState(AnimationStates.hideGreeting), 500);
+  const handleDoneTypingName = (): void => {
+    setAnimationState(AnimationStates.subHeading);
   };
 
-  const greetingStyle = useSpring({
-    margin: 0,
-    opacity: animationState >= AnimationStates.hideGreeting ? 0 : 1,
-    height: animationState >= AnimationStates.hideGreeting ? "0" : "5svh",
-    onRest: () => {
-      if (animationState === AnimationStates.hideGreeting)
-        setAnimationState(AnimationStates.done);
-    },
-  });
-
-  const animatedStyle = useSpring({
-    ...(isHomeScene || animationState < AnimationStates.done ? large : small),
-  });
+  const handleDoneTypingSubHeading = (): void => {
+    appState.send("INTRO_ANIMATION_COMPLETE");
+  };
 
   return (
-    <>
-      <animated.div style={greetingStyle} data-testid="greeting">
+    <header>
+      {animationState >= AnimationStates.name && (
         <Typewriter
-          text={"Hi. My name is"}
-          delay={500}
+          text="Hi, I'm Weston Vincze."
+          tagType="h1"
           centered={true}
-          size={"large"}
+          onDoneTyping={() => handleDoneTypingName()}
         />
-      </animated.div>
-      <span
-        style={{
-          fontSize: "var(--animated-font-size)",
-          lineHeight: "var(--animated-font-size)",
-          fontFamily: "var(--amatic)",
-        }}
-      >
-        {animationState >= AnimationStates.name && (
-          <animated.div style={animatedStyle}>
-            <AnimatedWord word={"Weston Vincze"} />
-          </animated.div>
-        )}
-      </span>
+      )}
       {animationState >= AnimationStates.subHeading && (
         <Typewriter
           text={subHeadingText[currentPage]}
@@ -112,6 +59,6 @@ export const AnimatedHeading = () => {
           onDoneTyping={() => handleDoneTypingSubHeading()}
         />
       )}
-    </>
+    </header>
   );
 };

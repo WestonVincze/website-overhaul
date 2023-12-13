@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "AmaticSC";
-  src: url("/fonts/AmaticSC/AmaticSC-Bold.ttf");
-}
-
-@font-face {
-  font-family: "OldTypewriter";
-  src: url("/fonts/OldTypewriter/fzm-Old.Typewriter.ttf");
-}
-
 :root {
   /* colors */
   --font-color: #160300;
@@ -64,6 +54,7 @@ body {
 
 html,
 body {
+  font-family: var(--montserrat);
   overflow-x: hidden;
 }
 
@@ -75,6 +66,7 @@ h5,
 h6,
 p {
   margin: var(--spacing-1) 0;
+  font-family: var(--noto);
 }
 
 hr {
@@ -84,6 +76,9 @@ hr {
 a {
   color: inherit;
   text-decoration: none;
+}
+a:focus {
+  outline: none;
 }
 
 * {
