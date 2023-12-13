@@ -8,7 +8,7 @@ export type SocialLink = {
 
 export type ProjectDetails = {
   projectName: string;
-  anchorTag?: string;
+  id?: string;
   year: string;
   status: "in progress" | "complete";
   skills: IconNames[];

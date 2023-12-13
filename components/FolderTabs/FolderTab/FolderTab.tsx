@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import style from "./FolderTab.module.css";
+import styles from "./FolderTab.module.css";
 import { animated, useSpring } from "react-spring";
 
 export interface FolderTabProps {
@@ -41,8 +41,8 @@ export const FolderTab = ({
     >
       <Link
         href={path}
-        className={`${style.folderTab} ${isActive ? style.active : ""} ${
-          text == null ? style.blankTab : ""
+        className={`${styles.folderTab} ${isActive ? styles.active : ""} ${
+          text == null ? styles.blankTab : ""
         }`}
       >
         <span>{text}</span>

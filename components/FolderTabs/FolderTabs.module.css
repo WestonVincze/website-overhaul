@@ -4,3 +4,25 @@
   top: var(--folder-tab-offset);
   right: var(--small-margin);
 }
+
+.folderTab {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  /* extra padding to help center text with clip-path */
+  padding-right: 1rem;
+  padding-left: 2rem;
+  background-color: var(--folder-shadow);
+  z-index: -1;
+  height: var(--folder-tab-height);
+  display: flex;
+  align-items: center;
+  font-size: var(--medium-font-size);
+  line-height: var(--medium-font-size);
+  transform: translateY(7px);
+  transition: transform 400ms ease-in-out;
+}
+.folderTab:hover, a:focus .folderTab, .folderTab.active {
+  transform: translateY(0);
+}
+.folderTab.active {
+  background-color: var(--folder);
+}

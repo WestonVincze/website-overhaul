@@ -1,7 +1,7 @@
-import { IconNames } from "../Icons";
+import { IconNames } from "../../components/Icons";
 
 const intro =
-  "I am a passionate web developer backed by over 5 years of professional experience. I specialize in JavaScript libraries and frameworks with a strong proficiency in React and TypeScript.";
+  "I am a driven web developer backed by over 5 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks with a strong proficiency in React and TypeScript.";
 
 type WorkExperience = {
   company: string;
@@ -93,12 +93,10 @@ const workExperience: WorkExperience[] = [
       "Bootstrap",
       "ASPnet",
       "Csharp",
-      //"Entity Framework",
       "AJAX",
       "SQL",
       "WordPress",
       "PHP",
-      //"Liquid",
       "JIRA",
       "GitHub",
     ],
@@ -154,7 +152,6 @@ const workExperience: WorkExperience[] = [
       "Bootstrap",
       "ASPnet",
       "Csharp",
-      //"Entity Framework",
       "SQL",
       "WordPress",
       "PHP",
@@ -198,7 +195,17 @@ const workExperience: WorkExperience[] = [
   },
 ];
 
-const education = {
+type Education = {
+  school: string;
+  program: string;
+  degree: string;
+  description: string;
+  highlights: string[];
+  startDate: string;
+  endDate: string;
+};
+
+const education: Education = {
   school: "Seneca College",
   program: "Computer Programmer",
   degree: "Advanced Diploma",
@@ -229,12 +236,7 @@ const technicalSkills: TechnicalSkill[] = [
       "SQL",
       "PHP",
       "GoLang",
-      "Python",
-      "Bash",
       "Liquid",
-      "Java",
-      "C++",
-      "C",
     ],
   },
   {
@@ -245,7 +247,6 @@ const technicalSkills: TechnicalSkill[] = [
       "NodeJS",
       "Redux",
       "Scss",
-      "Sass",
       "Less",
       "ASP.NET",
       "Entity Framework",
@@ -257,32 +258,18 @@ const technicalSkills: TechnicalSkill[] = [
       "VueJS",
       "RxJS",
       "XState",
-      "React-spring",
       "Material UI",
       "Chakra UI",
       "MySQL",
       "MongoDB",
       "Unity",
-      "AngularJS",
       "BabylonJS",
-      "CanJS",
       "Colyseus",
     ],
   },
   {
     title: "Development Tools",
-    skills: [
-      "Git",
-      "RESTful APIs",
-      "JIRA",
-      "Webpack",
-      "Figma",
-      "SEO",
-      "OpenGraph",
-      "Browser Dev Tools",
-      "JSON",
-      "Vim",
-    ],
+    skills: ["Git", "JIRA", "Webpack", "Figma", "Vim"],
   },
   {
     title: "Cloud & Deployment",
@@ -294,16 +281,29 @@ const technicalSkills: TechnicalSkill[] = [
   },
 ];
 
-const hobbies = [
-  "Game Development",
-  "Drawing & Animation",
-  "World Building",
-  "Improv & TTRPG`s",
-  "Reading & Writing",
-  "Snowboarding",
+type Hobby = {
+  name: string;
+  url?: string;
+};
+
+const hobbies: Hobby[] = [
+  { name: "Game Development", url: "https://weasyv.itch.io/" },
+  { name: "Drawing & Animation" },
+  { name: "World Building" },
+  { name: "Improv & TTRPG`s" },
+  { name: "Reading & Writing" },
+  { name: "Snowboarding" },
 ];
 
-export const ResumeContent = {
+export type Resume = {
+  intro: string;
+  workExperience: WorkExperience[];
+  technicalSkills: TechnicalSkill[];
+  education: Education;
+  hobbies: Hobby[];
+};
+
+export const ResumeContent: Resume = {
   intro,
   workExperience,
   technicalSkills,

@@ -1,23 +1,23 @@
 import { ProjectCard } from "@/components/ProjectCard";
 import { Container } from "@/components/Container";
 import { AnimatedContent } from "@/components/AnimatedContent";
-import { ProjectsContent } from "@/components/ProjectCard/ProjectsContent";
+import { Projects } from "@/scenes/ProjectsScene/ProjectsContent";
 
 export const ProjectsScene = (): JSX.Element => {
   return (
     <Container>
       <AnimatedContent>
-        <h1 id="web-dev">Web Development</h1>
         <section>
-          {ProjectsContent.websites.map((web, i) => (
-            <ProjectCard id={`web-dev-${web.anchorTag}`} {...web} key={i} />
+          <h2 id="web-dev">Web Development</h2>
+          {Projects.websites.map((web, i) => (
+            <ProjectCard id={`web-dev-${web.id}`} {...web} key={i} />
           ))}
         </section>
 
-        <h1 id="game-dev">Game Development</h1>
         <section>
-          {ProjectsContent.games.map((game, i) => (
-            <ProjectCard id={`game-dev-${game.anchorTag}`} {...game} key={i} />
+          <h2 id="game-dev">Game Development</h2>
+          {Projects.games.map((game, i) => (
+            <ProjectCard {...game} id={`game-dev-${game.id}`} key={i} />
           ))}
         </section>
       </AnimatedContent>

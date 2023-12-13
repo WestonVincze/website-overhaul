@@ -1,9 +1,9 @@
-import { ProjectDetails } from "./types";
+import { ProjectDetails } from "../../components/ProjectCard/types";
 
 const websites: ProjectDetails[] = [
   {
     projectName: "Portfolio Website",
-    anchorTag: "portfolio-website-2023",
+    id: "portfolio-website-2023",
     year: "2023",
     status: "in progress",
     skills: [
@@ -21,13 +21,12 @@ const websites: ProjectDetails[] = [
     description:
       "You are currently viewing this project! I created this website using NextJS to act as a hub for my portfolio and resume. The source code is openly available and demonstrates my iterative development style. This project is in active development and improves every day. You can view the project board and git history to see the most recent and upcoming changes.",
     highlights: [
-      "Designed project's initial concept using Figma",
-      "Hand drawn and programmatic animations with custom SVG",
-      "Integrated autodeploy workflow using Vercel",
-      "StateMachine integration using XState to track animations and interactions",
-      "Animated UI components using react-spring",
       "Component-level CSS modules and custom theme with standardized values using css variables",
       "Modular components with strong separation of concerns",
+      "Integrated autodeploy workflow using Vercel",
+      "StateMachine integration using XState to track animations and interactions",
+      "Designed project's initial concept using Figma",
+      "Hand drawn and programmatic animations with custom SVG",
     ],
     links: [
       {
@@ -44,7 +43,7 @@ const websites: ProjectDetails[] = [
   },
   {
     projectName: "Micro-Transaction Login Page",
-    anchorTag: "microtransaction-login-page",
+    id: "microtransaction-login-page",
     year: "2023",
     status: "in progress",
     skills: [
@@ -89,7 +88,7 @@ const websites: ProjectDetails[] = [
   */
   {
     projectName: "We Sell Users",
-    anchorTag: "we-sell-users",
+    id: "we-sell-users",
     year: "2020",
     status: "complete",
     skills: [
@@ -121,7 +120,7 @@ const websites: ProjectDetails[] = [
   },
   {
     projectName: "Dog Dojo",
-    anchorTag: "dog-dojo",
+    id: "dog-dojo",
     year: "2020",
     status: "complete",
     skills: [
@@ -141,7 +140,7 @@ const websites: ProjectDetails[] = [
     highlights: [
       "Mock e-commerce experience featuring item details, shopping cart, and a checkout page",
       "Dynamic routing for item detail pages",
-      "Created a minimalist logo of a dog and that wagged its tail whenever the user hovered over interactive elements",
+      "Created a minimalist logo of a dog with a tag wagging animation whenever the user hovered over interactive elements",
     ],
     links: [
       {
@@ -153,7 +152,7 @@ const websites: ProjectDetails[] = [
   },
   {
     projectName: "Portfolio Website",
-    anchorTag: "portfolio-website-2019",
+    id: "portfolio-website-2019",
     year: "2019",
     status: "complete",
     skills: ["NextJS", "JavaScript", "HTML", "CSS", "Trello", "Illustrator"],
@@ -177,12 +176,12 @@ const websites: ProjectDetails[] = [
 const games: ProjectDetails[] = [
   {
     projectName: "Dwarf Forges",
-    anchorTag: "dwarf-forges",
+    id: "dwarf-forges",
     year: "2023",
     status: "in progress",
     skills: ["Unity", "Csharp", "Blender", "Figma"],
     description:
-      "Dwarf Forges is a 3D game being built with Untiy and planned to release in 2024. The team consists of 3 developers, 1 artist, 1 sound engineer. Dwarf Forges is a game in which you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars, imbuing them with special effects, and use them to create a variety of unique weapons. Use your crafted weapons to fend off the dwarves until there are none left!",
+      "Dwarf Forges is a 3D game being built with Unity and planned to release in 2024. The team consists of 3 developers, 1 artist, 1 sound engineer. Dwarf Forges is a game in which you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars, imbuing them with special effects, and use them to create a variety of unique weapons. Use your crafted weapons to fend off the dwarves until there are none left!",
     contributions:
       "I am the team lead and a developer for this project. As the team lead I create tickets, assemble meetings, lead collaborative brainstorming sessions, document game mechanics and code standards, and guide team decisions. As a developer I implement various features (camera movement, animation logic, game state), manage the repository, and complete code reviews.",
     highlights: [
@@ -200,26 +199,9 @@ const games: ProjectDetails[] = [
       },
     ],
   },
-  /*
-  {
-    projectName: "Stolen Creation",
-    year: "2023",
-    status: "in progress",
-    skills: [],
-    description: "",
-    highlights: [],
-    links: [
-      {
-        icon: "GitHub",
-        text: "Source Code",
-        url: "https://github.com/WestonVincze/Dog-Dojo",
-      },
-    ],
-  },
-  */
   {
     projectName: "Tossed Away",
-    anchorTag: "tossed-away",
+    id: "tossed-away",
     year: "2022",
     status: "complete",
     skills: ["Unity", "Csharp", "Aseprite", "Trello"],
@@ -247,7 +229,7 @@ const games: ProjectDetails[] = [
   },
   {
     projectName: "Blood & Gold",
-    anchorTag: "blood-and-gold",
+    id: "blood-and-gold",
     year: "2021",
     status: "complete",
     skills: ["Unity", "Csharp", "Aseprite", "Trello"],
@@ -279,7 +261,7 @@ const games: ProjectDetails[] = [
   },
 ];
 
-export const ProjectsContent = {
+export const Projects = {
   websites,
   games,
 };

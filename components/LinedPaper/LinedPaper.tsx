@@ -8,7 +8,7 @@ export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
 export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
   return (
     <div className={styles.paper} {...props}>
-      {title && <h2>{title}</h2>}
+      {title && <h3>{title}</h3>}
       {children}
     </div>
   );

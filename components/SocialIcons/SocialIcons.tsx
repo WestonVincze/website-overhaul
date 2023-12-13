@@ -3,7 +3,7 @@ import styles from "./SocialIcons.module.css";
 
 export const SocialIcons = () => {
   return (
-    <div className={styles.socialIcons}>
+    <nav className={styles.socialIcons}>
       <a
         href="https://github.com/WestonVincze"
         target="_blank"
@@ -28,6 +28,6 @@ export const SocialIcons = () => {
       <a href="mailto:westonvincze@gmail.com" target="_blank" rel="noreferrer">
         <StickyNote size="small" icon="Email" text="say hi" />
       </a>
-    </div>
+    </nav>
   );
 };

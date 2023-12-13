@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import style from "./FolderTabs.module.css";
-import { FolderTab, FolderTabProps } from "./FolderTab";
+import styles from "./FolderTabs.module.css";
+import { FolderTabProps } from "./FolderTab";
 import { PaperPreview } from "./PaperPreview";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
   const currentPage = usePathname();
@@ -20,7 +21,7 @@ export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
   }
 
   return (
-    <div className={style.folderTabs} {...props}>
+    <nav className={styles.folderTabs} {...props}>
       {tabs.map((tab, i) => (
         <React.Fragment key={i}>
           <PaperPreview
@@ -28,20 +29,32 @@ export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
             active={tab.path === activeTab}
             key={i}
           />
-          <span
-            onClick={() => handleClick(tab.path)}
-            onMouseEnter={() => handleHover(tab.path)}
-            onMouseLeave={() => handleHover("")}
+          <Link
+            href={tab.path}
+            aria-label={tab.text}
+            onFocus={() => handleHover(tab.path)}
+            onBlur={() => handleHover("")}
+            onKeyPress={(event) => {
+              if (event.key === "Enter") {
+                handleClick(tab.path);
+              }
+            }}
           >
-            <FolderTab
-              path={tab.path}
-              text={tab.text}
-              isActive={activeTab === tab.path}
-            />
-          </span>
+            <span
+              className={`${styles.folderTab} ${
+                tab.path === activeTab ? styles.active : ""
+              }`}
+              onClick={() => handleClick(tab.path)}
+              onMouseEnter={() => handleHover(tab.path)}
+              onMouseLeave={() => handleHover("")}
+              aria-hidden="true"
+            >
+              {tab.text}
+            </span>
+          </Link>
         </React.Fragment>
       ))}
-    </div>
+    </nav>
   );
 };
 

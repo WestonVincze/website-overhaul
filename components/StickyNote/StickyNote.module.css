@@ -83,6 +83,7 @@
   justify-content: center;
 }
 .taped:hover .text,
+a:focus .taped .text,
 .taped:active .text {
   transform: var(--transform);
   box-shadow: var(--box-shadow);

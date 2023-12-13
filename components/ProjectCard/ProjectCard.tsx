@@ -22,22 +22,28 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <LinedPaper id={id} style={links && { marginBottom: "100px" }} {...props}>
-      <section className={styles.header}>
-        <h2>
-          {projectName} ({year})
-        </h2>
-        <h3 className={styles.stamp}>[{status}]</h3>
+      <header className={styles.header}>
+        <h3>{`${projectName} (${year})`}</h3>
+        <h3 className={styles.stamp}>{`[${status}]`}</h3>
+      </header>
+
+      <section>
+        <SkillStickers skills={skills} />
       </section>
-      <SkillStickers skills={skills} />
-      <section className={styles.body}>
+
+      <section>
         <h4>Description</h4>
         <p>{description}</p>
-        {contributions && (
-          <>
-            <h4>My Contributions</h4>
-            <p>{contributions}</p>
-          </>
-        )}
+      </section>
+
+      {contributions && (
+        <section>
+          <h4>My Contributions</h4>
+          <p>{contributions}</p>
+        </section>
+      )}
+
+      <section>
         <h4>Highlights</h4>
         <ul>
           {highlights.map((h, i) => (
@@ -45,13 +51,14 @@ export const ProjectCard = ({
           ))}
         </ul>
       </section>
-      <section className={styles.footer}>
+
+      <nav className={styles.footer}>
         {links?.map((link) => (
           <a href={link.url} target="_blank" rel="noreferrer" key={link.text}>
             <StickyNote text={link.text} icon={link.icon} />
           </a>
         ))}
-      </section>
+      </nav>
     </LinedPaper>
   );
 };
