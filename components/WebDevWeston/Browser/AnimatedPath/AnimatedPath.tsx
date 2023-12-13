@@ -17,30 +17,40 @@ export const AnimatedPath = ({
   transform = "translate(0,0)",
   delay = 0,
 }: AnimatedPathProps) => {
-  const start = { opacity: 0.5, transform: `${transform} scale(0)` };
-  const end = { opacity: 1, transform: `${transform} scale(1)` };
+  const start = {
+    opacity: 0,
+    transform: "scale(0.5)",
+  };
+  const end = { opacity: 1, transform: "scale(1)" };
   const animatedStyle = useSpring({
     from: start,
     to: toggle ? end : start,
     delay: toggle ? delay : 0,
   });
   return (
-    <animated.path
+    <animated.g
       style={{
-        stroke,
-        fill,
-        strokeWidth: "0",
-        strokeDasharray: "none",
-        strokeLinecap: "butt",
-        strokeDashoffset: "0",
-        strokeLinejoin: "miter",
-        strokeMiterlimit: "4",
-        fillRule: "nonzero",
+        transformOrigin: "center center",
+        willChange: "transform, opacity",
         ...animatedStyle,
       }}
-      transform={animatedStyle.transform}
-      d={d}
-      strokeLinecap="round"
-    />
+    >
+      <path
+        style={{
+          stroke,
+          fill,
+          strokeWidth: "0",
+          strokeDasharray: "none",
+          strokeLinecap: "butt", // lol butt
+          strokeDashoffset: "0",
+          strokeLinejoin: "miter",
+          strokeMiterlimit: "4",
+          fillRule: "nonzero",
+        }}
+        transform={transform}
+        d={d}
+        strokeLinecap="round"
+      />
+    </animated.g>
   );
 };

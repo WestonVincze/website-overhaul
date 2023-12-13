@@ -22,6 +22,7 @@ export const AnimatedScreenFSM = createMachine<Context>({
         NEXT: {
           target: "loop",
           actions: assign((context) => {
+            if (Animations.length === 0) return { currentIndex: 0 };
             const nextIndex = (context.currentIndex + 1) % Animations.length;
             return {
               currentIndex: nextIndex,

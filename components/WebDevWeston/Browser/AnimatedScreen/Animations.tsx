@@ -1,4 +1,5 @@
 /**
+ * NOTE: these limitations need to be updated once the font is finalized
  * Code typing Animations that can be played within the
  * Browser component's screen. New lines are denoted with '|'
  * Limitations:

@@ -33,13 +33,14 @@ export const AnimatedScreen = () => {
 
   return (
     <text
-      width="80%"
+      width="100%"
       x="0"
       y="30%"
       dominantBaseline="middle"
       stroke="black"
       strokeWidth=".5"
-      fontSize={13}
+      fontSize={14}
+      xmlSpace="preserve"
     >
       {lines.map((line, i) => (
         <tspan x="5%" dy={i === 0 ? "0" : "1.2em"} key={i}>
