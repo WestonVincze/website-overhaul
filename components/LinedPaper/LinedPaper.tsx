@@ -1,6 +1,6 @@
 import styles from "./LinedPaper.module.css";
 
-export interface LinedPaperProps {
+export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   children?: React.ReactNode;
 }
