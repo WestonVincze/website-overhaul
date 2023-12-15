@@ -54,6 +54,7 @@ export const Browser = ({
       viewBox="0 0 222 170"
       xmlSpace="preserve"
     >
+      <title>Animated Browser SVG used to display pseudo code poems</title>
       <desc>Created by Weston Vincze with Fabric.js 5.3.0</desc>
       {/* Frame */}
       <AnimatedGroup

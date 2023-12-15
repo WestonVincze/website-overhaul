@@ -40,6 +40,7 @@ export const AnimatedScreen = () => {
       strokeWidth="1"
       fontSize={14}
       xmlSpace="preserve"
+      aria-hidden="true" /* these pseudo code poems are visual aesthetic */
     >
       {lines.map((line, i) => (
         <tspan x="5%" dy={i === 0 ? "0" : "1.2em"} key={i}>
