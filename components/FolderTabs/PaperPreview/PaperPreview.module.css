@@ -1,12 +1,13 @@
 .paperPreview {
   position: absolute;
-  right: 5px;
   top: 0;
+  left: var(--small-margin);
   width: 75vw;
-  height: 50px;
-  z-index: 0;
-  background-color: #fff;
-  filter: var(--folder-shadow);
+  height: 180px;
+  background-color: var(--paper);
+  background-image: var(--lined-paper);
+  filter: var(--shadow);
+  z-index: -1;
 }
 
 @media screen and (max-width: 810px) {

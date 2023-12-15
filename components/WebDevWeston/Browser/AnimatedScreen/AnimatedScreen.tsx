@@ -12,7 +12,6 @@ import { AnimatedScreenFSM } from "./AnimatedScreenFSM";
  * - we should loop through multiple animations
  *
  */
-
 export const AnimatedScreen = () => {
   const [current, send] = useMachine(AnimatedScreenFSM);
   const [text, setText] = useState(
@@ -37,8 +36,8 @@ export const AnimatedScreen = () => {
       x="0"
       y="30%"
       dominantBaseline="middle"
-      stroke="black"
-      strokeWidth=".5"
+      stroke="var(--font-color)"
+      strokeWidth="1"
       fontSize={14}
       xmlSpace="preserve"
     >

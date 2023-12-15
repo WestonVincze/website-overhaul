@@ -845,7 +845,7 @@ export const Icons: Record<string, Icon> = {
     ),
   },
   ReactSpring: {
-    title: "React Spring",
+    title: "Spring",
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"

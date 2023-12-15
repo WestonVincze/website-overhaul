@@ -1,17 +1,30 @@
+/***** Variables *****/
 :root {
-  /* colors */
-  --font-color: #160300;
-  --primary: #fd8469;
-  --primary-dark: #fd7456;
-  --primary-darker: #fc6442;
-  --secondary: #816381;
-  --accent: #e9c696;
-  --accent-dark: #ba9e78;
+  /* named colors */
+  --purple: #6D597A;
+  --purple-shaded: #342B3A;
+  --yellow: #FAEB76;
+  --yellow-shaded: #C8BC5E;
+  --graphite: #202020;
+  --off-white: #F2E9E4;
+  --tape: rgba(255, 255, 255, 0.6);
+  --blue: #768dfa33;
+  --red: #fa768033;
 
-  /* color names */
-  --folder: var(--accent);
-  --folder-shadow: var(--accent-dark);
-  --background: var(--secondary);
+  /* all themes */
+  --background: var(--purple);
+
+  /* light theme */
+  --folder--light: #EEE2C8;
+  --folder-shaded--light: #DFD3B7;
+  --paper--light: var(--off-white);
+  --font--light: var(--graphite);
+
+  /* dark theme */
+  --folder--dark: #1E1B20;
+  --folder-shaded--dark: #18161A;
+  --paper--dark: var(--graphite);
+  --font--dark: var(--off-white);
 
   /* spacing increments */
   --small-margin: 5px;
@@ -26,25 +39,53 @@
   --folder-tab-height: 50px;
   --header-height: calc(var(--folder-tab-offset) + var(--folder-tab-height));
 
-  /* fonts */
-  --animated-font: var(--amatic);
-
   /* font sizes */
-  --animated-font-size: 100px;
-  --large-font-size: 40px;
-  --medium-font-size: 30px;
-  --small-font-size: 20px;
+  --font-size-large: 40px;
+  --font-size-medium: 25px;
+  --font-size-small: 20px;
 
   /* other */
   --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  --lined-paper: url("/images/linedpaper.png") repeat;
 }
 
-/***** Global *****/
+/***** Themes *****/
+:root, [data-theme="light"] {
+  --folder: var(--folder--light);
+  --folder-shaded: var(--folder-shaded--light);
+  --paper: var(--paper--light);
+  --font-color: var(--font--light);
+  --highlight: var(--yellow);
+
+}
+[data-theme="dark"] {
+  --folder-shaded: var(--folder-shaded--dark);
+  --paper: var(--paper--dark);
+  --font-color: var(--font--dark);
+  --highlight: var(--purple-shaded);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  :root {
+    --folder: var(--folder--dark);
+    --folder-shaded: var(--folder-shaded--dark);
+    --paper: var(--paper--dark);
+    --font-color: var(--font--dark);
+    --highlight: var(--purple-shaded);
+  }
+}
+
+
+/***** Globals *****/
 html {
   background-color: var(--background);
   color: var(--font-color);
   position: relative;
-  font-size: var(--small-font-size);
+  font-size: var(--font-size-medium);
+  line-height: var(--font-size-medium);
 }
 
 body {
@@ -58,15 +99,24 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  font-family: var(--poppins);
+  font-size: 2rem;
+  line-height: 2rem;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
   margin: var(--spacing-1) 0;
-  font-family: var(--noto);
+}
+
+p,
+li {
+  margin: var(--spacing-1) 0;
+  line-height: 1.5rem;
 }
 
 hr {
@@ -96,7 +146,7 @@ ul > li {
   margin-bottom: 0.5rem;
 }
 ul > li:before {
-  color: var(--primary);
+  color: var(--purple);
   content: "❖";
   padding-right: 5px;
 }
@@ -116,17 +166,17 @@ ul > li:before {
 @media (max-width: 815px) {
   :root {
     --animated-font-size: 75px;
-    --large-font-size: 35px;
-    --medium-font-size: 25px;
-    --small-font-size: 15px;
+    --font-size-large: 35px;
+    --font-size-medium: 25px;
+    --font-size-small: 15px;
     --folder-tab-height: 45px;
     --folder-tab-offset: 30px;
   }
 }
 @media (max-width: 710px) {
   :root {
-    --medium-font-size: 22px;
-    --small-font-size: 13px;
+    --font-size-medium: 22px;
+    --font-size-small: 13px;
   }
 }
 
@@ -145,33 +195,33 @@ ul > li:before {
 @media (max-width: 410px) {
   :root {
     --animated-font-size: 55px;
-    --large-font-size: 33px;
-    --medium-font-size: 23px;
-    --small-font-size: 13px;
+    --font-size-large: 33px;
+    --font-size-medium: 23px;
+    --font-size-small: 13px;
   }
 }
 
 @media (max-width: 385px) {
   :root {
     --animated-font-size: 50px;
-    --large-font-size: 28px;
-    --medium-font-size: 20px;
-    --small-font-size: 12px;
+    --font-size-large: 28px;
+    --font-size-medium: 20px;
+    --font-size-small: 12px;
   }
 }
 
 @media (max-width: 350px) {
   :root {
-    --large-font-size: 20px;
-    --medium-font-size: 16px;
-    --small-font-size: 12px;
+    --font-size-large: 20px;
+    --font-size-medium: 16px;
+    --font-size-small: 12px;
     --folder-tab-height: 35px;
   }
 }
 
 @media (max-width: 300px) {
   :root {
-    --medium-font-size: 13px;
+    --font-size-medium: 13px;
     --medium-margin: 5px;
     --small-margin: 2px;
     --spacing-2: 10px;
@@ -185,14 +235,3 @@ ul > li:before {
   }
 }
 
-/*
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-*/

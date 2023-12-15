@@ -15,9 +15,9 @@ export const Layout = ({ children }: LayoutProps) => {
       <SocialIcons />
       <FolderTabs
         tabs={[
-          { path: "/projects", text: "PROJECTS" },
-          { path: "/resume", text: "RESUME" },
           { path: "/", text: "HOME" },
+          { path: "/resume", text: "RESUME" },
+          { path: "/projects", text: "PROJECTS" },
         ]}
       />
       <FolderBody>{children}</FolderBody>

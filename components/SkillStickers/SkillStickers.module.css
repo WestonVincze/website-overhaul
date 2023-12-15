@@ -2,9 +2,9 @@
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    65px
+    45px
   ); /* TODO: dynamically populate this value based on StickyNote height */
-  grid-gap: 32px;
+  grid-gap: 22px;
   justify-content: space-evenly;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }

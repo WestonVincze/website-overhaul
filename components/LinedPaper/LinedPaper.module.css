@@ -1,11 +1,43 @@
+/* TODO: confirm performance and implement consistent spacing system */
 .paper {
   position: relative;
-  background: #fff;
-  background: url("/images/linedpaper.png") repeat;
+  background-image: var(--lined-paper);
+  background-color: var(--paper);
+  color: var(--font-color);
   padding: var(--spacing-2);
   margin-bottom: 35px;
   filter: var(--shadow);
-  line-height: 2rem;
+  padding-left: calc(45px + var(--spacing-2));
+
+}
+.paper > header > h3 {
+  margin: 0;
+}
+.paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  border-right: 2px solid var(--red);
+}
+.paper::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  --font-size-medium: calc(1.5rem - 2px);
+  background: linear-gradient(transparent, transparent var(--font-size-medium), var(--blue) var(--font-size-medium));
+  --line-spacing: calc(var(--font-size-medium) + 2px);
+  background-size: var(--line-spacing) var(--line-spacing);
+}
+
+.paper header {
+  min-height: calc(45px - var(--spacing-2));
 }
 
 .paper p {

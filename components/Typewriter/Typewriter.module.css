@@ -1,14 +1,16 @@
+/*
 h1.typewriter {
-  font-size: var(--large-font-size);
+  font-size: var(--font-size-large);
 }
 
 h2.typewriter {
-  font-size: var(--medium-font-size);
+  font-size: var(--font-size-medium);
 }
 
 p.typewriter {
-  font-size: var(--small-font-size);
+  font-size: var(--font-size-small);
 }
+*/
 
 .centered {
   text-align: center;

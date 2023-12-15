@@ -16,10 +16,9 @@ const skillPapers: LinedPaperProps[] = ResumeContent.technicalSkills.map(
 
 const workExperiencePapers: LinedPaperProps[] =
   ResumeContent.workExperience.map((role) => ({
-    title: role.title,
+    title: `${role.title} - ${role.company}`,
     children: (
       <>
-        <h4>{role.company}</h4>
         <h4>{`${role.startDate} - ${role.endDate}`}</h4>
         <SkillStickers skills={role.skills} />
         <p>{role.description}</p>
@@ -48,7 +47,9 @@ export const ResumeScene = () => {
 
           <section>
             <h2>Summary.</h2>
-            <LinedPaper>{ResumeContent.intro}</LinedPaper>
+            <LinedPaper>
+              <p>{ResumeContent.intro}</p>
+            </LinedPaper>
           </section>
 
           <section>

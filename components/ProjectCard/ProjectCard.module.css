@@ -13,6 +13,6 @@
 }
 
 .stamp {
-  color: var(--primary);
+  color: var(--font-color);
   flex: 0 0 auto;
 }

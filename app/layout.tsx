@@ -1,8 +1,7 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
 import { Layout } from "@/components/Layout";
-import { Amatic_SC, Noto_Sans, Montserrat } from "next/font/google";
-import localFont from "next/font/local";
+import { Poppins, Montserrat } from "next/font/google";
 
 export const metadata: Metadata = {
   title: {
@@ -20,23 +19,11 @@ export const metadata: Metadata = {
   },
 };
 
-const typeWriter = localFont({
-  src: "../public/fonts/OldTypewriter/fzm-Old.Typewriter.ttf",
-  display: "swap",
-});
-
-export const amatic = Amatic_SC({
-  weight: ["700"],
+export const poppins = Poppins({
+  weight: ["800"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--amatic",
-});
-
-export const noto = Noto_Sans({
-  weight: ["600"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--noto",
+  variable: "--poppins",
 });
 
 const montserrat = Montserrat({
@@ -49,9 +36,7 @@ const montserrat = Montserrat({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <body
-        className={`${noto.variable} ${montserrat.variable} ${amatic.variable}`}
-      >
+      <body className={`${poppins.variable} ${montserrat.variable}`}>
         <Layout>{children}</Layout>
       </body>
     </html>

@@ -14,10 +14,10 @@ interface BrowserProps {
 }
 
 export const Browser = ({
-  windowColor = "#FFF",
-  windowBorderColor = "#FD8469",
-  headerColor = "#FD8469",
-  buttonColor = "#FFF",
+  windowColor = "var(--paper)",
+  windowBorderColor = "var(--purple)",
+  headerColor = "var(--purple)",
+  buttonColor = "var(--paper)",
 }: BrowserProps) => {
   const [toggle, setToggle] = useState(false);
   const [toggleScreen, setToggleScreen] = useState(false);

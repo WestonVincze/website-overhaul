@@ -2,6 +2,6 @@
   position: absolute;
   display: flex;
   top: var(--small-margin);
-  left: var(--small-margin);
+  right: var(--small-margin);
   column-gap: var(--medium-margin);
 }

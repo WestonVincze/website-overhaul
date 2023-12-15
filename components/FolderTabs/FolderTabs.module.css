@@ -2,16 +2,16 @@
   position: absolute;
   display: flex;
   top: var(--folder-tab-offset);
-  right: var(--small-margin);
+  left: var(--small-margin);
+  column-gap: var(--small-margin);
 }
 
-.folderTab {
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+.folderTab > :first-child {
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
   /* extra padding to help center text with clip-path */
-  padding-right: 1rem;
-  padding-left: 2rem;
-  background-color: var(--folder-shadow);
-  z-index: -1;
+  padding-right: 1.5rem;
+  padding-left: 1rem;
+  background-color: var(--folder-shaded);
   height: var(--folder-tab-height);
   display: flex;
   align-items: center;
@@ -20,9 +20,11 @@
   transform: translateY(7px);
   transition: transform 400ms ease-in-out;
 }
-.folderTab:hover, a:focus .folderTab, .folderTab.active {
+.folderTab:hover > :first-child,
+.folderTab:focus :first-child,
+.folderTab.active :first-child {
   transform: translateY(0);
 }
-.folderTab.active {
+.folderTab.active span {
   background-color: var(--folder);
 }

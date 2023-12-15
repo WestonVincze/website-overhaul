@@ -30,20 +30,20 @@ export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
             key={i}
           />
           <Link
+            className={`${styles.folderTab} ${
+              tab.path === activeTab ? styles.active : ""
+            }`}
             href={tab.path}
             aria-label={tab.text}
             onFocus={() => handleHover(tab.path)}
             onBlur={() => handleHover("")}
-            onKeyPress={(event) => {
+            onKeyDown={(event) => {
               if (event.key === "Enter") {
                 handleClick(tab.path);
               }
             }}
           >
             <span
-              className={`${styles.folderTab} ${
-                tab.path === activeTab ? styles.active : ""
-              }`}
               onClick={() => handleClick(tab.path)}
               onMouseEnter={() => handleHover(tab.path)}
               onMouseLeave={() => handleHover("")}
