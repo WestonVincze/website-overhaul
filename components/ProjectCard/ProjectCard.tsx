@@ -12,21 +12,18 @@ export const ProjectCard = ({
   id,
   projectName,
   year,
-  status,
   skills,
   description,
   contributions,
   highlights,
   links,
-  ...props
 }: ProjectCardProps) => {
   return (
-    <LinedPaper id={id} style={links && { marginBottom: "100px" }} {...props}>
-      <header className={styles.header}>
-        <h3>{`${projectName} (${year})`}</h3>
-        <h3 className={styles.stamp}>{`[${status}]`}</h3>
-      </header>
-
+    <LinedPaper
+      id={id}
+      title={`${projectName} (${year})`}
+      style={links && { marginBottom: "100px" }}
+    >
       <section>
         <SkillStickers skills={skills} />
       </section>

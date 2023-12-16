@@ -1,8 +1,3 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
 .footer {
   margin: var(--spacing-2);
   display: flex;
@@ -10,9 +5,4 @@
   position: absolute;
   top: calc(100% - var(--spacing-2) * 2);
   left: 0;
-}
-
-.stamp {
-  color: var(--font-color);
-  flex: 0 0 auto;
 }

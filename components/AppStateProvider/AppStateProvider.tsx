@@ -21,8 +21,20 @@ export const useAppState = (): {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   isReady: (state: any) => boolean;
   reducedMotion: boolean | null;
+  fontSize: number;
+  lineHeight: number;
 } => {
   const reducedMotion = useReducedMotion();
+
+  const fontSize = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("font-size"),
+  );
+
+  const lineHeight = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--line-height",
+    ),
+  );
 
   // skip all react-spring animations if user prefers reduced motion
   useEffect(() => {
@@ -48,7 +60,13 @@ export const useAppState = (): {
     [],
   );
 
-  return { appState: appContext.appState, isReady, reducedMotion };
+  return {
+    appState: appContext.appState,
+    isReady,
+    reducedMotion,
+    fontSize,
+    lineHeight,
+  };
 };
 
 interface AppStateProviderProps {

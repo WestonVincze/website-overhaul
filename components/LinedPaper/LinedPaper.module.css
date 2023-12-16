@@ -1,17 +1,36 @@
-/* TODO: confirm performance and implement consistent spacing system */
+
+/**
+HEADER
+---------------------
+height === 1.5 rem
+---------------------
+
+* if header content is multi-line, we have to increase height by 1.5rem per extra line
+* we may need to check the scroll height of title content and override with JS
+
+EVERY OTHER LINE
+---------
+1 rem === 1 line
+---------
+
+* all units should be spaced using rems. Margin + padding should be added to round to the nearest whole rem
+
+**/
 .paper {
+  --left-gap: 2rem;
+  --header-gap: calc(var(--line-height)* 2);
+  --colored-line-size: 2px;
+
   position: relative;
-  background-image: var(--lined-paper);
+
+  padding-left: calc(var(--left-gap) + var(--spacing-1));
+  padding-right: var(--spacing-2);
+  padding-bottom: var(--line-height);
+  margin-bottom: var(--line-height);
+
   background-color: var(--paper);
   color: var(--font-color);
-  padding: var(--spacing-2);
-  margin-bottom: 35px;
   filter: var(--shadow);
-  padding-left: calc(45px + var(--spacing-2));
-
-}
-.paper > header > h3 {
-  margin: 0;
 }
 .paper::before {
   content: '';
@@ -19,27 +38,42 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 45px;
-  border-right: 2px solid var(--red);
+  width: var(--left-gap);
+  border-right: var(--colored-line-size) solid var(--red-20);
 }
 .paper::after {
   content: '';
   position: absolute;
-  top: 15px;
-  bottom: 15px;
+  top: var(--header-gap);
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
-  --font-size-medium: calc(1.5rem - 2px);
-  background: linear-gradient(transparent, transparent var(--font-size-medium), var(--blue) var(--font-size-medium));
-  --line-spacing: calc(var(--font-size-medium) + 2px);
-  background-size: var(--line-spacing) var(--line-spacing);
+
+  /* repeated pattern to draw lined paper lines */
+  background: linear-gradient(
+                var(--blue-20) var(--colored-line-size),
+                transparent var(--colored-line-size),
+                transparent calc(var(--line-height) - var(--colored-line-size))
+              );
+
+  background-size: auto var(--line-height);
 }
 
-.paper header {
-  min-height: calc(45px - var(--spacing-2));
+/* if there is no title, add padding to preserve effect */
+.paper.noTitle {
+  padding-top: var(--header-gap); 
 }
 
-.paper p {
-  line-height: 1.5rem;
+.paper > header:not(.multiLine) > .title {
+  line-height: var(--header-gap);
+}
+
+.paper > header.multiLine > .title,
+.paper > section:not(:last-child) {
+  margin-bottom: var(--line-height);
+}
+
+.paper h3, .paper h4, .paper h5, .paper h6 {
+  font-weight: bold;
 }

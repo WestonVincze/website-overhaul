@@ -55,7 +55,7 @@
 }
 .taped::before {
   content: "";
-  background-color: var(--tape);
+  background-color: var(--off-white-60);
   position: absolute;
   width: 60%;
   height: 10%;

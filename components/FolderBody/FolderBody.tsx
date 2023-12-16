@@ -7,9 +7,9 @@ interface FolderBodyProps {
 
 export const FolderBody = ({ children, ...props }: FolderBodyProps) => {
   return (
-    <div className={styles.folder} {...props}>
+    <main className={styles.folder} {...props}>
       <AnimatedHeading />
       {children}
-    </div>
+    </main>
   );
 };
