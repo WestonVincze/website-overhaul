@@ -31,6 +31,11 @@ EVERY OTHER LINE
   background-color: var(--paper);
   color: var(--font-color);
   filter: var(--shadow);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.paper.show {
+  opacity: 1;
 }
 .paper::before {
   content: '';
@@ -70,6 +75,7 @@ EVERY OTHER LINE
 }
 
 .paper > header.multiLine > .title,
+.paper header:not(:first-child),
 .paper > section:not(:last-child) {
   margin-bottom: var(--line-height);
 }

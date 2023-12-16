@@ -14,7 +14,6 @@ const subHeadingText = {
 enum AnimationStates {
   name,
   subHeading,
-  hideGreeting,
   done,
 }
 
@@ -38,13 +37,9 @@ export const AnimatedHeading = () => {
     appState.send("INTRO_ANIMATION_COMPLETE");
   }, [animationState, appState]);
 
-  const handleDoneTypingName = (): void => {
-    setAnimationState(AnimationStates.subHeading);
-  };
-
-  const handleDoneTypingSubHeading = (): void => {
+  const nextAnimationState = (): void => {
     if (animationState === AnimationStates.done) return;
-    setAnimationState(AnimationStates.done);
+    setAnimationState(animationState + 1);
   };
 
   return (
@@ -54,7 +49,7 @@ export const AnimatedHeading = () => {
           text="Hi, I'm Weston Vincze."
           tagType="h1"
           centered={true}
-          onDoneTyping={() => handleDoneTypingName()}
+          onDoneTyping={() => nextAnimationState()}
         />
       )}
       {animationState >= AnimationStates.subHeading && (
@@ -62,7 +57,7 @@ export const AnimatedHeading = () => {
           text={subHeadingText[currentPage]}
           inlineTag={true}
           centered={true}
-          onDoneTyping={() => handleDoneTypingSubHeading()}
+          onDoneTyping={() => nextAnimationState()}
         />
       )}
     </header>

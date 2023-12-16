@@ -1,6 +1,7 @@
 import React, { useMemo, useEffect, useRef } from "react";
 import styles from "./LinedPaper.module.css";
 import { useAppState } from "../AppStateProvider";
+import { useInView } from "react-spring";
 
 export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -13,6 +14,7 @@ export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
   const headerRef = useRef<HTMLHeadingElement>(null);
+  const [ref, inView] = useInView();
 
   const { lineHeight, fontSize } = useAppState();
 
@@ -46,8 +48,11 @@ export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
 
   return (
     <article
+      ref={ref}
       {...props}
-      className={`${styles.paper} ${!title && styles.noTitle}`}
+      className={`${styles.paper} ${inView ? styles.show : ""} ${
+        !title ? styles.noTitle : ""
+      }`.trim()}
     >
       {title && (
         <header ref={headerRef}>
