@@ -105,7 +105,7 @@
 }
 
 /***** CSS Reset *****/
-* {
+*, *::after, *::before {
   box-sizing: border-box;
   color: inherit;
   margin: 0;
@@ -133,11 +133,6 @@ html {
   color: var(--font-color);
   position: relative;
   line-height: var(--line-height);
-  /*
-  line-height: 1.4;
-  font-size: var(--font-size-medium);
-  line-height: var(--font-size-medium);
-  */
 }
 
 body {
@@ -152,10 +147,11 @@ body {
 
 h1 {
   font-family: var(--poppins);
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
 }
 h2 {
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2.5rem;
   margin-bottom: 0.5rem;
@@ -167,7 +163,6 @@ h4 {
   font-size: 1.1rem;
 }
 
-h2,
 h3,
 h4,
 h5,
@@ -177,9 +172,6 @@ h6 {
 
 ul > li {
   padding-left: 1.2rem;
-  /*
-  text-indent: -1rem;
-  */
   position: relative;
 }
 

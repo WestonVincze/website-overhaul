@@ -6,7 +6,6 @@
   height: var(--height);
   text-align: center;
   color: var(--font--light);
-  font-weight: bold;
 }
 .content {
   background-color: var(--yellow);
@@ -24,24 +23,25 @@
 
 /** SIZES *****************************************/
 .small {
-  --width: 65px;
-  --height: 65px;
-  --icon-width: 35px;
+  --width: 60px;
+  --height: 60px;
+  --icon-width: 30px;
   font-size: 12px;
   line-height: 12px;
 }
 .medium {
-  --width: 100px;
-  --height: 100px;
-  --icon-width: 100px;
-  font-size: 13px;
-  line-height: 13px;
+  --width: 90px;
+  --height: 90px;
+  --icon-width: 80px;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 /** TAPED *****************************************/
 .taped {
   position: relative;
   transform-style: preserve-3d;
+  font-weight: bold;
 }
 .taped.small {
   --fold-height: 20px;
@@ -49,7 +49,7 @@
   --box-shadow: inset 0 4px 8px var(--yellow-shaded);
 }
 .taped.medium {
-  --fold-height: 32px;
+  --fold-height: 28px;
   --transform: rotateX(20deg) translateY(-2px);
   --box-shadow: inset 0 10px 20px var(--yellow-shaded);
 }
@@ -124,9 +124,9 @@ a:focus .taped .text,
 /** size overrides **/
 .sticker.small {
   /* note: `SkillStickers` grid needs to be updated if below values change */
-  --width: 45px;
-  --height: 45px;
-  --icon-width: 25px;
+  --width: calc(var(--line-height) * 2);
+  --height: var(--width);
+  --icon-width: var(--width);
 }
 
 .sticker {
@@ -151,7 +151,7 @@ a:focus .taped .text,
 }
 .sticker .content svg {
   color: var(--off-white);
-  height: 90%;
+  height: 60%;
   position: absolute;
   top: 50%;
   left: 50%;

@@ -22,7 +22,7 @@ export const ProjectCard = ({
     <LinedPaper
       id={id}
       title={`${projectName} (${year})`}
-      style={links && { marginBottom: "100px" }}
+      style={links && { marginBottom: "80px" }}
     >
       <section>
         <SkillStickers skills={skills} />

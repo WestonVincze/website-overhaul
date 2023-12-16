@@ -5,7 +5,6 @@
   width: 75vw;
   height: 180px;
   background-color: var(--paper);
-  background-image: var(--lined-paper);
   filter: var(--shadow);
   z-index: -1;
 }

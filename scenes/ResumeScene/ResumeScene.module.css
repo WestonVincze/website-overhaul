@@ -6,17 +6,19 @@
   justify-content: center;
   column-gap: var(--spacing-2);
 }
-.columns {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.columns > * {
-  width: 50%;
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(12rem, 1fr)
+  );
 }
 
-@media screen and (max-width: 490px) {
-  .columns > * {
-    width: 100%;
-  }
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(16rem, 1fr)
+  );
 }
