@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import styles from "./FolderTabs.module.css";
-import { FolderTabProps } from "./FolderTab";
 import { PaperPreview } from "./PaperPreview";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+
+export interface FolderTab {
+  path: string;
+  text?: string;
+  isActive?: boolean;
+}
+interface FolderTabsProps {
+  tabs: FolderTab[];
+}
 
 export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
   const currentPage = usePathname();
@@ -57,7 +65,3 @@ export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
     </nav>
   );
 };
-
-interface FolderTabsProps {
-  tabs: FolderTabProps[];
-}
