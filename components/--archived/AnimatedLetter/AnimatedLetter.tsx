@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import styles from "./AnimatedLetter.module.css";
-import { DragSnap } from "../Drag/DragSnap";
+import { DragSnap } from "../../Drag/DragSnap";
 
 const ROTATION_THRESHOLD = 15;
 
