@@ -4,6 +4,7 @@ import { LinedPaper } from "@components/LinedPaper";
 import { SkillStickers } from "@components/SkillStickers";
 import styles from "./ResumeScene.module.css";
 import { StickyNote } from "@components/StickyNote";
+import { HighlightedHeading } from "@components/HighlightedHeading";
 
 export const ResumeScene = () => {
   return (
@@ -19,14 +20,14 @@ export const ResumeScene = () => {
         </header>
 
         <section>
-          <h2>Summary.</h2>
+          <HighlightedHeading id="summary" text="Summary." />
           <LinedPaper>
             <p>{ResumeContent.intro}</p>
           </LinedPaper>
         </section>
 
         <section>
-          <h2>Skills.</h2>
+          <HighlightedHeading id="skills" text="Skills." />
           {ResumeContent.technicalSkills.map((skillType, i) => (
             <LinedPaper key={i} title={skillType.title}>
               <ul className={styles.skills}>
@@ -39,7 +40,7 @@ export const ResumeScene = () => {
         </section>
 
         <section>
-          <h2>Experience.</h2>
+          <HighlightedHeading id="experience" text="Experience." />
           {ResumeContent.workExperience.map((role, i) => (
             <LinedPaper key={i} title={role.title}>
               <header>
@@ -67,7 +68,7 @@ export const ResumeScene = () => {
         </section>
 
         <section>
-          <h2>Education.</h2>
+          <HighlightedHeading id="education" text="Education." />
           <LinedPaper
             title={`${ResumeContent.education.program} (${ResumeContent.education.degree})`}
           >
@@ -91,7 +92,7 @@ export const ResumeScene = () => {
         </section>
 
         <section>
-          <h2>Hobbies.</h2>
+          <HighlightedHeading id="hobbies" text="Hobbies." />
           <LinedPaper>
             <ul className={styles.hobbies}>
               {ResumeContent.hobbies.map((hobby, i) => (

@@ -16,7 +16,7 @@ EVERY OTHER LINE
 
 **/
 .paper {
-  --left-gap: 2rem;
+  --left-gap: calc(var(--line-height) * 1.5);
   --header-gap: calc(var(--line-height) * 2);
   --colored-line-size: 2px;
 
@@ -24,17 +24,13 @@ EVERY OTHER LINE
 
   padding-left: calc(var(--left-gap) + var(--spacing-1));
   padding-right: var(--spacing-2);
+  /*padding-right: calc(var(--left-gap) + var(--spacing-1));*/
   padding-bottom: var(--line-height);
   margin-bottom: var(--line-height);
 
   background-color: var(--paper);
   color: var(--font-color);
   filter: var(--shadow);
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.paper.show {
-  opacity: 1;
 }
 .paper::before {
   content: "";

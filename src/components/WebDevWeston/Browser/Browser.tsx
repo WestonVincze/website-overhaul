@@ -21,13 +21,11 @@ export const Browser = ({
 }: BrowserProps) => {
   const [toggle, setToggle] = useState(false);
   const [toggleScreen, setToggleScreen] = useState(false);
-  const { appState } = useAppState();
-  const ready = useSelector(appState, (state) =>
-    state.matches(AppStates.ready),
-  );
+  const { appState, isReady } = useAppState();
+  const introDone = useSelector(appState, isReady);
 
   useEffect(() => {
-    if (!ready) return;
+    if (!introDone) return;
 
     const startDelay = setTimeout(() => {
       setToggle(true);
@@ -41,7 +39,7 @@ export const Browser = ({
       clearTimeout(startDelay);
       clearTimeout(screenDelay);
     };
-  }, [ready]);
+  }, [introDone]);
 
   return (
     <svg

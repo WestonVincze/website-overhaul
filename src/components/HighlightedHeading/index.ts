@@ -1,0 +1,1 @@
+export { HighlightedHeading } from "./HighlightedHeading";

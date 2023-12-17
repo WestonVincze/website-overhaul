@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useRef } from "react";
 import styles from "./LinedPaper.module.css";
 import { useAppState } from "@providers/AppStateProvider";
-import { useInView } from "react-spring";
+import { useSlideAnimation } from "@hooks/useSlideAnimation";
 
 export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -13,10 +13,9 @@ export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
  * @param children if no `section` elements are passed, content will be wrapped in a section, otherwise each `section` element (except the last) will have a single line margin to "double space" content
  */
 export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
-  const headerRef = useRef<HTMLHeadingElement>(null);
-  const [ref, inView] = useInView();
-
+  const [ref, animatedStyle, AnimatedArticle] = useSlideAnimation("article");
   const { lineHeight, fontSize } = useAppState();
+  const headerRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     // if height of header exceeds the heading section, change the line-height to match paper line height and maintain vertical rhythm
@@ -47,12 +46,11 @@ export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
   }, [children]);
 
   return (
-    <article
-      ref={ref}
+    <AnimatedArticle
       {...props}
-      className={`${styles.paper} ${inView ? styles.show : ""} ${
-        !title ? styles.noTitle : ""
-      }`.trim()}
+      ref={ref}
+      style={animatedStyle}
+      className={`${styles.paper} ${!title ? styles.noTitle : ""}`.trim()}
     >
       {title && (
         <header ref={headerRef}>
@@ -60,6 +58,6 @@ export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
         </header>
       )}
       {hasSection ? children : <section>{children}</section>}
-    </article>
+    </AnimatedArticle>
   );
 };
