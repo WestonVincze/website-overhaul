@@ -3,7 +3,7 @@
 import { FolderBody } from "../FolderBody";
 import { FolderTabs } from "../FolderTabs";
 import { SocialIcons } from "../SocialIcons";
-import { AppStateProvider } from "../AppStateProvider";
+import { AppStateProvider } from "@providers/AppStateProvider";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,7 +12,6 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <AppStateProvider>
-      <SocialIcons />
       <FolderTabs
         tabs={[
           { path: "/", text: "HOME" },
@@ -20,6 +19,7 @@ export const Layout = ({ children }: LayoutProps) => {
           { path: "/projects", text: "PROJECTS" },
         ]}
       />
+      <SocialIcons />
       <FolderBody>{children}</FolderBody>
     </AppStateProvider>
   );

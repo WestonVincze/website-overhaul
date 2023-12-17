@@ -26,7 +26,8 @@
       "@scenes/*": ["src/scenes/*"],
       "@hocs/*": ["src/hocs/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@providers/*": ["src/providers/*"],
     }
   },
   "include": [

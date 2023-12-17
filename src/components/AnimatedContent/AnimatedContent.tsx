@@ -1,5 +1,5 @@
 import { animated, useTrail } from "react-spring";
-import { useAppState } from "../AppStateProvider";
+import { useAppState } from "@providers/AppStateProvider";
 import { useSelector } from "@xstate/react";
 
 const DELAY_FACTOR = 500;

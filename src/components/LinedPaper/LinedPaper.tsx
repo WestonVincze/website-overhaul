@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useRef } from "react";
 import styles from "./LinedPaper.module.css";
-import { useAppState } from "../AppStateProvider";
+import { useAppState } from "@providers/AppStateProvider";
 import { useInView } from "react-spring";
 
 export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Typewriter } from "../Typewriter";
-import { useAppState } from "../AppStateProvider";
+import { useAppState } from "@providers/AppStateProvider";
 
 type Path = "/" | "/resume" | "/projects";
 

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-jest.mock("./components/AppStateProvider", () => ({
+jest.mock("@providers/AppStateProvider", () => ({
   useAppState: () => ({
     appState: {},
     isReady: true,

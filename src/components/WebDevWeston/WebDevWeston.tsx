@@ -3,7 +3,7 @@ import styles from "./WebDevWeston.module.css";
 import webDevWestonGIF from "/public/images/web-dev-weston.gif";
 import webDevWestonPNG from "/public/images/web-dev-weston.png";
 import { Browser } from "./Browser";
-import { useAppState } from "../AppStateProvider";
+import { useAppState } from "@providers/AppStateProvider";
 
 export const WebDevWeston = () => {
   const { reducedMotion } = useAppState();

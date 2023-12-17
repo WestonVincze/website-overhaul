@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Browser.module.css";
 import { AnimatedGroup } from "./AnimatedGroup";
 import { AnimatedScreen } from "./AnimatedScreen";
-import { AppStates, useAppState } from "../../AppStateProvider";
+import { AppStates, useAppState } from "@providers/AppStateProvider";
 import { useSelector } from "@xstate/react";
 
 interface BrowserProps {

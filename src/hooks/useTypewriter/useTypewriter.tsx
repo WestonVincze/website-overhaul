@@ -1,4 +1,4 @@
-import { useAppState } from "@components/AppStateProvider";
+import { useAppState } from "@providers/AppStateProvider";
 import { useEffect, useRef, useState } from "react";
 
 interface useTypewriterProps {

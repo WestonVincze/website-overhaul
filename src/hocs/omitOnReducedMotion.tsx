@@ -1,4 +1,4 @@
-import { useAppState } from "@components/AppStateProvider";
+import { useAppState } from "@providers/AppStateProvider";
 
 /**
  * Accessibility HOC that will not render (omit) the passed Component if the user prefers reduced motion
