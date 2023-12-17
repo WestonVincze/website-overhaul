@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 import { Metadata } from "next";
 import { Layout } from "@/components/Layout";
 import { Poppins, Montserrat } from "next/font/google";

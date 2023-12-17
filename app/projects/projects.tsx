@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectsScene } from "../../scenes/ProjectsScene";
+import { ProjectsScene } from "@/scenes/ProjectsScene";
 
 const Projects = () => {
   return <ProjectsScene />;
