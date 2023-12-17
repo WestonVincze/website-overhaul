@@ -1,6 +1,6 @@
 "use client";
 
-import { ResumeScene } from "@/scenes/ResumeScene";
+import { ResumeScene } from "@scenes/ResumeScene";
 
 const Resume = () => {
   return <ResumeScene />;

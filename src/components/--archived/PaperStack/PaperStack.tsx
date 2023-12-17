@@ -1,6 +1,6 @@
 // import styles from './PaperStack.module.css'
-import { LinedPaper, LinedPaperProps } from "@/components/LinedPaper";
-import { AnimatedContent } from "@/components/AnimatedContent";
+import { LinedPaper, LinedPaperProps } from "@components/LinedPaper";
+import { AnimatedContent } from "@components/AnimatedContent";
 
 interface PaperStackProps {
   papers: LinedPaperProps[];

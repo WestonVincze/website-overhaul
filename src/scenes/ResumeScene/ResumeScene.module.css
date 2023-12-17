@@ -9,16 +9,10 @@
 
 .skills {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(12rem, 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
 }
 
 .hobbies {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(16rem, 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }

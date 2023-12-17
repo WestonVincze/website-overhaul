@@ -1,6 +1,6 @@
 "use client";
 
-import { HomeScene } from "@/scenes/HomeScene";
+import { HomeScene } from "@scenes/HomeScene";
 
 const Home = () => {
   return <HomeScene />;

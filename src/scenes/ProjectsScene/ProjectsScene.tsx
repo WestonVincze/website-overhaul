@@ -1,7 +1,7 @@
-import { ProjectCard } from "@/components/ProjectCard";
-import { Container } from "@/components/Container";
-import { AnimatedContent } from "@/components/AnimatedContent";
-import { Projects } from "@/scenes/ProjectsScene/ProjectsContent";
+import { ProjectCard } from "@components/ProjectCard";
+import { Container } from "@components/Container";
+import { AnimatedContent } from "@components/AnimatedContent";
+import { Projects } from "@scenes/ProjectsScene/ProjectsContent";
 
 export const ProjectsScene = (): JSX.Element => {
   return (

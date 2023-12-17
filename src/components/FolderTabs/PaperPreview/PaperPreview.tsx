@@ -4,7 +4,7 @@ import styles from "./PaperPreview.module.css";
 import { useMachine } from "@xstate/react";
 import { PaperPreviewFSM, AnimationStates } from "./PaperPreviewFSM";
 import { OFF_SCREEN_Y_OFFSET, OFF_SCREEN_X_OFFSET } from "./types";
-import { omitOnReducedMotion } from "@/hocs/omitOnReducedMotion";
+import { omitOnReducedMotion } from "@hocs/omitOnReducedMotion";
 
 interface PaperPreviewProps {
   hovering: boolean;

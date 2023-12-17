@@ -1,5 +1,5 @@
-import { Container } from "@/components/Container";
-import { WebDevWeston } from "@/components/WebDevWeston";
+import { Container } from "@components/Container";
+import { WebDevWeston } from "@components/WebDevWeston";
 
 export const HomeScene = () => {
   return (

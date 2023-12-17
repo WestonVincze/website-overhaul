@@ -4,32 +4,17 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useState,
 } from "react";
 import { useInterpret } from "@xstate/react";
 import { InterpreterFrom } from "xstate";
 import { AppStateFSM, AppStates } from "./AppStateFSM";
 import { useReducedMotion, Globals } from "react-spring";
+import { useStyle } from "@hooks/useStyle";
 
 type AppState = InterpreterFrom<typeof AppStateFSM>;
 export const AppStateContext = createContext<
   { appState: AppState } | undefined
 >(undefined);
-
-const useStyle = (property: string, defaultValue: number) => {
-  const [styleValue, setStyleValue] = useState(defaultValue);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const computedValue = getComputedStyle(
-        document.documentElement,
-      ).getPropertyValue(property);
-      setStyleValue(computedValue ? parseFloat(computedValue) : defaultValue);
-    }
-  }, [property, defaultValue]);
-
-  return styleValue;
-};
 
 export const useAppState = (): {
   appState: AppState;

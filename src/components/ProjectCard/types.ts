@@ -1,4 +1,4 @@
-import { IconNames } from "../Icons";
+import { IconNames } from "@assets/Icons";
 
 export type SocialLink = {
   icon: IconNames;

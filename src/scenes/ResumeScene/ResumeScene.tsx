@@ -1,9 +1,9 @@
-import { Container } from "@/components/Container";
+import { Container } from "@components/Container";
 import { ResumeContent } from "./ResumeContent";
-import { LinedPaper } from "@/components/LinedPaper";
-import { SkillStickers } from "@/components/SkillStickers";
+import { LinedPaper } from "@components/LinedPaper";
+import { SkillStickers } from "@components/SkillStickers";
 import styles from "./ResumeScene.module.css";
-import { StickyNote } from "@/components/StickyNote";
+import { StickyNote } from "@components/StickyNote";
 
 export const ResumeScene = () => {
   return (

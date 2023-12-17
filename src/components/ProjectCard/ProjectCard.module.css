@@ -3,6 +3,6 @@
   display: flex;
   column-gap: var(--spacing-2);
   position: absolute;
-  top: calc(100% - var(--line-height)* 2);
+  top: calc(100% - var(--line-height) * 2);
   left: 0;
 }

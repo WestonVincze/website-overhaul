@@ -1,4 +1,4 @@
-import { IconNames } from "../../components/Icons";
+import { IconNames } from "@assets/Icons";
 
 const intro =
   "I am a driven web developer backed by over 5 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks with a strong proficiency in React and TypeScript.";

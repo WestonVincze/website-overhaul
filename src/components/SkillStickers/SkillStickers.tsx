@@ -1,5 +1,5 @@
 import styles from "./SkillStickers.module.css";
-import { IconNames } from "../Icons";
+import { IconNames } from "@assets/Icons";
 import { StickyNote } from "../StickyNote";
 // TODO: implement a form of interactivity (perhaps clicking on / hovering will highlight all relevant skills)
 /**

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useTypewriter } from "../../../Typewriter/useTypewriter";
+import { useTypewriter } from "@hooks/useTypewriter";
 import { Animations } from "./Animations";
 import { useMachine } from "@xstate/react";
 import { AnimatedScreenFSM } from "./AnimatedScreenFSM";

@@ -1,4 +1,4 @@
-import { useTypewriter } from "./useTypewriter";
+import { useTypewriter } from "@hooks/useTypewriter";
 import styles from "./Typewriter.module.css";
 
 /**

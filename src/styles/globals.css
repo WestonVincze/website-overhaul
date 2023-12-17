@@ -1,20 +1,20 @@
 /***** Variables *****/
 :root {
   /* named colors */
-  --purple: #6D597A;
-  --purple-shaded: #342B3A;
-  --yellow: #FAEB76;
-  --yellow-shaded: #C8BC5E;
+  --purple: #6d597a;
+  --purple-shaded: #342b3a;
+  --yellow: #faeb76;
+  --yellow-shaded: #c8bc5e;
   --graphite: #202020;
-  --off-white: #F2E9E4;
+  --off-white: #f2e9e4;
   --blue: #768dfa;
   --red: #fa7680;
 
   /* semi-transparent */
   /* ~60% */
-  --off-white-60: #F2E9E499;
-  --yellow-60: #FAEB7699;
-  --purple-60: #6D597A99;
+  --off-white-60: #f2e9e499;
+  --yellow-60: #faeb7699;
+  --purple-60: #6d597a99;
   /* ~20% */
   --blue-20: #768dfa33;
   --red-20: #fa768033;
@@ -23,14 +23,14 @@
   --background: var(--purple);
 
   /* light theme */
-  --folder--light: #EEE2C8;
-  --folder-shaded--light: #DFD3B7;
+  --folder--light: #eee2c8;
+  --folder-shaded--light: #dfd3b7;
   --paper--light: var(--off-white);
   --font--light: var(--graphite);
 
   /* dark theme */
-  --folder--dark: #1E1B20;
-  --folder-shaded--dark: #18161A;
+  --folder--dark: #1e1b20;
+  --folder-shaded--dark: #18161a;
   --paper--dark: var(--graphite);
   --font--dark: var(--off-white);
 
@@ -65,14 +65,14 @@
 }
 
 /***** Themes *****/
-:root, [data-theme="light"] {
+:root,
+[data-theme="light"] {
   --folder: var(--folder--light);
   --folder-shaded: var(--folder-shaded--light);
   --paper: var(--paper--light);
   --font-color: var(--font--light);
   --highlight: var(--yellow);
   --highlight-60: var(--yellow-60);
-
 }
 [data-theme="dark"] {
   --folder-shaded: var(--folder-shaded--dark);
@@ -105,7 +105,9 @@
 }
 
 /***** CSS Reset *****/
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   color: inherit;
   margin: 0;
@@ -113,12 +115,22 @@
   border: 0;
   outline: 0;
 }
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 :focus {
   outline: 0;
@@ -261,4 +273,3 @@ ul > li:before {
     min-width: 280px;
   }
 }
-

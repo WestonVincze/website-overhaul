@@ -22,10 +22,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/scenes/*": ["src/scenes/*"],
-      "@/hocs/*": ["src/hocs/*"],
-      "@/hooks/*": ["src/hooks/*"],
+      "@components/*": ["src/components/*"],
+      "@scenes/*": ["src/scenes/*"],
+      "@hocs/*": ["src/hocs/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "include": [

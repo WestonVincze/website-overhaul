@@ -1,5 +1,5 @@
 import styles from "./StickyNote.module.css";
-import { Icons, IconNames } from "../Icons";
+import { Icons, IconNames } from "@assets/Icons";
 
 interface StickyNoteProps {
   icon: IconNames;
