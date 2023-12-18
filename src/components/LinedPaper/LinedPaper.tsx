@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useRef } from "react";
 import styles from "./LinedPaper.module.css";
 import { useAppState } from "@providers/AppStateProvider";
-import { useSlideAnimation } from "@hooks/useSlideAnimation";
+import { useInViewAnimation } from "@hooks/useInViewAnimation";
 
 export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -13,7 +13,7 @@ export interface LinedPaperProps extends React.HTMLAttributes<HTMLDivElement> {
  * @param children if no `section` elements are passed, content will be wrapped in a section, otherwise each `section` element (except the last) will have a single line margin to "double space" content
  */
 export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
-  const [ref, animatedStyle, AnimatedArticle] = useSlideAnimation("article");
+  const [ref, animatedStyle, AnimatedArticle] = useInViewAnimation("article");
   const { lineHeight, fontSize } = useAppState();
   const headerRef = useRef<HTMLHeadingElement>(null);
 

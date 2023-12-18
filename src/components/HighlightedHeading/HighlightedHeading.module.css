@@ -1,0 +1,22 @@
+.highlighted span {
+  position: relative;
+  padding: 0 0.5ch;
+}
+
+.highlighted span::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  max-width: 0;
+  background-color: var(--highlight);
+  transform: rotate(-1deg);
+  z-index: -1;
+  transition: all 1s ease-out;
+}
+
+.highlighted span.showHighlight::before {
+  max-width: 100%;
+}

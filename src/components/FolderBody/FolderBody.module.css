@@ -1,4 +1,5 @@
 .folder {
+  z-index: 1;
   background: var(--folder);
   margin: var(--small-margin);
   margin-top: 0;
