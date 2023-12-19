@@ -1,0 +1,9 @@
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  column-gap: var(--small-margin);
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  padding-bottom: 0;
+}

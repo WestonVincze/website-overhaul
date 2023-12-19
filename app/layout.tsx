@@ -1,8 +1,9 @@
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 import { Metadata } from "next";
-import { Layout } from "@/components/Layout";
-import { Amatic_SC } from "next/font/google";
-import localFont from "next/font/local";
+import { Layout } from "@components/Layout";
+import { Poppins, Montserrat } from "next/font/google";
+import Head from "next/head";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: {
@@ -20,22 +21,29 @@ export const metadata: Metadata = {
   },
 };
 
-const typeWriter = localFont({
-  src: "../public/fonts/OldTypewriter/fzm-Old.Typewriter.ttf",
-  display: "swap",
-});
-
-export const amatic = Amatic_SC({
-  weight: ["700"],
+export const poppins = Poppins({
+  weight: ["800"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--amatic",
+  variable: "--poppins",
+});
+
+const montserrat = Montserrat({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--montserrat",
 });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <body className={`${amatic.variable} ${typeWriter.className}`}>
+      <Head>
+        <Link rel="preload" href="/images/black-paper.png" />
+        <Link rel="preload" href="/images/light-paper.png" />
+        <Link rel="preload" href="/images/soft-wallpaper.png" />
+      </Head>
+      <body className={`${poppins.variable} ${montserrat.variable}`}>
         <Layout>{children}</Layout>
       </body>
     </html>

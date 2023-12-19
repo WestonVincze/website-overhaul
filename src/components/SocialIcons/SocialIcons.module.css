@@ -1,0 +1,5 @@
+.socialIcons {
+  display: flex;
+  column-gap: var(--small-margin);
+  margin-bottom: var(--small-margin);
+}

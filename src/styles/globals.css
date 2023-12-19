@@ -1,0 +1,242 @@
+/***** Variables *****/
+:root {
+  /* named colors */
+  --purple: #6d597a;
+  --purple-shaded: #342b3a;
+  --yellow: #faeb76;
+  --yellow-shaded: #c8bc5e;
+  --graphite: #202020;
+  --off-white: #f2e9e4;
+  --blue: #768dfa;
+  --red: #fa7680;
+
+  /* semi-transparent */
+  /* ~60% */
+  --off-white-60: #f2e9e499;
+  --yellow-60: #faeb7699;
+  --purple-60: #6d597a99;
+  /* ~10% */
+  --blue-10: #768dfa22;
+  --red-10: #fa768022;
+
+  /* all themes */
+  --background: var(--purple);
+  --folder-texture: url("/images/soft-wallpaper.png");
+
+  /* light theme */
+  --folder--light: #eee2c8;
+  --folder-shaded--light: #dfd3b7;
+  --paper--light: var(--off-white);
+  --font--light: var(--graphite);
+  --paper-texture--light: url("/images/light-paper-fibers.png");
+
+  /* dark theme */
+  --folder--dark: #1e1b20;
+  --folder-shaded--dark: #18161a;
+  --paper--dark: #2d2d2d;
+  --font--dark: var(--off-white);
+  --paper-texture--dark: url("/images/black-paper.png");
+
+  /* spacing increments */
+  --small-margin: 5px;
+  --medium-margin: 10px;
+  --spacing-1: 10px;
+  --spacing-2: 20px;
+
+  /* Lined Paper vertical rhythm values - each `LinedPaper` line's height is equal to 1x `line-height` */
+  --line-height: 1.5rem;
+  --paper-left-gap: calc(var(--line-height) * 1.5);
+  --paper-header-gap: calc(var(--line-height) * 2);
+
+  /* other */
+  --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+/***** Themes *****/
+:root,
+[data-theme="light"] {
+  --folder: var(--folder--light);
+  --folder-shaded: var(--folder-shaded--light);
+  --paper: var(--paper--light);
+  --font-color: var(--font--light);
+  --highlight: var(--yellow);
+  --highlight-60: var(--yellow-60);
+  --paper-texture: var(--paper-texture--light);
+  --texture-opacity: 100%;
+}
+[data-theme="dark"] {
+  --folder: var(--folder--dark);
+  --folder-shaded: var(--folder-shaded--dark);
+  --paper: var(--paper--dark);
+  --font-color: var(--font--dark);
+  --highlight: var(--purple-shaded);
+  --highlight-60: var(--purple-60);
+  --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35));
+  --paper-texture: var(--paper-texture--dark);
+  --texture-opacity: 30%;
+}
+
+/***** User Preferences *****/
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+:root {
+    --folder: var(--folder--dark);
+    --folder-shaded: var(--folder-shaded--dark);
+    --paper: var(--paper--dark);
+    --font-color: var(--font--dark);
+    --highlight: var(--purple-shaded);
+    --highlight-60: var(--purple-60);
+    --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35));
+    --paper-texture: var(--paper-texture--dark);
+    --texture-opacity: 30%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/***** CSS Reset *****/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+:focus {
+  outline: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/***** Globals *****/
+html {
+  background-color: var(--background);
+  background-image: var(--folder-texture);
+  color: var(--font-color);
+  position: relative;
+  line-height: var(--line-height);
+  perspective: 800px;
+  padding: var(--small-margin);
+}
+
+body {
+  min-height: calc(100svh - var(--small-margin) * 2);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: var(--montserrat);
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1 {
+  font-family: var(--poppins);
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+h4 {
+  font-size: 1.1rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+ul > li {
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+ul > li:before {
+  content: "❖";
+  color: var(--purple);
+  position: absolute;
+  left: 0;
+}
+
+::selection {
+  background: var(--highlight-60);
+}
+::-moz-selection {
+  background: var(--highlight-60);
+}
+
+/***** Responsive Queries *****/
+@media (max-width: 550px) {
+  :root {
+    --medium-margin: 8px;
+    --small-margin: 4px;
+    --spacing-1: 5px;
+    --spacing-2: 10px;
+    --paper-left-gap: var(--line-height);
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --medium-margin: 5px;
+    --small-margin: 2px;
+    --spacing-1: 2px;
+    --spacing-2: 4px;
+  }
+  
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 280px) {
+  html {
+    min-width: 280px;
+  }
+}

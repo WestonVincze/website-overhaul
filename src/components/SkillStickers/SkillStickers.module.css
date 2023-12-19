@@ -1,0 +1,10 @@
+.skillStickers {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc(var(--line-height) * 3), 1fr)
+  );
+  grid-gap: var(--line-height);
+  justify-items: center;
+  margin-bottom: calc(var(--line-height) * 2);
+}

@@ -1,0 +1,7 @@
+.word {
+  display: flex;
+  justify-content: center;
+  font-size: var(--animated-font-size);
+  line-height: var(--animated-font-size);
+  text-transform: uppercase;
+}

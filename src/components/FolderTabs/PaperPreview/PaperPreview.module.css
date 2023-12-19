@@ -1,0 +1,28 @@
+.paper {
+  position: absolute;
+  top: 0;
+  left: var(--small-margin);
+  right: var(--small-margin);
+  height: 180px;
+  background-color: var(--paper);
+  filter: var(--shadow);
+  transform-origin: center center;
+  max-width: 1000px;
+}
+.paper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--paper-texture);
+  opacity: var(--texture-opacity);
+}
+
+@media screen and (max-width: 810px) {
+  /* paper preview not needed for mobile because there is no "hover" state */
+  .paperPreview {
+    display: none;
+  }
+}

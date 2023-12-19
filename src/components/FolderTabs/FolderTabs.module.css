@@ -1,0 +1,38 @@
+.folderTabs {
+  display: flex;
+  column-gap: var(--small-margin);
+  position: relative;
+  flex-grow: 1;
+}
+
+.folderTab {
+  display: flex;
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  /* extra padding to help center text with clip-path */
+  padding: 10px;
+  padding-right: 20px;
+  background-color: var(--folder-shaded);
+  align-items: center;
+  transform: translateY(7px);
+  transition: transform 400ms ease-in-out;
+}
+.folderTab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--folder-texture);
+  opacity: var(--texture-opacity);
+  z-index: -1;
+}
+
+.folderTab:hover,
+.folderTab:focus,
+.folderTab.active {
+  transform: translateY(0);
+}
+.folderTab.active {
+  background-color: var(--folder);
+}

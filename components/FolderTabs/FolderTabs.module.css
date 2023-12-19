@@ -1,6 +1,0 @@
-.folderTabs {
-  position: absolute;
-  display: flex;
-  top: var(--folder-tab-offset);
-  right: var(--small-margin);
-}

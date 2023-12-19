@@ -1,0 +1,193 @@
+/** ALL *******************************************/
+.stickyNote {
+  filter: var(--shadow);
+  width: var(--width);
+  height: var(--height);
+  text-align: center;
+  color: var(--font--light);
+}
+.content {
+  background-color: var(--yellow);
+  background-image: var(--paper-texture--light);
+  width: var(--width);
+  height: var(--height);
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.content svg {
+  max-height: 100%;
+  max-width: var(--icon-width);
+}
+
+/** SIZES *****************************************/
+.small {
+  --width: 60px;
+  --height: 60px;
+  --icon-width: 30px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.medium {
+  --width: 90px;
+  --height: 90px;
+  --icon-width: 80px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+/** TAPED *****************************************/
+.taped {
+  position: relative;
+  transform-style: preserve-3d;
+  font-weight: bold;
+  margin-top: 5%;
+}
+.taped.small {
+  --fold-height: 20px;
+  --transform: rotateX(20deg) translateY(-2px);
+  --box-shadow: inset 0 4px 8px var(--yellow-shaded);
+}
+.taped.medium {
+  --fold-height: 28px;
+  --transform: rotateX(20deg) translateY(-2px);
+  --box-shadow: inset 0 10px 20px var(--yellow-shaded);
+}
+.taped::before {
+  content: "";
+  background-color: var(--off-white-60);
+  position: absolute;
+  width: 60%;
+  height: 10%;
+  top: -5%;
+  left: 20%;
+}
+.taped .content {
+  height: calc(var(--height) - var(--fold-height));
+  padding-top: calc(var(--fold-height) / 2);
+}
+/* "fold" effect */
+.taped .text {
+  background-color: var(--yellow);
+  background-image: var(--paper-texture--light);
+  height: var(--fold-height);
+  width: 100%;
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.6s ease;
+  transform-origin: top;
+  padding-top: calc(var(--fold-height) / 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.taped:hover .text,
+a:focus .taped .text,
+a:focus-visible .taped .text,
+.taped:active .text {
+  transform: var(--transform);
+  box-shadow: var(--box-shadow);
+}
+
+/** STICKER ***************************************/
+@keyframes stickerLift {
+  0% {
+    transform: rotate3d(0, 0, 0, 0.1turn) translateZ(0px);
+  }
+  25% {
+    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px)
+      translateZ(0px);
+  }
+  35% {
+    transform: rotate3d(0.1, 0, -0.1, 0.01turn) translateX(1px) translateY(-1px)
+      translateZ(20px);
+  }
+  50% {
+    transform: rotate3d(0, 0, 0, 0.1turn) translateX(1px) translateY(-1px)
+      translateZ(60px);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0.1turn) translateZ(60px);
+  }
+}
+
+@keyframes stickerDrop {
+  from {
+    transform: translateZ(20px);
+  }
+  to {
+    transform: rotate3d(0, 0, 0, 0.1turn) translateZ(0);
+  }
+}
+
+/** size overrides **/
+.sticker.small {
+  /* note: `SkillStickers` grid needs to be updated if below values change */
+  --width: calc(var(--line-height) * 2);
+  --height: var(--width);
+  --icon-width: var(--width);
+}
+
+.sticker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+.sticker .content {
+  background-color: var(--purple);
+  border-radius: 50%;
+  border: 2px solid var(--off-white);
+  /*
+  animation: stickerDrop 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  */
+}
+/*
+.sticker:hover .content {
+  animation: stickerLift 0.5s;
+  animation-iteration-count: 1;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+}
+*/
+.sticker .content svg {
+  color: var(--off-white);
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sticker .text {
+  font-size: 0.75rem;
+  line-height: var(--line-height);
+  color: var(--font-color);
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+  padding: 0 4px;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  border-radius: 25%;
+  width: fit-content;
+  display: flex;
+}
+/*
+.sticker:hover .text,
+.sticker:active .text,
+.sticker:focus .text {
+  transition: all 0.3s ease-out;
+  color: var(--font--dark);
+  background-color: var(--purple);
+  border-bottom: 1px solid var(--off-white);
+  filter: var(--shadow);
+  opacity: 1;
+  transform: translateY(-20%);
+}
+*/
