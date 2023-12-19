@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
-import { animated, useSpring } from "react-spring";
+import { animated, useTrail } from "react-spring";
 import styles from "./PaperPreview.module.css";
 import { useMachine } from "@xstate/react";
-import { PaperPreviewFSM, AnimationStates } from "./PaperPreviewFSM";
-import { OFF_SCREEN_Y_OFFSET, OFF_SCREEN_X_OFFSET } from "./types";
+import { PaperPreviewFSM } from "./PaperPreviewFSM";
+import { ACTIVE_Y_OFFSET, ACTIVE_X_OFFSET } from "./types";
 import { omitOnReducedMotion } from "@hocs/omitOnReducedMotion";
 
 interface PaperPreviewProps {
   hovering: boolean;
   active: boolean;
   startActive?: boolean;
+  zIndex?: number;
 }
 
 const PaperPreview = ({
   hovering = false,
   active = false,
   startActive = false,
-  ...props
+  zIndex = 0,
 }: PaperPreviewProps) => {
   const [reset, setReset] = useState(startActive);
   const [current, send] = useMachine(PaperPreviewFSM);
@@ -38,10 +39,13 @@ const PaperPreview = ({
     setReset(true);
   };
 
-  const springProps = useSpring({
-    from: active ? { x: OFF_SCREEN_X_OFFSET, y: OFF_SCREEN_Y_OFFSET } : {},
-    to: { x: current.context.x, y: current.context.y },
-    onRest: current.value === AnimationStates.active ? resetAnimation : {},
+  const animatedStyles = useTrail(2, {
+    from: active ? { y: ACTIVE_Y_OFFSET, x: ACTIVE_X_OFFSET, opacity: 0 } : {},
+    to: {
+      y: current.context.y,
+      x: current.context.x,
+      opacity: current.context.opacity,
+    },
     immediate: reset,
   });
 
@@ -50,11 +54,20 @@ const PaperPreview = ({
   }, [reset]);
 
   return (
-    <animated.div
-      style={springProps}
-      className={styles.paperPreview}
-      {...props}
-    />
+    <div className={styles.paperPreview} style={{ zIndex }}>
+      {animatedStyles.map((trail, i) => (
+        <animated.div
+          key={i}
+          className={styles.paper}
+          style={{
+            ...trail,
+            transform: `rotate(${i === 0 ? "-" : ""}0.3deg)`,
+            top: `${i * 5}px`,
+            willChange: "transform, opacity",
+          }}
+        />
+      ))}
+    </div>
   );
 };
 

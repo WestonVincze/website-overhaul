@@ -1,30 +1,27 @@
 .folderTabs {
-  position: absolute;
   display: flex;
-  top: var(--folder-tab-offset);
-  left: var(--small-margin);
   column-gap: var(--small-margin);
+  position: relative;
+  flex-grow: 1;
 }
 
-.folderTab > :first-child {
+.folderTab {
+  display: flex;
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
   /* extra padding to help center text with clip-path */
-  padding-right: 1.5rem;
-  padding-left: 1rem;
+  padding: 10px;
+  padding-right: 20px;
   background-color: var(--folder-shaded);
-  height: var(--folder-tab-height);
-  display: flex;
   align-items: center;
-  font-size: var(--medium-font-size);
-  line-height: var(--medium-font-size);
   transform: translateY(7px);
   transition: transform 400ms ease-in-out;
 }
-.folderTab:hover > :first-child,
-.folderTab:focus :first-child,
-.folderTab.active :first-child {
+
+.folderTab:hover,
+.folderTab:focus,
+.folderTab.active {
   transform: translateY(0);
 }
-.folderTab.active span {
+.folderTab.active {
   background-color: var(--folder);
 }

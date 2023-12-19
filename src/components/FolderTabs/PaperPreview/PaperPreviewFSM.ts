@@ -1,9 +1,9 @@
 import { createMachine, assign } from "xstate";
 import {
-  HIDDEN_Y_OFFSET,
-  VISIBLE_Y_OFFSET,
-  OFF_SCREEN_Y_OFFSET,
-  OFF_SCREEN_X_OFFSET,
+  DEFAULT_Y_OFFSET,
+  HOVER_Y_OFFSET,
+  ACTIVE_Y_OFFSET,
+  ACTIVE_X_OFFSET,
 } from "./types";
 
 export const AnimationStates = {
@@ -15,20 +15,23 @@ export const AnimationStates = {
 interface Context {
   y: number;
   x: number;
+  opacity: number;
 }
 
 export const PaperPreviewFSM = createMachine<Context>({
   predictableActionArguments: true,
   initial: AnimationStates.default,
   context: {
-    y: HIDDEN_Y_OFFSET,
+    y: DEFAULT_Y_OFFSET,
     x: 0,
+    opacity: 1,
   },
   states: {
     [AnimationStates.default]: {
       entry: assign({
-        y: () => HIDDEN_Y_OFFSET,
+        y: () => DEFAULT_Y_OFFSET,
         x: () => 0,
+        opacity: () => 0,
       }),
       on: {
         HOVER: AnimationStates.hovered,
@@ -37,7 +40,9 @@ export const PaperPreviewFSM = createMachine<Context>({
     },
     [AnimationStates.hovered]: {
       entry: assign({
-        y: () => VISIBLE_Y_OFFSET,
+        y: () => HOVER_Y_OFFSET,
+        x: () => 0,
+        opacity: () => 1,
       }),
       on: {
         LEAVE_HOVER: AnimationStates.default,
@@ -46,8 +51,9 @@ export const PaperPreviewFSM = createMachine<Context>({
     },
     [AnimationStates.active]: {
       entry: assign({
-        y: () => OFF_SCREEN_Y_OFFSET,
-        x: () => OFF_SCREEN_X_OFFSET,
+        y: () => ACTIVE_Y_OFFSET,
+        x: () => ACTIVE_X_OFFSET,
+        opacity: () => 0.8,
       }),
       on: {
         LEAVE_ACTIVE: AnimationStates.default,

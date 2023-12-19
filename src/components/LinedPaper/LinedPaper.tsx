@@ -47,9 +47,13 @@ export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
 
   return (
     <AnimatedArticle
-      {...props}
+      id={props.id}
       ref={ref}
-      style={animatedStyle}
+      style={{
+        ...animatedStyle,
+        willChange: "transform, opacity",
+        ...props.style,
+      }}
       className={`${styles.paper} ${!title ? styles.noTitle : ""}`.trim()}
     >
       {title && (

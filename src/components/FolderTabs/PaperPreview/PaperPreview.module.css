@@ -1,16 +1,17 @@
-.paperPreview {
+.paper {
   position: absolute;
   top: 0;
   left: var(--small-margin);
-  width: 75vw;
+  right: var(--small-margin);
   height: 180px;
   background-color: var(--paper);
   filter: var(--shadow);
-  z-index: -1;
+  transform-origin: center center;
+  max-width: 1000px;
 }
 
 @media screen and (max-width: 810px) {
-  /* paper preview needs to be refactored for mobile because there is no "hover" state */
+  /* paper preview not needed for mobile because there is no "hover" state */
   .paperPreview {
     display: none;
   }

@@ -6,7 +6,7 @@ import { SkillStickers } from "../SkillStickers";
 
 interface ProjectCardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    Omit<ProjectDetails, "anchorName"> {}
+    ProjectDetails {}
 
 export const ProjectCard = ({
   id,
@@ -49,13 +49,15 @@ export const ProjectCard = ({
         </ul>
       </section>
 
-      <nav className={styles.footer}>
-        {links?.map((link) => (
-          <a href={link.url} target="_blank" rel="noreferrer" key={link.text}>
-            <StickyNote text={link.text} icon={link.icon} />
-          </a>
-        ))}
-      </nav>
+      {links && (
+        <nav className={styles.footer}>
+          {links.map((link) => (
+            <a href={link.url} target="_blank" rel="noreferrer" key={link.text}>
+              <StickyNote text={link.text} icon={link.icon} />
+            </a>
+          ))}
+        </nav>
+      )}
     </LinedPaper>
   );
 };

@@ -15,52 +15,36 @@ interface FolderTabsProps {
 
 export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
   const currentPage = usePathname();
+  const [hoverTab, setHoverTab] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState(currentPage);
-  const [hoverTab, setHoverTab] = useState("");
-
-  function handleClick(path: string): void {
-    if (activeTab === path) return;
-    setActiveTab(path);
-  }
-
-  function handleHover(path: string): void {
-    setHoverTab(path);
+  function handleHover(path?: string): void {
+    if (currentPage === path) return;
+    setHoverTab(path || null);
   }
 
   return (
     <nav className={styles.folderTabs} {...props}>
       {tabs.map((tab, i) => (
-        <React.Fragment key={i}>
+        <span key={i} style={{ zIndex: tabs.length - i + 1 }}>
           <PaperPreview
-            hovering={hoverTab === tab.path && hoverTab !== activeTab}
-            active={tab.path === activeTab}
-            key={i}
+            hovering={hoverTab === tab.path}
+            active={tab.path === currentPage}
+            zIndex={tabs.length - i + 1}
           />
           <Link
             className={`${styles.folderTab} ${
-              tab.path === activeTab ? styles.active : ""
+              currentPage === tab.path ? styles.active : ""
             }`}
             href={tab.path}
             aria-label={tab.text}
             onFocus={() => handleHover(tab.path)}
-            onBlur={() => handleHover("")}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                handleClick(tab.path);
-              }
-            }}
+            onBlur={() => handleHover()}
+            onMouseEnter={() => handleHover(tab.path)}
+            onMouseLeave={() => handleHover()}
           >
-            <span
-              onClick={() => handleClick(tab.path)}
-              onMouseEnter={() => handleHover(tab.path)}
-              onMouseLeave={() => handleHover("")}
-              aria-hidden="true"
-            >
-              {tab.text}
-            </span>
+            {tab.text}
           </Link>
-        </React.Fragment>
+        </span>
       ))}
     </nav>
   );
