@@ -3,8 +3,9 @@
   padding: 0 0.5ch;
 }
 
+/* TODO: repeat pattern for multiline headers (there are none right now) */
 .highlighted span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 25%;
   left: 0;

@@ -42,6 +42,7 @@
   position: relative;
   transform-style: preserve-3d;
   font-weight: bold;
+  margin-top: 5%;
 }
 .taped.small {
   --fold-height: 20px;

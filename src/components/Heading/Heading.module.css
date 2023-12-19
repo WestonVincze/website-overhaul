@@ -1,0 +1,7 @@
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 var(--small-margin);
+  column-gap: var(--small-margin);
+}

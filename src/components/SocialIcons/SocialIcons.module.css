@@ -1,7 +1,5 @@
 .socialIcons {
-  position: absolute;
   display: flex;
-  top: var(--small-margin);
-  right: var(--small-margin);
   column-gap: var(--medium-margin);
+  margin-bottom: var(--small-margin);
 }

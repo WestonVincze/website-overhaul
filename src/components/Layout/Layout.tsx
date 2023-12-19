@@ -1,8 +1,7 @@
 "use client";
 
+import { Heading } from "@components/Heading";
 import { FolderBody } from "../FolderBody";
-import { FolderTabs } from "../FolderTabs";
-import { SocialIcons } from "../SocialIcons";
 import { AppStateProvider } from "@providers/AppStateProvider";
 
 interface LayoutProps {
@@ -12,14 +11,7 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <AppStateProvider>
-      <FolderTabs
-        tabs={[
-          { path: "/", text: "HOME" },
-          { path: "/resume", text: "RESUME" },
-          { path: "/projects", text: "PROJECTS" },
-        ]}
-      />
-      <SocialIcons />
+      <Heading />
       <FolderBody>{children}</FolderBody>
     </AppStateProvider>
   );

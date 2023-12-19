@@ -39,29 +39,12 @@
   --medium-margin: 10px;
   --spacing-1: 10px;
   --spacing-2: 20px;
-  /* NOT IN USE
-  --spacing-3: 30px;
-  --spacing-4: 50px;
-  */
-
-  /* fixed sizes */
-  --folder-tab-offset: 25px;
-  --folder-tab-height: 50px;
-  --header-height: calc(var(--folder-tab-offset) + var(--folder-tab-height));
-
-  /* font sizes */
-  /*
-  --font-size-large: 40px;
-  --font-size-medium: 25px;
-  --font-size-small: 20px;
-  */
 
   /* elements within `LinedPaper` must use increments of this `line-height` to maintain vertical rhythm */
   --line-height: 1.5rem;
 
   /* other */
-  --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  --lined-paper: url("/images/linedpaper.png") repeat;
+  --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.25));
 }
 
 /***** Themes *****/
@@ -87,7 +70,7 @@
   html {
     color-scheme: dark;
   }
-  :root {
+:root {
     --folder: var(--folder--dark);
     --folder-shaded: var(--folder-shaded--dark);
     --paper: var(--paper--dark);
@@ -148,13 +131,15 @@ html {
 }
 
 body {
-  padding-top: var(--header-height);
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: var(--montserrat);
 }
 
-html,
-body {
-  font-family: var(--montserrat);
-  overflow-x: hidden;
+main {
+  flex-grow: 1;
 }
 
 h1 {
@@ -164,8 +149,8 @@ h1 {
 }
 h2 {
   font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
   margin-bottom: 0.5rem;
 }
 h3 {
@@ -202,71 +187,6 @@ ul > li:before {
 }
 
 /***** Responsive Queries *****/
-@media (max-width: 815px) {
-  :root {
-    --animated-font-size: 75px;
-    --font-size-large: 35px;
-    --font-size-medium: 25px;
-    --font-size-small: 15px;
-    --folder-tab-height: 45px;
-    --folder-tab-offset: 30px;
-  }
-}
-@media (max-width: 710px) {
-  :root {
-    --font-size-medium: 22px;
-    --font-size-small: 13px;
-  }
-}
-
-@media (max-width: 660px) {
-  :root {
-    --folder-tab-offset: 75px;
-  }
-}
-
-@media (max-width: 490px) {
-  :root {
-    --animated-font-size: 65px;
-  }
-}
-
-@media (max-width: 410px) {
-  :root {
-    --animated-font-size: 55px;
-    --font-size-large: 33px;
-    --font-size-medium: 23px;
-    --font-size-small: 13px;
-  }
-}
-
-@media (max-width: 385px) {
-  :root {
-    --animated-font-size: 50px;
-    --font-size-large: 28px;
-    --font-size-medium: 20px;
-    --font-size-small: 12px;
-  }
-}
-
-@media (max-width: 350px) {
-  :root {
-    --font-size-large: 20px;
-    --font-size-medium: 16px;
-    --font-size-small: 12px;
-    --folder-tab-height: 35px;
-  }
-}
-
-@media (max-width: 300px) {
-  :root {
-    --font-size-medium: 13px;
-    --medium-margin: 5px;
-    --small-margin: 2px;
-    --spacing-2: 10px;
-    --spacing-1: 5px;
-  }
-}
 
 @media (max-width: 280px) {
   html {
