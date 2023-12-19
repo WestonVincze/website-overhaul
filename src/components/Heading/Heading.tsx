@@ -5,6 +5,7 @@ import { SocialIcons } from "@components/SocialIcons";
 export const Heading = () => {
   return (
     <header className={styles.heading}>
+      <SocialIcons />
       <FolderTabs
         tabs={[
           { path: "/", text: "Home" },
@@ -12,7 +13,6 @@ export const Heading = () => {
           { path: "/projects", text: "Projects" },
         ]}
       />
-      <SocialIcons />
     </header>
   );
 };

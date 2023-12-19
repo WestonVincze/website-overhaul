@@ -41,6 +41,7 @@ export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
             onBlur={() => handleHover()}
             onMouseEnter={() => handleHover(tab.path)}
             onMouseLeave={() => handleHover()}
+            tabIndex={i + 1}
           >
             {tab.text}
           </Link>

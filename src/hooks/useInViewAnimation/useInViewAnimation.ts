@@ -7,22 +7,33 @@ import {
   useSpring,
   animated,
   AnimatedComponent,
-} from "react-spring";
+} from "@react-spring/web";
 
-type AnimationType = "slideUp" | "slideLeft" | "shrink";
+type AnimationType = "slideUp" | "slideLeft" | "shrink" | "grow";
 
-const Animations: Record<AnimationType, { from: object; to: object }> = {
+const Animations: Record<
+  AnimationType,
+  { from: object; to: object; tension: number }
+> = {
   slideUp: {
     from: { opacity: 0, y: 50 },
     to: { opacity: 1, y: 0 },
+    tension: 100,
   },
   slideLeft: {
-    from: { opacity: 0, x: -50 },
+    from: { opacity: 0, x: -25 },
     to: { opacity: 1, x: 0 },
+    tension: 100,
   },
   shrink: {
-    from: { opacity: 0, scale: 1.5 },
+    from: { opacity: 0, scale: 1.2 },
     to: { opacity: 1, scale: 1 },
+    tension: 500,
+  },
+  grow: {
+    from: { opacity: 0, scale: 0.75 },
+    to: { opacity: 1, scale: 1 },
+    tension: 500,
   },
 };
 
@@ -46,7 +57,7 @@ export const useInViewAnimation = <T extends ElementType>(
   animation: AnimationType = "slideUp",
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): [RefObject<any>, SpringValues, AnimatedComponent<T>, boolean] => {
-  const [ref, isInView] = useInView();
+  const [ref, isInView] = useInView({ amount: 0.25 });
   const { appState } = useAppState();
   const ready = useSelector(appState, (state) =>
     state.matches(AppStates.ready),
@@ -55,7 +66,7 @@ export const useInViewAnimation = <T extends ElementType>(
   const animatedStyles = useSpring({
     from: Animations[animation].from,
     to: ready && isInView ? Animations[animation].to : {},
-    config: { tension: 100 },
+    config: { tension: Animations[animation].tension },
   });
 
   const AnimatedComponent = animated(component);

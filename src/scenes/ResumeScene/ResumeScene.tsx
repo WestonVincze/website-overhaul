@@ -5,19 +5,28 @@ import { SkillStickers } from "@components/SkillStickers";
 import styles from "./ResumeScene.module.css";
 import { StickyNote } from "@components/StickyNote";
 import { HighlightedHeading } from "@components/HighlightedHeading";
+import { useInViewAnimation } from "@hooks/useInViewAnimation";
 
 export const ResumeScene = () => {
+  const [ref, animatedStyles, AnimatedHeader] = useInViewAnimation(
+    "header",
+    "shrink",
+  );
   return (
     <Container>
       <article className={styles.resume}>
-        <header className={styles.stickyNotes}>
+        <AnimatedHeader
+          ref={ref}
+          style={animatedStyles}
+          className={styles.stickyNotes}
+        >
           <a href="/images/WestonVinczeResume.pdf" download>
             <StickyNote icon="Download" text="Download" />
           </a>
           <a href="/images/WestonVinczeResume.pdf" target="_blank">
             <StickyNote icon="Eye" text="View" />
           </a>
-        </header>
+        </AnimatedHeader>
 
         <section>
           <HighlightedHeading id="summary" text="Summary." />

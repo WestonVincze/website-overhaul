@@ -1,6 +1,5 @@
 /** ALL *******************************************/
 .stickyNote {
-  perspective: 800px;
   filter: var(--shadow);
   width: var(--width);
   height: var(--height);
@@ -86,6 +85,7 @@
 }
 .taped:hover .text,
 a:focus .taped .text,
+a:focus-visible .taped .text,
 .taped:active .text {
   transform: var(--transform);
   box-shadow: var(--box-shadow);

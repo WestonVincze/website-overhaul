@@ -4,13 +4,19 @@ import webDevWestonGIF from "/public/images/web-dev-weston.gif";
 import webDevWestonPNG from "/public/images/web-dev-weston.png";
 import { Browser } from "./Browser";
 import { useAppState } from "@providers/AppStateProvider";
+import { useInViewAnimation } from "@hooks/useInViewAnimation";
 
 export const WebDevWeston = () => {
   const { reducedMotion } = useAppState();
   const webDevWestonImage = reducedMotion ? webDevWestonPNG : webDevWestonGIF;
   const imageType = reducedMotion ? "PNG image" : "Animated GIF";
+
+  const [ref, animatedStyles, AnimatedSection] = useInViewAnimation(
+    "section",
+    "grow",
+  );
   return (
-    <div className={styles.weston}>
+    <AnimatedSection ref={ref} style={animatedStyles} className={styles.weston}>
       <Image
         priority={true}
         className={styles.weston}
@@ -19,6 +25,6 @@ export const WebDevWeston = () => {
         alt={`${imageType} of Weston 'web' developing`}
       />
       <Browser />
-    </div>
+    </AnimatedSection>
   );
 };
