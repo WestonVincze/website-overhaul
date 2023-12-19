@@ -1,6 +1,7 @@
 .resume {
   text-align: left;
 }
+
 .stickyNotes {
   display: flex;
   justify-content: center;
@@ -10,6 +11,14 @@
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
+
+.experience header, .education header {
+  display: flex;
+  justify-content: space-between;
+}
+.experience header p, .education header p {
+  font-style: italic;
 }
 
 .hobbies {

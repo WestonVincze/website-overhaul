@@ -48,7 +48,7 @@ export const ResumeScene = () => {
           ))}
         </section>
 
-        <section>
+        <section className={styles.experience}>
           <HighlightedHeading id="experience" text="Experience." />
           {ResumeContent.workExperience.map((role, i) => (
             <LinedPaper key={i} title={role.title}>
@@ -76,14 +76,14 @@ export const ResumeScene = () => {
           ))}
         </section>
 
-        <section>
+        <section className={styles.education}>
           <HighlightedHeading id="education" text="Education." />
           <LinedPaper
             title={`${ResumeContent.education.program} (${ResumeContent.education.degree})`}
           >
             <header>
-              <h3>{ResumeContent.education.school}</h3>
-              <h4>{`${ResumeContent.education.startDate} - ${ResumeContent.education.endDate}`}</h4>
+              <h4>{ResumeContent.education.school}</h4>
+              <p>{`${ResumeContent.education.startDate} - ${ResumeContent.education.endDate}`}</p>
             </header>
 
             <section>

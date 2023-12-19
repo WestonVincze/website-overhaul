@@ -15,9 +15,9 @@
   --off-white-60: #f2e9e499;
   --yellow-60: #faeb7699;
   --purple-60: #6d597a99;
-  /* ~20% */
-  --blue-20: #768dfa33;
-  --red-20: #fa768033;
+  /* ~10% */
+  --blue-10: #768dfa22;
+  --red-10: #fa768022;
 
   /* all themes */
   --background: var(--purple);
@@ -40,8 +40,10 @@
   --spacing-1: 10px;
   --spacing-2: 20px;
 
-  /* elements within `LinedPaper` must use increments of this `line-height` to maintain vertical rhythm */
+  /* Lined Paper vertical rhythm values - each `LinedPaper` line's height is equal to 1x `line-height` */
   --line-height: 1.5rem;
+  --paper-left-gap: calc(var(--line-height) * 1.5);
+  --paper-header-gap: calc(var(--line-height) * 2);
 
   /* other */
   --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
@@ -196,6 +198,7 @@ ul > li:before {
     --small-margin: 4px;
     --spacing-1: 5px;
     --spacing-2: 10px;
+    --paper-left-gap: var(--line-height);
   }
 
   h1 {

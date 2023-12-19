@@ -140,16 +140,20 @@ a:focus-visible .taped .text,
   background-color: var(--purple);
   border-radius: 50%;
   border: 2px solid var(--off-white);
+  /*
   animation: stickerDrop 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  */
 }
+/*
 .sticker:hover .content {
   animation: stickerLift 0.5s;
   animation-iteration-count: 1;
   transform-style: preserve-3d;
   animation-fill-mode: forwards;
 }
+*/
 .sticker .content svg {
   color: var(--off-white);
   height: 60%;
@@ -159,17 +163,19 @@ a:focus-visible .taped .text,
   transform: translate(-50%, -50%);
 }
 .sticker .text {
+  line-height: var(--line-height);
   color: var(--font-color);
-  transform: translateY(25%);
+  transform: translateY(0);
   transition: all 0.5s ease-in-out;
+  padding: 0 4px;
   position: absolute;
   top: 100%;
   left: auto;
-  padding: 4px;
-  border-radius: 20%;
+  border-radius: 25%;
   width: fit-content;
   display: flex;
 }
+/*
 .sticker:hover .text,
 .sticker:active .text,
 .sticker:focus .text {
@@ -179,5 +185,6 @@ a:focus-visible .taped .text,
   border-bottom: 1px solid var(--off-white);
   filter: var(--shadow);
   opacity: 1;
-  transform: translateY(-10%);
+  transform: translateY(-20%);
 }
+*/
