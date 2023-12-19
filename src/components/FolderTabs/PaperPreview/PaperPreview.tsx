@@ -1,57 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { animated, useTrail } from "react-spring";
 import styles from "./PaperPreview.module.css";
 import { useMachine } from "@xstate/react";
 import { PaperPreviewFSM } from "./PaperPreviewFSM";
-import { ACTIVE_Y_OFFSET, ACTIVE_X_OFFSET } from "./types";
 import { omitOnReducedMotion } from "@hocs/omitOnReducedMotion";
 
 interface PaperPreviewProps {
-  hovering: boolean;
+  hover: boolean;
   active: boolean;
-  startActive?: boolean;
   zIndex?: number;
 }
 
 const PaperPreview = ({
-  hovering = false,
+  hover = false,
   active = false,
-  startActive = false,
   zIndex = 0,
 }: PaperPreviewProps) => {
-  const [reset, setReset] = useState(startActive);
   const [current, send] = useMachine(PaperPreviewFSM);
 
   useEffect(() => {
-    send(hovering ? "HOVER" : "LEAVE_HOVER");
-  }, [hovering, send]);
-
-  useEffect(() => {
-    if (active) {
-      send("ACTIVE");
-    } else {
-      send("LEAVE_ACTIVE");
-      resetAnimation();
-    }
-  }, [active, send]);
-
-  const resetAnimation = (): void => {
-    setReset(true);
-  };
+    send(hover && !active ? "HOVER" : "LEAVE_HOVER");
+  }, [hover, send, active]);
 
   const animatedStyles = useTrail(2, {
-    from: active ? { y: ACTIVE_Y_OFFSET, x: ACTIVE_X_OFFSET, opacity: 0 } : {},
-    to: {
-      y: current.context.y,
-      x: current.context.x,
-      opacity: current.context.opacity,
-    },
-    immediate: reset,
+    to: { y: current.context.y, opacity: current.context.opacity },
   });
-
-  useEffect(() => {
-    if (reset) setReset(false);
-  }, [reset]);
 
   return (
     <div className={styles.paperPreview} style={{ zIndex }}>

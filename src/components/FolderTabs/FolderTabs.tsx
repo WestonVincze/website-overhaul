@@ -27,7 +27,7 @@ export const FolderTabs = ({ tabs, ...props }: FolderTabsProps) => {
       {tabs.map((tab, i) => (
         <span key={i} style={{ zIndex: tabs.length - i + 1 }}>
           <PaperPreview
-            hovering={hoverTab === tab.path}
+            hover={hoverTab === tab.path}
             active={tab.path === currentPage}
             zIndex={tabs.length - i + 1}
           />
