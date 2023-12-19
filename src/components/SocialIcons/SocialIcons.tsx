@@ -26,7 +26,7 @@ export const SocialIcons = () => {
         <StickyNote size="small" icon="CodeSandbox" text="sandbox" />
       </a>
       <a href="mailto:westonvincze@gmail.com" target="_blank" rel="noreferrer">
-        <StickyNote size="small" icon="Email" text="say hi" />
+        <StickyNote size="small" icon="Email" text="email" />
       </a>
     </nav>
   );
