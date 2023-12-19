@@ -7,12 +7,12 @@ export const HomeScene = () => {
     <Container centered={true}>
       <LinedPaper>
         <p>
-          I'm a self-driven frontend developer with a passion for crafting
+          {`I'm a self-driven frontend developer with a passion for crafting
           immersive digital experiences. I'm an avid creator with an obsession
           for problem solving and an insatiable thirst for knowledge. I'm
           continuously engaged in learning and experimenting with the latest
           technologies, perpetually seeking to expand my skills and creative
-          horizons.
+          horizons.`}
         </p>
       </LinedPaper>
       <WebDevWeston />
