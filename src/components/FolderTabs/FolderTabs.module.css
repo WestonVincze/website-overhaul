@@ -17,7 +17,7 @@
   transition: transform 400ms ease-in-out;
 }
 .folderTab::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -35,4 +35,8 @@
 }
 .folderTab.active {
   background-color: var(--folder);
+}
+
+.folderTab:focus-visible {
+  background-color: var(--highlight);
 }
