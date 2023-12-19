@@ -26,6 +26,7 @@ EVERY OTHER LINE
   margin-bottom: var(--line-height);
 
   background-color: var(--paper);
+  background-image: var(--paper-texture);
   color: var(--font-color);
   filter: var(--shadow);
 }

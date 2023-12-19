@@ -16,6 +16,17 @@
   transform: translateY(7px);
   transition: transform 400ms ease-in-out;
 }
+.folderTab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--folder-texture);
+  opacity: var(--texture-opacity);
+  z-index: -1;
+}
 
 .folderTab:hover,
 .folderTab:focus,

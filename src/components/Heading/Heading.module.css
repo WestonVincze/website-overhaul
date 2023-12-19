@@ -5,6 +5,5 @@
   column-gap: var(--small-margin);
   flex-wrap: wrap;
   flex-direction: row-reverse;
-  padding: var(--small-margin);
   padding-bottom: 0;
 }

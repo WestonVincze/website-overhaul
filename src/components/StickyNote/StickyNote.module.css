@@ -8,6 +8,7 @@
 }
 .content {
   background-color: var(--yellow);
+  background-image: var(--paper-texture--light);
   width: var(--width);
   height: var(--height);
   padding-bottom: 4px;
@@ -69,10 +70,11 @@
 /* "fold" effect */
 .taped .text {
   background-color: var(--yellow);
+  background-image: var(--paper-texture--light);
   height: var(--fold-height);
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 1px;
   left: 0;
   transition:
     transform 0.4s ease,
@@ -163,6 +165,7 @@ a:focus-visible .taped .text,
   transform: translate(-50%, -50%);
 }
 .sticker .text {
+  font-size: 0.75rem;
   line-height: var(--line-height);
   color: var(--font-color);
   transform: translateY(0);

@@ -2,6 +2,8 @@ import "../src/styles/globals.css";
 import { Metadata } from "next";
 import { Layout } from "@components/Layout";
 import { Poppins, Montserrat } from "next/font/google";
+import Head from "next/head";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: {
@@ -36,6 +38,11 @@ const montserrat = Montserrat({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
+      <Head>
+        <Link rel="preload" href="/images/black-paper.png" />
+        <Link rel="preload" href="/images/light-paper.png" />
+        <Link rel="preload" href="/images/soft-wallpaper.png" />
+      </Head>
       <body className={`${poppins.variable} ${montserrat.variable}`}>
         <Layout>{children}</Layout>
       </body>

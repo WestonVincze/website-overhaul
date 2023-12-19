@@ -21,18 +21,21 @@
 
   /* all themes */
   --background: var(--purple);
+  --folder-texture: url("/images/soft-wallpaper.png");
 
   /* light theme */
   --folder--light: #eee2c8;
   --folder-shaded--light: #dfd3b7;
   --paper--light: var(--off-white);
   --font--light: var(--graphite);
+  --paper-texture--light: url("/images/light-paper-fibers.png");
 
   /* dark theme */
   --folder--dark: #1e1b20;
   --folder-shaded--dark: #18161a;
   --paper--dark: #2d2d2d;
   --font--dark: var(--off-white);
+  --paper-texture--dark: url("/images/black-paper.png");
 
   /* spacing increments */
   --small-margin: 5px;
@@ -58,14 +61,19 @@
   --font-color: var(--font--light);
   --highlight: var(--yellow);
   --highlight-60: var(--yellow-60);
+  --paper-texture: var(--paper-texture--light);
+  --texture-opacity: 100%;
 }
 [data-theme="dark"] {
+  --folder: var(--folder--dark);
   --folder-shaded: var(--folder-shaded--dark);
   --paper: var(--paper--dark);
   --font-color: var(--font--dark);
   --highlight: var(--purple-shaded);
   --highlight-60: var(--purple-60);
   --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35));
+  --paper-texture: var(--paper-texture--dark);
+  --texture-opacity: 30%;
 }
 
 /***** User Preferences *****/
@@ -81,6 +89,8 @@
     --highlight: var(--purple-shaded);
     --highlight-60: var(--purple-60);
     --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35));
+    --paper-texture: var(--paper-texture--dark);
+    --texture-opacity: 30%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -129,14 +139,16 @@ a {
 /***** Globals *****/
 html {
   background-color: var(--background);
+  background-image: var(--folder-texture);
   color: var(--font-color);
   position: relative;
   line-height: var(--line-height);
   perspective: 800px;
+  padding: var(--small-margin);
 }
 
 body {
-  height: 100svh;
+  min-height: calc(100svh - var(--small-margin) * 2);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;

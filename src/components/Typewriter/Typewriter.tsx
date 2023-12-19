@@ -43,10 +43,7 @@ export const Typewriter = ({
   const Tag = tagType;
 
   return (
-    <Tag
-      className={`${styles.typewriter} ${centered && styles.centered}`}
-      {...props}
-    >
+    <Tag className={`${centered && styles.centered}`} {...props}>
       {inlineTag ? `<${typed} />` : typed}
     </Tag>
   );
