@@ -86,8 +86,8 @@ const websites: ProjectDetails[] = [
     description:
       "You are currently viewing this project! I created this website using NextJS to act as a hub for my portfolio and resume. The source code is openly available and demonstrates my iterative development style. This project is in active development and improves every day. You can view the project board and git history to see the most recent and upcoming changes.",
     highlights: [
-      "Highly reusable custom hooks that contain logic for ease of use",
-      "Modular component architecture that enforces a strong separation of concerns",
+      "Shared logic extracted into highly reusable custom hooks for consistency and ease of use",
+      "Modular component architecture that enforces a strong separation of concerns by containing and grouping relevant logic",
       "Fully accessible and WCAG compliant with an adaptive UI that scales to user's preferred font size",
       "Custom theme with dark and light variants",
       "Designed and developed from scratch",
