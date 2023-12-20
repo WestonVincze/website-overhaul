@@ -7,9 +7,20 @@ export const ProjectsScene = (): JSX.Element => {
   return (
     <Container>
       <section>
-        <HighlightedHeading id="web-dev" text="Web Development" />
+        <HighlightedHeading id="challenges" text="Challenges" />
+        {Projects.challenges.map((challenge, i) => (
+          <ProjectCard
+            {...challenge}
+            id={`challenges-${challenge.id}`}
+            key={i}
+          />
+        ))}
+      </section>
+
+      <section>
+        <HighlightedHeading id="websites" text="Websites" />
         {Projects.websites.map((web, i) => (
-          <ProjectCard id={`web-dev-${web.id}`} {...web} key={i} />
+          <ProjectCard {...web} id={`websites-${web.id}`} key={i} />
         ))}
       </section>
 

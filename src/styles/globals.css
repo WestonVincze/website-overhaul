@@ -131,6 +131,8 @@ section {
 }
 :focus {
   outline: 0;
+}
+:focus-visible {
   transform: scale(1.05);
 }
 a {

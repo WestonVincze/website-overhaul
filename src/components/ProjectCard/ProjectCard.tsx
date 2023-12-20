@@ -11,7 +11,6 @@ interface ProjectCardProps
 export const ProjectCard = ({
   id,
   projectName,
-  year,
   skills,
   description,
   contributions,
@@ -21,7 +20,7 @@ export const ProjectCard = ({
   return (
     <LinedPaper
       id={id}
-      title={`${projectName} (${year})`}
+      title={`${projectName}`}
       style={links && { marginBottom: "80px" }}
     >
       <section>
@@ -40,14 +39,16 @@ export const ProjectCard = ({
         </section>
       )}
 
-      <section>
-        <h4>Highlights</h4>
-        <ul>
-          {highlights.map((h, i) => (
-            <li key={i}>{h}</li>
-          ))}
-        </ul>
-      </section>
+      {highlights && (
+        <section>
+          <h4>Highlights</h4>
+          <ul>
+            {highlights.map((h, i) => (
+              <li key={i}>{h}</li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {links && (
         <nav className={styles.footer}>
