@@ -1,4 +1,69 @@
-import { ProjectDetails } from "../../components/ProjectCard/types";
+import { ProjectDetails } from "@components/ProjectCard/types";
+
+const challenges: ProjectDetails[] = [
+  {
+    projectName: "Frontend Mentor - FAQ Accordion",
+    id: "faq-accordion",
+    year: "2023",
+    skills: ["JavaScript", "HTML", "CSS", "Vercel"],
+    description:
+      "My submission for a challenge from Frontend Mentor. The instructions were to create an FAQ accordion based on image mockups and implement hide/show accordion functionality.",
+    highlights: [
+      "Modular component architecture written from scratch using Vanilla JS and CSS",
+      "JSDoc integration for lightweight type safety",
+      "Accessible, WCAG compliant solution",
+    ],
+    links: [
+      {
+        icon: "GitHub",
+        text: "Source Code",
+        url: "https://github.com/WestonVincze/FAQ-Accordion-Challenge",
+      },
+      {
+        icon: "Eye",
+        text: "Live Demo",
+        url: "https://faq-accordion-challenge-weston-vincze.vercel.app/",
+      },
+    ],
+  },
+  {
+    projectName: "Scroll Driven Animations",
+    id: "scroll-driven-animations",
+    year: "2023",
+    status: "complete",
+    skills: ["JavaScript", "HTML", "CSS", "CodeSandbox"],
+    description:
+      "A scroll-driven animation demo on CodeSandbox using the Intersection Observer API. Cards animate onto the page as the user scrolls down and when the last card is visible new cards are generated which creates an infinite scroll effect.",
+    links: [
+      {
+        icon: "CodeSandbox",
+        text: "Live Demo",
+        url: "https://codesandbox.io/p/sandbox/scroll-driven-animated-content-kv3yr9",
+      },
+    ],
+  },
+  {
+    projectName: "Animated Sprite Sheet",
+    id: "animated-sprite-sheet",
+    year: "2023",
+    status: "complete",
+    skills: ["JavaScript", "HTML", "CSS", "CodeSandbox"],
+    description:
+      "This CodeSandbox is the result of a self-challenge to animate a sprite sheet using vanilla CSS. I completed the challenge in one night and wrote an article to documented my experience.",
+    links: [
+      {
+        icon: "CodeSandbox",
+        text: "Live Demo",
+        url: "https://codesandbox.io/p/sandbox/animated-sprite-sheet-m2s46x",
+      },
+      {
+        icon: "Eye",
+        text: "Read Article",
+        url: "https://medium.com/@westonvincze/i-challenged-myself-to-animate-a-sprite-sheet-using-only-js-and-css-3460d30cc818",
+      },
+    ],
+  },
+];
 
 const websites: ProjectDetails[] = [
   {
@@ -21,12 +86,12 @@ const websites: ProjectDetails[] = [
     description:
       "You are currently viewing this project! I created this website using NextJS to act as a hub for my portfolio and resume. The source code is openly available and demonstrates my iterative development style. This project is in active development and improves every day. You can view the project board and git history to see the most recent and upcoming changes.",
     highlights: [
-      "Component-level CSS modules and custom theme with standardized values using css variables",
-      "Modular components with strong separation of concerns",
-      "Integrated autodeploy workflow using Vercel",
-      "StateMachine integration using XState to track animations and interactions",
-      "Designed project's initial concept using Figma",
-      "Hand drawn and programmatic animations with custom SVG",
+      "Highly reusable custom hooks that contain logic for ease of use",
+      "Modular component architecture that enforces a strong separation of concerns",
+      "Fully accessible and WCAG compliant with an adaptive UI that scales to user's preferred font size",
+      "Custom theme with dark and light variants",
+      "Designed and developed from scratch",
+      "Custom assets featuring hand drawn and programmatic animations",
     ],
     links: [
       {
@@ -43,7 +108,7 @@ const websites: ProjectDetails[] = [
   },
   {
     projectName: "Micro-Transaction Login Page",
-    id: "microtransaction-login-page",
+    id: "mtx-login-page",
     year: "2023",
     status: "in progress",
     skills: [
@@ -56,12 +121,12 @@ const websites: ProjectDetails[] = [
       "CodeSandbox",
     ],
     description:
-      "A 'Bad UI Battle' contribution that simulates a login page environment in which the user must purchase 'characters' using a micro-transaction store.",
+      "A 'Bad UI Battle' contribution that simulates a login page environment in which the user must purchase 'characters' through a micro-transaction store.",
     highlights: [
-      "Simulated API data requests using custom hooks and local storage",
+      "Simulated API requests using a local storage mock data layer and custom hooks",
       "Cached and memoized user data for data persistence",
-      "Robust state management using Redux slices",
-      "React-Toastify and React-Modal Integration",
+      "Robust state management using Redux",
+      "React-Toastify and React-Modal integration",
     ],
     links: [
       {
@@ -76,16 +141,6 @@ const websites: ProjectDetails[] = [
       },
     ],
   },
-  /*
-  {
-    projectName: "Wedding Website",
-    year: "2021",
-    status: "complete",
-    skills: ["WordPress", "HTML", "CSS", "JavaScript"],
-    description: "Center",
-    highlights: [],
-  },
-  */
   {
     projectName: "We Sell Users",
     id: "we-sell-users",
@@ -104,11 +159,11 @@ const websites: ProjectDetails[] = [
       "Photoshop",
     ],
     description:
-      "I built this application from scratch as part of a take-home challenge that led to my employment at Richmond Day. I built this application using ASP.NET MVC, Entity Framework, and VueJS. I was given mock data in an excel sheet and tasked with designing a database and a full stack application to manage and display the data.",
+      "I built this project as part of a one week take-home challenge. I was given mock data in an excel sheet and tasked with designing a database and a full stack application to manage and display user data.",
     highlights: [
-      "Successfully led to employment at Richmond Day",
+      "Successfully led to my employment at Richmond Day",
       "Project completed and deployed to Azure within one week",
-      "Interactive interface for editing data seamlessly blended into UI",
+      "Interactive interface to dynamically edit data",
     ],
     links: [
       {
@@ -136,11 +191,11 @@ const websites: ProjectDetails[] = [
       "Illustrator",
     ],
     description:
-      "I designed and built a mock dog store web application using ASP.net core MVC, C#, Bootstrap, and SQL. Source code available on my GitHub. Though it is no longer live, I did establish an autodeploy pipeline using Azure DevOps. I designed and animated the logo, created the layout, and developed the application as a learning project. This project utilizes the MVC methodology, and features user creation, management, a virtual checkout system, and a form with client/server validation. Data was stored within an SQL database and accessed using controllers built with C# and Entity Framework Core. Views were created using VueJS and provided an interactive layer for users to view and modify data.",
+      "I built this full stack application as a learning exercise. This project is a mock e-commerce website with a virtual storefront for 'buying' dogs. Though it is no longer live, I did establish an autodeploy pipeline using Azure DevOps. Controllers access SQL data using linq statements and leverage VueJS to display and modify data.",
     highlights: [
-      "Mock e-commerce experience featuring item details, shopping cart, and a checkout page",
+      "Mock e-commerce experience featuring item details, shopping cart, and checkout pages",
       "Dynamic routing for item detail pages",
-      "Created a minimalist logo of a dog with a tag wagging animation whenever the user hovered over interactive elements",
+      "Minimalist logo of a dog with a subtle tail wag animation that played whenever the user hovered over interactive elements",
     ],
     links: [
       {
@@ -157,12 +212,7 @@ const websites: ProjectDetails[] = [
     status: "complete",
     skills: ["NextJS", "JavaScript", "HTML", "CSS", "Trello", "Illustrator"],
     description:
-      "A website I created as an avenue to learn NextJS, test out GitHub pages, and publicly host a portfolio of my work to market myself as a freelance web developer.",
-    highlights: [
-      "Designed and built from scratch",
-      "Static rendering using NextJS",
-      "GitHub pages integration",
-    ],
+      "A website I created as an avenue to learn NextJS, test out GitHub pages, and publicly host a portfolio of my work and market myself as a freelance web developer. This was the original concept of my current website.",
     links: [
       {
         icon: "GitHub",
@@ -181,7 +231,7 @@ const games: ProjectDetails[] = [
     status: "in progress",
     skills: ["Unity", "Csharp", "Blender", "Figma"],
     description:
-      "Dwarf Forges is a 3D game being built with Unity and planned to release in 2024. The team consists of 3 developers, 1 artist, 1 sound engineer. Dwarf Forges is a game in which you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars, imbuing them with special effects, and use them to create a variety of unique weapons. Use your crafted weapons to fend off the dwarves until there are none left!",
+      "Dwarf Forges is a 3D game being built with Unity and planned to release in 2024. The team consists of 3 developers, 1 artist, and 1 sound engineer. Dwarf Forges is a game where you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars and use them to forge a variety of unique weapons. Use those weapons to fend off the dwarves until there are none left!",
     contributions:
       "I am the team lead and a developer for this project. As the team lead I create tickets, assemble meetings, lead collaborative brainstorming sessions, document game mechanics and code standards, and guide team decisions. As a developer I implement various features (camera movement, animation logic, game state), manage the repository, and complete code reviews.",
     highlights: [
@@ -262,6 +312,7 @@ const games: ProjectDetails[] = [
 ];
 
 export const Projects = {
+  challenges,
   websites,
   games,
 };

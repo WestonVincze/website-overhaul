@@ -13,12 +13,15 @@
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
 }
 
-.experience header, .education header {
+.experience header,
+.education header {
   display: flex;
   justify-content: space-between;
 }
-.experience header p, .education header p {
+.experience header p,
+.education header p {
   font-style: italic;
+  text-align: right;
 }
 
 .hobbies {

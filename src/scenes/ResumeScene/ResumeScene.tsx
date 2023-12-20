@@ -1,8 +1,9 @@
+import styles from "./ResumeScene.module.css";
+import utilStyles from "@styles/utils.module.css";
 import { Container } from "@components/Container";
 import { ResumeContent } from "./ResumeContent";
 import { LinedPaper } from "@components/LinedPaper";
 import { SkillStickers } from "@components/SkillStickers";
-import styles from "./ResumeScene.module.css";
 import { StickyNote } from "@components/StickyNote";
 import { HighlightedHeading } from "@components/HighlightedHeading";
 import { useInViewAnimation } from "@hooks/useInViewAnimation";
@@ -107,7 +108,11 @@ export const ResumeScene = () => {
               {ResumeContent.hobbies.map((hobby, i) => (
                 <li key={i}>
                   {hobby.url ? (
-                    <a href={hobby.url} target="_blank">
+                    <a
+                      href={hobby.url}
+                      className={utilStyles.link}
+                      target="_blank"
+                    >
                       {hobby.name}
                     </a>
                   ) : (

@@ -27,7 +27,8 @@
       "@hocs/*": ["src/hocs/*"],
       "@hooks/*": ["src/hooks/*"],
       "@assets/*": ["src/assets/*"],
-      "@providers/*": ["src/providers/*"]
+      "@providers/*": ["src/providers/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "include": [

@@ -9,11 +9,11 @@ export type SocialLink = {
 export type ProjectDetails = {
   projectName: string;
   id?: string;
-  year: string;
-  status: "in progress" | "complete";
+  year?: string;
+  status?: "in progress" | "complete";
   skills: IconNames[];
   description: string;
   contributions?: string;
-  highlights: string[];
+  highlights?: string[];
   links?: SocialLink[];
 };

@@ -1,0 +1,24 @@
+/** Utility Module for commonly used styles **/
+
+.link {
+  position: relative;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  height: 2px;
+  width: 90%;
+  background-color: var(--purple);
+  transition: all 300ms ease-in-out;
+}
+.link:focus::after,
+.link:hover::after {
+  left: 0;
+  width: 100%;
+}
+.link:focus-visible {
+  outline: 1px solid var(--purple-60);
+  border-radius: 5px;
+}
