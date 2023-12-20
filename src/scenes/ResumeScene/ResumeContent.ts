@@ -1,7 +1,81 @@
 import { IconNames } from "@assets/Icons";
 
 const intro =
-  "I am a self-driven frontend web developer backed by over 5 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks with a strong proficiency in React and TypeScript.";
+  "I am a self-driven frontend web developer backed by over 5 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks, with a strong proficiency in React and TypeScript.";
+
+type TechnicalSkill = {
+  title: string;
+  skills: string[];
+};
+
+const technicalSkills: TechnicalSkill[] = [
+  {
+    title: "Languages",
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "C#",
+      "SQL",
+      "PHP",
+      "Go",
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      "React",
+      "NextJS",
+      "VueJS",
+      "Jest",
+      "Storybook",
+      "GraphQL",
+      "Redux",
+      "RxJS",
+      "XState",
+      "React-Spring",
+      "ChartsJS",
+      "jQuery",
+      "AJAX",
+      "Material UI",
+      "Chakra UI",
+      "Bootstrap",
+      "Scss",
+      "Less",
+      "WordPress",
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      "NodeJS",
+      "MongoDB",
+      "ASP.NET",
+      "Entity Framework",
+      "LINQ",
+      "SQL",
+      "Colyseus",
+    ],
+  },
+  {
+    title: "DevOps",
+    skills: ["Vercel", "AWS", "Docker", "K8s", "Helm", "Azure"],
+  },
+  {
+    title: "Tools",
+    skills: [
+      "Webpack",
+      "Git",
+      "Figma",
+      "JIRA",
+      "Postman",
+      "Vim",
+      "BabylonJS",
+      "Unity",
+    ],
+  },
+];
 
 type WorkExperience = {
   company: string;
@@ -35,18 +109,20 @@ const workExperience: WorkExperience[] = [
       "Gitlab",
     ],
     description:
-      "Collaborated as a frontend specialist in an agile team with a primary focus on account management and the consolidation of legacy code into a unified platform. Executed a wide range of tasks from minor microservice updates to leading full project lifecycles.",
+      "Collaborated as a frontend specialist within the account management team on a highly secure SaaS platform.",
     location: "Waterloo, Canada (Remote)",
     startDate: "01/2023",
     endDate: "09/2023",
     highlights: [
-      "Contributed to Avuik’s SaaS platform and microservices emphasizing security and role management standards ",
-      "Led project to rebuild legacy payment form and enhance payment options with React, GraphQL, and Go",
-      "Seamlessly integrated third party iframe into Auvik's design despite strict constraints using strategic CSS",
-      "Commended by design team for my dedication to design details when developing UI components from mockups",
-      "Developed robust React components and custom hooks with extensive documentation and testing for ease of use",
-      "Implemented microservices to handle database queries and API requests using GraphQL, Go, and Kubernetes",
-      "Persistently addressed tech debt, risks, and improvement opportunities during sprint grooming and retro meetings",
+      "Contributed to multiple microservice repositories with automated CI/CD pipeline integration",
+      "Led project to refactor legacy payment form and enhance payment options with React, GraphQL, and Go",
+      "Seamlessly integrated iframe despite strict constraints through strategic CSS and state management",
+      "Commended by design team for my dedication to design details when developing UI components",
+      "Created reusable hooks for API requests and common patterns with a focus on ease of use",
+      "Wrote rigorous tests and Storybook stories, incorporating modular tools to simplify intricate testing logic",
+      "Provided comprehensive feedback during code reviews and wrote descriptive details for pull requests",
+      "Extensively documented work with highly readable code, JSDoc function descriptions, and e2e flow charts",
+      "Persistently addressed tech debt, risks, and improvement opportunities during sprint grooming and retro",
     ],
   },
   {
@@ -54,15 +130,14 @@ const workExperience: WorkExperience[] = [
     title: "JavaScript Consultant",
     skills: [
       "React",
+      "NextJS",
+      "Redux",
       "TypeScript",
-      "JavaScript",
       "HTML",
       "CSS",
       "Jest",
       "Storybook",
       "GraphQL",
-      "NextJS",
-      "Redux",
       "NodeJS",
       "MaterialUI",
       "ChakraUI",
@@ -70,15 +145,15 @@ const workExperience: WorkExperience[] = [
       "GitHub",
     ],
     description:
-      "Engaged as a versatile developer and consultant within Bitovi's React Department, serving an array of diverse clients. Proficiently managed a broad spectrum of frontend React projects from short-term individual assignments to substantial, collaborative endeavors within agile teams.",
+      "Engaged as a versatile React developer and consultant, serving an array of diverse clients. Projects ranged from short-term individual assignments to substantial, collaborative endeavors within agile teams.",
     location: "Chicago, USA (Remote)",
     startDate: "11/2021",
     endDate: "11/2022",
     highlights: [
-      "Collaborated with a small team to design architectural patterns and develop a white-label React application and shared component library using Redux, TypeScript, and Charts.js",
-      "Conducted rigorous testing using Jest and leveraged Storybook to showcase UI components and their various states",
-      "Represented Bitovi during virtual events and delivered live presentations on open-source libraries like Storybook and react-to-webcomponent",
-      "Contributed to Bitovi maintained open source libraries like StackStorm and react-to-webcomponent",
+      "Collaborated on the architectural planning and development of a project to refactor an existing web app into a modular white-label product with a shared and customizable component library",
+      "Conducted rigorous testing and leveraged Storybook to showcase UI components and their various states",
+      "Represented Bitovi during virtual events to deliver live presentations on trending technologies",
+      "Contributed to Bitovi supported open source libraries like StackStorm and react-to-webcomponent",
       "Designed a senior-level take-home test and rubric for a client to assist their hiring process",
     ],
   },
@@ -87,13 +162,13 @@ const workExperience: WorkExperience[] = [
     title: "Full Stack Developer",
     skills: [
       "JQuery",
+      "AJAX",
       "JavaScript",
       "HTML",
       "CSS",
       "Bootstrap",
       "ASPnet",
       "Csharp",
-      "AJAX",
       "SQL",
       "WordPress",
       "PHP",
@@ -106,8 +181,9 @@ const workExperience: WorkExperience[] = [
     startDate: "04/2020",
     endDate: "11/2021",
     highlights: [
+      "Wrote frontend from scratch for a virtual retreat hosted by MINI, featuring interactive games and contests",
       "Developed scalable, database-first applications primarily using ASP.NET, SQL, and jQuery",
-      "Created interactive web components using JavaScript and customized open-source libraries",
+      "Crafted interactive web components using JavaScript and customized open-source libraries",
       "Implemented pixel-perfect, responsive designs from PSD mockups provided by designers",
     ],
   },
@@ -123,19 +199,16 @@ const workExperience: WorkExperience[] = [
       "WordPress",
       "PHP",
       "Figma",
-      "Photoshop",
-      "Illustrator",
     ],
     description:
-      "Cultivated client relationships, gathered project requirements, facilitated contract negotiations, and consistently delivered websites, primarily leveraging WordPress and custom themes.",
+      "Cultivated client relationships, gathered project requirements, and delivered full websites from scratch.",
     location: "Toronto, Canada (Remote)",
     startDate: "11/2019",
     endDate: "04/2020",
     highlights: [
-      "Managed deployment and hosting of web domains as well as SEO, contact forms, and eCommerce",
-      "Worked closely with non-technical clients to gather requirements and create mockups true to their vision and budget",
-      "Designed, developed, and deployed luxury watch splash page within tight two day deadline",
-      "Refactored code, improved SEO, and established article publication workflow for psychology article website",
+      "Managed deployment and hosting of web domains as well as SEO, mailing services, and eCommerce",
+      "Designed, developed, and deployed luxury watch store splash page within tight two day deadline",
+      "Refactored code, improved SEO, and established article publication workflow for psychology website",
       "Integrated calendar scheduling, PayPal services, and improved UI layout for virtual classroom website",
     ],
   },
@@ -145,7 +218,6 @@ const workExperience: WorkExperience[] = [
     skills: [
       "VueJS",
       "React",
-      "JQuery",
       "JavaScript",
       "HTML",
       "CSS",
@@ -155,19 +227,19 @@ const workExperience: WorkExperience[] = [
       "SQL",
       "WordPress",
       "PHP",
+      "Azure",
       "Trello",
       "Bitbucket",
-      "Azure",
     ],
     description:
-      "Worked in a small development team to deliver large-scale web applications as well as WordPress websites for clients.",
+      "Worked within a small development team to deliver large-scale web apps and WordPress websites.",
     location: "Toronto, Canada (Remote)",
     startDate: "07/2018",
     endDate: "11/2019",
     highlights: [
-      "Developed a dynamic, data-driven, MVC web application for Telus using ASP.NET Core and VueJS",
-      "Collaborated on a React application for Air Canada capable of fetching and displaying article data from Contentful",
-      "Independently built and launched a WordPress website for a client with a fully customized theme using Isotope.js",
+      "Contributed to dynamic MVC web apps with VueJS views, ASP.NET controllers, and SQL data",
+      "Collaborated on React application with Contentful integration for user friendly article management",
+      "Independently built and launched WordPress website with a customized theme using Isotope.js and PHP",
     ],
   },
   {
@@ -184,13 +256,13 @@ const workExperience: WorkExperience[] = [
       "PHP",
     ],
     description:
-      "Collaborated in an agile development team contracted by Scotiabank and worked independently on web applications.",
+      "Collaborated in an agile development environment and worked independently on web apps.",
     location: "Scarborough, Canada",
     startDate: "01/2017",
     endDate: "07/2017",
     highlights: [
       "Actively participated in scrum meetings and consistently completed sprint tasks ahead of schedule",
-      "Developed web application capable of making API calls using AJAX and rendering nutritional information data",
+      "Developed web app prototype to fetch, render, and filter nutrition data from nearby restaurants",
     ],
   },
 ];
@@ -200,9 +272,9 @@ type Education = {
   program: string;
   degree: string;
   description: string;
-  highlights: string[];
   startDate: string;
   endDate: string;
+  highlights: string[];
 };
 
 const education: Education = {
@@ -210,83 +282,14 @@ const education: Education = {
   program: "Computer Programmer",
   degree: "Advanced Diploma",
   description:
-    "Excelled as a team player and leader for multiple group projects and mastered object oriented programming (OOP), web development, computer networking, database design, normalization, and collaboration.",
-  highlights: [
-    "Made the dean's list and graduated with honors",
-    "Excelled as a leader and team member for multiple group projects and presentations",
-  ],
+    "Mastered the fundamentals of object oriented programming (OOP), web development, computer networking, database design, normalization, and collaboration.",
   startDate: "09/2015",
   endDate: "05/2018",
+  highlights: [
+    "Made the dean's list and graduated with honors",
+    "Excelled as a leader and team player for multiple group projects and presentations",
+  ],
 };
-
-type TechnicalSkill = {
-  title: string;
-  skills: string[];
-};
-
-const technicalSkills: TechnicalSkill[] = [
-  {
-    title: "Languages",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "C#",
-      "SQL",
-      "PHP",
-      "Go",
-    ],
-  },
-  {
-    title: "Libraries & Frameworks",
-    skills: [
-      "React",
-      "NextJS",
-      "NodeJS",
-      "Redux",
-      "Scss",
-      "Less",
-      "ASP.NET",
-      "Entity Framework",
-      "Bootstrap",
-      "jQuery",
-      "AJAX",
-      "WordPress",
-      "GraphQL",
-      "VueJS",
-      "RxJS",
-      "XState",
-      "Material UI",
-      "Chakra UI",
-      "Unity",
-      "BabylonJS",
-      "Colyseus",
-    ],
-  },
-  {
-    title: "Development Tools",
-    skills: ["Git", "JIRA", "Webpack", "Figma", "Vim"],
-  },
-  {
-    title: "DevOps & Data",
-    skills: [
-      "Vercel",
-      "AWS",
-      "Docker",
-      "Azure",
-      "K8s",
-      "Helm",
-      "SQL",
-      "MongoDB",
-      "MySQL",
-    ],
-  },
-  {
-    title: "Testing & Debugging",
-    skills: ["Jest", "Storybook", "React Testing Library", "Postman"],
-  },
-];
 
 type Hobby = {
   name: string;
@@ -312,8 +315,8 @@ export type Resume = {
 
 export const ResumeContent: Resume = {
   intro,
-  workExperience,
   technicalSkills,
+  workExperience,
   education,
   hobbies,
 };
