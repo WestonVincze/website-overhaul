@@ -6,16 +6,18 @@ import Head from "next/head";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://westonvincze.com"),
   title: {
     template: "Weston Vincze | %s",
     absolute: "Weston Vincze",
   },
-  description: "Portfolio Website made by Weston Vincze using NextJS.",
+  description: "Portfolio Website built by Weston Vincze using NextJS.",
+  keywords: "Web Development, Portfolio, NextJS, Weston Vincze",
   openGraph: {
     title: "Weston Vincze Portfolio",
-    siteName: "Weston Vincze Portfolio",
+    siteName: "Weston Vincze - Frontend Developer",
     url: "https://westonvincze.com",
-    images: ["/images/og-image.png", "/images/og-image-alt.png"],
+    images: ["/images/og-image.png", "/images/og-image-dark.png"],
     locale: "en_CA",
     type: "website",
   },
