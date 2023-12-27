@@ -1,4 +1,4 @@
-import { IconNames } from "@assets/Icons";
+import { IconName } from "@assets/Icons";
 
 const intro =
   "I am a self-driven frontend web developer backed by over 5 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks, with a strong proficiency in React and TypeScript.";
@@ -80,7 +80,7 @@ const technicalSkills: TechnicalSkill[] = [
 type WorkExperience = {
   company: string;
   title: string;
-  skills: IconNames[];
+  skills: IconName[];
   description: string;
   location: string;
   startDate: string;

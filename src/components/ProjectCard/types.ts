@@ -1,7 +1,7 @@
-import { IconNames } from "@assets/Icons";
+import { IconName } from "@assets/Icons";
 
 export type SocialLink = {
-  icon: IconNames;
+  icon: IconName;
   text: string;
   url: string;
 };
@@ -11,7 +11,7 @@ export type ProjectDetails = {
   id?: string;
   year?: string;
   status?: "in progress" | "complete";
-  skills: IconNames[];
+  skills: IconName[];
   description: string;
   contributions?: string;
   highlights?: string[];

@@ -1,11 +1,11 @@
-import { IconNames, Icons } from "@assets/Icons";
+import { IconName, GetIcon } from "@assets/Icons";
 import styles from "./Switch.module.css";
 import { useState, useEffect } from "react";
 
 interface SwitchProps {
   storageKey: string;
-  onIcon: IconNames;
-  offIcon: IconNames;
+  onIcon: IconName;
+  offIcon: IconName;
   onToggle?: (value: boolean) => void;
   title: string;
 }
@@ -35,9 +35,10 @@ export const Switch = ({
       className={`${styles.switch} ${value ? styles.on : styles.off}`}
       title={title}
       onClick={handleToggle}
+      aria-label="Switch"
     >
-      {Icons[onIcon].icon()}
-      {Icons[offIcon].icon()}
+      <span className={styles.offIcon}>{GetIcon(offIcon)}</span>
+      <span className={styles.onIcon}>{GetIcon(onIcon)}</span>
     </button>
   );
 };

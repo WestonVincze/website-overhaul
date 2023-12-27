@@ -1,10 +1,10 @@
-type Icon = {
+type IconProps = {
   title: string;
   ariaLabel?: string;
   icon: () => JSX.Element;
 };
 
-export const Icons: Record<string, Icon> = {
+export const Icons: Record<string, IconProps> = {
   GitHub: {
     title: "GitHub",
     icon: () => (
@@ -996,4 +996,8 @@ export const Icons: Record<string, Icon> = {
   },
 };
 
-export type IconNames = keyof typeof Icons;
+export type IconName = keyof typeof Icons;
+
+export const GetIcon = (iconName: IconName) => {
+  return Icons[iconName].icon();
+};
