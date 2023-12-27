@@ -1,23 +1,43 @@
+import { IconNames, Icons } from "@assets/Icons";
 import styles from "./Switch.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface SwitchProps {
-  initialValue?: boolean;
+  storageKey: string;
+  onIcon: IconNames;
+  offIcon: IconNames;
   onToggle?: (value: boolean) => void;
+  title: string;
 }
 
-export const Switch = ({ initialValue = false, onToggle }: SwitchProps) => {
+export const Switch = ({
+  storageKey,
+  onIcon,
+  offIcon,
+  onToggle,
+  title,
+}: SwitchProps) => {
+  const initialValue = localStorage.getItem(storageKey) === "true";
   const [value, setValue] = useState(initialValue);
 
+  useEffect(() => {
+    localStorage.setItem(storageKey, String(value));
+  }, [value, storageKey]);
+
   const handleToggle = () => {
-    setValue(!value);
-    onToggle?.(value);
+    const newValue = !value;
+    setValue(newValue);
+    onToggle?.(newValue);
   };
 
   return (
-    <label className={styles.switch}>
-      <input type="checkbox" checked={value} onChange={handleToggle} />
-      {value ? "on" : "off"}
-    </label>
+    <button
+      className={`${styles.switch} ${value ? styles.on : styles.off}`}
+      title={title}
+      onClick={handleToggle}
+    >
+      {Icons[onIcon].icon()}
+      {Icons[offIcon].icon()}
+    </button>
   );
 };
