@@ -2,7 +2,6 @@
   display: flex;
   column-gap: var(--small-margin);
   position: relative;
-  flex-grow: 1;
 }
 
 .folderTab {

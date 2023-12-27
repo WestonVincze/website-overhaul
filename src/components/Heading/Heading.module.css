@@ -7,3 +7,14 @@
   flex-direction: row-reverse;
   padding-bottom: 0;
 }
+
+.heading > .buttons {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--small-margin);
+  flex-grow: 1;
+}
+
+.heading > .tabs {
+  flex-grow: 1;
+}
