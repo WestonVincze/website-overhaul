@@ -21,11 +21,12 @@ export const Switch = ({
   onToggle,
   onMount,
 }: SwitchProps) => {
-  const storedValue =
-    typeof localStorage !== "undefined" && localStorage.getItem(storageKey);
-  const [value, setValue] = useState<boolean>(
-    storedValue !== null ? storedValue === "true" : initialValue,
-  );
+  const [value, setValue] = useState<boolean>(() => {
+    if (typeof window === "undefined") return initialValue;
+
+    const storedValue = localStorage.getItem(storageKey);
+    return storedValue !== null ? storedValue === "true" : initialValue;
+  });
 
   useEffect(() => {
     if (typeof localStorage === "undefined") return;
