@@ -1,30 +1,50 @@
 .switch {
-  width: 50px;
-  height: 25px;
-  background-color: red;
-  border-radius: 30%;
   position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 1.5rem;
   display: flex;
   justify-content: space-between;
-  padding: 2px;
+  background-color: var(--folder);
+  box-shadow: 0 0 0.2rem var(--folder-shaded);
 }
-.switch svg {
-  width: 20px;
-  height: 20px;
+.switch:hover {
+  cursor: pointer;
 }
 .switch::after {
   content: '';
-  width: 21px;
-  height: 21px;
-  border-radius: 50%;
-  background-color: aqua;
   position: absolute;
-  top: 2px;
+  top: 0.1rem; 
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background-color: var(--font-color);
+  box-shadow: inset 0 0 0.3rem var(--folder-shaded);
   transition: all 200ms ease-in-out;
 }
-.switch.on::after {
-  left: 2px;
+.switch span {
+  width: 1.1rem;
+  height: 1.1rem;
+  transform: scale(0.3);
+  opacity: 0;
+  transition: all 400ms ease-in-out;
 }
+
+/** ON **/
+.switch.on::after {
+  left: 0.1rem;
+}
+.on .onIcon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/** OFF **/
 .switch.off::after {
-  left: 27px;
+  left: 1.6rem;
+}
+.off .offIcon {
+  transform: scale(1);
+  opacity: 1;
 }
