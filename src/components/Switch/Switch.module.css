@@ -13,27 +13,26 @@
   cursor: pointer;
 }
 .switch::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0.1rem; 
-  width: 1.3rem;
-  height: 1.3rem;
+  top: 0.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
   background-color: var(--font-color);
-  box-shadow: inset 0 0 0.3rem var(--folder-shaded);
-  transition: all 200ms ease-in-out;
+  transition: left 200ms ease-in-out;
 }
 .switch span {
   width: 1.1rem;
   height: 1.1rem;
   transform: scale(0.3);
   opacity: 0;
-  transition: all 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
 }
 
 /** ON **/
 .switch.on::after {
-  left: 0.1rem;
+  left: 1.7rem;
 }
 .on .onIcon {
   transform: scale(1);
@@ -42,7 +41,7 @@
 
 /** OFF **/
 .switch.off::after {
-  left: 1.6rem;
+  left: 0.2rem;
 }
 .off .offIcon {
   transform: scale(1);

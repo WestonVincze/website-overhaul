@@ -6,23 +6,33 @@ interface SwitchProps {
   storageKey: string;
   onIcon: IconName;
   offIcon: IconName;
-  onToggle?: (value: boolean) => void;
+  initialValue?: boolean;
   title: string;
+  onToggle?: (value: boolean) => void;
+  onMount?: (value: boolean) => void;
 }
 
 export const Switch = ({
   storageKey,
   onIcon,
   offIcon,
-  onToggle,
+  initialValue = false,
   title,
+  onToggle,
+  onMount,
 }: SwitchProps) => {
-  const initialValue = localStorage.getItem(storageKey) === "true";
-  const [value, setValue] = useState(initialValue);
+  const storedValue = localStorage.getItem(storageKey);
+  const [value, setValue] = useState<boolean>(
+    storedValue !== null ? storedValue === "true" : initialValue,
+  );
 
   useEffect(() => {
     localStorage.setItem(storageKey, String(value));
   }, [value, storageKey]);
+
+  useEffect(() => {
+    onMount?.(value);
+  }, [onMount, value]);
 
   const handleToggle = () => {
     const newValue = !value;
@@ -35,10 +45,9 @@ export const Switch = ({
       className={`${styles.switch} ${value ? styles.on : styles.off}`}
       title={title}
       onClick={handleToggle}
-      aria-label="Switch"
     >
-      <span className={styles.offIcon}>{GetIcon(offIcon)}</span>
       <span className={styles.onIcon}>{GetIcon(onIcon)}</span>
+      <span className={styles.offIcon}>{GetIcon(offIcon)}</span>
     </button>
   );
 };
