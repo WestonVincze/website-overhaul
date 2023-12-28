@@ -1,8 +1,8 @@
 import styles from "./StickyNote.module.css";
-import { Icons, IconNames } from "@assets/Icons";
+import { Icons, IconName } from "@assets/Icons";
 
 interface StickyNoteProps {
-  icon: IconNames;
+  icon: IconName;
   text?: string;
   variant?: "taped" | "sticker";
   size?: "medium" | "small";

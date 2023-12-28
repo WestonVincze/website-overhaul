@@ -53,7 +53,13 @@ export const ProjectCard = ({
       {links && (
         <nav className={styles.footer}>
           {links.map((link) => (
-            <a href={link.url} target="_blank" rel="noreferrer" key={link.text}>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              key={link.text}
+              aria-label={`${link.text} for ${projectName}`}
+            >
               <StickyNote text={link.text} icon={link.icon} />
             </a>
           ))}

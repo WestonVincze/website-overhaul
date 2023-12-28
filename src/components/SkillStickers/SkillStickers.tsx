@@ -1,5 +1,5 @@
 import styles from "./SkillStickers.module.css";
-import { IconNames } from "@assets/Icons";
+import { IconName } from "@assets/Icons";
 import { StickyNote } from "../StickyNote";
 // TODO: implement a form of interactivity (perhaps clicking on / hovering will highlight all relevant skills)
 /**
@@ -11,10 +11,10 @@ import { StickyNote } from "../StickyNote";
  */
 
 /**
- * Accepts a list of `iconNames` to create a grid of StickyNote stickers
+ * Accepts a list of `iconName` to create a grid of StickyNote stickers
  */
 interface SkillStickersProps {
-  skills: IconNames[];
+  skills: IconName[];
 }
 
 export const SkillStickers = ({ skills }: SkillStickersProps) => {

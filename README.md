@@ -59,7 +59,6 @@ Backups for the current screenshots are taken before new screenshots are saved. 
 `Y` or `y` will delete the backups and keep the new screenshots.
 `N` or `n` will delete the new screenshots and rename the backups.
 
-
 ## Author
 
 Weston Vincze - 2023

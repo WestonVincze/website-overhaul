@@ -50,6 +50,8 @@
 
   /* other */
   --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+
+  color-scheme: light dark;
 }
 
 /***** Themes *****/
@@ -78,9 +80,6 @@
 
 /***** User Preferences *****/
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
   :root {
     --folder: var(--folder--dark);
     --folder-shaded: var(--folder-shaded--dark);
@@ -93,6 +92,7 @@
     --texture-opacity: 30%;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -141,9 +141,6 @@ a {
 
 /***** Globals *****/
 html {
-  background-color: var(--background);
-  background-image: var(--folder-texture);
-  color: var(--font-color);
   position: relative;
   line-height: var(--line-height);
   perspective: 800px;
@@ -156,6 +153,12 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   font-family: var(--montserrat);
+  background-color: var(--background);
+  background-image: var(--folder-texture);
+  color: var(--font-color);
+  transition:
+    color 100ms ease-in-out,
+    background-color 100ms ease-in-out;
 }
 
 main {
