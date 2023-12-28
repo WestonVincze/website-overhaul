@@ -1,23 +1,30 @@
-import { Switch } from "@components/Switch";
+import { useEffect, useState } from "react";
+import { Switch, SwitchSkeleton } from "@components/Switch";
 
 export const DarkModeSwitch = () => {
-  const prefersDark =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [prefersDark, setPrefersDark] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setPrefersDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }, []);
 
   const toggleDarkMode = (on: boolean) => {
     document.body.dataset.theme = on ? "dark" : "light";
   };
 
-  return (
+  return prefersDark !== null ? (
     <Switch
       storageKey="darkMode"
       onIcon="Moon"
       offIcon="Sun"
       title="Dark mode theme toggle"
-      onMount={toggleDarkMode}
-      onToggle={toggleDarkMode}
       initialValue={prefersDark}
+      onToggle={toggleDarkMode}
+      onMount={toggleDarkMode}
     />
+  ) : (
+    <SwitchSkeleton />
   );
 };

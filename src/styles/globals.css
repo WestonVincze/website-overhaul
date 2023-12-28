@@ -50,6 +50,8 @@
 
   /* other */
   --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+
+  color-scheme: light dark;
 }
 
 /***** Themes *****/
@@ -77,6 +79,20 @@
 }
 
 /***** User Preferences *****/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --folder: var(--folder--dark);
+    --folder-shaded: var(--folder-shaded--dark);
+    --paper: var(--paper--dark);
+    --font-color: var(--font--dark);
+    --highlight: var(--purple-shaded);
+    --highlight-60: var(--purple-60);
+    --shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35));
+    --paper-texture: var(--paper-texture--dark);
+    --texture-opacity: 30%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -140,7 +156,9 @@ body {
   background-color: var(--background);
   background-image: var(--folder-texture);
   color: var(--font-color);
-  transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+  transition:
+    color 100ms ease-in-out,
+    background-color 100ms ease-in-out;
 }
 
 main {
