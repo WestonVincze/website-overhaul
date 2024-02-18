@@ -2,6 +2,32 @@ import { ProjectDetails } from "@components/ProjectCard/types";
 
 const challenges: ProjectDetails[] = [
   {
+    projectName: "Take Home Challenge - Currency Ticker",
+    id: "currency-ticker",
+    year: "2024",
+    skills: ["NextJS", "TypeScript", "HTML", "CSS", "Jest", "Vercel", "Figma"],
+    description:
+      "My submission for a take home challenge as part of an interview process. The challenge was to create an application that utilizes an API that frequently updates data and display a list and details page for the returned data. I used the coincap.io API to fetch and display cryptocurrency data which was updated every 30 seconds. I implemented a persistent favorites system using local storage, pagination with 'show more' and 'show less' buttons, and skeleton components to minimize layout shifts.",
+    highlights: [
+      "Led to a final interview and job offer",
+      "Completed challenge within tight 3 day deadline",
+      "Designed and developed from scratch",
+      "Includes a detailed post mortem document (PostMortem.md)",
+    ],
+    links: [
+      {
+        icon: "GitHub",
+        text: "Source Code",
+        url: "https://github.com/WestonVincze/currency-ticker",
+      },
+      {
+        icon: "Eye",
+        text: "Live Demo",
+        url: "https://currency-ticker.vercel.app",
+      },
+    ],
+  },
+  {
     projectName: "Frontend Mentor - FAQ Accordion",
     id: "faq-accordion",
     year: "2023",
