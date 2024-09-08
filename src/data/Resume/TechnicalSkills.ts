@@ -1,0 +1,70 @@
+import type { TechnicalSkill } from "./types";
+
+export const technicalSkills: TechnicalSkill[] = [
+  {
+    title: "Languages",
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "C#",
+      "SQL",
+      "PHP",
+      "Go",
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      "React",
+      "NextJS",
+      "VueJS",
+      "Jest",
+      "Storybook",
+      "GraphQL",
+      "Redux",
+      "RxJS",
+      "XState",
+      "React-Spring",
+      "ChartsJS",
+      "jQuery",
+      "AJAX",
+      "Material UI",
+      "Chakra UI",
+      "Bootstrap",
+      "Scss",
+      "Less",
+      "WordPress",
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      "NodeJS",
+      "MongoDB",
+      "ASP.NET",
+      "Entity Framework",
+      "LINQ",
+      "SQL",
+      "Colyseus",
+    ],
+  },
+  {
+    title: "DevOps",
+    skills: ["Vercel", "AWS", "Docker", "K8s", "Helm", "Azure"],
+  },
+  {
+    title: "Tools",
+    skills: [
+      "Webpack",
+      "Git",
+      "Figma",
+      "JIRA",
+      "Postman",
+      "Vim",
+      "BabylonJS",
+      "Unity",
+    ],
+  },
+];
