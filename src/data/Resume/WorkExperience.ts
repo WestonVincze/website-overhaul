@@ -16,7 +16,7 @@ export const workExperience: WorkExperience[] = [
       "GitHub",
     ],
     description:
-      "Developed and improved marketing websites and contributed to development of internal microservices to replace legacy SaaS platform.",
+      "Created and optimized multiple marketing websites, enhancing performance and functionality. Actively contributed to the development of microservices, supporting the transition from a legacy SaaS platform.",
     location: "PA, USA (Remote)",
     startDate: "02/2024",
     endDate: "present",
@@ -175,7 +175,7 @@ export const workExperience: WorkExperience[] = [
       "Bitbucket",
     ],
     description:
-      "Worked within a small development team to deliver large-scale web apps and WordPress websites.",
+      "Developed and maintained secure, large-scale web apps and WordPress websites for multiple clients.",
     location: "Toronto, Canada (Remote)",
     startDate: "07/2018",
     endDate: "11/2019",

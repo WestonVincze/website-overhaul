@@ -1,7 +1,7 @@
 import styles from "./ResumeScene.module.css";
 import utilStyles from "@styles/utils.module.css";
 import { Container } from "@components/Container";
-import { ResumeContent } from "./ResumeContent";
+import { Resume } from "../../data/Resume";
 import { LinedPaper } from "@components/LinedPaper";
 import { SkillStickers } from "@components/SkillStickers";
 import { StickyNote } from "@components/StickyNote";
@@ -32,13 +32,13 @@ export const ResumeScene = () => {
         <section>
           <HighlightedHeading id="summary" text="Summary." />
           <LinedPaper>
-            <p>{ResumeContent.intro}</p>
+            <p>{Resume.intro}</p>
           </LinedPaper>
         </section>
 
         <section>
           <HighlightedHeading id="skills" text="Skills." />
-          {ResumeContent.technicalSkills.map((skillType, i) => (
+          {Resume.technicalSkills.map((skillType, i) => (
             <LinedPaper key={i} title={skillType.title}>
               <ul className={styles.skills}>
                 {skillType.skills.map((skill, i) => (
@@ -51,7 +51,7 @@ export const ResumeScene = () => {
 
         <section className={styles.experience}>
           <HighlightedHeading id="experience" text="Experience." />
-          {ResumeContent.workExperience.map((role, i) => (
+          {Resume.workExperience.map((role, i) => (
             <LinedPaper key={i} title={role.title}>
               <header>
                 <h4>{role.company}</h4>
@@ -80,20 +80,20 @@ export const ResumeScene = () => {
         <section className={styles.education}>
           <HighlightedHeading id="education" text="Education." />
           <LinedPaper
-            title={`${ResumeContent.education.program} (${ResumeContent.education.degree})`}
+            title={`${Resume.education.program} (${Resume.education.degree})`}
           >
             <header>
-              <h4>{ResumeContent.education.school}</h4>
-              <p>{`${ResumeContent.education.startDate} - ${ResumeContent.education.endDate}`}</p>
+              <h4>{Resume.education.school}</h4>
+              <p>{`${Resume.education.startDate} - ${Resume.education.endDate}`}</p>
             </header>
 
             <section>
-              <p>{ResumeContent.education.description}</p>
+              <p>{Resume.education.description}</p>
             </section>
 
             <section>
               <ul>
-                {ResumeContent.education.highlights.map((highlight, i) => (
+                {Resume.education.highlights.map((highlight, i) => (
                   <li key={i}>{highlight}</li>
                 ))}
               </ul>
@@ -105,7 +105,7 @@ export const ResumeScene = () => {
           <HighlightedHeading id="hobbies" text="Hobbies." />
           <LinedPaper>
             <ul className={styles.hobbies}>
-              {ResumeContent.hobbies.map((hobby, i) => (
+              {Resume.hobbies.map((hobby, i) => (
                 <li key={i}>
                   {hobby.url ? (
                     <a

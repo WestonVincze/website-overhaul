@@ -5,7 +5,7 @@ export const education: Education = {
   program: "Computer Programmer",
   degree: "Advanced Diploma",
   description:
-    "Mastered the fundamentals of object oriented programming (OOP), web development, computer networking, database design, normalization, and collaboration.",
+    "Mastered the fundamentals of object oriented programming (OOP), web development, computer networking, database design, and group collaboration as a leader and team player.",
   startDate: "09/2015",
   endDate: "05/2018",
   highlights: [

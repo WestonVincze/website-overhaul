@@ -31,7 +31,7 @@ export type Hobby = {
   url?: string;
 };
 
-export type Resume = {
+export type ResumeFormat = {
   intro: string;
   workExperience: WorkExperience[];
   technicalSkills: TechnicalSkill[];
