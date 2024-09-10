@@ -1,94 +1,37 @@
-import { IconName } from "@assets/Icons";
+import { WorkExperience } from "./types";
 
-const intro =
-  "I am a self-driven frontend web developer backed by over 5 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks, with a strong proficiency in React and TypeScript.";
-
-type TechnicalSkill = {
-  title: string;
-  skills: string[];
-};
-
-const technicalSkills: TechnicalSkill[] = [
+export const workExperience: WorkExperience[] = [
   {
-    title: "Languages",
-    skills: [
-      "TypeScript",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "C#",
-      "SQL",
-      "PHP",
-      "Go",
-    ],
-  },
-  {
-    title: "Frontend",
+    company: "eLocal",
+    title: "Frontend Developer",
     skills: [
       "React",
       "NextJS",
-      "VueJS",
-      "Jest",
-      "Storybook",
-      "GraphQL",
-      "Redux",
-      "RxJS",
-      "XState",
-      "React-Spring",
-      "ChartsJS",
-      "jQuery",
-      "AJAX",
-      "Material UI",
-      "Chakra UI",
-      "Bootstrap",
-      "Scss",
-      "Less",
-      "WordPress",
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      "NodeJS",
-      "MongoDB",
-      "ASP.NET",
-      "Entity Framework",
-      "LINQ",
-      "SQL",
-      "Colyseus",
-    ],
-  },
-  {
-    title: "DevOps",
-    skills: ["Vercel", "AWS", "Docker", "K8s", "Helm", "Azure"],
-  },
-  {
-    title: "Tools",
-    skills: [
-      "Webpack",
-      "Git",
-      "Figma",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Vitest",
+      "AWS",
       "JIRA",
-      "Postman",
-      "Vim",
-      "BabylonJS",
-      "Unity",
+      "GitHub",
+    ],
+    description:
+      "Created and optimized multiple marketing websites, enhancing performance and functionality. Actively contributed to the development of microservices, supporting the transition from a legacy SaaS platform.",
+    location: "PA, USA (Remote)",
+    startDate: "02/2024",
+    endDate: "present",
+    highlights: [
+      "Refactored server-side logic across multiple React components into modular, reusable custom hooks",
+      "Migrated projects to TypeScript, significantly improving developer experience and reducing bugs",
+      "Engineered a secure, customizable multi-step form as a third-party script, enabling seamless integration",
+      "Developed NextJS SPA with dynamic SEO, achieving perfect mobile web vital scores on Lighthouse",
+      "Improved page speed scores by 15-25% for a fleet of internal revenue-driving marketing websites",
+      "Elevated accessibility and best practices scores for multiple websites from ~60-85% to 100%",
+      "Conducted frequent A/B tests with the marketing team, improving user retention by up to 20%",
+      "Developed and maintained automated unit tests using Vitest to reduce manual testing efforts",
+      "Mentored intern on best practices for React and TypeScript, encouraging judgment-free questions",
     ],
   },
-];
-
-type WorkExperience = {
-  company: string;
-  title: string;
-  skills: IconName[];
-  description: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  highlights: string[];
-};
-
-const workExperience: WorkExperience[] = [
   {
     company: "Auvik Networks",
     title: "Software Developer",
@@ -232,7 +175,7 @@ const workExperience: WorkExperience[] = [
       "Bitbucket",
     ],
     description:
-      "Worked within a small development team to deliver large-scale web apps and WordPress websites.",
+      "Developed and maintained secure, large-scale web apps and WordPress websites for multiple clients.",
     location: "Toronto, Canada (Remote)",
     startDate: "07/2018",
     endDate: "11/2019",
@@ -266,57 +209,3 @@ const workExperience: WorkExperience[] = [
     ],
   },
 ];
-
-type Education = {
-  school: string;
-  program: string;
-  degree: string;
-  description: string;
-  startDate: string;
-  endDate: string;
-  highlights: string[];
-};
-
-const education: Education = {
-  school: "Seneca College",
-  program: "Computer Programmer",
-  degree: "Advanced Diploma",
-  description:
-    "Mastered the fundamentals of object oriented programming (OOP), web development, computer networking, database design, normalization, and collaboration.",
-  startDate: "09/2015",
-  endDate: "05/2018",
-  highlights: [
-    "Made the dean's list and graduated with honors",
-    "Excelled as a leader and team player for multiple group projects and presentations",
-  ],
-};
-
-type Hobby = {
-  name: string;
-  url?: string;
-};
-
-const hobbies: Hobby[] = [
-  { name: "Game Development", url: "https://weasyv.itch.io/" },
-  { name: "Drawing & Animation" },
-  { name: "World Building" },
-  { name: "Improv & TTRPG`s" },
-  { name: "Reading & Writing" },
-  { name: "Snowboarding" },
-];
-
-export type Resume = {
-  intro: string;
-  workExperience: WorkExperience[];
-  technicalSkills: TechnicalSkill[];
-  education: Education;
-  hobbies: Hobby[];
-};
-
-export const ResumeContent: Resume = {
-  intro,
-  technicalSkills,
-  workExperience,
-  education,
-  hobbies,
-};
