@@ -12,6 +12,7 @@ export const ProjectCard = ({
   id,
   projectName,
   skills,
+  subheading,
   description,
   contributions,
   highlights,
@@ -23,6 +24,10 @@ export const ProjectCard = ({
       title={`${projectName}`}
       style={links && { marginBottom: "80px" }}
     >
+      <p role="doc-subtitle" className={styles.subheading}>
+        {subheading}
+      </p>
+
       <section>
         <SkillStickers skills={skills} />
       </section>

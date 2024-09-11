@@ -69,7 +69,8 @@ EVERY OTHER LINE
 
 .paper > header.multiLine > .title,
 .paper header:not(:first-child),
-.paper > section:not(:last-child) {
+.paper > section:not(:last-child),
+.paper [role="doc-subtitle"] {
   margin-bottom: var(--line-height);
 }
 
