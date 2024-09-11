@@ -8,3 +8,9 @@
   justify-items: center;
   margin-bottom: calc(var(--line-height) * 2);
 }
+
+@media screen and (max-width: 550px) {
+  .skillStickers {
+    column-gap: var(--size-1);
+  }
+}
