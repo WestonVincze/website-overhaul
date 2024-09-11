@@ -12,6 +12,7 @@ export type ProjectDetails = {
   year?: string;
   status?: "in progress" | "complete";
   skills: IconName[];
+  subheading?: string;
   description: string;
   contributions?: string;
   highlights?: string[];
