@@ -6,8 +6,11 @@ export type SocialLink = {
   url: string;
 };
 
+export type ProjectCategory = "game" | "website" | "demo";
+
 export type ProjectDetails = {
   projectName: string;
+  category: ProjectCategory;
   id?: string;
   year?: string;
   status?: "in progress" | "complete";
