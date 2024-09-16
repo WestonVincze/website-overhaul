@@ -3,4 +3,8 @@ import { Demos } from "./Demos";
 import { Games } from "./Games";
 import { Websites } from "./Websites";
 
-export const Projects: ProjectDetails[] = [...Demos, ...Websites, ...Games];
+export const Projects: Record<string, ProjectDetails[]> = {
+  demos: Demos,
+  websites: Websites,
+  games: Games,
+};

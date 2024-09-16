@@ -1,14 +1,14 @@
 import { ProjectCard } from "@components/ProjectCard";
 import { Container } from "@components/Container";
 import { Projects } from "@data/Projects";
-import { ProjectDetails } from "@data/Projects/types";
+import { HighlightedHeading } from "@components/HighlightedHeading";
 
 export const ProjectsScene = (): JSX.Element => {
   return (
     <Container>
       <section>
         <HighlightedHeading id="challenges" text="Challenges" />
-        {Projects.challenges.map((challenge, i) => (
+        {Projects.demos.map((challenge, i) => (
           <ProjectCard
             {...challenge}
             id={`challenges-${challenge.id}`}
