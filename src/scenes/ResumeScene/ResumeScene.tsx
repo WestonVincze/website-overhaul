@@ -1,7 +1,7 @@
 import styles from "./ResumeScene.module.css";
 import utilStyles from "@styles/utils.module.css";
 import { Container } from "@components/Container";
-import { Resume } from "../../data/Resume";
+import { Resume } from "@data/Resume";
 import { LinedPaper } from "@components/LinedPaper";
 import { SkillStickers } from "@components/SkillStickers";
 import { StickyNote } from "@components/StickyNote";

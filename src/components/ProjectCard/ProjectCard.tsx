@@ -1,7 +1,7 @@
 import styles from "./ProjectCard.module.css";
 import { LinedPaper } from "../LinedPaper";
 import { StickyNote } from "../StickyNote";
-import { ProjectDetails } from "./types";
+import { ProjectDetails } from "@data/Projects/types";
 import { SkillStickers } from "../SkillStickers";
 
 interface ProjectCardProps
@@ -12,6 +12,7 @@ export const ProjectCard = ({
   id,
   projectName,
   skills,
+  subheading,
   description,
   contributions,
   highlights,
@@ -23,6 +24,10 @@ export const ProjectCard = ({
       title={`${projectName}`}
       style={links && { marginBottom: "80px" }}
     >
+      <p role="doc-subtitle" className={styles.subheading}>
+        {subheading}
+      </p>
+
       <section>
         <SkillStickers skills={skills} />
       </section>

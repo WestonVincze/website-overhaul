@@ -51,7 +51,7 @@ export const LinedPaper = ({ title, children, ...props }: LinedPaperProps) => {
       ref={ref}
       style={{
         ...animatedStyle,
-        willChange: "transform, opacity",
+        /* willChange: "transform, opacity", (consumes will-change memory budget) */
         ...props.style,
       }}
       className={`${styles.paper} ${!title ? styles.noTitle : ""}`.trim()}
