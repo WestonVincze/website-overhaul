@@ -1,7 +1,7 @@
 import { ProjectCard } from "@components/ProjectCard";
 import { Container } from "@components/Container";
-import { Projects } from "@scenes/ProjectsScene/ProjectsContent";
-import { HighlightedHeading } from "@components/HighlightedHeading";
+import { Projects } from "@data/Projects";
+import { ProjectDetails } from "@data/Projects/types";
 
 export const ProjectsScene = (): JSX.Element => {
   return (
