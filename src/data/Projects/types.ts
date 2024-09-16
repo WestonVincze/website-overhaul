@@ -12,6 +12,7 @@ export type ProjectDetails = {
   projectName: string;
   category: ProjectCategory;
   id?: string;
+  screenshots?: string[];
   year?: string;
   status?: "in progress" | "complete";
   skills: IconName[];
