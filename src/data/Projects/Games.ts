@@ -5,18 +5,66 @@ export const Games: ProjectDetails[] = [
     projectName: "Necro Vs Crown",
     category: "game",
     id: "necro-vs-crown",
+    screenshots: ["necro-vs-crown-1.jpg"],
     year: "2024",
     status: "in progress",
-    skills: ["JavaScript", "Vitest", "Figma"], // colyseus, bitECS, Phaser, PIXI, RxJS, Svelte
+    skills: [
+      "TypeScript",
+      "Vitest",
+      "Figma",
+      "Colyseus",
+      "BitECS",
+      "Phaser",
+      "PixiJS",
+      "RxJS",
+      "Svelte",
+    ],
     subheading: "Personal Project",
-    description: "",
-    contributions: "",
-    highlights: [""],
+    description:
+      "Necro VS Crown is an ambitious multiplayer browser game currently in development. It was originally a single player POC known as Necro Cursor. Necro VS Crown has two factions with opposing goals and distinct mechanics. While playing as the Necro, you control a lowly necromancer and amass an army of skeletons that you have direct control over. While playing as the Crown, you collect gold over time that can be spent to spawn units that will automatically chase and attack Necro units. The former is akin to the 'survivor' rogue-like genre, while the latter is akin to the deck building rogue-like genre.",
+    highlights: [
+      "Highly performant data-oriented architecture built with bitECS (ECS framework)",
+      "Rigorous unit tests for most systems (over 85 tests)",
+      "Lightweight and reactive UI built with Svelte",
+      "Two unique game modes with distinct mechanics, goals, and controls",
+      "Modular components and systems built in a shared package",
+      "Asymmetrical multiplayer gameplay (under development)",
+    ],
     links: [
       {
         icon: "GitHub",
         text: "Source Code",
         url: "https://github.com/WestonVincze/necro-vs-crown",
+      },
+    ],
+  },
+  {
+    projectName: "Necro Cursor",
+    category: "game",
+    id: "necro-cursor",
+    year: "2024",
+    status: "complete",
+    skills: ["TypeScript", "PixiJS", "RxJS"],
+    subheading: "POC Demo",
+    description:
+      "Necro Cursor is an experimental POC browser game in which you play as a lowly necromancer who must defend himself from a horde of angry townsfolk. Summon skeletons from the bones of your enemies to defend you and survive as long as you can!",
+    highlights: [
+      "Detailed run stats and local highscores",
+      "Highly reactive and event-driven solutions",
+      "Lightweight project with minimal third party libraries",
+      "Custom debug tools and testing environment",
+      "Detailed documentation and post-mortem in the README",
+    ],
+    links: [
+      {
+        icon: "Eye",
+        text: "Play Game",
+        url: "https://necro-cursor.vercel.app/",
+      },
+      {
+        icon: "GitHub",
+        text: "Source Code",
+        url: "https://github.com/WestonVincze/necro-cursor",
       },
     ],
   },
@@ -29,9 +77,9 @@ export const Games: ProjectDetails[] = [
     skills: ["Unity", "Csharp", "Blender", "Figma"],
     subheading: "Game Jam (Summer Slow Jam 2023)",
     description:
-      "Dwarf Forges is a 3D game being built with Unity and planned to release in 2024. The team consists of 3 developers, 1 artist, and 1 sound engineer. Dwarf Forges is a game where you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars and use them to forge a variety of unique weapons. Use those weapons to fend off the dwarves until there are none left!",
+      "Dwarf Forges is a 3D RTS style game built with Unity. The team consisted of 3 developers, 1 artist, and 1 sound engineer. Dwarf Forges is a game where you play as an enchanted forge and must save yourself from a horde of Dwarves who intend to drag you back to their fortress. Smelt down your enemies into metal bars and use them to forge a variety of unique weapons. Use those weapons to fend off the dwarves until there are none left!",
     contributions:
-      "I am the team lead and a developer for this project. As the team lead I create tickets, assemble meetings, lead collaborative brainstorming sessions, document game mechanics and code standards, and guide team decisions. As a developer I implement various features (camera movement, animation logic, game state), manage the repository, and complete code reviews.",
+      "I was the team lead and a developer for this project. As the team lead I created tickets, assembled meetings, lead collaborative brainstorming sessions, documented game mechanics and code standards, and guided team decisions. As a developer I implemented various features (camera movement, animation, game state), managed the repository, and conducted code reviews.",
     highlights: [
       "Physics based movement and object interactions",
       "Third person RTS Camera controls with locked and free roam camera states",
@@ -68,7 +116,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/Roasted-Goblin-Studio/7DRL-Jam/tree/master",
+        url: "https://github.com/Roasted-Goblin-Studio/7DRL-Jam",
       },
       {
         icon: "Itch",
@@ -102,7 +150,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/PhillypHenning/Blood-and-Gold-2D-Platformer",
+        url: "https://github.com/WestonVincze/Blood-And-Gold",
       },
       {
         icon: "Itch",

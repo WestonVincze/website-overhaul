@@ -2,6 +2,35 @@ import { ProjectDetails } from "./types";
 
 export const Websites: ProjectDetails[] = [
   {
+    projectName: "Currency Ticker",
+    category: "demo",
+    id: "currency-ticker",
+    year: "2024",
+    skills: ["NextJS", "TypeScript", "HTML", "CSS", "Jest", "Vercel", "Figma"],
+    subheading: "Take-Home Challenge (3 days)",
+    description:
+      "My submission for a take home challenge as part of an interview process. The challenge was to create an application to fetch and display a frequently updated dataset via API. The application had to update data live, include list and details pages, and be responsive. I used the coincap.io API to fetch and display cryptocurrency data on a 30 second interval. I implemented a persistent favorites system using local storage, pagination with 'show more' and 'show less' buttons, and skeleton components to minimize layout shifts.",
+    highlights: [
+      "Led to a final interview and job offer",
+      "Seamless transition between empty and states",
+      "Completed challenge within tight 3 day deadline",
+      "Designed and developed from scratch",
+      "Includes a detailed post mortem document in the repo (PostMortem.md)",
+    ],
+    links: [
+      {
+        icon: "GitHub",
+        text: "Source Code",
+        url: "https://github.com/WestonVincze/currency-ticker",
+      },
+      {
+        icon: "Eye",
+        text: "Live Demo",
+        url: "https://currency-ticker.vercel.app",
+      },
+    ],
+  },
+  {
     projectName: "Portfolio Website",
     category: "website",
     id: "portfolio-website-2023",
@@ -21,10 +50,10 @@ export const Websites: ProjectDetails[] = [
     ],
     subheading: "Digital Resume and Portfolio",
     description:
-      "You are currently viewing this project! I created this website using NextJS to act as a hub for my portfolio and resume. The source code is openly available and demonstrates my iterative development style. This project is in active development and improves every day. You can view the project board and git history to see the most recent and upcoming changes.",
+      "You are currently viewing this project! I created this website using NextJS to act as a hub for my portfolio and resume. The source code is openly available and demonstrates my iterative development style. This project is in the late MVP stage with QoL and visual improvements on the pipeline. You can view the project board and git history to see the most recent and upcoming changes.",
     highlights: [
       "Shared logic extracted into highly reusable custom hooks for consistency and ease of use",
-      "Modular component architecture that enforces a strong separation of concerns by containing and grouping relevant logic",
+      "Modular component architecture, enforcing a strong separation of concerns",
       "Fully accessible and WCAG compliant with an adaptive UI that scales to user's preferred font size",
       "Custom theme with dark and light variants",
       "Designed and developed from scratch",
@@ -74,9 +103,9 @@ export const Websites: ProjectDetails[] = [
         url: "https://github.com/WestonVincze/mtx-login-page",
       },
       {
-        icon: "CodeSandbox",
+        icon: "Eye",
         text: "Live Demo",
-        url: "https://codesandbox.io/s/mtx-login-page-initial-concept-pdngmn",
+        url: "https://mtx-login-page.vercel.app/",
       },
     ],
   },
@@ -96,7 +125,6 @@ export const Websites: ProjectDetails[] = [
       "AJAX",
       "SQL",
       "Trello",
-      "Photoshop",
     ],
     subheading: "Take-Home Challenge (one week)",
     description:

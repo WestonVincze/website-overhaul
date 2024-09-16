@@ -1,7 +1,7 @@
 import styles from "./ProjectCard.module.css";
 import { LinedPaper } from "../LinedPaper";
 import { StickyNote } from "../StickyNote";
-import { ProjectDetails } from "./types";
+import { ProjectDetails } from "@data/Projects/types";
 import { SkillStickers } from "../SkillStickers";
 
 interface ProjectCardProps

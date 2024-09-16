@@ -16,7 +16,7 @@ export const workExperience: WorkExperience[] = [
       "GitHub",
     ],
     description:
-      "Created and optimized multiple marketing websites, enhancing performance and functionality. Actively contributed to the development of microservices, supporting the transition from a legacy SaaS platform.",
+      "Created and optimized multiple marketing websites, enhancing performance and core web vitals. Actively contributed to the development of microservices, supporting the transition from a legacy SaaS platform.",
     location: "PA, USA (Remote)",
     startDate: "02/2024",
     endDate: "present",

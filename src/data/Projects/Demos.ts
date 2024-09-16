@@ -2,35 +2,6 @@ import { ProjectDetails } from "./types";
 
 export const Demos: ProjectDetails[] = [
   {
-    projectName: "Currency Ticker",
-    category: "demo",
-    id: "currency-ticker",
-    year: "2024",
-    skills: ["NextJS", "TypeScript", "HTML", "CSS", "Jest", "Vercel", "Figma"],
-    subheading: "Take-Home Challenge (3 days)",
-    description:
-      "My submission for a take home challenge as part of an interview process. The challenge was to create an application to fetch and display a frequently updated dataset via API. The application had to update data live, include list and details pages, and be responsive. I used the coincap.io API to fetch and display cryptocurrency data on a 30 second interval. I implemented a persistent favorites system using local storage, pagination with 'show more' and 'show less' buttons, and skeleton components to minimize layout shifts.",
-    highlights: [
-      "Led to a final interview and job offer",
-      "Seamless transition between empty and states",
-      "Completed challenge within tight 3 day deadline",
-      "Designed and developed from scratch",
-      "Includes a detailed post mortem document in the repo (PostMortem.md)",
-    ],
-    links: [
-      {
-        icon: "GitHub",
-        text: "Source Code",
-        url: "https://github.com/WestonVincze/currency-ticker",
-      },
-      {
-        icon: "Eye",
-        text: "Live Demo",
-        url: "https://currency-ticker.vercel.app",
-      },
-    ],
-  },
-  {
     projectName: "FAQ Accordion",
     category: "demo",
     id: "faq-accordion",
@@ -82,7 +53,7 @@ export const Demos: ProjectDetails[] = [
     year: "2023",
     status: "complete",
     skills: ["JavaScript", "HTML", "CSS", "CodeSandbox"],
-    subheading: "Self-Challenge",
+    subheading: "POC Demo",
     description:
       "A CodeSandbox demo created as a self-challenge to test weather animating a sprite sheet using only vanilla CSS was possible. I completed the challenge in one night and wrote an article to document my experience.",
     links: [

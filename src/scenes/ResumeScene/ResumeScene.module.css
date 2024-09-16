@@ -10,7 +10,7 @@
 
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 
 .experience header,
@@ -27,4 +27,11 @@
 .hobbies {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+@media (max-width: 600px) {
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  }
 }
