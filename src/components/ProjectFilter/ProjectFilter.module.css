@@ -1,0 +1,21 @@
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterContainer > * {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.filterContainer .select {
+  width: 50%;
+  margin-top: calc(var(--line-height) / 4);
+  z-index: 100;
+  color: var(--font--light);
+}
+
+.option {
+  display: flex;
+}
