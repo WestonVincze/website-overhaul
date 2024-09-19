@@ -4,7 +4,6 @@ import Select, { components, MultiValue, SingleValue } from "react-select";
 import { IconName } from "@assets/Icons";
 import { ProjectCategory } from "@data/Projects/types";
 import { LinedPaper } from "@components/LinedPaper";
-import { SkillStickers } from "@components/SkillStickers";
 import { StickyNote } from "@components/StickyNote";
 
 type Option = { value: string; label: string };

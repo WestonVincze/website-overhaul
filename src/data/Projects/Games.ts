@@ -59,7 +59,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "Eye",
         text: "Play Game",
-        url: "https://necro-cursor.vercel.app/",
+        url: "https://necro-cursor.vercel.app",
       },
       {
         icon: "GitHub",
@@ -91,7 +91,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/WestonVincze/Dwarf-Forges",
+        url: "https://github.com/WestonVincze/dwarf-forges",
       },
     ],
   },
@@ -150,7 +150,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/WestonVincze/Blood-And-Gold",
+        url: "https://github.com/WestonVincze/blood-and-gold",
       },
       {
         icon: "Itch",
