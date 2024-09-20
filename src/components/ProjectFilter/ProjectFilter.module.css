@@ -1,21 +1,50 @@
 .filterContainer {
+  width: 100%;
+  border-radius: 5px;
+  padding: var(--spacing-1) var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  background-color: var(--purple-30);
+}
+
+.filterControls {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 
-.filterContainer > * {
-  display: flex;
-  flex-direction: column;
+.filterControls > * {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
 
-.filterContainer .select {
-  width: 50%;
+.filterControls label {
+  width: 30%;
+  text-align: right;
+}
+
+.filterControls .select {
+  width: 70%;
   margin-top: calc(var(--line-height) / 4);
-  z-index: 100;
   color: var(--font--light);
 }
 
-.option {
+.optionContainer {
   display: flex;
+  flex-direction: row;
+  gap: var(--spacing-2);
+}
+
+.optionContainer .optionIcon * {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 810px) {
+  .filterControls {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
