@@ -1,10 +1,15 @@
 import styles from "./ProjectFilter.module.css";
 import React, { useState, useId } from "react";
-import Select, { components, MultiValue, SingleValue } from "react-select";
+import Select, {
+  components,
+  MultiValue,
+  SingleValue,
+  StylesConfig,
+} from "react-select";
 import { IconName } from "@assets/Icons";
 import { ProjectCategory } from "@data/Projects/types";
-import { LinedPaper } from "@components/LinedPaper";
 import { StickyNote } from "@components/StickyNote";
+import { HighlightedHeading } from "@components/HighlightedHeading";
 
 type Option = { value: string; label: string };
 
@@ -12,17 +17,14 @@ const skills = [
   { value: "React", label: "React" },
   { value: "TypeScript", label: "TypeScript" },
   { value: "JavaScript", label: "JavaScript" },
-  { value: "GitHub", label: "GitHub" },
-  { value: "Aseprite", label: "JavaScript" },
+  { value: "Aseprite", label: "Aseprite" },
   { value: "Blender", label: "Blender" },
-  { value: "Bootstrap", label: "Bootstrap" },
   { value: "Csharp", label: "C#" },
   { value: "CSS", label: "CSS" },
   { value: "Figma", label: "Figma" },
   { value: "HTML", label: "HTML" },
   { value: "Jest", label: "Jest" },
   { value: "NextJS", label: "NextJS" },
-  { value: "NodeJS", label: "NodeJS" },
   { value: "Unity", label: "Unity" },
   { value: "VueJS", label: "VueJS" },
   { value: "Vercel", label: "Vercel" },
@@ -40,9 +42,10 @@ const skills = [
 ];
 
 const categories = [
-  { value: "demo", label: "Demo" },
-  { value: "game", label: "Game" },
-  { value: "website", label: "Website" },
+  { value: "", label: "All" },
+  { value: "website", label: "Websites" },
+  { value: "game", label: "Games" },
+  { value: "demo", label: "Demos" },
 ];
 
 export type FilterCriteria = {
@@ -52,11 +55,25 @@ export type FilterCriteria = {
 
 const CustomOption = (props: any) => {
   return (
-    <components.Option className={styles.option} {...props}>
-      <StickyNote variant="sticker" icon={props.data.value} size="small" />
-      {props.data.label}
+    <components.Option {...props}>
+      <div className={styles.optionContainer}>
+        <div className={styles.optionIcon}>
+          <StickyNote
+            variant="sticker"
+            icon={props.data.value}
+            size="small"
+            showText={false}
+          />
+        </div>
+        <>{props.data.label}</>
+      </div>
     </components.Option>
   );
+};
+
+const filterStyles: StylesConfig<Option, true> = {
+  control: (styles) => ({ ...styles }),
+  menu: (styles) => ({ ...styles }),
 };
 
 export const ProjectFilter: React.FC<{
@@ -86,33 +103,35 @@ export const ProjectFilter: React.FC<{
   };
 
   return (
-    <div>
-      <LinedPaper title="Filter Projects">
-        <div className={styles.filterContainer}>
-          <div>
-            <label htmlFor={skillsId}>Skills</label>
-            <Select
-              instanceId={skillsId}
-              className={styles.select}
-              placeholder="All"
-              onChange={handleSkillChange}
-              isMulti
-              options={skills}
-              components={{ Option: CustomOption }}
-            />
-          </div>
-          <div>
-            <label htmlFor={skillsId}>Category</label>
+    <>
+      <HighlightedHeading text="Filter Projects" id={"filter"} />
+      <div className={styles.filterContainer}>
+        <div className={styles.filterControls}>
+          <div className={styles.inputGroup}>
+            <label htmlFor={categoriesId}>Type of Project</label>
             <Select
               instanceId={categoriesId}
               className={styles.select}
-              placeholder="All"
+              placeholder="Any Type"
               onChange={handleCategoryChange}
               options={categories}
             />
           </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor={skillsId}>Skills</label>
+            <Select
+              instanceId={skillsId}
+              className={styles.select}
+              placeholder="Any Skill"
+              onChange={handleSkillChange}
+              isMulti
+              options={skills}
+              components={{ Option: CustomOption }}
+              styles={filterStyles}
+            />
+          </div>
         </div>
-      </LinedPaper>
-    </div>
+      </div>
+    </>
   );
 };

@@ -3,14 +3,16 @@ import { Icons, IconName } from "@assets/Icons";
 
 interface StickyNoteProps {
   icon: IconName;
+  showText?: boolean;
   text?: string;
   variant?: "taped" | "sticker";
   size?: "medium" | "small";
 }
 
 export const StickyNote = ({
-  text,
   icon,
+  showText = true,
+  text,
   variant = "taped",
   size = "medium",
   ...props
@@ -25,7 +27,7 @@ export const StickyNote = ({
       {...props}
     >
       <div className={styles.content}>{Icons[icon] && Icons[icon].icon()}</div>
-      <div className={styles.text}>{text}</div>
+      {showText && <div className={styles.text}>{text}</div>}
     </div>
   );
 };
