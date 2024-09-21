@@ -11,6 +11,7 @@ interface ProjectCardProps
 export const ProjectCard = ({
   id,
   projectName,
+  year,
   skills,
   subheading,
   description,
@@ -21,7 +22,7 @@ export const ProjectCard = ({
   return (
     <LinedPaper
       id={id}
-      title={`${projectName}`}
+      title={`${projectName} (${year})`}
       style={links && { marginBottom: "80px" }}
     >
       <p role="doc-subtitle" className={styles.subheading}>

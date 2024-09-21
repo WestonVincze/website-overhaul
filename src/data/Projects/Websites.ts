@@ -3,7 +3,7 @@ import { ProjectDetails } from "./types";
 export const Websites: ProjectDetails[] = [
   {
     projectName: "Currency Ticker",
-    category: "demo",
+    category: "website",
     id: "currency-ticker",
     year: "2024",
     skills: [
@@ -47,7 +47,6 @@ export const Websites: ProjectDetails[] = [
     status: "in progress",
     skills: [
       "NextJS",
-      "Vercel",
       "React",
       "TypeScript",
       "JavaScript",
@@ -56,6 +55,7 @@ export const Websites: ProjectDetails[] = [
       "Jest",
       "XState",
       "ReactSpring",
+      "Vercel",
       "Figma",
     ],
     subheading: "Digital Resume and Portfolio",
@@ -188,7 +188,7 @@ export const Websites: ProjectDetails[] = [
     ],
   },
   {
-    projectName: "Portfolio Website 2019",
+    projectName: "Portfolio Website",
     category: "website",
     id: "portfolio-website-2019",
     year: "2019",

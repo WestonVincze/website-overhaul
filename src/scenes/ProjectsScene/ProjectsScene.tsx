@@ -41,7 +41,7 @@ export const ProjectsScene = (): JSX.Element => {
       ))}
       {filteredProjects.length === 0 && (
         <div className={styles.noResults}>
-          <p>No results found. Try clearing the filters.</p>
+          <p>No results found. Try changing or clearing the filters.</p>
         </div>
       )}
     </Container>

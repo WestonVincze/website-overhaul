@@ -10,6 +10,7 @@ import { IconName } from "@assets/Icons";
 import { ProjectCategory } from "@data/Projects/types";
 import { StickyNote } from "@components/StickyNote";
 import { HighlightedHeading } from "@components/HighlightedHeading";
+import { useInViewAnimation } from "@hooks/useInViewAnimation";
 
 type Option = { value: string; label: string };
 
@@ -71,9 +72,16 @@ const CustomOption = (props: any) => {
   );
 };
 
-const filterStyles: StylesConfig<Option, true> = {
+const skillsFilterStyles: StylesConfig<Option, true> = {
+  control: (styles, { isFocused }) => ({ ...styles }),
+  menu: (styles) => ({ ...styles }),
+  placeholder: (styles) => ({ ...styles, fontStyle: "italic" }),
+};
+
+const categoryFilterStyles: StylesConfig<Option, false> = {
   control: (styles) => ({ ...styles }),
   menu: (styles) => ({ ...styles }),
+  placeholder: (styles) => ({ ...styles, fontStyle: "italic" }),
 };
 
 export const ProjectFilter: React.FC<{
@@ -86,6 +94,8 @@ export const ProjectFilter: React.FC<{
   const [selectedCategory, setSelectedCategory] = useState<
     ProjectCategory | undefined
   >(undefined);
+
+  const [ref, animatedStyle, AnimatedDiv] = useInViewAnimation("div", "grow");
 
   const handleSkillChange = (options: MultiValue<Option>) => {
     const skills = [...options.map((option) => option.value)];
@@ -105,33 +115,43 @@ export const ProjectFilter: React.FC<{
   return (
     <>
       <HighlightedHeading text="Filter Projects" id={"filter"} />
-      <div className={styles.filterContainer}>
+      <AnimatedDiv
+        id="filter-container"
+        ref={ref}
+        style={{ ...animatedStyle }}
+        className={styles.filterContainer}
+      >
         <div className={styles.filterControls}>
           <div className={styles.inputGroup}>
-            <label htmlFor={categoriesId}>Type of Project</label>
+            <label aria-label="category" htmlFor="category">
+              Category
+            </label>
             <Select
+              id="category"
               instanceId={categoriesId}
               className={styles.select}
-              placeholder="Any Type"
+              placeholder="All"
               onChange={handleCategoryChange}
               options={categories}
+              styles={categoryFilterStyles}
             />
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor={skillsId}>Skills</label>
             <Select
+              id={skillsId}
               instanceId={skillsId}
               className={styles.select}
-              placeholder="Any Skill"
+              placeholder="Any"
               onChange={handleSkillChange}
               isMulti
               options={skills}
               components={{ Option: CustomOption }}
-              styles={filterStyles}
+              styles={skillsFilterStyles}
             />
           </div>
         </div>
-      </div>
+      </AnimatedDiv>
     </>
   );
 };
