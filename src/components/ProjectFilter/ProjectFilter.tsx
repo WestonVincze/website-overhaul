@@ -15,31 +15,31 @@ import { useInViewAnimation } from "@hooks/useInViewAnimation";
 type Option = { value: string; label: string };
 
 const skills = [
-  { value: "React", label: "React" },
-  { value: "TypeScript", label: "TypeScript" },
-  { value: "JavaScript", label: "JavaScript" },
+  { value: "AJAX", label: "AJAX" },
   { value: "Aseprite", label: "Aseprite" },
+  { value: "BitECS", label: "BitECS" },
   { value: "Blender", label: "Blender" },
+  { value: "CodeSandbox", label: "CodeSandbox" },
+  { value: "Colyseus", label: "Colyseus" },
   { value: "Csharp", label: "C#" },
   { value: "CSS", label: "CSS" },
   { value: "Figma", label: "Figma" },
   { value: "HTML", label: "HTML" },
+  { value: "JavaScript", label: "JavaScript" },
   { value: "Jest", label: "Jest" },
   { value: "NextJS", label: "NextJS" },
-  { value: "Unity", label: "Unity" },
-  { value: "VueJS", label: "VueJS" },
-  { value: "Vercel", label: "Vercel" },
-  { value: "ReactSpring", label: "React Spring" },
-  { value: "XState", label: "XState" },
-  { value: "CodeSandbox", label: "CodeSandbox" },
-  { value: "AJAX", label: "AJAX" },
-  { value: "Vitest", label: "Vitest" },
-  { value: "Colyseus", label: "Colyseus" },
   { value: "Phaser", label: "Phaser" },
   { value: "PixiJS", label: "PixiJS" },
-  { value: "Svelte", label: "Svelte" },
-  { value: "BitECS", label: "BitECS" },
+  { value: "React", label: "React" },
+  { value: "ReactSpring", label: "React Spring" },
   { value: "RxJS", label: "RxJS" },
+  { value: "Svelte", label: "Svelte" },
+  { value: "TypeScript", label: "TypeScript" },
+  { value: "Unity", label: "Unity" },
+  { value: "Vercel", label: "Vercel" },
+  { value: "Vitest", label: "Vitest" },
+  { value: "VueJS", label: "VueJS" },
+  { value: "XState", label: "XState" },
 ];
 
 const categories = [
@@ -73,14 +73,14 @@ const CustomOption = (props: any) => {
 };
 
 const skillsFilterStyles: StylesConfig<Option, true> = {
-  control: (styles, { isFocused }) => ({ ...styles }),
-  menu: (styles) => ({ ...styles }),
+  // control: (styles, { isFocused }) => ({ ...styles }),
+  // menu: (styles) => ({ ...styles }),
   placeholder: (styles) => ({ ...styles, fontStyle: "italic" }),
 };
 
 const categoryFilterStyles: StylesConfig<Option, false> = {
-  control: (styles) => ({ ...styles }),
-  menu: (styles) => ({ ...styles }),
+  // control: (styles) => ({ ...styles }),
+  // menu: (styles) => ({ ...styles }),
   placeholder: (styles) => ({ ...styles, fontStyle: "italic" }),
 };
 
