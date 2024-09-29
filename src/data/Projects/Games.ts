@@ -10,12 +10,14 @@ export const Games: ProjectDetails[] = [
     status: "in progress",
     skills: [
       "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
       "Vitest",
       "Figma",
       "Colyseus",
       "BitECS",
       "Phaser",
-      "PixiJS",
       "RxJS",
       "Svelte",
     ],
@@ -44,7 +46,15 @@ export const Games: ProjectDetails[] = [
     id: "necro-cursor",
     year: "2024",
     status: "complete",
-    skills: ["TypeScript", "PixiJS", "RxJS"],
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "PixiJS",
+      "RxJS",
+      "Vercel",
+    ],
     subheading: "POC Demo",
     description:
       "Necro Cursor is an experimental POC browser game in which you play as a lowly necromancer who must defend himself from a horde of angry townsfolk. Summon skeletons from the bones of your enemies to defend you and survive as long as you can!",
@@ -59,7 +69,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "Eye",
         text: "Play Game",
-        url: "https://necro-cursor.vercel.app/",
+        url: "https://necro-cursor.vercel.app",
       },
       {
         icon: "GitHub",
@@ -91,7 +101,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/WestonVincze/Dwarf-Forges",
+        url: "https://github.com/WestonVincze/dwarf-forges",
       },
     ],
   },
@@ -150,7 +160,7 @@ export const Games: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/WestonVincze/Blood-And-Gold",
+        url: "https://github.com/WestonVincze/blood-and-gold",
       },
       {
         icon: "Itch",

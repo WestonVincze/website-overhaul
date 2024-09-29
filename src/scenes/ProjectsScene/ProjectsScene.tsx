@@ -1,35 +1,49 @@
+import styles from "./ProjectsScene.module.css";
+import { useState } from "react";
 import { ProjectCard } from "@components/ProjectCard";
 import { Container } from "@components/Container";
-import { Projects } from "@data/Projects";
-import { HighlightedHeading } from "@components/HighlightedHeading";
+import { Projects, ProjectDetails } from "@data/Projects";
+import { FilterCriteria, ProjectFilter } from "@components/ProjectFilter";
+
+const projects = Projects;
+
+const filterProjects = (
+  projects: ProjectDetails[],
+  criteria: FilterCriteria,
+): ProjectDetails[] => {
+  return projects.filter((project) => {
+    const matchesSkills =
+      !criteria.selectedSkills ||
+      criteria.selectedSkills.every((skill) => project.skills.includes(skill));
+    const matchedCategory =
+      !criteria.selectedCategory ||
+      criteria.selectedCategory === project.category;
+
+    return matchesSkills && matchedCategory;
+  });
+};
 
 export const ProjectsScene = (): JSX.Element => {
+  const [filteredProjects, setFilteredProjects] =
+    useState<ProjectDetails[]>(projects);
+
+  const handleFilterChange = (criteria: FilterCriteria) => {
+    setFilteredProjects(filterProjects(projects, criteria));
+  };
+
   return (
     <Container>
-      <section>
-        <HighlightedHeading id="challenges" text="Challenges" />
-        {Projects.demos.map((challenge, i) => (
-          <ProjectCard
-            {...challenge}
-            id={`challenges-${challenge.id}`}
-            key={i}
-          />
-        ))}
-      </section>
-
-      <section>
-        <HighlightedHeading id="websites" text="Websites" />
-        {Projects.websites.map((web, i) => (
-          <ProjectCard {...web} id={`websites-${web.id}`} key={i} />
-        ))}
-      </section>
-
-      <section>
-        <HighlightedHeading id="game-dev" text="Game Development" />
-        {Projects.games.map((game, i) => (
-          <ProjectCard {...game} id={`game-dev-${game.id}`} key={i} />
-        ))}
-      </section>
+      <ProjectFilter onFilterChange={handleFilterChange} />
+      {filteredProjects.map((project, i) => (
+        <section key={i}>
+          <ProjectCard {...project} id={`challenges-${project.id}`} />
+        </section>
+      ))}
+      {filteredProjects.length === 0 && (
+        <div className={styles.noResults}>
+          <p>No results found. Try changing or clearing the filters.</p>
+        </div>
+      )}
     </Container>
   );
 };

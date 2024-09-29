@@ -1,0 +1,61 @@
+.filterContainer {
+  width: 100%;
+  padding: var(--spacing-1) var(--spacing-2);
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.filterContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--purple-30);
+  border-radius: 5px;
+  filter: blur(2px);
+}
+
+.filterControls {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.filterControls > * {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.filterControls label {
+  width: 100px;
+  text-align: right;
+}
+
+.filterControls .select {
+  width: 70%;
+  margin-top: calc(var(--line-height) / 4);
+  color: var(--font--light);
+}
+
+.optionContainer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-2);
+}
+
+.optionContainer .optionIcon * {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 810px) {
+  .filterControls {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
