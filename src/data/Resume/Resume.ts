@@ -5,7 +5,7 @@ import { technicalSkills } from "./TechnicalSkills";
 import { workExperience } from "./WorkExperience";
 
 const intro =
-  "I am a self-driven frontend web developer backed by over 7 years of professional experience. I specialize in JavaScript, including a plethora of libraries and frameworks, with a strong proficiency in React and TypeScript.";
+  "Self-driven Frontend Developer with 7+ years of experience building user-focused, high-performance web applications. JavaScript expert specializing in Next.js, React, and TypeScript, dedicated to delivering scalable, maintainable solutions.";
 
 export const Resume: ResumeFormat = {
   intro,

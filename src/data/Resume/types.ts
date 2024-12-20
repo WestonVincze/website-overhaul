@@ -13,7 +13,7 @@ export type WorkExperience = {
   location: string;
   startDate: string;
   endDate: string;
-  highlights: string[];
+  highlights?: string[];
 };
 
 export type Education = {

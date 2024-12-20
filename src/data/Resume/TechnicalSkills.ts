@@ -24,22 +24,16 @@ export const technicalSkills: TechnicalSkill[] = [
       "Jest",
       "Vitest",
       "Storybook",
-      "GraphQL",
       "Redux",
       "RxJS",
-      "XState",
-      "React-Spring",
       "jQuery",
       "Tailwind",
-      "Bootstrap",
-      "Scss",
-      "Less",
-      "WordPress",
+      "SCSS",
     ],
   },
   {
     title: "Backend",
-    skills: ["NodeJS", "MongoDB", "ASP.NET", "LINQ", "SQL"],
+    skills: ["NodeJS", "GraphQL", "ASP.NET", "SQL"],
   },
   {
     title: "DevOps",
@@ -47,7 +41,7 @@ export const technicalSkills: TechnicalSkill[] = [
   },
   {
     title: "Tools",
-    skills: ["Vite", "Webpack", "Git", "Figma", "JIRA", "Postman", "Vim"],
+    skills: ["Vite", "Webpack", "Git", "WordPress", "JIRA", "Figma"],
   },
   {
     title: "Game Dev",

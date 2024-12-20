@@ -66,13 +66,15 @@ export const ResumeScene = () => {
                 <p>{role.description}</p>
               </section>
 
-              <section>
-                <ul>
-                  {role.highlights.map((h, i) => (
-                    <li key={i}>{h}</li>
-                  ))}
-                </ul>
-              </section>
+              {role.highlights && (
+                <section>
+                  <ul>
+                    {role.highlights.map((h, i) => (
+                      <li key={i}>{h}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </LinedPaper>
           ))}
         </section>
