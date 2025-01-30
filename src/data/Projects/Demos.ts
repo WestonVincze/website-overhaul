@@ -2,6 +2,33 @@ import { ProjectDetails } from "./types";
 
 export const Demos: ProjectDetails[] = [
   {
+    projectName: "IP Address Tracker",
+    category: "demo",
+    id: "ip-address-tracker",
+    year: "2025",
+    skills: ["NextJS", "React", "Tailwind", "HTML", "CSS", "Vercel"],
+    subheading: "Frontend Mentor Challenge",
+    description:
+      "A Frontend Mentor challenge which was completed as an avenue to learn and practice Tailwind CSS. The instructions were to create an input that accepts an IP address or domain and displays various geolocation data and a map. Design images and a loose style guideline was provided.",
+    highlights: [
+      "Effecient API implementation leveraging a NextJS route handler",
+      "Environment variable feature flag for optional mock responses",
+      "Adaptive user input that automatically adds decimals for ipv4 ip addresses",
+    ],
+    links: [
+      {
+        icon: "GitHub",
+        text: "Source Code",
+        url: "https://github.com/WestonVincze/ip-address-tracker-challenge",
+      },
+      {
+        icon: "Eye",
+        text: "Live Demo",
+        url: "https://ip-address-tracker-challenge-weston-vincze.vercel.app/",
+      },
+    ],
+  },
+  {
     projectName: "FAQ Accordion",
     category: "demo",
     id: "faq-accordion",
