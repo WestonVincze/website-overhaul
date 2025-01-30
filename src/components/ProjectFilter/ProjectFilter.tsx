@@ -40,6 +40,7 @@ const skills = [
   { value: "Vitest", label: "Vitest" },
   { value: "VueJS", label: "VueJS" },
   { value: "XState", label: "XState" },
+  { value: "Tailwind", label: "Tailwind CSS" }
 ];
 
 const categories = [
