@@ -34,12 +34,15 @@ export const ProjectsScene = (): JSX.Element => {
   return (
     <Container>
       <ProjectFilter onFilterChange={handleFilterChange} />
-      {filteredProjects.map((project, i) => (
-        <section key={i}>
-          <ProjectCard {...project} id={`challenges-${project.id}`} />
-        </section>
-      ))}
-      {filteredProjects.length === 0 && (
+      {filteredProjects.length > 0 ? (
+        filteredProjects
+          .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+          .map((project, i) => (
+            <section key={i}>
+              <ProjectCard {...project} id={`challenges-${project.id}`} />
+            </section>
+          ))
+      ) : (
         <div className={styles.noResults}>
           <p>No results found. Try changing or clearing the filters.</p>
         </div>

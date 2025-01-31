@@ -13,7 +13,7 @@ export type ProjectDetails = {
   category: ProjectCategory;
   id?: string;
   screenshots?: string[];
-  year?: string;
+  year: string;
   status?: "in progress" | "complete";
   skills: IconName[];
   subheading?: string;

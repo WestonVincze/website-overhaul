@@ -41,9 +41,19 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <Head>
-        <Link rel="preload" href="/images/black-paper.png" />
-        <Link rel="preload" href="/images/light-paper.png" />
-        <Link rel="preload" href="/images/soft-wallpaper.png" />
+        <Link
+          rel="preload"
+          href="/images/black-paper.png"
+          as="image"
+          media="(prefers-color-scheme: dark)"
+        />
+        <Link
+          rel="preload"
+          href="/images/light-paper.png"
+          as="image"
+          media="(prefers-color-scheme: light)"
+        />
+        <Link rel="preload" href="/images/soft-wallpaper.png" as="image" />
       </Head>
       <body className={`${poppins.variable} ${montserrat.variable}`}>
         <Layout>{children}</Layout>
