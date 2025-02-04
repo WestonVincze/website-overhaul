@@ -1216,7 +1216,7 @@ export const Icons: Record<string, IconProps> = {
     ),
   },
   Tailwind: {
-    title: "Tailwind CSS",
+    title: "Tailwind",
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"

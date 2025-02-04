@@ -2,6 +2,43 @@ import { ProjectDetails } from "./types";
 
 export const Games: ProjectDetails[] = [
   {
+    projectName: "Baby Simulator",
+    category: "game",
+    id: "baby-simulator",
+    year: "2025",
+    status: "in progress",
+    skills: [
+      "Svelte",
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Vitest",
+      "Figma",
+    ],
+    subheading: "Utility AI Test project",
+    description:
+      "Baby Simulator is a simple browser game in which the player offers toys to a baby to stave off boredom. The simulation ends when the boredom meter fills up. Each toy is categorized by its unique properties which build up 'aversion' and make the toy less appealing. Offer new and different toys to keep baby entertained for as long as possible. This project was built as a testing grounds for my AI decision making JavaScript library based on utility theory called utility-ai. In utility-ai, each possible action is 'appraised' and represented numerically by a value of 0-1. A final decision is made based on the highest score.",
+    highlights: [
+      "Reactive Svelte driven UI using stores for state management",
+      "Complex decision making system that considers and compares multiple factors",
+      "Customized formulas designed to assign numeric value to arbitrary data",
+      "Detailed data visualization and development tools",
+    ],
+    links: [
+      {
+        icon: "Eye",
+        text: "Live Demo",
+        url: "https://baby-simulator.vercel.app",
+      },
+      {
+        icon: "GitHub",
+        text: "Source Code",
+        url: "https://github.com/WestonVincze/baby-simulator",
+      },
+    ],
+  },
+  {
     projectName: "Necro Vs Crown",
     category: "game",
     id: "necro-vs-crown",
