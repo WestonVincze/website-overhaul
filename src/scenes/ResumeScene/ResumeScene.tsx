@@ -21,10 +21,10 @@ export const ResumeScene = () => {
           style={animatedStyles}
           className={styles.stickyNotes}
         >
-          <a href="/images/WestonVinczeResume-Concise.pdf">
+          <a href="/resumes/WestonVinczeResume-Concise.pdf" target="_blank">
             <StickyNote icon="Eye" text="Concise" />
           </a>
-          <a href="/images/WestonVinczeResume-Detailed.pdf" target="_blank">
+          <a href="/resumes/WestonVinczeResume-Detailed.pdf" target="_blank">
             <StickyNote icon="Eye" text="Detailed" />
           </a>
         </AnimatedHeader>
