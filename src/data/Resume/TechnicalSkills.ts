@@ -33,7 +33,7 @@ export const technicalSkills: TechnicalSkill[] = [
   },
   {
     title: "Backend",
-    skills: ["NodeJS", "GraphQL", "ASP.NET", "SQL"],
+    skills: ["NodeJS", "GraphQL", "ASP.NET"],
   },
   {
     title: "DevOps",

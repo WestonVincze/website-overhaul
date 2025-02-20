@@ -12,6 +12,9 @@ export const workExperience: WorkExperience[] = [
       "CSS",
       "Vitest",
       "AWS",
+      "PHP",
+      "SQL",
+      "WordPress",
       "JIRA",
       "GitHub",
     ],
@@ -30,7 +33,7 @@ export const workExperience: WorkExperience[] = [
   },
   {
     company: "Auvik Networks",
-    title: "Software Developer",
+    title: "Frontend/Full Stack Developer",
     skills: [
       "React",
       "TypeScript",
@@ -51,7 +54,7 @@ export const workExperience: WorkExperience[] = [
       "Collaborated as a frontend specialist within the account management team on a highly secure SaaS platform.",
     location: "Waterloo, Canada (Remote)",
     startDate: "01/2023",
-    endDate: "09/2023",
+    endDate: "01/2024",
     highlights: [
       "Led project to refactor payment form into microservices, enhancing user experience",
       "Integrated iframe under strict constraints with strategic CSS and state management",
@@ -61,7 +64,7 @@ export const workExperience: WorkExperience[] = [
   },
   {
     company: "Bitovi",
-    title: "JavaScript Consultant",
+    title: "Frontend Consultant",
     skills: [
       "React",
       "NextJS",
@@ -93,7 +96,7 @@ export const workExperience: WorkExperience[] = [
   },
   {
     company: "Richmond Day",
-    title: "Full Stack Developer",
+    title: "Frontend/Full Stack Developer",
     skills: [
       "JQuery",
       "AJAX",
@@ -122,7 +125,7 @@ export const workExperience: WorkExperience[] = [
   },
   {
     company: "Self Employed",
-    title: "Freelance Web Developer",
+    title: "Frontend Developer (Freelance)",
     skills: [
       "JQuery",
       "JavaScript",
@@ -144,8 +147,8 @@ export const workExperience: WorkExperience[] = [
     ],
   },
   {
-    company: "LBC IT Solutions, Inc",
-    title: "Junior Web Developer",
+    company: "LBC IT Solutions",
+    title: "Junior Frontend Developer",
     skills: [
       "VueJS",
       "React",
@@ -169,8 +172,8 @@ export const workExperience: WorkExperience[] = [
     endDate: "11/2019",
   },
   {
-    company: "PWC Technology Services, Inc",
-    title: "Software Developer Intern",
+    company: "PWC",
+    title: "Frontend Developer (Intern)",
     skills: [
       "JQuery",
       "JavaScript",
