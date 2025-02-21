@@ -127,7 +127,7 @@ export const Websites: ProjectDetails[] = [
       {
         icon: "GitHub",
         text: "Source Code",
-        url: "https://github.com/WestonVincze/website-overhaul",
+        url: "https://github.com/WestonVincze/porfilio-website",
       },
       {
         icon: "GitHub2",
