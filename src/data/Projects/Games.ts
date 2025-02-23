@@ -16,12 +16,12 @@ export const Games: ProjectDetails[] = [
       "Vitest",
       "Figma",
     ],
-    subheading: "Utility AI Test project",
+    subheading: "Drag & Drop Browser Game",
     description:
       "Baby Simulator is a simple browser game in which the player offers toys to a baby to stave off boredom. The simulation ends when the boredom meter fills up. Each toy is categorized by its unique properties which build up 'aversion' and make the toy less appealing. Offer new and different toys to keep baby entertained for as long as possible. This project was built as a testing grounds for my AI decision making JavaScript library based on utility theory called utility-ai. In utility-ai, each possible action is 'appraised' and represented numerically by a value of 0-1. A final decision is made based on the highest score.",
     highlights: [
       "Reactive Svelte driven UI using stores for state management",
-      "Complex decision making system that considers and compares multiple factors",
+      "Complex decision making system that compares multiple actions based on utility theory",
       "Customized formulas designed to assign numeric value to arbitrary data",
       "Detailed data visualization and development tools",
     ],

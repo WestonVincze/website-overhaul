@@ -43,14 +43,14 @@ export const Websites: ProjectDetails[] = [
       "Vercel",
       "Figma",
     ],
-    subheading: "Take-Home Challenge (3 days)",
+    subheading: "Take-Home Challenge (2 days)",
     description:
       "My submission for a take home challenge as part of an interview process. The challenge was to create an application to fetch and display a frequently updated dataset via API. The application had to update data live, include list and details pages, and be responsive. I used the coincap.io API to fetch and display cryptocurrency data on a 30 second interval. I implemented a persistent favorites system using local storage, pagination with 'show more' and 'show less' buttons, and skeleton components to minimize layout shifts.",
     highlights: [
       "Led to a final interview and job offer",
       "Seamless transition between empty and states",
-      "Completed challenge within tight 3 day deadline",
-      "Designed and developed from scratch",
+      "Completed challenge within tight 2 day deadline",
+      "Designed and developed from scratch, including Figma mockup for mobile and desktop",
       "Includes a detailed post mortem document in the repo (PostMortem.md)",
     ],
     links: [

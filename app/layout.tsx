@@ -2,8 +2,6 @@ import "../src/styles/globals.css";
 import { Metadata } from "next";
 import { Layout } from "@components/Layout";
 import { Poppins, Montserrat } from "next/font/google";
-import Head from "next/head";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://westonvincze.com"),
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Weston Vincze",
   },
   description: "Portfolio Website built by Weston Vincze using NextJS.",
-  keywords: "Web Development, Portfolio, NextJS, Weston Vincze",
+  keywords: ["Web Development", "Portfolio", "NextJS", "Weston Vincze"],
   openGraph: {
     title: "Weston Vincze Portfolio",
     siteName: "Weston Vincze - Frontend Developer",
@@ -39,22 +37,7 @@ const montserrat = Montserrat({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" style={{ scrollBehavior: "smooth" }}>
-      <Head>
-        <Link
-          rel="preload"
-          href="/images/black-paper.png"
-          as="image"
-          media="(prefers-color-scheme: dark)"
-        />
-        <Link
-          rel="preload"
-          href="/images/light-paper.png"
-          as="image"
-          media="(prefers-color-scheme: light)"
-        />
-        <Link rel="preload" href="/images/soft-wallpaper.png" as="image" />
-      </Head>
+    <html lang="en">
       <body className={`${poppins.variable} ${montserrat.variable}`}>
         <Layout>{children}</Layout>
       </body>
